@@ -1,380 +1,632 @@
 <!doctype html>
-<html lang="en">
+<html lang="en-CA">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Harbourview Media — Professional real estate photography in Vancouver, BC. Clean, natural, MLS-ready images delivered fast." />
+  <title>Harbourview Media | Real Estate Photography — Vancouver, BC</title>
 
-  <title>Harbourview Media | Real Estate Photography</title>
-
-  <meta name="description" content="Professional real estate photography for Vancouver listings. Clean images, accurate colour, and fast delivery.">
-
+  <!-- Basic, traditional + professional styling (single-file, no frameworks) -->
   <style>
     :root{
-      --text:#111827;
-      --muted:#4b5563;
-      --border:#e5e7eb;
-      --bg:#ffffff;
-      --accent:#0b5fff;
-      --accent-hover:#094fd6;
-      --max: 1000px;
-      --radius: 10px;
+      --bg: #ffffff;
+      --text: #0f172a;          /* slate-900 */
+      --muted: #475569;         /* slate-600 */
+      --border: #e2e8f0;        /* slate-200 */
+      --card: #f8fafc;          /* slate-50 */
+      --accent: #0f172a;
+      --accent2: #1f2937;
+      --shadow: 0 10px 30px rgba(2,6,23,.08);
+      --radius: 14px;
+      --max: 1120px;
     }
 
-    *{box-sizing:border-box}
-
+    *{ box-sizing: border-box; }
+    html, body{ height: 100%; }
     body{
-      margin:0;
-      font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
-      color:var(--text);
-      background:var(--bg);
-      line-height:1.6;
+      margin: 0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.5;
     }
 
-    a{color:inherit;text-decoration:none}
+    a{ color: inherit; text-decoration: none; }
+    a:hover{ text-decoration: underline; }
+    img{ max-width: 100%; display: block; }
 
-    .container{
-      max-width:var(--max);
-      margin:0 auto;
-      padding:0 20px;
+    /* Layout */
+    .container{ width: min(var(--max), calc(100% - 32px)); margin: 0 auto; }
+    .grid{ display: grid; gap: 18px; }
+    .two{ grid-template-columns: 1.2fr .8fr; }
+    .three{ grid-template-columns: repeat(3, 1fr); }
+    .four{ grid-template-columns: repeat(4, 1fr); }
+
+    @media (max-width: 980px){
+      .two{ grid-template-columns: 1fr; }
+      .three{ grid-template-columns: 1fr; }
+      .four{ grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 520px){
+      .four{ grid-template-columns: 1fr; }
     }
 
     /* Header */
-
     header{
-      border-bottom:1px solid var(--border);
-      background:#fff;
+      position: sticky; top: 0; z-index: 50;
+      background: rgba(255,255,255,.92);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border);
     }
-
-    .topbar{
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      gap:16px;
-      padding:16px 0;
+    .nav{
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 12px 0;
+      gap: 16px;
     }
-
     .brand{
-      display:flex;
-      align-items:center;
-      gap:12px;
-      font-weight:700;
-      font-size:18px;
+      display: flex; align-items: center; gap: 12px;
+      min-width: 200px;
     }
-
-    .brand img{
-      width:44px;
-      height:44px;
-      object-fit:contain;
-      display:block;
+    .logo{
+      width: 38px; height: 38px; border-radius: 10px;
+      border: 1px solid var(--border);
+      background: linear-gradient(180deg,#fff,#f1f5f9);
+      display: grid; place-items: center;
+      overflow: hidden;
     }
-
-    nav{
-      display:flex;
-      align-items:center;
-      gap:20px;
-      font-size:14px;
-      font-weight:600;
+    .logo img{ width: 100%; height: 100%; object-fit: cover; }
+    .brand .title{
+      display: flex; flex-direction: column; line-height: 1.1;
     }
+    .brand .title strong{ font-size: 14px; letter-spacing: .2px; }
+    .brand .title span{ font-size: 12px; color: var(--muted); }
 
-    nav a{
-      color:var(--muted);
+    nav ul{
+      list-style: none; margin: 0; padding: 0;
+      display: flex; gap: 18px; align-items: center;
+      font-size: 14px;
     }
-
-    nav a:hover{
-      color:var(--text);
+    nav a{ color: var(--muted); text-decoration: none; }
+    nav a:hover{ color: var(--text); text-decoration: none; }
+    .cta{
+      display: inline-flex; align-items: center; justify-content: center;
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: var(--accent);
+      color: #fff;
+      font-size: 14px;
+      border: 1px solid var(--accent);
+      white-space: nowrap;
     }
+    .cta:hover{ filter: brightness(.95); text-decoration: none; }
 
-    .btn{
-      padding:10px 14px;
-      border-radius:var(--radius);
-      font-size:14px;
-      font-weight:700;
-      border:1px solid var(--border);
-      background:#fff;
+    /* Mobile nav (simple) */
+    .menu-btn{
+      display: none;
+      border: 1px solid var(--border);
+      background: #fff;
+      border-radius: 10px;
+      padding: 9px 10px;
+      font-size: 14px;
     }
-
-    .btn.primary{
-      background:var(--accent);
-      border-color:var(--accent);
-      color:#fff;
-    }
-
-    .btn.primary:hover{
-      background:var(--accent-hover);
-      border-color:var(--accent-hover);
-    }
-
-    /* Hero */
-
-    .hero{
-      padding:46px 0 26px;
-    }
-
-    .hero h1{
-      font-size:clamp(28px,3.5vw,42px);
-      line-height:1.2;
-      margin:0 0 12px;
-      letter-spacing:-0.2px;
-    }
-
-    .hero p{
-      margin:0 0 18px;
-      color:var(--muted);
-      max-width:70ch;
-      font-size:16px;
-    }
-
-    .hero-actions{
-      display:flex;
-      gap:12px;
-      flex-wrap:wrap;
+    @media (max-width: 820px){
+      nav ul{ display: none; }
+      .menu-btn{ display: inline-flex; }
+      .nav-right{ display: flex; gap: 10px; align-items: center; }
+      .mobile-nav{
+        display: none;
+        border-top: 1px solid var(--border);
+        padding: 10px 0 14px 0;
+      }
+      .mobile-nav.open{ display: block; }
+      .mobile-nav a{
+        display: block;
+        padding: 10px 0;
+        color: var(--muted);
+        text-decoration: none;
+      }
+      .mobile-nav a:hover{ color: var(--text); }
     }
 
     /* Sections */
-
-    .section{
-      padding:26px 0;
-      border-top:1px solid var(--border);
+    section{ padding: 54px 0; }
+    .kicker{
+      color: var(--muted);
+      font-size: 13px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      margin: 0 0 10px 0;
     }
-
-    .section h2{
-      margin:0 0 8px;
-      font-size:19px;
+    h1{
+      font-size: clamp(28px, 4vw, 44px);
+      line-height: 1.1;
+      margin: 0 0 16px 0;
+      letter-spacing: -0.02em;
     }
-
-    .section p{
-      margin:0 0 12px;
-      color:var(--muted);
+    h2{
+      font-size: 22px;
+      margin: 0 0 14px 0;
+      letter-spacing: -0.01em;
     }
-
-    .grid{
-      display:grid;
-      gap:18px;
-      grid-template-columns:1fr;
-      margin-top:14px;
-    }
-
-    @media (min-width:860px){
-      .grid{
-        grid-template-columns:repeat(3,1fr);
-      }
-    }
+    p{ margin: 0 0 14px 0; color: var(--muted); }
+    .lead{ font-size: 16px; max-width: 62ch; }
 
     .card{
-      border:1px solid var(--border);
-      border-radius:var(--radius);
-      padding:18px;
-      background:#fff;
+      border: 1px solid var(--border);
+      background: var(--card);
+      border-radius: var(--radius);
+      padding: 18px;
+      box-shadow: none;
+    }
+    .shadow{ box-shadow: var(--shadow); background: #fff; }
+    .pill{
+      display: inline-flex; align-items: center;
+      padding: 6px 10px;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      font-size: 13px;
+      color: var(--muted);
+      background: #fff;
+      gap: 8px;
     }
 
-    .card h3{
-      margin:0 0 8px;
-      font-size:16px;
+    /* Hero */
+    .hero{
+      padding: 56px 0 34px 0;
+      background:
+        radial-gradient(900px 350px at 15% 10%, rgba(15,23,42,.05), transparent 60%),
+        radial-gradient(900px 350px at 85% 0%, rgba(15,23,42,.06), transparent 60%);
+      border-bottom: 1px solid var(--border);
+    }
+    .hero-actions{
+      display: flex; gap: 10px; flex-wrap: wrap;
+      margin-top: 16px;
+    }
+    .btn{
+      display: inline-flex; align-items: center; justify-content: center;
+      padding: 10px 14px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: #fff;
+      color: var(--text);
+      font-size: 14px;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+    .btn:hover{ background: #f8fafc; text-decoration: none; }
+    .btn.primary{
+      background: var(--accent);
+      border-color: var(--accent);
+      color: #fff;
+    }
+    .btn.primary:hover{ filter: brightness(.95); }
+
+    .hero-visual{
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      overflow: hidden;
+      background: #fff;
+      box-shadow: var(--shadow);
+      min-height: 340px;
+      display: grid;
+      place-items: center;
+      position: relative;
+    }
+    .hero-visual .placeholder{
+      padding: 18px;
+      text-align: center;
+      color: var(--muted);
+      max-width: 44ch;
+    }
+    .hero-visual small{ display: block; margin-top: 10px; color: #64748b; }
+
+    /* Portfolio */
+    .portfolio-grid{
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+    }
+    @media (max-width: 980px){ .portfolio-grid{ grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 520px){ .portfolio-grid{ grid-template-columns: 1fr; } }
+
+    .shot{
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      overflow: hidden;
+      background: #fff;
+      min-height: 190px;
+      position: relative;
+    }
+    .shot .ph{
+      height: 190px;
+      background:
+        linear-gradient(135deg, #f8fafc, #eef2f7);
+      display: grid; place-items: center;
+      color: #64748b;
+      font-size: 13px;
+      text-align: center;
+      padding: 10px;
+    }
+    .shot span{
+      position: absolute;
+      left: 10px; bottom: 10px;
+      font-size: 12px;
+      background: rgba(255,255,255,.9);
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      padding: 5px 9px;
+      color: var(--muted);
     }
 
-    ul{
-      margin:0;
-      padding-left:18px;
-      color:var(--muted);
-    }
-
-    li{
-      margin:6px 0;
-    }
-
-    /* Contact */
-
-    .contact{
-      background:#f9fafb;
-      border:1px solid var(--border);
-      border-radius:var(--radius);
-      padding:24px;
-      text-align:center;
-    }
-
-    .contact h2{
-      font-size:22px;
-      margin-bottom:8px;
-    }
-
-    .contact p{
-      color:var(--muted);
-      margin-bottom:14px;
-    }
-
-    .contact a{
-      color:var(--accent);
-      font-weight:700;
-      font-size:16px;
-    }
+    /* List styling */
+    .list{ margin: 0; padding-left: 18px; color: var(--muted); }
+    .list li{ margin: 8px 0; }
 
     /* Footer */
-
     footer{
-      border-top:1px solid var(--border);
-      padding:18px 0;
-      margin-top:22px;
-      font-size:13px;
-      color:var(--muted);
-      text-align:center;
+      border-top: 1px solid var(--border);
+      padding: 26px 0;
+      color: var(--muted);
+      font-size: 13px;
     }
+    .footer-row{
+      display: flex; gap: 16px; align-items: center; justify-content: space-between;
+      flex-wrap: wrap;
+    }
+    .fine{ color: #64748b; }
+
+    /* Skip link (accessibility) */
+    .skip{
+      position: absolute; left: -999px; top: 0;
+      background: #fff; border: 1px solid var(--border);
+      padding: 8px 10px; border-radius: 10px;
+    }
+    .skip:focus{ left: 12px; top: 12px; z-index: 999; }
   </style>
 </head>
 
 <body>
+  <a class="skip" href="#main">Skip to content</a>
 
-<header>
-  <div class="container">
-    <div class="topbar">
-
-      <div class="brand">
-        <img src="harbourviewmedialogo.png" alt="Harbourview Media logo">
-        Harbourview Media
-      </div>
-
-      <nav>
-        <a href="#services">Services</a>
-        <a href="#about">About</a>
-        <a href="#process">Process</a>
-        <a class="btn primary" href="mailto:sean@harbourviewmedia.ca?subject=Booking%20Request">Book</a>
-      </nav>
-
-    </div>
-  </div>
-</header>
-
-<main class="container">
-
-  <!-- Hero -->
-
-  <section class="hero">
-
-    <h1>Real Estate Photography for Vancouver Listings</h1>
-
-    <p>
-      Clean, professional images with accurate colour and straight lines.
-      Designed to help your listings stand out and sell with confidence.
-    </p>
-
-    <div class="hero-actions">
-      <a class="btn primary" href="mailto:sean@harbourviewmedia.ca?subject=Booking%20Request">Email to Book</a>
-      <a class="btn" href="#services">View Services</a>
-    </div>
-
-  </section>
-
-  <!-- Services -->
-
-  <section id="services" class="section">
-
-    <h2>Services</h2>
-
-    <div class="grid">
-
-      <div class="card">
-        <h3>Residential Photography</h3>
-        <ul>
-          <li>Condos and houses</li>
-          <li>Interior and exterior images</li>
-          <li>MLS-ready delivery</li>
-        </ul>
-      </div>
-
-      <div class="card">
-        <h3>Turnaround</h3>
-        <ul>
-          <li>24 to 48 hour delivery</li>
-          <li>Consistent editing style</li>
-          <li>Web and print formats</li>
-        </ul>
-      </div>
-
-      <div class="card">
-        <h3>Visual Style</h3>
-        <ul>
-          <li>Natural lighting</li>
-          <li>True colour</li>
-          <li>No heavy HDR</li>
-        </ul>
-      </div>
-
-    </div>
-
-  </section>
-
-  <!-- About -->
-
-  <section id="about" class="section">
-
-    <h2>About Harbourview Media</h2>
-
-    <p>
-      Harbourview Media is a Vancouver-based real estate photography service
-      focused on clear communication, reliable delivery, and honest presentation.
-      Every shoot is approached with attention to detail and consistency.
-    </p>
-
-  </section>
-
-  <!-- Process -->
-
-  <section id="process" class="section">
-
-    <h2>How It Works</h2>
-
-    <div class="grid">
-
-      <div class="card">
-        <h3>1. Book</h3>
-        <p>Email with the address, property type, and preferred time.</p>
-      </div>
-
-      <div class="card">
-        <h3>2. Shoot</h3>
-        <p>On-site photography with professional equipment and lighting control.</p>
-      </div>
-
-      <div class="card">
-        <h3>3. Deliver</h3>
-        <p>Edited images delivered within 24 to 48 hours.</p>
-      </div>
-
-    </div>
-
-  </section>
-
-  <!-- Contact -->
-
-  <section id="contact" class="section">
-
-    <div class="contact">
-
-      <h2>Contact</h2>
-
-      <p>
-        For bookings and inquiries, please include the property address and preferred timeline.
-      </p>
-
-      <p>
-        <a href="mailto:sean@harbourviewmedia.ca">
-          sean@harbourviewmedia.ca
+  <header>
+    <div class="container">
+      <div class="nav">
+        <a class="brand" href="#top" aria-label="Harbourview Media Home">
+          <div class="logo" aria-hidden="true">
+            <!-- Put your file at: /harbourviewmedialogo.png -->
+            <img src="harbourviewmedialogo.png" alt="" onerror="this.style.display='none'; this.parentElement.innerHTML='H';" />
+          </div>
+          <div class="title">
+            <strong>Harbourview Media</strong>
+            <span>Real Estate Photography • Vancouver, BC</span>
+          </div>
         </a>
 
+        <div class="nav-right">
+          <button class="menu-btn" id="menuBtn" type="button" aria-expanded="false" aria-controls="mobileNav">
+            Menu
+          </button>
+
+          <nav aria-label="Primary">
+            <ul>
+              <li><a href="#portfolio">Portfolio</a></li>
+              <li><a href="#services">Services</a></li>
+              <li><a href="#process">Process</a></li>
+              <li><a href="#about">About</a></li>
+              <li><a href="#faq">FAQ</a></li>
+            </ul>
+          </nav>
+
+          <a class="cta" href="mailto:sean@harbourviewmedia.ca?subject=Booking%20Request%20%E2%80%94%20Harbourview%20Media&body=Hi%20Sean%2C%0A%0AI%E2%80%99d%20like%20to%20book%20a%20shoot.%0A%0AProperty%20address%3A%20%0APreferred%20date%2Ftime%3A%20%0AListing%20type%20(condo%2Fhouse)%3A%20%0AAny%20notes%3A%20%0A%0AThanks%2C%0A">
+            Book via Email
+          </a>
+        </div>
+      </div>
+
+      <div class="mobile-nav" id="mobileNav" aria-label="Mobile">
+        <a href="#portfolio">Portfolio</a>
+        <a href="#services">Services</a>
+        <a href="#process">Process</a>
+        <a href="#about">About</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contact">Contact</a>
+      </div>
     </div>
+  </header>
 
-  </section>
+  <main id="main">
+    <!-- HERO -->
+    <section class="hero" id="top">
+      <div class="container grid two" style="align-items: center;">
+        <div>
+          <p class="kicker">Vancouver real estate photography</p>
+          <h1>Clean, natural photos that make listings look premium.</h1>
+          <p class="lead">
+            Harbourview Media delivers bright, MLS-ready images with accurate verticals and a professional finish—ideal for
+            condos, townhomes, and houses across Vancouver.
+          </p>
 
-  <!-- Footer -->
+          <div class="hero-actions">
+            <a class="btn primary" href="mailto:sean@harbourviewmedia.ca?subject=Booking%20Request%20%E2%80%94%20Harbourview%20Media&body=Hi%20Sean%2C%0A%0AI%E2%80%99d%20like%20to%20book%20a%20shoot.%0A%0AProperty%20address%3A%20%0APreferred%20date%2Ftime%3A%20%0AListing%20type%20(condo%2Fhouse)%3A%20%0AAny%20notes%3A%20%0A%0AThanks%2C%0A">Book a Shoot</a>
+            <a class="btn" href="#portfolio">View Portfolio</a>
+            <span class="pill" title="Turnaround">
+              24–48h delivery
+            </span>
+          </div>
+
+          <div style="margin-top: 16px; display:flex; gap:10px; flex-wrap: wrap;">
+            <span class="pill">MLS + Web exports</span>
+            <span class="pill">Straight verticals</span>
+            <span class="pill">Natural look (no heavy HDR)</span>
+          </div>
+        </div>
+
+        <div class="hero-visual" role="img" aria-label="Featured photo showcase">
+          <!-- Replace this with a real hero photo later:
+               <img src="portfolio/hero.jpg" alt="Bright living room photo" style="width:100%; height:100%; object-fit:cover;">
+          -->
+          <div class="placeholder">
+            <strong>Replace with your best “living room wide” shot</strong>
+            <small>Tip: use one strong interior image as the hero. It instantly boosts trust.</small>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PORTFOLIO -->
+    <section id="portfolio">
+      <div class="container">
+        <p class="kicker">Portfolio</p>
+        <div class="grid two" style="align-items:end;">
+          <div>
+            <h2>Recent work</h2>
+            <p>Keep this section tight: only your best images. Quality beats quantity.</p>
+          </div>
+          <div class="card shadow">
+            <strong style="display:block; margin-bottom:6px;">Quick booking</strong>
+            <div style="color: var(--muted); font-size: 14px;">
+              Email: <a href="mailto:sean@harbourviewmedia.ca">sean@harbourviewmedia.ca</a><br />
+              Vancouver, BC
+            </div>
+          </div>
+        </div>
+
+        <div class="portfolio-grid" style="margin-top: 16px;">
+          <!-- Replace placeholders with <img src="portfolio/01.jpg" ...> etc -->
+          <div class="shot">
+            <div class="ph">Portfolio image 01<br><span class="fine">Living room wide</span></div>
+            <span>Interior</span>
+          </div>
+          <div class="shot">
+            <div class="ph">Portfolio image 02<br><span class="fine">Kitchen angle</span></div>
+            <span>Interior</span>
+          </div>
+          <div class="shot">
+            <div class="ph">Portfolio image 03<br><span class="fine">Bedroom wide</span></div>
+            <span>Interior</span>
+          </div>
+          <div class="shot">
+            <div class="ph">Portfolio image 04<br><span class="fine">Bathroom wide</span></div>
+            <span>Interior</span>
+          </div>
+          <div class="shot">
+            <div class="ph">Portfolio image 05<br><span class="fine">Balcony / view</span></div>
+            <span>Detail</span>
+          </div>
+          <div class="shot">
+            <div class="ph">Portfolio image 06<br><span class="fine">Building / exterior</span></div>
+            <span>Exterior</span>
+          </div>
+        </div>
+
+        <div style="margin-top: 14px;">
+          <p class="fine">When you have images: create a <code>portfolio/</code> folder and replace each placeholder with real <code>&lt;img&gt;</code> tags.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section id="services" style="background: #fbfdff; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
+      <div class="container">
+        <p class="kicker">Services</p>
+        <h2>Simple, reliable deliverables</h2>
+
+        <div class="grid three" style="margin-top: 16px;">
+          <div class="card shadow">
+            <strong>Real Estate Photography</strong>
+            <p style="margin-top: 10px;">Bright, natural images for condos, townhomes, and houses—optimized for MLS and marketing.</p>
+            <ul class="list">
+              <li>Interior + exterior coverage</li>
+              <li>Straight verticals</li>
+              <li>Natural colour</li>
+            </ul>
+          </div>
+
+          <div class="card shadow">
+            <strong>MLS + Web Delivery</strong>
+            <p style="margin-top: 10px;">Exports sized for MLS plus a web set for social and websites.</p>
+            <ul class="list">
+              <li>High-resolution MLS set</li>
+              <li>Web set (fast loading)</li>
+              <li>Clean file naming</li>
+            </ul>
+          </div>
+
+          <div class="card shadow">
+            <strong>Fast Turnaround</strong>
+            <p style="margin-top: 10px;">Most shoots delivered within 24–48 hours.</p>
+            <ul class="list">
+              <li>Quick edits</li>
+              <li>Consistent look</li>
+              <li>Easy re-booking</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="card" style="margin-top: 16px;">
+          <strong>Need a quote?</strong>
+          <p style="margin-top: 8px; margin-bottom: 0;">
+            Email the address + property type + preferred time, and you’ll get a reply with availability and details.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROCESS -->
+    <section id="process">
+      <div class="container">
+        <p class="kicker">Process</p>
+        <h2>How it works</h2>
+
+        <div class="grid four" style="margin-top: 16px;">
+          <div class="card shadow">
+            <strong>1) Book</strong>
+            <p style="margin-top: 10px;">Send the address, unit number, and preferred time by email.</p>
+          </div>
+          <div class="card shadow">
+            <strong>2) Shoot</strong>
+            <p style="margin-top: 10px;">Tripod-based wide shots with clean composition and accurate lines.</p>
+          </div>
+          <div class="card shadow">
+            <strong>3) Edit</strong>
+            <p style="margin-top: 10px;">Natural finish—balanced light, consistent colour, no heavy HDR look.</p>
+          </div>
+          <div class="card shadow">
+            <strong>4) Deliver</strong>
+            <p style="margin-top: 10px;">MLS + web-ready folders delivered via share link.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" style="background: #fbfdff; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
+      <div class="container">
+        <p class="kicker">About</p>
+        <div class="grid two" style="align-items: start;">
+          <div class="card shadow">
+            <h2 style="margin-top: 0;">Local. Reliable. Detail-focused.</h2>
+            <p>
+              Harbourview Media is based in Vancouver, BC and focused on clean, traditional real estate photography that helps
+              listings present their best—without going overboard on effects.
+            </p>
+            <p style="margin-bottom: 0;">
+              <strong>Primary goal:</strong> consistent results that agents can trust and re-book.
+            </p>
+          </div>
+
+          <div class="card">
+            <strong>Service area</strong>
+            <p style="margin-top: 10px;">Vancouver, BC + nearby areas (by request).</p>
+
+            <hr style="border:0; border-top:1px solid var(--border); margin: 14px 0;" />
+
+            <strong>Turnaround</strong>
+            <p style="margin-top: 10px;">24–48 hours for most properties.</p>
+
+            <hr style="border:0; border-top:1px solid var(--border); margin: 14px 0;" />
+
+            <strong>Style</strong>
+            <p style="margin-top: 10px; margin-bottom: 0;">Natural, clean, MLS-friendly. Straight lines. Accurate colour.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq">
+      <div class="container">
+        <p class="kicker">FAQ</p>
+        <h2>Common questions</h2>
+
+        <div class="grid two" style="margin-top: 16px;">
+          <details class="card shadow">
+            <summary style="cursor:pointer; font-weight: 600;">How many photos do you deliver?</summary>
+            <p style="margin-top: 10px;">Depends on size and layout. Most condos deliver a clean set that covers every key space without duplicates.</p>
+          </details>
+
+          <details class="card shadow">
+            <summary style="cursor:pointer; font-weight: 600;">What’s your editing style?</summary>
+            <p style="margin-top: 10px;">Natural light, balanced exposure, accurate verticals. The goal is premium but realistic.</p>
+          </details>
+
+          <details class="card shadow">
+            <summary style="cursor:pointer; font-weight: 600;">How fast is delivery?</summary>
+            <p style="margin-top: 10px;">Most shoots are delivered in 24–48 hours.</p>
+          </details>
+
+          <details class="card shadow">
+            <summary style="cursor:pointer; font-weight: 600;">How do I book?</summary>
+            <p style="margin-top: 10px;">Email the address, unit number, preferred time, and any access notes.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" style="padding-bottom: 70px;">
+      <div class="container">
+        <p class="kicker">Contact</p>
+        <div class="grid two" style="align-items: center;">
+          <div class="card shadow">
+            <h2 style="margin-top: 0;">Book a shoot</h2>
+            <p class="lead" style="margin-bottom: 14px;">
+              Email the property address, preferred time, and listing type. You’ll get a reply with availability and next steps.
+            </p>
+            <div style="display:flex; gap:10px; flex-wrap: wrap;">
+              <a class="btn primary" href="mailto:sean@harbourviewmedia.ca?subject=Booking%20Request%20%E2%80%94%20Harbourview%20Media&body=Hi%20Sean%2C%0A%0AI%E2%80%99d%20like%20to%20book%20a%20shoot.%0A%0AProperty%20address%3A%20%0AUnit%20%23%3A%20%0APreferred%20date%2Ftime%3A%20%0AListing%20type%20(condo%2Fhouse)%3A%20%0ALockbox%2Faccess%20notes%3A%20%0A%0AThanks%2C%0A">Email to Book</a>
+              <a class="btn" href="#portfolio">See Work</a>
+            </div>
+          </div>
+
+          <div class="card">
+            <strong>Harbourview Media</strong>
+            <p style="margin-top: 10px;">
+              Vancouver, BC<br />
+              <a href="mailto:sean@harbourviewmedia.ca">sean@harbourviewmedia.ca</a>
+            </p>
+            <p style="margin-bottom: 0;" class="fine">
+              (Optional) Add your phone number later once you want calls/texts.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
 
   <footer>
-    © <span id="year"></span> Harbourview Media
+    <div class="container">
+      <div class="footer-row">
+        <div>
+          <strong style="color: var(--text);">Harbourview Media</strong>
+          <div class="fine">Real Estate Photography • Vancouver, BC</div>
+        </div>
+        <div class="fine">
+          © <span id="year"></span> Harbourview Media • <a href="mailto:sean@harbourviewmedia.ca">sean@harbourviewmedia.ca</a>
+        </div>
+      </div>
+    </div>
   </footer>
 
-</main>
+  <script>
+    // Year
+    document.getElementById("year").textContent = new Date().getFullYear();
 
-<script>
-  document.getElementById("year").textContent = new Date().getFullYear();
-</script>
+    // Simple mobile menu
+    const btn = document.getElementById("menuBtn");
+    const nav = document.getElementById("mobileNav");
+    btn?.addEventListener("click", () => {
+      const isOpen = nav.classList.toggle("open");
+      btn.setAttribute("aria-expanded", String(isOpen));
+    });
 
+    // Close mobile menu when clicking a link
+    nav?.querySelectorAll("a").forEach(a => {
+      a.addEventListener("click", () => {
+        nav.classList.remove("open");
+        btn.setAttribute("aria-expanded", "false");
+      });
+    });
+  </script>
 </body>
 </html>
