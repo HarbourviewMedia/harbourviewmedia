@@ -1,373 +1,311 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Harbourview Media | Real Estate Photography Vancouver</title>
-  <meta name="description" content="Clean, natural real estate photography for Vancouver agents. Straight lines, true colour, and fast 24 to 48 hour delivery." />
-  <meta name="theme-color" content="#0b1220" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Harbourview Media | Real Estate Photography</title>
+
+  <meta name="description" content="Clean, modern real estate photography for Vancouver agents. Accurate colour, straight lines, and fast delivery.">
 
   <style>
-    :root{
-      --bg: #0b1220;
-      --bg2:#0f1a2f;
-      --card:#0f172a;
-      --text:#e6eaf2;
-      --muted:#a7b0c2;
-      --line: rgba(255,255,255,.10);
-      --accent:#7dd3fc;
-      --accent2:#a78bfa;
-      --shadow: 0 18px 50px rgba(0,0,0,.35);
-      --radius: 18px;
-      --radius2: 14px;
-      --max: 1100px;
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
 
-    *{box-sizing:border-box}
-    html,body{height:100%}
-    body{
-      margin:0;
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
-      color:var(--text);
-      background:
-        radial-gradient(1200px 600px at 15% 10%, rgba(125,211,252,.20), transparent 60%),
-        radial-gradient(1000px 500px at 85% 20%, rgba(167,139,250,.18), transparent 55%),
-        radial-gradient(900px 500px at 50% 100%, rgba(255,255,255,.06), transparent 60%),
-        linear-gradient(180deg, var(--bg), var(--bg2));
-      line-height:1.55;
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background: #0b1220;
+      color: #f1f5f9;
+      line-height: 1.6;
     }
 
-    a{color:inherit}
-    .wrap{max-width:var(--max); margin:0 auto; padding:28px 18px 80px}
-    .nav{
-      display:flex; align-items:center; justify-content:space-between;
-      padding:14px 16px; border:1px solid var(--line);
-      background: rgba(15,23,42,.55);
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 40px 20px 80px;
+    }
+
+    /* Header */
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 24px;
+      background: rgba(15, 23, 42, 0.85);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 16px;
       backdrop-filter: blur(10px);
-      border-radius: var(--radius);
-    }
-    .brand{
-      display:flex; gap:10px; align-items:center;
-      font-weight:700; letter-spacing:.2px;
-    }
-    .logo{
-      width:34px; height:34px; border-radius:10px;
-      background: linear-gradient(135deg, rgba(125,211,252,.85), rgba(167,139,250,.85));
-      box-shadow: 0 10px 25px rgba(0,0,0,.25);
-      display:grid; place-items:center;
-      font-weight:900; color:#07101f;
-    }
-    .navlinks{display:flex; gap:14px; align-items:center; color:var(--muted); font-weight:600; font-size:14px}
-    .navlinks a{opacity:.9; text-decoration:none}
-    .navlinks a:hover{opacity:1; color:var(--text)}
-    .cta{
-      display:flex; gap:10px; align-items:center;
-    }
-    .btn{
-      display:inline-flex; align-items:center; justify-content:center;
-      padding:10px 14px;
-      border-radius: 12px;
-      border:1px solid var(--line);
-      text-decoration:none;
-      font-weight:700;
-      font-size:14px;
-      transition: transform .08s ease, background .2s ease, border-color .2s ease;
-      user-select:none;
-    }
-    .btn:hover{transform: translateY(-1px); border-color: rgba(255,255,255,.18)}
-    .btn.primary{
-      border-color: transparent;
-      color:#06101f;
-      background: linear-gradient(135deg, rgba(125,211,252,1), rgba(167,139,250,1));
-    }
-    .btn.ghost{color:var(--text); background: rgba(255,255,255,.04)}
-
-    .hero{
-      margin-top:22px;
-      padding:34px 18px 22px;
-      border-radius: var(--radius);
-      border:1px solid var(--line);
-      background: rgba(15,23,42,.45);
-      backdrop-filter: blur(10px);
-      box-shadow: var(--shadow);
-      overflow:hidden;
-      position:relative;
-    }
-    .hero:before{
-      content:"";
-      position:absolute; inset:-2px;
-      background:
-        radial-gradient(500px 240px at 18% 20%, rgba(125,211,252,.20), transparent 60%),
-        radial-gradient(520px 260px at 82% 10%, rgba(167,139,250,.18), transparent 58%);
-      pointer-events:none;
-    }
-    .heroinner{position:relative; max-width: 780px; margin:0 auto; text-align:center}
-    h1{
-      margin:0 0 8px;
-      font-size: clamp(30px, 4vw, 46px);
-      letter-spacing:-.5px;
-      line-height:1.1;
-    }
-    .sub{
-      margin:0 auto 18px;
-      color:var(--muted);
-      font-size: clamp(15px, 1.7vw, 18px);
-      max-width: 56ch;
-    }
-    .pillrow{
-      display:flex; flex-wrap:wrap; gap:10px;
-      justify-content:center;
-      margin: 14px 0 22px;
-    }
-    .pill{
-      padding:8px 10px;
-      border-radius:999px;
-      border:1px solid var(--line);
-      background: rgba(255,255,255,.03);
-      color: rgba(230,234,242,.92);
-      font-weight:700;
-      font-size:13px;
     }
 
-    .grid{
-      margin-top:18px;
-      display:grid;
-      gap:14px;
-      grid-template-columns: repeat(12, 1fr);
-    }
-    .card{
-      grid-column: span 12;
-      border:1px solid var(--line);
-      border-radius: var(--radius);
-      background: rgba(15,23,42,.50);
-      backdrop-filter: blur(10px);
-      padding:18px 16px;
-      box-shadow: 0 10px 30px rgba(0,0,0,.22);
-    }
-    .card h2{
-      margin:0 0 10px;
-      font-size:18px;
-      letter-spacing:-.2px;
-    }
-    .card p{margin:0; color:var(--muted)}
-    .list{margin:10px 0 0; padding-left:18px; color:var(--muted)}
-    .list li{margin:6px 0}
-
-    .two{grid-column: span 12}
-    .three{grid-column: span 12}
-
-    @media (min-width: 860px){
-      .two{grid-column: span 6}
-      .three{grid-column: span 4}
-      .hero{padding:44px 24px 28px}
-      .wrap{padding:32px 18px 90px}
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 700;
+      font-size: 18px;
     }
 
-    .divider{
-      height:1px; background: var(--line);
-      margin: 14px 0 12px;
+    .brand img {
+      width: 42px;
+      height: 42px;
+      object-fit: contain;
     }
 
-    .quote{
-      margin: 10px 0 0;
-      padding: 12px 12px;
-      border-left: 3px solid rgba(125,211,252,.7);
-      background: rgba(255,255,255,.03);
-      border-radius: 12px;
-      color: var(--muted);
+    nav {
+      display: flex;
+      gap: 20px;
       font-size: 14px;
+      color: #cbd5f5;
+      font-weight: 500;
     }
 
-    .contactbox{
-      display:grid;
-      gap:10px;
+    nav a:hover {
+      color: #ffffff;
     }
-    .contactitem{
-      display:flex; gap:10px; align-items:flex-start;
-      padding:10px 12px;
-      border-radius: 14px;
-      border:1px solid var(--line);
-      background: rgba(255,255,255,.03);
+
+    /* Hero */
+
+    .hero {
+      margin-top: 32px;
+      padding: 60px 24px;
+      text-align: center;
+      background: rgba(15,23,42,0.7);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 20px;
     }
-    .ico{
-      width:28px; height:28px;
-      border-radius:10px;
-      background: rgba(255,255,255,.06);
-      display:grid; place-items:center;
-      flex: 0 0 auto;
-      color: rgba(230,234,242,.92);
-      font-weight:900;
+
+    .hero h1 {
+      font-size: clamp(32px, 4vw, 48px);
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      margin-bottom: 12px;
+    }
+
+    .hero p {
+      max-width: 600px;
+      margin: 0 auto 26px;
+      color: #cbd5f5;
+      font-size: 18px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      padding: 12px 18px;
+      border-radius: 12px;
+      font-weight: 600;
+      font-size: 14px;
+      border: 1px solid rgba(255,255,255,0.15);
+      background: rgba(255,255,255,0.05);
+      transition: all 0.15s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-1px);
+      background: rgba(255,255,255,0.08);
+    }
+
+    .btn.primary {
+      background: linear-gradient(135deg, #7dd3fc, #a78bfa);
+      color: #0b1220;
+      border: none;
+    }
+
+    /* Info Grid */
+
+    .grid {
+      margin-top: 40px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      padding: 22px;
+      background: rgba(15,23,42,0.7);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 16px;
+    }
+
+    .card h2 {
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+
+    .card p,
+    .card li {
+      color: #cbd5f5;
+      font-size: 15px;
+    }
+
+    .card ul {
+      padding-left: 18px;
+      margin-top: 8px;
+    }
+
+    .card li {
+      margin-bottom: 6px;
+    }
+
+    /* Contact */
+
+    .contact {
+      margin-top: 40px;
+      padding: 30px 24px;
+      background: rgba(15,23,42,0.7);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 20px;
+      text-align: center;
+    }
+
+    .contact h2 {
+      font-size: 22px;
+      margin-bottom: 10px;
+    }
+
+    .contact p {
+      color: #cbd5f5;
+      margin-bottom: 14px;
+    }
+
+    .contact a {
+      font-weight: 600;
+      color: #7dd3fc;
+    }
+
+    /* Footer */
+
+    footer {
+      margin-top: 50px;
+      text-align: center;
       font-size: 13px;
-    }
-    .contactitem strong{display:block; font-size:14px}
-    .contactitem span{display:block; color:var(--muted); font-size:13px; margin-top:2px}
-    footer{
-      margin-top: 18px;
-      color: rgba(167,176,194,.85);
-      font-size: 13px;
-      text-align:center;
-      opacity:.95;
-    }
-    .smallnote{color: rgba(167,176,194,.85); font-size:13px}
-    .kbd{
-      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-      font-size: 12px;
-      padding: 2px 6px;
-      border-radius: 8px;
-      border: 1px solid var(--line);
-      background: rgba(255,255,255,.03);
-      color: rgba(230,234,242,.92);
+      color: #94a3b8;
     }
   </style>
 </head>
 
 <body>
-  <div class="wrap">
-    <div class="nav">
+
+  <div class="container">
+
+    <!-- Header -->
+
+    <header>
       <div class="brand">
-        <div class="logo">H</div>
-        <div>Harbourview Media</div>
+        <img src="harbourviewmedialogo.png" alt="Harbourview Media Logo">
+        Harbourview Media
       </div>
 
-      <div class="navlinks">
+      <nav>
         <a href="#services">Services</a>
         <a href="#why">Why</a>
         <a href="#contact">Contact</a>
-      </div>
+      </nav>
+    </header>
 
-      <div class="cta">
-        <a class="btn ghost" href="#contact">Get a quote</a>
-        <a class="btn primary" href="mailto:sean@harbourviewmedia.ca?subject=Listing%20photography%20inquiry">Email</a>
-      </div>
-    </div>
+    <!-- Hero -->
 
     <section class="hero">
-      <div class="heroinner">
-        <h1>Modern real estate photography for Vancouver agents</h1>
-        <p class="sub">
-          Clean lines, true colour, and fast delivery. Designed for condos and residential listings that need a polished, natural look.
-        </p>
 
-        <div class="pillrow">
-          <div class="pill">24 to 48 hour delivery</div>
-          <div class="pill">Straight verticals</div>
-          <div class="pill">Accurate colour</div>
-          <div class="pill">MLS ready exports</div>
-          <div class="pill">Vancouver based</div>
-        </div>
+      <h1>Modern Real Estate Photography</h1>
 
-        <div class="cta" style="justify-content:center">
-          <a class="btn primary" href="mailto:sean@harbourviewmedia.ca?subject=Booking%20request%20for%20listing%20photos">Book a shoot</a>
-          <a class="btn ghost" href="#services">See services</a>
-        </div>
+      <p>
+        Clean, accurate, and professional photography for Vancouver agents.
+        Designed to showcase properties with clarity and confidence.
+      </p>
+
+      <div class="hero-buttons">
+        <a class="btn primary" href="mailto:sean@harbourviewmedia.ca?subject=Booking%20Request">Book a Shoot</a>
+        <a class="btn" href="#contact">Contact</a>
+      </div>
+
     </section>
 
+    <!-- Info -->
+
     <div class="grid">
-      <section id="services" class="card two">
+
+      <section id="services" class="card">
         <h2>Services</h2>
-        <p>Focused on the essentials agents actually use for listings.</p>
-        <ul class="list">
+        <ul>
           <li>Condo and residential photography</li>
           <li>Interior and exterior images</li>
-          <li>Delivery in 24 to 48 hours</li>
-          <li>MLS and social media ready files</li>
+          <li>MLS-ready delivery</li>
+          <li>24 to 48 hour turnaround</li>
         </ul>
-
-        <div class="divider"></div>
-        <p class="smallnote">
-          Add-ons (later): twilight exteriors, floor plans, video walkthroughs, agent headshots.
-        </p>
       </section>
 
-      <section id="why" class="card two">
+      <section id="why" class="card">
         <h2>Why Harbourview Media</h2>
-        <ul class="list">
-          <li>Natural light and clean edits, not heavy HDR</li>
-          <li>Consistent framing and straight lines</li>
-          <li>Reliable turnaround and simple communication</li>
-          <li>Files delivered ready for MLS and marketing</li>
+        <ul>
+          <li>Natural light and true colour</li>
+          <li>Straight verticals and clean framing</li>
+          <li>No heavy HDR</li>
+          <li>Reliable communication</li>
         </ul>
-
-        <div class="quote">
-          Goal: make the space look premium while keeping it honest and true to life.
-        </div>
       </section>
 
-      <section class="card three">
-        <h2>Coverage</h2>
-        <p>Vancouver and nearby areas.</p>
-        <ul class="list">
-          <li>Downtown</li>
+      <section class="card">
+        <h2>Coverage Area</h2>
+        <ul>
+          <li>Vancouver</li>
           <li>Burnaby</li>
-          <li>New Westminster</li>
           <li>Richmond</li>
           <li>North Vancouver</li>
+          <li>Surrounding areas</li>
         </ul>
       </section>
 
-      <section class="card three">
-        <h2>Turnaround</h2>
-        <p>Typical delivery is 24 to 48 hours.</p>
-        <ul class="list">
-          <li>Next day delivery when possible</li>
-          <li>Consistent file naming</li>
-          <li>Web and MLS exports included</li>
-        </ul>
-      </section>
+    </div>
 
-      <section class="card three">
-        <h2>Simple process</h2>
-        <p>Send the address and preferred time window.</p>
-        <ul class="list">
-          <li>Confirm booking</li>
-          <li>Shoot on site</li>
-          <li>Deliver link to finals</li>
-        </ul>
-      </section>
+    <!-- Contact -->
 
-      <section id="contact" class="card">
-        <h2>Contact</h2>
-        <p>Fastest way is email. Include the address and when you need photos delivered.</p>
+    <section id="contact" class="contact">
 
-        <div class="divider"></div>
+      <h2>Get in Touch</h2>
 
-        <div class="contactbox">
-          <div class="contactitem">
-            <div class="ico">@</div>
-            <div>
-              <strong>Email</strong>
-              <span><a href="mailto:sean@harbourviewmedia.ca?subject=Listing%20photography%20inquiry">sean@harbourviewmedia.ca</a></span>
-            </div>
-          </div>
+      <p>
+        Email is the fastest way to book.
+        Please include the address and preferred time.
+      </p>
 
-          <div class="contactitem">
-            <div class="ico">W</div>
-            <div>
-              <strong>Website</strong>
-              <span>harbourviewmedia.ca</span>
-            </div>
-          </div>
+      <p>
+        <a href="mailto:sean@harbourviewmedia.ca">
+          sean@harbourviewmedia.ca
+        </a>
+      </p>
 
-          <div class="contactitem">
-            <div class="ico">i</div>
-            <div>
-              <strong>What to send</strong>
-              <span>Address, property type, preferred time, and target delivery date.</span>
-            </div>
-          </div>
-        </div>
+      <p>
+        harbourviewmedia.ca
+      </p>
 
-        <div class="divider"></div>
+    </section>
 
+    <!-- Footer -->
 
     <footer>
-      © <span id="y"></span> Harbourview Media. Vancouver, BC.
-      </div>
+      © <span id="year"></span> Harbourview Media. All rights reserved.
     </footer>
+
   </div>
 
   <script>
-    document.getElementById("y").textContent = new Date().getFullYear();
+    document.getElementById("year").textContent = new Date().getFullYear();
   </script>
+
 </body>
 </html>
