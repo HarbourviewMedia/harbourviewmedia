@@ -1,0 +1,45 @@
+/* Fonts */
+body {
+    font-family: 'Open Sans', sans-serif;
+    color: #333;
+    line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, .navbar-brand {
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: -0.5px;
+}
+
+/* Primary Color - Currently a bold "Harbour" Blue */
+:root {
+    --bs-primary: #0b5ed7; /* You can change this hex code to match your logo */
+}
+
+/* Navbar Customization */
+.navbar-brand {
+    font-size: 1.5rem;
+    color: #000;
+}
+
+/* Hero Section with Background Image */
+.hero-section {
+    background: url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80') no-repeat center center/cover;
+    height: 85vh; /* 85% of the screen height */
+    position: relative;
+}
+
+/* Dark Overlay on Hero so text is readable */
+.hero-section .overlay {
+    background: rgba(0, 0, 0, 0.5); /* 50% opacity black */
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+}
+
+/* Card Hover Effect */
+.hover-up {
+    transition: transform 0.3s ease;
+}
+
+.hover-up:hover {
+    transform: translateY(-5px);
+}
