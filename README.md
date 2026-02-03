@@ -7,4 +7,4 @@ Domain: https://harbourviewmedia.ca
 This repository hosts the public website using GitHub Pages.
 
 Contact:
-info@harbourviewmedia.ca
+sean@harbourviewmedia.ca
