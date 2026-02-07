@@ -1,533 +1,264 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Harbourview Media | Vancouver Wedding Photography</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --navy: #081221;
-            --cream: #F7F3EC;
-            --slate: #9AA3AD;
-            --accent: #78A6FF;
-            --white: #ffffff;
-            --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-        }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        html { scroll-behavior: smooth; }
+<html lang="en"> <head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>Harbourview Media | Vancouver Wedding Photography</title> <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet"> <style> :root { --white: #FFFFFF; --off-white: #F9FAFB; --navy: #0B1320; --gray: #9CA3AF; --accent: #6CA0FF; --transition: all 0.3s ease; }
 
-        body {
-            font-family: 'Manrope', sans-serif;
-            background-color: var(--cream);
-            color: var(--navy);
-            line-height: 1.5;
-            -webkit-font-smoothing: antialiased;
-        }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Inter', sans-serif; background: var(--white); color: var(--navy); line-height: 1.6; overflow-x: hidden; }
+    h1, h2, h3 { font-family: 'Playfair Display', serif; font-weight: 700; }
+    a { text-decoration: none; color: inherit; transition: var(--transition); }
+    ul { list-style: none; }
+    img { width: 100%; height: auto; display: block; object-fit: cover; }
 
-        h1, h2, h3 { font-family: 'DM Serif Display', serif; font-weight: 400; line-height: 1.1; }
-        a { text-decoration: none; color: inherit; transition: var(--transition); }
-        ul { list-style: none; }
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+    .btn { display: inline-block; padding: 12px 28px; font-weight: 600; font-size: 14px; text-transform: uppercase; letter-spacing: 1px; cursor: pointer; border: none; transition: var(--transition); }
+    .btn-navy { background: var(--navy); color: var(--white); }
+    .btn-navy:hover { background: var(--accent); }
+    .btn-outline { background: transparent; border: 1px solid var(--white); color: var(--white); }
+    .btn-outline:hover { background: var(--white); color: var(--navy); }
 
-        .container { max-width: 1300px; margin: 0 auto; padding: 0 40px; }
-        .section-padding { padding: 100px 0; }
-        .label { font-size: 11px; text-transform: uppercase; letter-spacing: 2px; color: var(--slate); font-weight: 600; margin-bottom: 12px; display: block; }
+    /* Navigation */
+    nav { position: fixed; top: 0; width: 100%; z-index: 1000; background: rgba(255, 255, 255, 0.95); padding: 20px 0; border-bottom: 1px solid rgba(0,0,0,0.05); }
+    .nav-content { display: flex; justify-content: space-between; align-items: center; }
+    .logo { font-size: 22px; letter-spacing: 2px; font-weight: 700; color: var(--navy); }
+    .nav-links { display: flex; gap: 30px; align-items: center; }
+    .nav-links a { font-size: 13px; font-weight: 600; text-transform: uppercase; color: var(--navy); }
+    .nav-links a:hover { color: var(--accent); }
 
-        /* REVEAL ANIMATION */
-        .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out; }
-        .reveal.visible { opacity: 1; transform: translateY(0); }
+    /* Hero */
+    .hero { height: 100vh; background: linear-gradient(rgba(11, 19, 32, 0.4), rgba(11, 19, 32, 0.4)), url('[https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&q=80&w=2069](https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&q=80&w=2069)') no-repeat center center/cover; display: flex; align-items: center; justify-content: center; text-align: center; color: var(--white); }
+    .hero-content h1 { font-size: clamp(40px, 8vw, 80px); margin-bottom: 10px; }
+    .hero-content p { font-size: clamp(18px, 2vw, 24px); margin-bottom: 30px; font-weight: 300; }
+    .hero-btns { display: flex; gap: 15px; justify-content: center; }
 
-        /* BUTTONS */
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            padding: 14px 28px;
-            font-size: 11px;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            cursor: pointer;
-            transition: var(--transition);
-            border: none;
-        }
-        .btn-navy { background: var(--navy); color: var(--white); }
-        .btn-navy:hover { background: #1a2a44; transform: scale(1.02); }
-        .btn-outline { border: 1px solid var(--navy); background: transparent; color: var(--navy); }
-        .btn-outline:hover { background: var(--navy); color: var(--white); }
+    /* Portfolio */
+    .section-header { text-align: center; padding: 80px 0 40px; }
+    .section-header h2 { font-size: 36px; margin-bottom: 10px; }
+    .gallery { display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 15px; padding-bottom: 80px; }
+    .gallery-item { position: relative; overflow: hidden; height: 450px; cursor: pointer; }
+    .gallery-item img { height: 100%; transition: transform 0.5s ease; }
+    .gallery-item:hover img { transform: scale(1.05); }
 
-        /* NAVIGATION */
-        nav {
-            position: fixed; top: 0; width: 100%; z-index: 1000;
-            padding: 24px 0; transition: var(--transition);
-        }
-        nav.scrolled { background: rgba(247, 243, 236, 0.95); backdrop-filter: blur(10px); padding: 16px 0; border-bottom: 1px solid rgba(8, 18, 33, 0.05); }
-        .nav-content { display: flex; justify-content: space-between; align-items: center; }
-        .logo { font-family: 'DM Serif Display', serif; font-size: 1.4rem; letter-spacing: 1px; }
-        .nav-links { display: flex; align-items: center; gap: 30px; }
-        .nav-links a { font-size: 11px; text-transform: uppercase; letter-spacing: 1px; font-weight: 500; }
-        .nav-links a:hover { color: var(--accent); }
+    /* About */
+    .about { background: var(--off-white); padding: 100px 0; }
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+    .about-text h2 { font-size: 36px; margin-bottom: 20px; }
+    .about-text p { font-size: 18px; color: var(--navy); margin-bottom: 20px; }
+    .about-image { height: 600px; box-shadow: 20px 20px 0 var(--navy); }
 
-        /* HERO */
-        .hero { padding: 180px 0 100px; display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 80px; align-items: center; }
-        .hero-text h1 { font-size: clamp(3rem, 6vw, 4.8rem); margin-bottom: 24px; }
-        .hero-text p { font-size: 1.15rem; color: #4a4a4a; margin-bottom: 32px; max-width: 480px; font-weight: 300; }
-        .hero-ctas { display: flex; gap: 16px; margin-bottom: 48px; }
-        .proof-row { display: flex; gap: 24px; font-size: 10px; text-transform: uppercase; letter-spacing: 1px; color: var(--slate); border-top: 1px solid rgba(8, 18, 33, 0.1); padding-top: 24px; }
-        .social-proof { font-size: 10px; color: var(--navy); margin-top: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; }
+    /* Pricing */
+    .pricing { padding: 100px 0; text-align: center; }
+    .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 50px; }
+    .price-card { padding: 40px; border: 1px solid #EEE; background: var(--white); transition: var(--transition); }
+    .price-card:hover { border-color: var(--accent); box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
+    .price-card h3 { font-size: 24px; margin-bottom: 15px; }
+    .price-card .cost { font-size: 32px; font-weight: 700; margin-bottom: 20px; display: block; }
+    .price-card ul { margin-bottom: 30px; text-align: left; }
+    .price-card li { margin-bottom: 10px; color: var(--gray); font-size: 15px; }
+    .price-card li::before { content: "✓"; margin-right: 10px; color: var(--accent); }
 
-        /* HERO COLLAGE */
-        .hero-collage { position: relative; }
-        .collage-main { display: grid; grid-template-columns: 1fr 0.7fr; gap: 20px; height: 550px; }
-        .frame { overflow: hidden; position: relative; border-radius: 2px; }
-        .frame-stacked { display: grid; grid-template-rows: 1fr 1fr; gap: 20px; }
-        .film-strip { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-top: 20px; height: 100px; }
-        
-        /* IMAGE OVERLAY */
-        .img-overlay { position: absolute; inset: 0; background: rgba(8, 18, 33, 0.4); opacity: 0; transition: var(--transition); display: flex; align-items: center; justify-content: center; color: white; font-size: 10px; text-transform: uppercase; letter-spacing: 2px; }
-        .frame:hover .img-overlay { opacity: 1; cursor: pointer; }
+    /* Reviews */
+    .reviews { background: var(--navy); color: var(--white); padding: 100px 0; text-align: center; }
+    .review-slider { max-width: 800px; margin: 40px auto 0; }
+    .review-item p { font-size: 24px; font-style: italic; margin-bottom: 20px; }
+    .review-item span { font-weight: 600; text-transform: uppercase; letter-spacing: 2px; font-size: 14px; color: var(--accent); }
 
-        /* PORTFOLIO */
-        .featured-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin-bottom: 40px; }
-        .gallery-card { position: relative; height: 400px; background: white; padding: 20px; transition: var(--transition); border-radius: 2px; }
-        .gallery-card:hover { transform: translateY(-10px); }
-        .gallery-card h3 { margin-top: 20px; font-size: 1.5rem; }
-        
-        .mosaic { display: grid; grid-template-columns: repeat(4, 1fr); grid-auto-rows: 220px; gap: 15px; }
-        .t-2x2 { grid-column: span 2; grid-row: span 2; }
-        .t-tall { grid-row: span 2; }
+    /* Contact */
+    .contact { padding: 100px 0; }
+    .contact-form { max-width: 600px; margin: 0 auto; }
+    .form-group { margin-bottom: 20px; }
+    .form-group label { display: block; font-size: 12px; font-weight: 600; text-transform: uppercase; margin-bottom: 5px; }
+    .form-group input, .form-group textarea { width: 100%; padding: 15px; border: 1px solid #DDD; font-family: inherit; font-size: 16px; }
+    .form-group input:focus, .form-group textarea:focus { outline: 1px solid var(--navy); }
 
-        /* PRICING */
-        .collections { display: grid; grid-template-columns: repeat(3, 1fr); border: 1px solid rgba(8, 18, 33, 0.1); }
-        .collection { padding: 60px 40px; background: white; border-right: 1px solid rgba(8, 18, 33, 0.1); }
-        .collection:last-child { border-right: none; }
-        .collection h3 { font-size: 2rem; margin-bottom: 8px; }
-        .price { color: var(--accent); font-weight: 700; font-size: 13px; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 30px; display: block; }
-        .collection ul li { font-size: 14px; margin-bottom: 12px; opacity: 0.8; padding-left: 20px; position: relative; }
-        .collection ul li::before { content: "—"; position: absolute; left: 0; color: var(--accent); }
+    footer { background: var(--off-white); padding: 40px 0; text-align: center; border-top: 1px solid #EEE; }
+    .footer-logo { font-size: 20px; font-weight: 700; letter-spacing: 2px; margin-bottom: 10px; }
+    .footer-links { display: flex; justify-content: center; gap: 20px; margin-bottom: 20px; }
+    .footer-links a { font-size: 12px; color: var(--gray); text-transform: uppercase; }
 
-        /* PROCESS */
-        .timeline-container { position: relative; padding: 60px 0; }
-        .timeline-line { position: absolute; top: 50%; left: 0; width: 100%; height: 1px; background: rgba(8, 18, 33, 0.1); z-index: 1; transform: translateY(-50%); }
-        .timeline-steps { display: flex; justify-content: space-between; position: relative; z-index: 2; }
-        .step { width: 20%; background: var(--cream); text-align: center; }
-        .step-num { width: 40px; height: 40px; background: var(--navy); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; font-size: 12px; font-weight: 700; }
-        .step h4 { font-family: 'Manrope'; font-weight: 700; font-size: 12px; text-transform: uppercase; margin-bottom: 10px; }
-        .step p { font-size: 13px; opacity: 0.7; padding: 0 10px; }
+    @media (max-width: 768px) {
+        .nav-links { display: none; }
+        .about-grid { grid-template-columns: 1fr; }
+        .about-image { height: 400px; order: -1; }
+    }
+</style>
+</head> <body>
 
-        /* REVIEWS */
-        .reviews-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; }
-        .review { padding: 40px; background: #fff; border-radius: 2px; box-shadow: 0 10px 30px rgba(8,18,33,0.03); }
-        .review p { font-family: 'DM Serif Display'; font-size: 1.6rem; margin-bottom: 24px; color: var(--navy); }
-        .review cite { font-style: normal; font-size: 11px; text-transform: uppercase; font-weight: 700; letter-spacing: 1px; color: var(--slate); }
+<nav>
+    <div class="container nav-content">
+        <a href="#" class="logo">HARBOURVIEW MEDIA</a>
+        <ul class="nav-links">
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#pricing">Pricing</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#reviews">Reviews</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><button class="btn btn-navy" onclick="location.href='#contact'">Check Availability</button></li>
+        </ul>
+    </div>
+</nav>
 
-        /* FAQ */
-        .faq-wrap { max-width: 800px; margin: 0 auto; }
-        details { border-bottom: 1px solid rgba(8, 18, 33, 0.1); }
-        summary { padding: 24px 0; cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center; font-weight: 600; font-size: 16px; }
-        summary::after { content: '+'; font-size: 20px; font-weight: 300; }
-        details[open] summary::after { content: '-'; }
-        details p { padding-bottom: 24px; font-size: 15px; color: #555; line-height: 1.7; }
-
-        /* CONTACT */
-        .contact-wrap { display: grid; grid-template-columns: 1fr 1.5fr; gap: 100px; }
-        .form-group { margin-bottom: 24px; }
-        .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
-        label { display: block; font-size: 10px; font-weight: 700; text-transform: uppercase; margin-bottom: 8px; letter-spacing: 1px; }
-        input, select, textarea { width: 100%; padding: 14px; background: transparent; border: 1px solid rgba(8, 18, 33, 0.15); font-family: inherit; font-size: 14px; transition: border-color 0.3s; }
-        input:focus, textarea:focus { outline: none; border-color: var(--navy); }
-        .success-msg { display: none; padding: 20px; background: #e8f5e9; color: #2e7d32; font-size: 14px; margin-top: 20px; }
-
-        /* MODAL */
-        .modal { position: fixed; inset: 0; background: rgba(8, 18, 33, 0.95); z-index: 2000; display: none; align-items: center; justify-content: center; }
-        .modal-content { background: var(--cream); padding: 60px; width: 100%; max-width: 500px; position: relative; }
-        .close-modal { position: absolute; top: 20px; right: 20px; cursor: pointer; font-size: 24px; }
-
-        /* FOOTER */
-        footer { padding: 80px 0; border-top: 1px solid rgba(8, 18, 33, 0.05); text-align: center; }
-        .socials { margin-bottom: 32px; display: flex; justify-content: center; gap: 30px; }
-        .socials a { font-size: 11px; text-transform: uppercase; letter-spacing: 1px; font-weight: 600; }
-        .copyright { font-size: 10px; color: var(--slate); letter-spacing: 1px; }
-
-        #btt { position: fixed; bottom: 40px; right: 40px; background: var(--navy); color: white; width: 44px; height: 44px; display: none; align-items: center; justify-content: center; cursor: pointer; border: none; z-index: 100; border-radius: 50%; font-size: 12px; }
-
-        /* PHOTO PLACEHOLDERS */
-        .photo { width: 100%; height: 100%; background-size: cover; position: relative; }
-        .grain { position: absolute; inset: 0; opacity: 0.15; pointer-events: none; mix-blend-mode: overlay; }
-        
-        @media (max-width: 968px) {
-            .hero, .contact-wrap, .collections, .featured-cards, .reviews-grid { grid-template-columns: 1fr; }
-            .hero-collage { order: -1; margin-bottom: 40px; }
-            .nav-links { display: none; }
-            .timeline-steps { flex-direction: column; gap: 40px; }
-            .timeline-line { display: none; }
-            .step { width: 100%; }
-            .container { padding: 0 24px; }
-        }
-    </style>
-</head>
-<body>
-
-    <svg style="display:none">
-        <filter id='noiseFilter'>
-          <feTurbulence type='fractalNoise' baseFrequency='0.6' stitchTiles='stitch'/>
-          <feColorMatrix type="saturate" values="0"/>
-        </filter>
-    </svg>
-
-    <nav id="navbar">
-        <div class="container nav-content">
-            <a href="#" class="logo">HARBOURVIEW MEDIA</a>
-            <div class="nav-links">
-                <a href="#portfolio">Portfolio</a>
-                <a href="#pricing">Pricing</a>
-                <a href="#process">Process</a>
-                <a href="#faq">FAQ</a>
-                <a href="#contact">Contact</a>
-                <button class="btn btn-navy" style="padding: 10px 18px; font-size: 9px;" onclick="openModal()">Check Availability</button>
-            </div>
-        </div>
-    </nav>
-
-    <header class="container hero">
-        <div class="hero-text reveal">
-            <span class="label">Vancouver, BC</span>
-            <h1>Wedding photography in Vancouver</h1>
-            <p>Calm direction, candid moments, clean edits — delivered in 3–5 weeks.</p>
-            <div class="hero-ctas">
-                <button class="btn btn-navy" onclick="openModal()">Check Availability</button>
-                <a href="#portfolio" class="btn btn-outline">View Portfolio</a>
-            </div>
-            <div class="proof-row">
-                <span>✦ Guided Posing</span>
-                <span>✦ Private Gallery</span>
-                <span>✦ 3–5 Week Delivery</span>
-            </div>
-            <div class="social-proof">Limited dates each month.</div>
-        </div>
-
-        <div class="hero-collage reveal" style="transition-delay: 0.2s;">
-            <div class="collage-main">
-                <div class="frame">
-                    <svg class="photo" viewBox="0 0 400 600" preserveAspectRatio="xMidYMid slice">
-                        <defs>
-                            <linearGradient id="g1" x1="0%" y1="0%" x2="100%" y2="100%">
-                                <stop offset="0%" style="stop-color:#d4ccc4" />
-                                <stop offset="100%" style="stop-color:#9c958d" />
-                            </linearGradient>
-                        </defs>
-                        <rect width="100%" height="100%" fill="url(#g1)" />
-                        <ellipse cx="200" cy="220" rx="70" ry="100" fill="#8a837a" opacity="0.3" filter="blur(40px)" />
-                        <rect width="100%" height="100%" filter="url(#noiseFilter)" opacity="0.1" />
-                    </svg>
-                    <div class="img-overlay">View Galleries</div>
-                </div>
-                <div class="frame-stacked">
-                    <div class="frame">
-                        <svg class="photo" viewBox="0 0 300 300" preserveAspectRatio="xMidYMid slice">
-                            <rect width="100%" height="100%" fill="#cbd5e1" />
-                            <path d="M0 300 L300 0" stroke="white" stroke-width="0.5" opacity="0.3" />
-                            <rect width="100%" height="100%" filter="url(#noiseFilter)" opacity="0.08" />
-                        </svg>
-                    </div>
-                    <div class="frame">
-                        <svg class="photo" viewBox="0 0 300 300" preserveAspectRatio="xMidYMid slice">
-                            <rect width="100%" height="100%" fill="#e9d5ff" />
-                            <circle cx="250" cy="50" r="100" fill="#fbbf24" opacity="0.2" filter="blur(60px)" />
-                            <rect width="100%" height="100%" filter="url(#noiseFilter)" opacity="0.1" />
-                        </svg>
-                    </div>
-                </div>
-            </div>
-            <div class="film-strip">
-                <div class="frame"><svg viewBox="0 0 100 100"><rect width="100" height="100" fill="#a8a29e" /><rect width="100%" height="100%" filter="url(#noiseFilter)" opacity="0.1" /></svg></div>
-                <div class="frame"><svg viewBox="0 0 100 100"><rect width="100" height="100" fill="#78716c" /><rect width="100%" height="100%" filter="url(#noiseFilter)" opacity="0.1" /></svg></div>
-                <div class="frame"><svg viewBox="0 0 100 100"><rect width="100" height="100" fill="#d6d3d1" /><rect width="100%" height="100%" filter="url(#noiseFilter)" opacity="0.1" /></svg></div>
-                <div class="frame"><svg viewBox="0 0 100 100"><rect width="100" height="100" fill="#44403c" /><rect width="100%" height="100%" filter="url(#noiseFilter)" opacity="0.1" /></svg></div>
-            </div>
-        </div>
-    </header>
-
-    <section id="portfolio" class="container section-padding">
-        <div class="reveal">
-            <span class="label">Work</span>
-            <h2 style="font-size: 3.5rem; margin-bottom: 50px;">Featured Galleries</h2>
-        </div>
-        
-        <div class="featured-cards reveal">
-            <div class="gallery-card">
-                <svg class="photo" viewBox="0 0 400 300" style="height: 250px;"><rect width="100%" height="100%" fill="#334155" /><rect width="100%" height="100%" filter="url(#noiseFilter)" opacity="0.15" /></svg>
-                <h3>City Wedding</h3>
-                <span class="label" style="margin-top: 10px;">Vancouver, BC</span>
-            </div>
-            <div class="gallery-card">
-                <svg class="photo" viewBox="0 0 400 300" style="height: 250px;"><rect width="100%" height="100%" fill="#166534" opacity="0.8"/><rect width="100%" height="100%" filter="url(#noiseFilter)" opacity="0.15" /></svg>
-                <h3>Garden Ceremony</h3>
-                <span class="label" style="margin-top: 10px;">Victoria, BC</span>
-            </div>
-            <div class="gallery-card">
-                <svg class="photo" viewBox="0 0 400 300" style="height: 250px;"><rect width="100%" height="100%" fill="#075985" opacity="0.8"/><rect width="100%" height="100%" filter="url(#noiseFilter)" opacity="0.15" /></svg>
-                <h3>Coastal Elopement</h3>
-                <span class="label" style="margin-top: 10px;">Tofino, BC</span>
-            </div>
-        </div>
-
-        <div class="mosaic reveal">
-            <div class="frame t-2x2"><svg class="photo" viewBox="0 0 400 400"><rect width="100%" height="100%" fill="#d1d5db"/><rect width="100%" height="100%" filter="url(#noiseFilter)" opacity="0.1" /></svg></div>
-            <div class="frame t-tall"><svg class="photo" viewBox="0 0 200 400"><rect width="100%" height="100%" fill="#9ca3af"/><rect width="100%" height="100%" filter="url(#noiseFilter)" opacity="0.1" /></svg></div>
-            <div class="frame"><svg class="photo" viewBox="0 0 200 200"><rect width="100%" height="100%" fill="#4b5563"/><rect width="100%" height="100%" filter="url(#noiseFilter)" opacity="0.1" /></svg></div>
-            <div class="frame"><svg class="photo" viewBox="0 0 200 200"><rect width="100%" height="100%" fill="#1f2937"/><rect width="100%" height="100%" filter="url(#noiseFilter)" opacity="0.1" /></svg></div>
-            <div class="frame t-tall"><svg class="photo" viewBox="0 0 200 400"><rect width="100%" height="100%" fill="#6b7280"/><rect width="100%" height="100%" filter="url(#noiseFilter)" opacity="0.1" /></svg></div>
-            <div class="frame"><svg class="photo" viewBox="0 0 200 200"><rect width="100%" height="100%" fill="#d1d5db"/><rect width="100%" height="100%" filter="url(#noiseFilter)" opacity="0.1" /></svg></div>
-            <div class="frame t-2x2"><svg class="photo" viewBox="0 0 400 400"><rect width="100%" height="100%" fill="#111827"/><rect width="100%" height="100%" filter="url(#noiseFilter)" opacity="0.1" /></svg></div>
-        </div>
-    </section>
-
-    <section id="pricing" class="container section-padding reveal">
-        <span class="label">Investment</span>
-        <h2 style="font-size: 3rem; margin-bottom: 50px;">Collections</h2>
-        
-        <div class="collections">
-            <div class="collection">
-                <h3>Intimate</h3>
-                <span class="price">Starting at $1,600</span>
-                <ul>
-                    <li>4 Hours of Coverage</li>
-                    <li>Single Photographer</li>
-                    <li>Online Gallery (1 Year)</li>
-                    <li>Timeline Planning</li>
-                    <li>Full Print Rights</li>
-                </ul>
-            </div>
-            <div class="collection" style="background: #fdfaf8;">
-                <h3>Signature</h3>
-                <span class="price">Starting at $2,800</span>
-                <ul>
-                    <li>8 Hours of Coverage</li>
-                    <li>Single Photographer</li>
-                    <li>Engagement Session</li>
-                    <li>Sneak Peek (48 Hours)</li>
-                    <li>Custom Photo Box</li>
-                </ul>
-            </div>
-            <div class="collection">
-                <h3>Full Day</h3>
-                <span class="price">Starting at $3,800</span>
-                <ul>
-                    <li>12 Hours of Coverage</li>
-                    <li>Second Photographer</li>
-                    <li>Engagement Session</li>
-                    <li>Heirloom Photo Album</li>
-                    <li>Priority Delivery</li>
-                </ul>
-            </div>
-        </div>
-        <p style="text-align: center; margin-top: 40px; font-size: 13px; opacity: 0.6;">Elopements and destination weddings quoted custom.</p>
-    </section>
-
-    <section id="process" class="container section-padding reveal">
-        <span class="label">Experience</span>
-        <h2 style="font-size: 3rem; margin-bottom: 60px; text-align: center;">How we work</h2>
-        
-        <div class="timeline-container">
-            <div class="timeline-line"></div>
-            <div class="timeline-steps">
-                <div class="step">
-                    <div class="step-num">1</div>
-                    <h4>Inquiry</h4>
-                    <p>We'll chat to ensure our styles and personalities align.</p>
-                </div>
-                <div class="step">
-                    <div class="step-num">2</div>
-                    <h4>Planning</h4>
-                    <p>Building your custom timeline for the best light.</p>
-                </div>
-                <div class="step">
-                    <div class="step-num">3</div>
-                    <h4>The Day</h4>
-                    <p>Documentary coverage with guided direction.</p>
-                </div>
-                <div class="step">
-                    <div class="step-num">4</div>
-                    <h4>Delivery</h4>
-                    <p>Your curated story delivered within 3–5 weeks.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="reviews" class="container section-padding reveal">
-        <span class="label">Kind Words</span>
-        <div class="reviews-grid">
-            <div class="review">
-                <p>"The photos are clean, timeless, and captured moments we didn't even notice were happening. The best investment we made."</p>
-                <cite>— Elena & Marcus</cite>
-            </div>
-            <div class="review">
-                <p>"We aren't 'camera people' but they made us feel so comfortable. The direction was calm and the results are stunning."</p>
-                <cite>— Sarah & David</cite>
-            </div>
-        </div>
-    </section>
-
-    <section id="faq" class="container section-padding reveal">
-        <div class="faq-wrap">
-            <span class="label">FAQ</span>
-            <h2 style="font-size: 3rem; margin-bottom: 40px;">Common Inquiries</h2>
-            <details>
-                <summary>How many photos will we receive?</summary>
-                <p>For a standard 8-hour wedding, you can expect 500-700 professionally edited images. Every image delivered is high-resolution and print-ready.</p>
-            </details>
-            <details>
-                <summary>What is your turnaround time?</summary>
-                <p>I deliver a 'Sneak Peek' gallery within 48 hours. Your full online gallery will be ready within 3 to 5 weeks of your wedding date.</p>
-            </details>
-            <details>
-                <summary>Do you travel for weddings?</summary>
-                <p>Absolutely. While I'm based in Vancouver, I frequently travel across the Lower Mainland, Vancouver Island, and the Okanagan.</p>
-            </details>
-            <details>
-                <summary>How do we book our date?</summary>
-                <p>A signed contract and a 30% retainer fee are required to officially secure your date on my calendar.</p>
-            </details>
-        </div>
-    </section>
-
-    <section id="contact" class="container section-padding reveal">
-        <div class="contact-wrap">
-            <div class="contact-info">
-                <span class="label">Contact</span>
-                <h2 style="font-size: 3.5rem; margin-bottom: 30px;">Let's connect.</h2>
-                <p style="margin-bottom: 40px; opacity: 0.7;">Available for 2026/2027 bookings. Response time is typically within 24 hours.</p>
-                <p style="font-size: 13px; font-weight: 700; text-transform: uppercase;">hello@harbourviewmedia.com</p>
-            </div>
-            
-            <form id="contactForm" onsubmit="handleForm(event)">
-                <div class="form-row">
-                    <div class="form-group">
-                        <label>Name</label>
-                        <input type="text" required>
-                    </div>
-                    <div class="form-group">
-                        <label>Email</label>
-                        <input type="email" required>
-                    </div>
-                </div>
-                <div class="form-row">
-                    <div class="form-group">
-                        <label>Wedding Date</label>
-                        <input type="date">
-                    </div>
-                    <div class="form-group">
-                        <label>Venue</label>
-                        <input type="text">
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label>Hours of Coverage</label>
-                    <select>
-                        <option>4 Hours</option>
-                        <option>8 Hours</option>
-                        <option>12 Hours</option>
-                        <option>Custom / Elopement</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label>How did you find us?</label>
-                    <select>
-                        <option>Instagram</option>
-                        <option>Referral</option>
-                        <option>Google Search</option>
-                        <option>Other</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label>Tell us your story</label>
-                    <textarea rows="5"></textarea>
-                </div>
-                <button type="submit" class="btn btn-navy" style="width: 100%;">Send Inquiry</button>
-                <div id="success" class="success-msg">Thank you. Your message has been sent successfully.</div>
-            </form>
-        </div>
-    </section>
-
-    <footer>
-        <div class="container">
-            <div class="socials">
-                <a href="#">Instagram</a>
-                <a href="#">Facebook</a>
-                <a href="#">Pinterest</a>
-            </div>
-            <p class="copyright">© 2026 HARBOURVIEW MEDIA. BASED IN VANCOUVER, BC.</p>
-        </div>
-    </footer>
-
-    <div id="availModal" class="modal">
-        <div class="modal-content">
-            <span class="close-modal" onclick="closeModal()">&times;</span>
-            <span class="label">Booking</span>
-            <h2 style="margin-bottom: 24px;">Check my calendar</h2>
-            <div class="form-group">
-                <label>Proposed Wedding Date</label>
-                <input type="date" id="check-date">
-            </div>
-            <button class="btn btn-navy" style="width: 100%;" onclick="closeModal()">Check Date</button>
+<header class="hero">
+    <div class="hero-content">
+        <h1>Wedding Photography in Vancouver</h1>
+        <p>Natural photos. Calm direction. Clean edits.</p>
+        <div class="hero-btns">
+            <button class="btn btn-navy" onclick="location.href='#contact'">Check Availability</button>
+            <button class="btn btn-outline" onclick="location.href='#portfolio'">View Portfolio</button>
         </div>
     </div>
+</header>
 
-    <button id="btt" onclick="window.scrollTo(0,0)">↑</button>
+<section id="portfolio" class="container">
+    <div class="section-header">
+        <h2>Portfolio</h2>
+        <p>Real moments from recent weddings in British Columbia.</p>
+    </div>
+    <div class="gallery">
+        <div class="gallery-item"><img src="[https://images.unsplash.com/photo-1583939003579-730e3918a45a?auto=format&fit=crop&q=80&w=800](https://images.unsplash.com/photo-1583939003579-730e3918a45a?auto=format&fit=crop&q=80&w=800)" alt="Wedding couple"></div>
+        <div class="gallery-item"><img src="[https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&q=80&w=800](https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&q=80&w=800)" alt="Bride portrait"></div>
+        <div class="gallery-item"><img src="[https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&q=80&w=800](https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&q=80&w=800)" alt="Outdoor ceremony"></div>
+        <div class="gallery-item"><img src="[https://images.unsplash.com/photo-1465495910483-0d674b0b7a05?auto=format&fit=crop&q=80&w=800](https://images.unsplash.com/photo-1465495910483-0d674b0b7a05?auto=format&fit=crop&q=80&w=800)" alt="Wedding kiss"></div>
+        <div class="gallery-item"><img src="[https://images.unsplash.com/photo-1544078751-58fee2d8a03b?auto=format&fit=crop&q=80&w=800](https://images.unsplash.com/photo-1544078751-58fee2d8a03b?auto=format&fit=crop&q=80&w=800)" alt="Reception dance"></div>
+        <div class="gallery-item"><img src="[https://images.unsplash.com/photo-1532712938310-34cb3982ef74?auto=format&fit=crop&q=80&w=800](https://images.unsplash.com/photo-1532712938310-34cb3982ef74?auto=format&fit=crop&q=80&w=800)" alt="Rings"></div>
+        <div class="gallery-item"><img src="[https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?auto=format&fit=crop&q=80&w=800](https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?auto=format&fit=crop&q=80&w=800)" alt="Wedding detail"></div>
+        <div class="gallery-item"><img src="[https://images.unsplash.com/photo-1510076857177-7470076d4098?auto=format&fit=crop&q=80&w=800](https://images.unsplash.com/photo-1510076857177-7470076d4098?auto=format&fit=crop&q=80&w=800)" alt="Engagement sunset"></div>
+        <div class="gallery-item"><img src="[https://images.unsplash.com/photo-1522673607200-1648832cee98?auto=format&fit=crop&q=80&w=800](https://images.unsplash.com/photo-1522673607200-1648832cee98?auto=format&fit=crop&q=80&w=800)" alt="First dance"></div>
+        <div class="gallery-item"><img src="[https://images.unsplash.com/photo-1472653431158-6364773b2a56?auto=format&fit=crop&q=80&w=800](https://images.unsplash.com/photo-1472653431158-6364773b2a56?auto=format&fit=crop&q=80&w=800)" alt="Wedding party"></div>
+        <div class="gallery-item"><img src="[https://images.unsplash.com/photo-1520854221256-17451cc331bf?auto=format&fit=crop&q=80&w=800](https://images.unsplash.com/photo-1520854221256-17451cc331bf?auto=format&fit=crop&q=80&w=800)" alt="Groom portrait"></div>
+        <div class="gallery-item"><img src="[https://images.unsplash.com/photo-1525772838741-478995628041?auto=format&fit=crop&q=80&w=800](https://images.unsplash.com/photo-1525772838741-478995628041?auto=format&fit=crop&q=80&w=800)" alt="Vancouver landscape couple"></div>
+    </div>
+</section>
 
-    <script>
-        // SCROLL REVEAL
-        const observerOptions = { threshold: 0.1 };
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, observerOptions);
+<section id="about" class="about">
+    <div class="container about-grid">
+        <div class="about-image">
+            <img src="[https://images.unsplash.com/photo-1556103255-4443dbc35f5a?auto=format&fit=crop&q=80&w=800](https://images.unsplash.com/photo-1556103255-4443dbc35f5a?auto=format&fit=crop&q=80&w=800)" style="height:100%;" alt="Sean Photographer">
+        </div>
+        <div class="about-text">
+            <span class="label" style="text-transform:uppercase; font-size:12px; font-weight:700; color:var(--accent); letter-spacing:2px;">The Photographer</span>
+            <h2>Hi, I’m Sean.</h2>
+            <p>I focus on natural moments, clean edits, and making couples feel comfortable in front of the lens.</p>
+            <p>Based in Vancouver, I serve the Lower Mainland and beyond. My goal is to capture your wedding day exactly as it feels, without the awkward posing or cheesy trends.</p>
+            <button class="btn btn-navy" onclick="location.href='#contact'">Let's Chat</button>
+        </div>
+    </div>
+</section>
 
-        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+<section id="pricing" class="container pricing">
+    <h2>Wedding Collections</h2>
+    <div class="pricing-grid">
+        <div class="price-card">
+            <h3>Elopement</h3>
+            <span class="cost">$1,800</span>
+            <ul>
+                <li>4 Hours of Coverage</li>
+                <li>Online Gallery Delivery</li>
+                <li>High Resolution Files</li>
+                <li>Print Rights</li>
+            </ul>
+            <button class="btn btn-navy" onclick="location.href='#contact'">Book Now</button>
+        </div>
+        <div class="price-card" style="border-color: var(--navy);">
+            <h3>Full Day</h3>
+            <span class="cost">$3,500</span>
+            <ul>
+                <li>8 Hours of Coverage</li>
+                <li>Engagement Session</li>
+                <li>Online Gallery Delivery</li>
+                <li>High Resolution Files</li>
+                <li>100+ Images</li>
+            </ul>
+            <button class="btn btn-navy" onclick="location.href='#contact'">Book Now</button>
+        </div>
+        <div class="price-card">
+            <h3>Luxury</h3>
+            <span class="cost">$5,200</span>
+            <ul>
+                <li>Full Day Coverage</li>
+                <li>Second Photographer</li>
+                <li>Engagement Session</li>
+                <li>Handcrafted Photo Album</li>
+                <li>Luxury Print Set</li>
+            </ul>
+            <button class="btn btn-navy" onclick="location.href='#contact'">Book Now</button>
+        </div>
+    </div>
+</section>
 
-        // NAVBAR SCROLL
-        window.addEventListener('scroll', () => {
-            const nav = document.getElementById('navbar');
-            const btt = document.getElementById('btt');
-            if (window.scrollY > 50) {
-                nav.classList.add('scrolled');
-                btt.style.display = 'flex';
-            } else {
-                nav.classList.remove('scrolled');
-                btt.style.display = 'none';
-            }
-        });
+<section id="reviews" class="reviews">
+    <div class="container">
+        <div class="review-slider">
+            <div class="review-item">
+                <p>"Sean made us feel so relaxed. The photos are incredible and look so natural. He truly captured the energy of our day."</p>
+                <span>— Sarah & Michael</span>
+            </div>
+        </div>
+    </div>
+</section>
 
-        // MODAL
-        function openModal() {
-            document.getElementById('availModal').style.display = 'flex';
-            document.body.style.overflow = 'hidden';
-        }
-        function closeModal() {
-            document.getElementById('availModal').style.display = 'none';
-            document.body.style.overflow = 'auto';
-        }
-        window.onclick = (e) => {
-            if (e.target.classList.contains('modal')) closeModal();
-        };
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape') closeModal();
-        });
+<section id="contact" class="contact container">
+    <div class="section-header">
+        <h2>Contact</h2>
+        <p>Tell me about your wedding day.</p>
+    </div>
+    <div class="contact-form">
+        <form id="weddingForm">
+            <div class="form-row" style="display:grid; grid-template-columns: 1fr 1fr; gap:20px;">
+                <div class="form-group">
+                    <label>Name</label>
+                    <input type="text" placeholder="Your Name" required>
+                </div>
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" placeholder="Your Email" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Wedding Date</label>
+                <input type="date">
+            </div>
+            <div class="form-group">
+                <label>Venue</label>
+                <input type="text" placeholder="Where is the wedding?">
+            </div>
+            <div class="form-group">
+                <label>Message</label>
+                <textarea rows="6" placeholder="Tell me more..."></textarea>
+            </div>
+            <button type="submit" class="btn btn-navy" style="width:100%;">Send Message</button>
+        </form>
+    </div>
+</section>
 
-        // FORM HANDLING
-        function handleForm(e) {
+<footer>
+    <div class="container">
+        <div class="footer-logo">HARBOURVIEW MEDIA</div>
+        <div class="footer-links">
+            <a href="#portfolio">Portfolio</a>
+            <a href="#pricing">Pricing</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+        </div>
+        <p class="copyright">© 2024 Harbourview Media. Vancouver Wedding Photography.</p>
+    </div>
+</footer>
+
+<script>
+    // Simple form submission feedback
+    document.getElementById('weddingForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        alert('Thank you for your message! I will get back to you within 24 hours.');
+        this.reset();
+    });
+
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
             e.preventDefault();
-            document.getElementById('success').style.display = 'block';
-            e.target.reset();
-        }
-    </script>
-</body>
-</html>
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    });
+</script>
+</body> </html>
