@@ -3,197 +3,814 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Harbourview Media - Professional Real Estate Photography with 24-48hr Turnaround. Serving [Your Location].">
-    <title>Harbourview Media | Real Estate Photography</title>
-    
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    
+    <title>Harbourview Media | Wedding Photography Vancouver</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
-    
-    <link rel="stylesheet" href="style.css">
-    
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --navy: #0B1320;
+            --off-white: #F6F4EF;
+            --gray: #B9C0C7;
+            --accent: #7FB7FF;
+            --white: #ffffff;
+            --text-dark: #1A1A1A;
+            --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            --shadow: 0 10px 30px rgba(0,0,0,0.05);
+            --radius: 8px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--off-white);
+            color: var(--text-dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, .logo {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        section {
+            padding: 100px 0;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: var(--transition);
+        }
+
+        section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(246, 244, 239, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            border-bottom: 1px solid rgba(11, 19, 32, 0.05);
+            padding: 20px 0;
+            transition: var(--transition);
+        }
+
+        nav.scrolled {
+            padding: 12px 0;
+            box-shadow: var(--shadow);
+        }
+
+        .nav-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.2rem;
+            letter-spacing: 2px;
+            text-decoration: none;
+            color: var(--navy);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 24px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--navy);
+            font-size: 0.85rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+
+        /* Hero */
+        .hero {
+            background: var(--navy);
+            color: var(--off-white);
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+            padding-top: 120px;
+            text-align: center;
+            transform: none;
+            opacity: 1;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            margin-bottom: 24px;
+            line-height: 1.1;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+            color: var(--gray);
+            font-style: italic;
+        }
+
+        .cta-group {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            margin-bottom: 60px;
+        }
+
+        .btn {
+            padding: 16px 32px;
+            border-radius: var(--radius);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.9rem;
+            transition: var(--transition);
+            cursor: pointer;
+            border: none;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: var(--accent);
+            color: var(--navy);
+        }
+
+        .btn-primary:hover {
+            background: var(--white);
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            border: 1px solid var(--gray);
+            color: var(--off-white);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--white);
+            background: rgba(255,255,255,0.05);
+        }
+
+        .trust-bullets {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--gray);
+        }
+
+        /* Portfolio */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 40px;
+        }
+
+        .portfolio-item {
+            position: relative;
+            aspect-ratio: 4/5;
+            background: #e5e5e5;
+            overflow: hidden;
+            border-radius: var(--radius);
+            cursor: pointer;
+        }
+
+        .portfolio-item svg {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(11, 19, 32, 0.4);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .portfolio-item:hover svg {
+            transform: scale(1.05);
+        }
+
+        .portfolio-item:hover .overlay {
+            opacity: 1;
+        }
+
+        .overlay span {
+            color: white;
+            padding: 8px 20px;
+            border: 1px solid white;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            letter-spacing: 2px;
+        }
+
+        /* Packages */
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            background: var(--white);
+            padding: 40px;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+        }
+
+        .card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+
+        .card .price {
+            font-size: 2rem;
+            color: var(--navy);
+            margin-bottom: 20px;
+        }
+
+        .card ul {
+            list-style: none;
+            margin-bottom: 30px;
+            flex-grow: 1;
+        }
+
+        .card li {
+            padding: 8px 0;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+            font-size: 0.95rem;
+        }
+
+        .note {
+            text-align: center;
+            margin-top: 40px;
+            font-style: italic;
+            color: var(--gray);
+        }
+
+        /* Process */
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            position: relative;
+        }
+
+        .step {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .step-num {
+            width: 40px;
+            height: 40px;
+            border: 1px solid var(--navy);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-weight: bold;
+        }
+
+        /* Reviews */
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .review-card {
+            background: var(--white);
+            padding: 30px;
+            border-radius: var(--radius);
+            font-style: italic;
+        }
+
+        .author {
+            margin-top: 20px;
+            display: block;
+            font-style: normal;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 0.75rem;
+            letter-spacing: 1px;
+        }
+
+        /* FAQ */
+        .faq-list {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        details {
+            background: var(--white);
+            margin-bottom: 10px;
+            border-radius: var(--radius);
+            padding: 10px 20px;
+        }
+
+        summary {
+            padding: 15px 0;
+            cursor: pointer;
+            font-weight: 500;
+            outline: none;
+        }
+
+        /* Contact */
+        .contact-form {
+            max-width: 700px;
+            margin: 0 auto;
+            background: var(--white);
+            padding: 50px;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            text-transform: uppercase;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid var(--gray);
+            border-radius: 4px;
+            font-family: inherit;
+        }
+
+        .error-msg {
+            color: #d93025;
+            font-size: 0.75rem;
+            display: none;
+            margin-top: 5px;
+        }
+
+        /* Modal */
+        .modal {
+            position: fixed;
+            inset: 0;
+            background: rgba(11, 19, 32, 0.9);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 2000;
+            padding: 20px;
+        }
+
+        .modal-content {
+            background: var(--off-white);
+            padding: 40px;
+            border-radius: var(--radius);
+            max-width: 500px;
+            width: 100%;
+            position: relative;
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--navy);
+            color: var(--gray);
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .social-links {
+            margin-bottom: 20px;
+        }
+
+        .social-links a {
+            color: var(--off-white);
+            margin: 0 10px;
+            text-decoration: none;
+        }
+
+        #backToTop {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: var(--navy);
+            color: white;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            border: none;
+            box-shadow: var(--shadow);
+            z-index: 99;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .hero h1 { font-size: 2.5rem; }
+            .cta-group { flex-direction: column; }
+            .trust-bullets { flex-direction: column; gap: 10px; }
+            .contact-form { padding: 30px; }
+        }
+    </style>
 </head>
 <body>
 
-   <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top shadow-sm">
-        <div class="container">
-            <a class="navbar-brand" href="#">
-    <img src="logoblack.png" alt="Harbourview Media" height="55">
-</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto align-items-center">
-                    <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#process">Why Us</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#pricing">Pricing</a></li>
-                    <li class="nav-item ms-lg-3">
-                        <a class="btn btn-primary text-white px-4 rounded-pill" href="#contact">Book Now</a>
-                    </li>
-                </ul>
+    <nav id="navbar">
+        <div class="container nav-content">
+            <a href="#" class="logo">HARBOURVIEW MEDIA</a>
+            <div class="nav-links">
+                <a href="#portfolio">Weddings</a>
+                <a href="#portfolio">Portfolio</a>
+                <a href="#packages">Packages</a>
+                <a href="#process">Process</a>
+                <a href="#reviews">Reviews</a>
+                <a href="#faq">FAQ</a>
+                <a href="#contact">Contact</a>
             </div>
         </div>
     </nav>
-    <header class="hero-section d-flex align-items-center text-center text-white">
-        <div class="overlay"></div>
-        <div class="container position-relative">
-            <h1 class="display-3 fw-bold mb-3">Showcase Listings. Sell Faster.</h1>
-            <p class="lead mb-4">Professional Real Estate Photography with <br><strong>Guaranteed 24-48 Hour Turnaround.</strong></p>
-            <a href="#contact" class="btn btn-primary btn-lg px-5 py-3 fw-bold">Book Your Shoot</a>
+
+    <header class="hero">
+        <div class="container hero-content">
+            <h1>Wedding Photography in Vancouver</h1>
+            <p>Timeless, natural photos with a calm, guided experience.</p>
+            <div class="cta-group">
+                <button class="btn btn-primary" onclick="openModal()">Check Availability</button>
+                <a href="#portfolio" class="btn btn-secondary">View Portfolio</a>
+            </div>
+            <div class="trust-bullets">
+                <span>✦ Fast 4-Week Turnaround</span>
+                <span>✦ Guided Posing</span>
+                <span>✦ Professional Gallery</span>
+            </div>
         </div>
     </header>
 
-    <section id="process" class="py-5">
-        <div class="container py-4">
-            <div class="row text-center g-4">
-                <div class="col-md-4">
-                    <div class="p-3">
-                        <i class="fa-solid fa-clock fa-3x text-primary mb-3"></i>
-                        <h3 class="h5 fw-bold">24-48hr Turnaround</h3>
-                        <p class="text-muted">We know the market moves fast. Get your edited, MLS-ready photos delivered quickly.</p>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="p-3">
-                        <i class="fa-solid fa-star fa-3x text-primary mb-3"></i>
-                        <h3 class="h5 fw-bold">Premium Quality</h3>
-                        <p class="text-muted">HDR editing, natural light optimization, and wide-angle shots that make rooms feel spacious and real.</p>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="p-3">
-                        <i class="fa-solid fa-house-laptop fa-3x text-primary mb-3"></i>
-                        <h3 class="h5 fw-bold">Easy Delivery</h3>
-                        <p class="text-muted">Download your high-res and MLS-sized images via a simple, secure link.</p>
-                    </div>
-                </div>
-            </div>
+    <section id="portfolio" class="container">
+        <div class="section-title">
+            <h2>The Portfolio</h2>
+            <p>Moments captured across British Columbia</p>
+        </div>
+        <div class="grid">
+            <script>
+                for(let i=1; i<=9; i++) {
+                    document.write(`
+                        <div class="portfolio-item">
+                            <svg viewBox="0 0 400 500" xmlns="http://www.w3.org/2000/svg">
+                                <rect width="100%" height="100%" fill="${i % 2 === 0 ? '#B9C0C7' : '#D1D5DB'}"/>
+                                <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" font-family="Playfair Display" fill="#6B7280">Wedding ${i}</text>
+                            </svg>
+                            <div class="overlay"><span>View</span></div>
+                        </div>
+                    `);
+                }
+            </script>
         </div>
     </section>
 
- <section id="services" class="py-5 bg-light">
+    <section id="packages" style="background: #efeee9;">
         <div class="container">
-            <div class="text-center mb-5">
-                <h2 class="fw-bold">Our Services</h2>
-                <p class="text-muted">High-quality photography for every listing type.</p>
+            <div class="section-title">
+                <h2>Investment</h2>
             </div>
-            <div class="row g-4">
-                <div class="col-md-4">
-                    <div class="card h-100 border-0 shadow-sm hover-up">
-                        <img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" class="card-img-top" alt="Interior Photography">
-                        <div class="card-body">
-                            <h4 class="card-title fw-bold">Interiors</h4>
-                            <p class="card-text text-muted">Bright, wide-angle shots that show the flow of the home. We ensure windows are clear and rooms feel spacious.</p>
-                        </div>
-                    </div>
+            <div class="pricing-grid">
+                <div class="card">
+                    <h3>Starter</h3>
+                    <div class="price">$2,800</div>
+                    <ul>
+                        <li>6 Hours Coverage</li>
+                        <li>Single Photographer</li>
+                        <li>Online Gallery</li>
+                        <li>High-Res Downloads</li>
+                    </ul>
+                    <a href="#contact" class="btn btn-primary" style="text-align:center">Book a Call</a>
                 </div>
-                <div class="col-md-4">
-                    <div class="card h-100 border-0 shadow-sm hover-up">
-                        <img src="https://images.unsplash.com/photo-1605276374104-dee2a0ed3cd6?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" class="card-img-top" alt="Exterior Photography">
-                        <div class="card-body">
-                            <h4 class="card-title fw-bold">Exteriors</h4>
-                            <p class="card-text text-muted">Capture the curb appeal. We ensure the property looks inviting from the street with natural, realistic lighting.</p>
-                        </div>
-                    </div>
+                <div class="card" style="border: 1px solid var(--accent);">
+                    <h3>Classic</h3>
+                    <div class="price">$3,900</div>
+                    <ul>
+                        <li>8 Hours Coverage</li>
+                        <li>Second Photographer</li>
+                        <li>Engagement Session</li>
+                        <li>Online Gallery</li>
+                    </ul>
+                    <a href="#contact" class="btn btn-primary" style="text-align:center">Book a Call</a>
                 </div>
-                <div class="col-md-4">
-                    <div class="card h-100 border-0 shadow-sm hover-up">
-                        <img src="https://images.unsplash.com/photo-1493663284031-b7e3aefcae8e?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" class="card-img-top" alt="Detail Shots">
-                        <div class="card-body">
-                            <h4 class="card-title fw-bold">Detail Shots</h4>
-                            <p class="card-text text-muted">Artistic close-ups of finishes, fireplaces, and fixtures. Perfect for your social media marketing.</p>
-                        </div>
-                    </div>
+                <div class="card">
+                    <h3>Premium</h3>
+                    <div class="price">$5,200</div>
+                    <ul>
+                        <li>10 Hours Coverage</li>
+                        <li>Two Photographers</li>
+                        <li>Engagement Session</li>
+                        <li>Fine Art Heirloom Album</li>
+                    </ul>
+                    <a href="#contact" class="btn btn-primary" style="text-align:center">Book a Call</a>
                 </div>
             </div>
+            <p class="note">Custom quotes available for elopements + destination</p>
         </div>
     </section>
-   <section id="pricing" class="py-5">
-        <div class="container py-4">
-            <div class="text-center mb-5">
-                <h2 class="fw-bold">Simple Pricing</h2>
-                <p class="text-muted">No hidden fees. Fast turnaround included.</p>
+
+    <section id="process" class="container">
+        <div class="section-title">
+            <h2>The Experience</h2>
+        </div>
+        <div class="process-steps">
+            <div class="step">
+                <div class="step-num">1</div>
+                <h3>Inquiry</h3>
+                <p>We'll chat about your vision and make sure we're a perfect fit.</p>
             </div>
-            <div class="row justify-content-center g-4">
-                <div class="col-md-5 col-lg-4">
-                    <div class="card border-0 shadow h-100">
-                        <div class="card-header bg-primary text-white text-center py-4">
-                            <h3 class="fw-bold mb-0">Condo</h3>
-                        </div>
-                        <div class="card-body text-center p-5">
-                            <h2 class="display-4 fw-bold">$95</h2>
-                            <ul class="list-unstyled mt-4 text-start mx-auto" style="max-width: 250px;">
-                                <li class="mb-3"><i class="fa-solid fa-check text-primary me-2"></i> Professional HDR Photos</li>
-                                <li class="mb-3"><i class="fa-solid fa-check text-primary me-2"></i> 24-48hr Turnaround</li>
-                                <li class="mb-3"><i class="fa-solid fa-check text-primary me-2"></i> High-Res & MLS Size</li>
-                                <li class="mb-3"><i class="fa-solid fa-check text-primary me-2"></i> Easy Download Link</li>
-                            </ul>
-                            <a href="#contact" class="btn btn-outline-primary w-100 mt-3 rounded-pill">Book Condo</a>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="col-md-5 col-lg-4">
-                    <div class="card border-0 shadow h-100">
-                        <div class="card-header bg-dark text-white text-center py-4">
-                            <h3 class="fw-bold mb-0">House</h3>
-                        </div>
-                        <div class="card-body text-center p-5">
-                            <h2 class="display-4 fw-bold">$120<span class="fs-6 text-muted">+</span></h2>
-                            <p class="text-muted small">Starting price (varies by sq ft)</p>
-                            <ul class="list-unstyled mt-4 text-start mx-auto" style="max-width: 250px;">
-                                <li class="mb-3"><i class="fa-solid fa-check text-primary me-2"></i> All Interior & Exterior</li>
-                                <li class="mb-3"><i class="fa-solid fa-check text-primary me-2"></i> 24-48hr Turnaround</li>
-                                <li class="mb-3"><i class="fa-solid fa-check text-primary me-2"></i> Detail/Feature Shots</li>
-                                <li class="mb-3"><i class="fa-solid fa-check text-primary me-2"></i> High-Res & MLS Size</li>
-                            </ul>
-                            <a href="#contact" class="btn btn-primary w-100 mt-3 rounded-pill">Request Quote</a>
-                        </div>
-                    </div>
-                </div>
+            <div class="step">
+                <div class="step-num">2</div>
+                <h3>Planning</h3>
+                <p>Timeline assistance and location scouting for the best light.</p>
+            </div>
+            <div class="step">
+                <div class="step-num">3</div>
+                <h3>Wedding Day</h3>
+                <p>Relaxed, unobtrusive coverage while you enjoy your day.</p>
+            </div>
+            <div class="step">
+                <div class="step-num">4</div>
+                <h3>Delivery</h3>
+                <p>Your full gallery delivered within 4 weeks of the "I do's."</p>
             </div>
         </div>
     </section>
 
-   <section id="contact" class="py-5 bg-white">
-        <div class="container py-4 text-center">
-            <h2 class="fw-bold mb-4">Ready to Schedule?</h2>
-            <p class="lead mb-4">Call or email Sean to book your next shoot.</p>
-            
-            <div class="row justify-content-center">
-                <div class="col-md-8">
-                    <div class="card bg-dark text-white p-5 border-0 rounded-3">
-                        <h3 class="fw-bold">Contact Harbourview Media</h3>
-                        
-                        <div class="row mt-4 justify-content-center">
-                            <div class="col-md-6 mb-3">
-                                <i class="fa-solid fa-envelope fa-2x mb-2 text-primary"></i>
-                                <p class="mb-0"><a href="mailto:sean@harbourviewmedia.ca" class="text-white text-decoration-none">sean@harbourviewmedia.ca</a></p>
-                            </div>
-                            <div class="col-md-6 mb-3">
-                                <i class="fa-solid fa-phone fa-2x mb-2 text-primary"></i>
-                                <p class="mb-0"><a href="tel:16046074762" class="text-white text-decoration-none">(604)-607-4762</a></p>
-                            </div>
-                        </div>
-
-                        <div class="mt-4">
-                            <a href="mailto:sean@harbourviewmedia.ca" class="btn btn-primary btn-lg px-5 rounded-pill">Book via Email</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-  <footer class="bg-light py-4 text-center text-muted">
+    <section id="reviews" style="background: var(--navy); color: var(--off-white);">
         <div class="container">
-            <small>&copy; 2026 Harbourview Media. All rights reserved.</small>
+            <div class="section-title">
+                <h2 style="color: white;">Kind Words</h2>
+            </div>
+            <div class="reviews-grid">
+                <div class="review-card" style="color: var(--text-dark);">
+                    "The photos are beyond what we imagined. They captured the small, quiet moments we didn't even notice happened."
+                    <span class="author">— Sarah & James</span>
+                </div>
+                <div class="review-card" style="color: var(--text-dark);">
+                    "I usually hate being in front of the camera, but they made us feel so comfortable. It felt like hanging out with a friend."
+                    <span class="author">— Michael & Leo</span>
+                </div>
+                <div class="review-card" style="color: var(--text-dark);">
+                    "Professional, punctual, and the lighting in our sunset portraits is absolutely magical. Highly recommend!"
+                    <span class="author">— Elena & Marcus</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="faq" class="container">
+        <div class="section-title">
+            <h2>Frequently Asked Questions</h2>
+        </div>
+        <div class="faq-list">
+            <details>
+                <summary>When will we receive our photos?</summary>
+                <p>You will receive a "Sneak Peek" within 48 hours, and your full high-resolution gallery is delivered within 4 weeks.</p>
+            </details>
+            <details>
+                <summary>Do you offer a second shooter?</summary>
+                <p>Yes, my Classic and Premium packages include a second photographer to ensure every angle is covered.</p>
+            </details>
+            <details>
+                <summary>Is there a travel fee?</summary>
+                <p>Travel within the Lower Mainland is included. For destination weddings, we simply charge for flight and 2 nights of lodging.</p>
+            </details>
+            <details>
+                <summary>How do we book our date?</summary>
+                <p>A signed contract and a 30% non-refundable retainer are required to officially secure your wedding date.</p>
+            </details>
+            <details>
+                <summary>Do you provide RAW files?</summary>
+                <p>To maintain brand quality, I do not provide unedited RAW files. Every photo you receive is carefully edited for color and tone.</p>
+            </details>
+            <details>
+                <summary>What are your payment terms?</summary>
+                <p>We accept credit card, e-transfer, or bank transfer. The final balance is due 30 days before your wedding date.</p>
+            </details>
+        </div>
+    </section>
+
+    <section id="contact" class="container">
+        <div class="section-title">
+            <h2>Say Hello</h2>
+            <p>Inquire about your 2025/2026 date</p>
+        </div>
+        <div class="contact-form">
+            <form id="weddingForm" onsubmit="return validateForm(event)">
+                <div class="form-group">
+                    <label>Full Name *</label>
+                    <input type="text" id="name" required>
+                    <div class="error-msg" id="nameError">Name is required</div>
+                </div>
+                <div class="form-group">
+                    <label>Email Address *</label>
+                    <input type="email" id="email" required>
+                    <div class="error-msg" id="emailError">Please enter a valid email</div>
+                </div>
+                <div class="form-group" style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                    <div>
+                        <label>Wedding Date</label>
+                        <input type="date" id="date">
+                    </div>
+                    <div>
+                        <label>Venue / Location</label>
+                        <input type="text" id="venue">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Tell me about your day</label>
+                    <textarea id="message" rows="5"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 100%;">Send Message</button>
+                <div style="text-align: center; margin-top: 20px;">
+                    <a href="mailto:hello@harbourviewmedia.com" style="color: var(--gray); font-size: 0.8rem;">Or email directly: hello@harbourviewmedia.com</a>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="social-links">
+                <a href="#">Instagram</a> / <a href="#">Pinterest</a> / <a href="#">Facebook</a>
+            </div>
+            <p>&copy; 2026 Harbourview Media. All Rights Reserved.</p>
+            <p style="font-size: 0.75rem; margin-top: 10px;">Serving Vancouver + Lower Mainland</p>
         </div>
     </footer>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <div id="availModal" class="modal">
+        <div class="modal-content">
+            <button class="close-modal" onclick="closeModal()">&times;</button>
+            <h3 style="margin-bottom: 20px;">Check Availability</h3>
+            <p style="margin-bottom: 20px; font-size: 0.9rem;">I'm currently booking for late 2025 and 2026. Please provide your date to see if I'm free!</p>
+            <div class="form-group">
+                <label>Select Your Date</label>
+                <input type="date" id="modalDate">
+            </div>
+            <button class="btn btn-primary" onclick="closeModal()" style="width: 100%;">Check Date</button>
+        </div>
+    </div>
+
+    <button id="backToTop" onclick="scrollToTop()">↑</button>
+
+    <script>
+        // Intersection Observer for animations
+        const observerOptions = { threshold: 0.1 };
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('section').forEach(section => {
+            observer.observe(section);
+        });
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('navbar');
+            const btt = document.getElementById('backToTop');
+            
+            if (window.scrollY > 50) {
+                nav.classList.add('scrolled');
+                btt.style.display = 'flex';
+            } else {
+                nav.classList.remove('scrolled');
+                btt.style.display = 'none';
+            }
+        });
+
+        // Modal Logic
+        function openModal() {
+            document.getElementById('availModal').style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            document.getElementById('availModal').style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        window.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeModal();
+        });
+
+        // Scroll to top
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Form Validation
+        function validateForm(event) {
+            event.preventDefault();
+            let isValid = true;
+            
+            const name = document.getElementById('name');
+            const email = document.getElementById('email');
+            const nameError = document.getElementById('nameError');
+            const emailError = document.getElementById('emailError');
+
+            if (name.value.trim() === "") {
+                nameError.style.display = 'block';
+                isValid = false;
+            } else {
+                nameError.style.display = 'none';
+            }
+
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email.value)) {
+                emailError.style.display = 'block';
+                isValid = false;
+            } else {
+                emailError.style.display = 'none';
+            }
+
+            if (isValid) {
+                alert("Thank you! Your inquiry has been sent. We will get back to you within 24 hours.");
+                document.getElementById('weddingForm').reset();
+            }
+            return false;
+        }
+    </script>
 </body>
 </html>
