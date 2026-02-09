@@ -1,6 +1,6 @@
 # Harbourview Media Website
 
-Official website for Harbourview Media, a Vancouver-based real estate photography service based in Vancouver, BC.
+Official website for Harbourview Media, a Vancouver-based wedding photography service based in Vancouver, BC.
 
 Domain: https://harbourviewmedia.ca
 
