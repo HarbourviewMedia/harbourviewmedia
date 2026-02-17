@@ -1,4 +1,3 @@
-Gemini said
 <!DOCTYPE html>
 
 <html lang="en">
@@ -8,285 +7,264 @@ Gemini said
 <title>Harbourview Media | Vancouver Wedding Photography</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Manrope:wght@200;300;400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@300;500;700&display=swap" rel="stylesheet">
 <style>
 :root {
 --ink: #0B1320;
---off-white: #F9F7F2;
---muted: #9AA3AD;
---line: rgba(11, 19, 32, 0.08);
---transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+--cream: #FAF9F6;
+--gold: #A69177;
+--muted: #8E949E;
+--transition: all 0.7s cubic-bezier(0.19, 1, 0.22, 1);
 }
 
     * { margin: 0; padding: 0; box-sizing: border-box; }
     html { scroll-behavior: smooth; }
     body { 
-        font-family: 'Manrope', sans-serif; 
-        background-color: var(--off-white); 
+        font-family: 'Montserrat', sans-serif; 
+        background-color: var(--cream); 
         color: var(--ink); 
-        line-height: 1.5;
+        line-height: 1.4;
         -webkit-font-smoothing: antialiased;
-        overflow-x: hidden;
     }
 
     /* Typography */
-    h1, h2, h3 { font-family: 'DM Serif Display', serif; font-weight: 400; line-height: 1.05; }
-    .label { font-size: 10px; text-transform: uppercase; letter-spacing: 4px; color: var(--muted); font-weight: 600; display: block; margin-bottom: 20px; }
+    h1, h2, h3, .serif { font-family: 'Cormorant Garamond', serif; font-weight: 400; line-height: 1.1; }
+    .label { font-size: 11px; text-transform: uppercase; letter-spacing: 5px; color: var(--gold); font-weight: 700; display: block; margin-bottom: 25px; }
     
-    /* Layout */
-    .container { max-width: 1200px; margin: 0 auto; padding: 0 40px; }
-    .flex-between { display: flex; justify-content: space-between; align-items: baseline; }
-    .section-padding { padding: 160px 0; border-bottom: 1px solid var(--line); }
-
+    /* Layout Structure */
+    .container { max-width: 1400px; margin: 0 auto; padding: 0 60px; }
+    .section-header { border-bottom: 1px solid rgba(11, 19, 32, 0.1); padding-bottom: 40px; margin-bottom: 60px; }
+    
     /* Navigation */
     nav { 
-        position: fixed; 
-        top: 0; 
-        width: 100%;
-        z-index: 1000; 
-        background: rgba(249, 247, 242, 0.9); 
-        backdrop-filter: blur(10px);
-        padding: 35px 0; 
-        transition: var(--transition);
+        position: fixed; top: 0; width: 100%; z-index: 1000; 
+        background: rgba(250, 249, 246, 0.98); 
+        border-bottom: 1px solid rgba(11, 19, 32, 0.05); 
+        padding: 25px 0; 
     }
     .nav-inner { display: flex; justify-content: space-between; align-items: center; }
-    .logo { font-family: 'DM Serif Display', serif; font-size: 22px; letter-spacing: 1px; }
+    .logo { font-family: 'Cormorant Garamond', serif; font-size: 28px; letter-spacing: 2px; font-weight: 600; color: var(--ink); text-decoration: none; }
     .nav-links { display: flex; gap: 40px; }
-    .nav-links a { font-size: 10px; text-transform: uppercase; letter-spacing: 2px; font-weight: 600; text-decoration: none; color: var(--ink); }
+    .nav-links a { font-size: 11px; text-transform: uppercase; letter-spacing: 2px; font-weight: 500; text-decoration: none; color: var(--ink); }
 
-    /* Hero - Pure Typography */
+    /* Hero */
     .hero { 
-        height: 100vh; 
+        padding: 220px 0 120px;
+        display: grid;
+        grid-template-columns: 1.2fr 0.8fr;
+        gap: 100px;
+        align-items: end;
+    }
+    .hero h1 { font-size: clamp(4.5rem, 9vw, 8rem); margin-bottom: 30px; }
+    .hero p { font-size: 20px; font-weight: 300; max-width: 500px; line-height: 1.6; color: #333; }
+    .hero-meta { border-left: 1px solid var(--gold); padding-left: 40px; }
+
+    /* Grid Services */
+    .services { background: var(--ink); color: var(--cream); padding: 100px 0; }
+    .service-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.1); }
+    .service-card { padding: 60px; background: var(--ink); }
+    .service-card h3 { font-size: 42px; margin-bottom: 20px; }
+    .service-card p { font-size: 14px; font-weight: 300; opacity: 0.8; line-height: 1.8; }
+
+    /* Portfolio Placeholder - Premium Texture */
+    .portfolio-preview { padding: 120px 0; background: #fff; }
+    .folio-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
+    .folio-item { 
+        aspect-ratio: 4/5; 
+        background: var(--cream); 
+        border: 1px solid rgba(0,0,0,0.03); 
         display: flex; 
-        flex-direction: column; 
-        justify-content: center; 
+        align-items: center; 
+        justify-content: center;
         text-align: center;
-    }
-    .hero h1 { font-size: clamp(4rem, 12vw, 9rem); margin-bottom: 40px; letter-spacing: -0.02em; }
-    .hero-meta { display: flex; justify-content: center; gap: 60px; margin-top: 40px; }
-    .meta-item { text-align: left; }
-    .meta-item span { display: block; font-size: 10px; text-transform: uppercase; letter-spacing: 2px; color: var(--muted); margin-bottom: 8px; }
-    .meta-item p { font-size: 16px; font-weight: 300; }
-
-    /* Large Statement Section */
-    .statement { max-width: 900px; }
-    .statement h2 { font-size: clamp(2.5rem, 5vw, 4.5rem); margin-bottom: 40px; }
-    .statement p { font-size: 20px; font-weight: 300; color: #444; max-width: 600px; }
-
-    /* Services Grid */
-    .services-list { margin-top: 80px; }
-    .service-row { 
-        display: grid; 
-        grid-template-columns: 1fr 2fr 1fr; 
-        padding: 40px 0; 
-        border-top: 1px solid var(--line);
+        padding: 40px;
         transition: var(--transition);
     }
-    .service-row:hover { background: rgba(0,0,0,0.02); padding-left: 20px; }
-    .service-num { font-size: 12px; font-weight: 600; color: var(--muted); }
-    .service-title { font-family: 'DM Serif Display', serif; font-size: 32px; }
-    .service-desc { font-size: 15px; color: #666; font-weight: 300; align-self: center; }
+    .folio-item:hover { background: #F2F0EB; transform: translateY(-10px); }
 
-    /* Review */
-    .review-wrap { text-align: center; max-width: 1000px; margin: 0 auto; }
-    .review-text { font-family: 'DM Serif Display', serif; font-size: clamp(2rem, 4vw, 3.5rem); line-height: 1.2; margin-bottom: 40px; font-style: italic; }
+    /* Testimonial Large */
+    .testimonial { padding: 140px 0; text-align: center; }
+    .testimonial blockquote { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.5rem, 5vw, 4.5rem); line-height: 1.1; font-style: italic; max-width: 1100px; margin: 0 auto 40px; }
 
-    /* Contact */
-    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 120px; }
-    .contact-info h2 { font-size: 80px; margin-bottom: 40px; }
-    .contact-link { display: block; font-size: 32px; font-family: 'DM Serif Display', serif; margin-bottom: 10px; text-decoration: none; color: var(--ink); border-bottom: 1px solid var(--ink); width: fit-content; }
+    /* Contact Section */
+    .contact { padding: 120px 0; background: #fff; }
+    .contact-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 120px; }
+    .contact-info h2 { font-size: 72px; margin-bottom: 30px; }
+    .contact-detail { margin-bottom: 40px; }
+    .contact-detail a { font-family: 'Cormorant Garamond', serif; font-size: 32px; font-style: italic; border-bottom: 1px solid var(--gold); }
     
-    .form-field { margin-bottom: 40px; position: relative; }
-    .form-field label { display: block; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 15px; color: var(--muted); }
-    input, textarea { 
-        width: 100%; 
-        background: transparent; 
-        border: none; 
-        border-bottom: 1px solid var(--line); 
-        padding: 15px 0; 
-        font-family: inherit; 
-        font-size: 18px; 
-        color: var(--ink);
-        transition: var(--transition);
+    /* Form Styling */
+    .form-group { margin-bottom: 40px; }
+    .form-group label { display: block; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 15px; color: var(--muted); }
+    input, select, textarea { 
+        width: 100%; border: none; border-bottom: 1px solid rgba(11, 19, 32, 0.2); 
+        padding: 15px 0; font-family: inherit; font-size: 16px; background: transparent; 
+        transition: border 0.4s;
     }
-    input:focus, textarea:focus { outline: none; border-bottom-color: var(--ink); }
+    input:focus { outline: none; border-bottom-color: var(--ink); }
 
-    .submit-btn { 
-        background: var(--ink); 
-        color: white; 
-        border: none; 
-        padding: 25px 60px; 
-        font-size: 12px; 
-        text-transform: uppercase; 
-        letter-spacing: 3px; 
-        font-weight: 600; 
-        cursor: pointer; 
-        transition: var(--transition);
+    .btn-submit { 
+        background: var(--ink); color: #fff; border: none; padding: 25px 60px; 
+        font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 4px; 
+        cursor: pointer; width: 100%; transition: var(--transition);
     }
-    .submit-btn:hover { letter-spacing: 5px; background: #000; }
+    .btn-submit:hover { background: var(--gold); }
 
-    footer { padding: 80px 0; text-align: center; font-size: 10px; letter-spacing: 2px; color: var(--muted); text-transform: uppercase; }
+    footer { padding: 80px 0; text-align: center; border-top: 1px solid rgba(11, 19, 32, 0.05); }
 
-    /* Reveal Animation */
-    .reveal { opacity: 0; transform: translateY(40px); transition: var(--transition); }
+    /* Desktop Reveal */
+    .reveal { opacity: 0; transform: translateY(30px); transition: var(--transition); }
     .reveal.active { opacity: 1; transform: translateY(0); }
 
-    @media (max-width: 900px) {
-        .contact-grid, .service-row, .hero-meta { grid-template-columns: 1fr; text-align: left; }
-        .hero-meta { flex-direction: column; gap: 30px; align-items: flex-start; margin-top: 60px; }
-        .service-row { gap: 10px; }
+    @media (max-width: 1024px) {
+        .hero, .contact-inner, .service-grid, .folio-grid { grid-template-columns: 1fr; gap: 60px; }
+        .container { padding: 0 30px; }
+        .hero { padding-top: 150px; }
+        .hero h1 { font-size: 4rem; }
         .nav-links { display: none; }
-        .hero h1 { font-size: 4rem; text-align: left; }
-        .contact-info h2 { font-size: 50px; }
-        .section-padding { padding: 100px 0; }
     }
 </style>
 </head>
 <body>
 
-<nav id="navbar">
+<nav>
     <div class="container nav-inner">
         <a href="#" class="logo">HARBOURVIEW MEDIA</a>
         <div class="nav-links">
-            <a href="#about">Philosophy</a>
-            <a href="#services">Services</a>
-            <a href="#contact">Contact</a>
+            <a href="#about">Approach</a>
+            <a href="#work">Galleries</a>
+            <a href="#contact">Inquire</a>
+            <a href="tel:6046074762" style="color: var(--gold);">604.607.4762</a>
         </div>
-        <a href="tel:6046074762" style="font-size: 10px; letter-spacing: 1px; font-weight: 700;">604.607.4762</a>
     </div>
 </nav>
 
 <main>
     <section class="container hero">
-        <span class="label" style="text-align: center;">Vancouver, British Columbia</span>
-        <h1>The Art of the Natural Moment.</h1>
+        <div>
+            <span class="label">Vancouver, BC & Worldwide</span>
+            <h1>Fine Art Documentary Photography.</h1>
+            <p>Natural moments. Calm direction. Clean edits. Captured with intention for the modern couple.</p>
+        </div>
         <div class="hero-meta">
-            <div class="meta-item">
-                <span>Specialization</span>
-                <p>Documentary Wedding Photography</p>
+            <span class="label">Status</span>
+            <p style="font-size: 14px; margin-bottom: 15px;">Currently Booking</p>
+            <p style="font-family: 'Cormorant Garamond', serif; font-size: 28px; font-style: italic;">Season 2026 — 2027</p>
+        </div>
+    </section>
+
+    <section class="services" id="about">
+        <div class="container">
+            <div class="section-header">
+                <span class="label" style="color: var(--gold);">The Standard</span>
+                <h2 style="font-size: 64px;">A seamless experience.</h2>
             </div>
-            <div class="meta-item">
-                <span>Availability</span>
-                <p>Now Booking 2025 — 2026</p>
-            </div>
-            <div class="meta-item">
-                <span>Timeline</span>
-                <p>Full Gallery in 21—35 Days</p>
+            <div class="service-grid">
+                <div class="service-card">
+                    <span class="label">01</span>
+                    <h3>Natural Coverage</h3>
+                    <p>Specializing in documentary-style wedding photography that captures the day as it unfolds, avoiding forced poses and artificial staging.</p>
+                </div>
+                <div class="service-card">
+                    <div class="label">02</div>
+                    <h3>Calm Direction</h3>
+                    <p>We provide quiet, professional guidance to ensure you look your best while maintaining the genuine energy of your celebration.</p>
+                </div>
+                <div class="service-card">
+                    <div class="label">03</div>
+                    <h3>Clean Editing</h3>
+                    <p>A timeless aesthetic characterized by clean, true-to-life colors. Full gallery delivery guaranteed within 3–5 weeks.</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <section class="container section-padding reveal" id="about">
-        <div class="statement">
-            <span class="label">Our Philosophy</span>
-            <h2>Calm direction.<br>Clean editing.<br>Natural coverage.</h2>
-            <p>We believe wedding photography should look the way the day felt. We avoid forced poses and artificial staging in favor of clean, true-to-life colors and timeless documentation.</p>
-        </div>
-    </section>
-
-    <section class="container section-padding reveal" id="services">
-        <span class="label">Services & Standards</span>
-        <div class="services-list">
-            <div class="service-row">
-                <span class="service-num">01</span>
-                <span class="service-title">Documentary Focus</span>
-                <p class="service-desc">Candid, unscripted coverage of your entire day, from the quiet morning preparations to the energy of the dance floor.</p>
+    <section class="portfolio-preview" id="work">
+        <div class="container">
+            <div class="section-header">
+                <span class="label">Galleries</span>
+                <h2 style="font-size: 64px;">Select Commissions.</h2>
             </div>
-            <div class="service-row">
-                <span class="service-num">02</span>
-                <span class="service-title">Editorial Direction</span>
-                <p class="service-desc">Gentle, professional guidance during portraits to ensure you feel comfortable and look natural without the awkwardness.</p>
-            </div>
-            <div class="service-row">
-                <span class="service-num">03</span>
-                <span class="service-title">Digital Heritage</span>
-                <p class="service-desc">High-resolution, hand-edited digital galleries delivered with full printing rights and permanent online hosting.</p>
+            <div class="folio-grid reveal">
+                <div class="folio-item"><p class="serif" style="font-size: 24px; font-style: italic;">Urban Heritage<br><span style="font-family: 'Montserrat'; font-size: 10px; font-style: normal; text-transform: uppercase; letter-spacing: 2px;">Gastown</span></p></div>
+                <div class="folio-item"><p class="serif" style="font-size: 24px; font-style: italic;">Coastal Vows<br><span style="font-family: 'Montserrat'; font-size: 10px; font-style: normal; text-transform: uppercase; letter-spacing: 2px;">West Vancouver</span></p></div>
+                <div class="folio-item"><p class="serif" style="font-size: 24px; font-style: italic;">Garden Estate<br><span style="font-family: 'Montserrat'; font-size: 10px; font-style: normal; text-transform: uppercase; letter-spacing: 2px;">Shaughnessy</span></p></div>
             </div>
         </div>
     </section>
 
-    <section class="container section-padding reveal">
-        <div class="review-wrap">
-            <span class="label">Client Experience</span>
-            <p class="review-text">"Thanks to Sean from Harbourview, photos from our Wedding went amazing, without breaking the bank."</p>
-            <span class="label" style="color: var(--ink); opacity: 1;">Arman Hosseini — 5.0 Rating</span>
-        </div>
+    <section class="container testimonial reveal">
+        <span class="label">Kind Words</span>
+        <blockquote>"Thanks to Sean from Harbourview, photos from our Wedding went amazing, without breaking the bank."</blockquote>
+        <p class="label" style="color: var(--ink);">Arman Hosseini &mdash; 5.0 Rated Service</p>
     </section>
 
-    <section class="container section-padding reveal" style="border-bottom: none;" id="contact">
-        <div class="contact-grid">
-            <div class="contact-info">
-                <span class="label">Inquiry</span>
-                <h2>Secure your date.</h2>
-                <p style="margin-bottom: 60px; font-weight: 300;">Currently accepting a limited number of commissions per season to ensure dedicated quality for every couple.</p>
-                <a href="mailto:info@harbourviewmedia.ca" class="contact-link">harbourviewmedia.ca</a>
-                <p style="margin-top: 30px; font-size: 12px; font-weight: 600;">Office Hours: Mon—Sat / Closes 6PM</p>
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="contact-inner reveal">
+                <div class="contact-info">
+                    <span class="label">Inquiry</span>
+                    <h2>Secure your date.</h2>
+                    <p style="margin-bottom: 50px; font-weight: 300;">Accepting limited commissions for the 2026 and 2027 wedding seasons across the Lower Mainland.</p>
+                    
+                    <div class="contact-detail">
+                        <span class="label">Web</span><br>
+                        <a href="#">harbourviewmedia.ca</a>
+                    </div>
+                    <div class="contact-detail">
+                        <span class="label">Direct</span><br>
+                        <a href="tel:6046074762">604.607.4762</a>
+                    </div>
+                </div>
+
+                <form id="contactForm" style="background: var(--cream); padding: 60px; border: 1px solid rgba(0,0,0,0.05);">
+                    <div class="form-group">
+                        <label>Full Name</label>
+                        <input type="text" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Email Address</label>
+                        <input type="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Event Date & Venue</label>
+                        <input type="text" placeholder="Season 2026/2027">
+                    </div>
+                    <div class="form-group">
+                        <label>Tell us about your plans</label>
+                        <textarea rows="4"></textarea>
+                    </div>
+                    <button type="submit" class="btn-submit">Send Inquiry</button>
+                    <p id="success" style="display:none; margin-top: 30px; text-align: center; font-size: 14px; font-weight: 700; color: var(--gold);">Message received. Sean will respond within 24 hours.</p>
+                </form>
             </div>
-            
-            <form id="inquiryForm">
-                <div class="form-field">
-                    <label>Full Name</label>
-                    <input type="text" required>
-                </div>
-                <div class="form-field">
-                    <label>Email Address</label>
-                    <input type="email" required>
-                </div>
-                <div class="form-field">
-                    <label>Wedding Date & Venue</label>
-                    <input type="text" placeholder="Month / Year / Location">
-                </div>
-                <div class="form-field">
-                    <label>The Vision</label>
-                    <textarea rows="4" placeholder="Tell us about your day..."></textarea>
-                </div>
-                <button type="submit" class="submit-btn">Send Inquiry</button>
-                <p id="success" style="display:none; margin-top: 30px; font-size: 14px; font-weight: 600; color: #2e7d32;">Your message has been received. Sean will be in touch within 24 hours.</p>
-            </form>
         </div>
     </section>
 </main>
 
 <footer>
     <div class="container">
-        <p>© 2026 HARBOURVIEW MEDIA. ALL RIGHTS RESERVED. SERVING VANCOUVER & THE LOWER MAINLAND.</p>
+        <p style="font-family: 'Cormorant Garamond', serif; font-size: 24px; letter-spacing: 2px; margin-bottom: 20px;">HARBOURVIEW MEDIA</p>
+        <p style="font-size: 10px; letter-spacing: 3px; color: var(--muted); text-transform: uppercase;">© 2026 Harbourview Media | Photography Service | Vancouver & Lower Mainland</p>
     </div>
 </footer>
 
 <script>
-    // Scroll Reveal Logic
-    const observerOptions = {
-        threshold: 0.1
-    };
-
+    // Simple Intersection Observer for scroll animations
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('active');
-            }
+            if (entry.isIntersecting) entry.target.classList.add('active');
         });
-    }, observerOptions);
+    }, { threshold: 0.1 });
 
     document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-    // Form Submission
-    document.getElementById('inquiryForm').addEventListener('submit', function(e) {
+    // Form feedback
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
         e.preventDefault();
         document.getElementById('success').style.display = 'block';
-        this.style.opacity = '0.4';
+        this.style.opacity = '0.3';
         this.style.pointerEvents = 'none';
-    });
-
-    // Simple Navbar effect on scroll
-    window.addEventListener('scroll', () => {
-        const nav = document.getElementById('navbar');
-        if (window.scrollY > 50) {
-            nav.style.padding = '20px 0';
-            nav.style.boxShadow = '0 10px 30px rgba(0,0,0,0.02)';
-        } else {
-            nav.style.padding = '35px 0';
-            nav.style.boxShadow = 'none';
-        }
     });
 </script>
 </body>
