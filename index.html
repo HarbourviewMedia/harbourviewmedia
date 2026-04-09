@@ -300,14 +300,16 @@ footer .wm{color:rgba(250,246,240,.4)}
 .a-stat-lbl{font-size:.68rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-top:.2rem}
 
 .team-grid{display:flex;flex-direction:column;gap:1rem}
-.team-card{background:var(--white);border:1px solid var(--sand3);border-radius:16px;padding:1.4rem 1.6rem;display:flex;align-items:center;gap:1.2rem;transition:border-color .2s,transform .2s}
+.team-card{background:var(--white);border:1px solid var(--sand3);border-radius:16px;padding:1.6rem 1.8rem;display:flex;align-items:flex-start;gap:1.4rem;transition:border-color .2s,transform .2s}
 .team-card:hover{border-color:var(--rust);transform:translateX(4px)}
-.team-avatar{width:52px;height:52px;border-radius:14px;background:var(--rust);display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:1.3rem;font-weight:700;color:var(--white);flex-shrink:0;font-style:italic}
+.team-avatar{width:6px;height:auto;align-self:stretch;border-radius:4px;background:var(--rust);flex-shrink:0}
 .team-avatar.forest{background:var(--forest)}
 .team-avatar.rust2{background:var(--rust-lt)}
-.team-info strong{display:block;font-size:.9rem;font-weight:600;color:var(--ink)}
-.team-info span{font-size:.75rem;color:var(--muted)}
-.team-role{margin-left:auto;font-size:.62rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;background:var(--rust-pale);color:var(--rust);padding:.3rem .75rem;border-radius:100px;white-space:nowrap}
+.team-info{flex:1}
+.team-info strong{display:block;font-size:.92rem;font-weight:600;color:var(--ink);margin-bottom:.15rem}
+.team-info .role-tag{font-size:.62rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--rust);margin-bottom:.5rem;display:block}
+.team-info p{font-size:.78rem;color:var(--mid);line-height:1.65}
+.team-role{display:none}
 
 /* ── FAQ ── */
 #faq{background:var(--sand)}
@@ -477,36 +479,28 @@ footer .wm{color:rgba(250,246,240,.4)}
       </div>
       <div class="team-grid reveal">
         <div class="team-card">
-          <div class="team-avatar">S</div>
+          <div class="team-avatar"></div>
           <div class="team-info">
             <strong>Sean</strong>
-            <span>Vancouver, BC</span>
+            <span class="role-tag">Photographer</span>
+            <p>Sean founded Harbourview Media with one goal — make great photography accessible without the big-studio price tag. He leads every shoot with a calm, low-key energy that puts clients at ease from the first minute.</p>
           </div>
-          <span class="team-role">Lead Photographer</span>
         </div>
         <div class="team-card">
-          <div class="team-avatar forest">D</div>
+          <div class="team-avatar forest"></div>
           <div class="team-info">
             <strong>Dylan</strong>
-            <span>Vancouver, BC</span>
+            <span class="role-tag">Photographer</span>
+            <p>Dylan has an eye for natural light and candid moments. His approach is quiet and observational — he captures the real stuff before you even notice the camera is there.</p>
           </div>
-          <span class="team-role">Photographer</span>
         </div>
         <div class="team-card">
-          <div class="team-avatar rust2">L</div>
+          <div class="team-avatar rust2"></div>
           <div class="team-info">
             <strong>Luke</strong>
-            <span>Vancouver, BC</span>
+            <span class="role-tag">Photographer</span>
+            <p>Luke brings energy and creativity to every session. Whether it's a grad shoot at golden hour or a family session with three kids who won't stay still, Luke keeps things moving and the shots coming.</p>
           </div>
-          <span class="team-role">Photographer</span>
-        </div>
-        <div class="team-card" style="background:var(--rust-pale);border-color:rgba(196,92,46,.2)">
-          <div style="font-size:1.4rem">📸</div>
-          <div class="team-info">
-            <strong style="color:var(--rust)">Join the team</strong>
-            <span>Always looking for talent</span>
-          </div>
-          <a href="mailto:sean@harbourviewmedia.ca" style="font-size:.62rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--rust);text-decoration:none;margin-left:auto;border-bottom:1px solid rgba(196,92,46,.3);padding-bottom:1px">Get in touch</a>
         </div>
       </div>
     </div>
