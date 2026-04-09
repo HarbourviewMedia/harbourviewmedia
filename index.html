@@ -288,6 +288,42 @@ footer .wm{color:rgba(250,246,240,.4)}
   .hero-stats::before{display:none}
   .h-stat{border-right:none;border-bottom:1px solid rgba(255,255,255,.1)}
 }
+
+/* ── ABOUT ── */
+#about{background:var(--sand2);border-top:1px solid var(--sand3)}
+.about-layout{display:grid;grid-template-columns:1.1fr 1fr;gap:5rem;align-items:center}
+.about-left p{font-size:.95rem;color:var(--mid);line-height:1.85;margin-bottom:1.2rem}
+.about-left p strong{color:var(--ink);font-weight:600}
+.about-stats{display:flex;gap:2.5rem;margin-top:2.5rem;flex-wrap:wrap}
+.a-stat{}
+.a-stat-num{font-family:var(--serif);font-size:2.2rem;font-weight:700;color:var(--rust);letter-spacing:-.02em;line-height:1}
+.a-stat-lbl{font-size:.68rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-top:.2rem}
+
+.team-grid{display:flex;flex-direction:column;gap:1rem}
+.team-card{background:var(--white);border:1px solid var(--sand3);border-radius:16px;padding:1.4rem 1.6rem;display:flex;align-items:center;gap:1.2rem;transition:border-color .2s,transform .2s}
+.team-card:hover{border-color:var(--rust);transform:translateX(4px)}
+.team-avatar{width:52px;height:52px;border-radius:14px;background:var(--rust);display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:1.3rem;font-weight:700;color:var(--white);flex-shrink:0;font-style:italic}
+.team-avatar.forest{background:var(--forest)}
+.team-avatar.rust2{background:var(--rust-lt)}
+.team-info strong{display:block;font-size:.9rem;font-weight:600;color:var(--ink)}
+.team-info span{font-size:.75rem;color:var(--muted)}
+.team-role{margin-left:auto;font-size:.62rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;background:var(--rust-pale);color:var(--rust);padding:.3rem .75rem;border-radius:100px;white-space:nowrap}
+
+/* ── FAQ ── */
+#faq{background:var(--sand)}
+.faq-layout{display:grid;grid-template-columns:1fr 1.6fr;gap:5rem;align-items:start}
+.faq-list{display:flex;flex-direction:column;gap:.8rem}
+.faq-item{background:var(--white);border:1px solid var(--sand3);border-radius:14px;overflow:hidden;transition:border-color .2s}
+.faq-item.open{border-color:var(--rust)}
+.faq-q{display:flex;align-items:center;justify-content:space-between;padding:1.3rem 1.5rem;cursor:pointer;gap:1rem;user-select:none}
+.faq-q span{font-size:.92rem;font-weight:500;color:var(--ink);line-height:1.4}
+.faq-icon{width:28px;height:28px;border-radius:50%;background:var(--sand2);display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:background .2s,transform .2s;color:var(--mid);font-size:1rem;font-weight:300}
+.faq-item.open .faq-icon{background:var(--rust);color:var(--white);transform:rotate(45deg)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .35s ease,padding .2s ease}
+.faq-a-inner{padding:0 1.5rem 1.3rem;font-size:.875rem;color:var(--mid);line-height:1.8}
+.faq-item.open .faq-a{max-height:200px}
+
+
 </style>
 </head>
 <body>
@@ -299,8 +335,11 @@ footer .wm{color:rgba(250,246,240,.4)}
 <nav id="nav">
   <a class="wm" href="#"><span class="wm-t">Harbourview</span><span class="wm-ln"></span><span class="wm-b">Media</span></a>
   <ul class="nav-links">
-    <li><a href="#services">Services</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
     <li><a href="#pricing">Pricing</a></li>
+    <li><a href="#faq">FAQ</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
   <a class="nav-cta" href="#contact">Book Now →</a>
@@ -419,6 +458,61 @@ footer .wm{color:rgba(250,246,240,.4)}
   </div>
 </section>
 
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="container">
+    <div class="about-layout">
+      <div class="about-left">
+        <p class="s-kicker reveal">Who we are</p>
+        <h2 class="s-title reveal">A small team.<br><em>A big commitment.</em></h2>
+        <p class="reveal">Harbourview Media is a Vancouver-based photography team built around one idea — that good photos shouldn't require a massive budget or a stressful shoot day. We work across grad sessions, portraits, family photography, and real estate, bringing a calm and natural approach to every session.</p>
+        <p class="reveal">We keep our team small on purpose. Every session gets real attention, real direction, and images that actually reflect who you are — not a template version of you.</p>
+        <div class="about-stats reveal">
+          <div class="a-stat"><div class="a-stat-num">3</div><div class="a-stat-lbl">Person team</div></div>
+          <div class="a-stat"><div class="a-stat-num">4</div><div class="a-stat-lbl">Session types</div></div>
+          <div class="a-stat"><div class="a-stat-num">2wk</div><div class="a-stat-lbl">Max delivery</div></div>
+          <div class="a-stat"><div class="a-stat-num">5.0</div><div class="a-stat-lbl">Google rating</div></div>
+        </div>
+      </div>
+      <div class="team-grid reveal">
+        <div class="team-card">
+          <div class="team-avatar">S</div>
+          <div class="team-info">
+            <strong>Sean</strong>
+            <span>Vancouver, BC</span>
+          </div>
+          <span class="team-role">Lead Photographer</span>
+        </div>
+        <div class="team-card">
+          <div class="team-avatar forest">D</div>
+          <div class="team-info">
+            <strong>Dylan</strong>
+            <span>Vancouver, BC</span>
+          </div>
+          <span class="team-role">Photographer</span>
+        </div>
+        <div class="team-card">
+          <div class="team-avatar rust2">L</div>
+          <div class="team-info">
+            <strong>Luke</strong>
+            <span>Vancouver, BC</span>
+          </div>
+          <span class="team-role">Photographer</span>
+        </div>
+        <div class="team-card" style="background:var(--rust-pale);border-color:rgba(196,92,46,.2)">
+          <div style="font-size:1.4rem">📸</div>
+          <div class="team-info">
+            <strong style="color:var(--rust)">Join the team</strong>
+            <span>Always looking for talent</span>
+          </div>
+          <a href="mailto:sean@harbourviewmedia.ca" style="font-size:.62rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--rust);text-decoration:none;margin-left:auto;border-bottom:1px solid rgba(196,92,46,.3);padding-bottom:1px">Get in touch</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- PROCESS -->
 <section id="process">
   <div class="container">
@@ -525,6 +619,50 @@ footer .wm{color:rgba(250,246,240,.4)}
   </div>
 </section>
 
+
+<!-- FAQ -->
+<section id="faq">
+  <div class="container">
+    <div class="faq-layout">
+      <div>
+        <p class="s-kicker reveal">FAQ</p>
+        <h2 class="s-title reveal">Questions we<br><em>get all the time.</em></h2>
+        <p class="reveal" style="font-size:.88rem;color:var(--mid);line-height:1.8;margin-top:-.5rem">Can't find your answer? <a href="#contact" style="color:var(--rust);text-decoration:none;border-bottom:1px solid rgba(196,92,46,.3)">Send us a message.</a></p>
+      </div>
+      <div class="faq-list reveal">
+        <div class="faq-item">
+          <div class="faq-q"><span>What should I wear to my session?</span><div class="faq-icon">+</div></div>
+          <div class="faq-a"><div class="faq-a-inner">Wear something you feel comfortable and confident in — nothing too trendy that'll date the photos. Solid colours and simple patterns work best. Avoid logos. If you're unsure, we're happy to give advice before the shoot.</div></div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q"><span>Where do sessions take place?</span><div class="faq-icon">+</div></div>
+          <div class="faq-a"><div class="faq-a-inner">All outdoor, anywhere across Metro Vancouver. Popular spots include Ambleside Beach, Lighthouse Park, Gastown, Stanley Park, and Lynn Canyon. We'll discuss the best location for your session when you book.</div></div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q"><span>What happens if it rains?</span><div class="faq-icon">+</div></div>
+          <div class="faq-a"><div class="faq-a-inner">We monitor the forecast closely. If it's going to be heavy rain on your session day, we'll reach out to reschedule at no extra cost. Light overcast is actually great for photos — no harsh shadows.</div></div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q"><span>How do I get my photos?</span><div class="faq-icon">+</div></div>
+          <div class="faq-a"><div class="faq-a-inner">You'll receive a private link to your online gallery within 2 weeks of your session. From there you can download all images in full resolution, share with family and friends, or order prints directly.</div></div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q"><span>Can I request specific shots or locations?</span><div class="faq-icon">+</div></div>
+          <div class="faq-a"><div class="faq-a-inner">Absolutely. We love when clients have ideas. Send us references, specific spots you have in mind, or a shot list before the session and we'll incorporate them into the plan.</div></div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q"><span>How far in advance should I book?</span><div class="faq-icon">+</div></div>
+          <div class="faq-a"><div class="faq-a-inner">As early as possible, especially for grad season. May and June book out fast. We recommend booking at least 3–4 weeks ahead to secure your preferred date and location.</div></div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q"><span>Do you travel outside Vancouver?</span><div class="faq-icon">+</div></div>
+          <div class="faq-a"><div class="faq-a-inner">Yes — we cover all of Metro Vancouver including West Vancouver, North Vancouver, Burnaby, Richmond, Surrey, and beyond. Travel within the Lower Mainland is included in every session price.</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- CTA BAND -->
 <section id="cta">
   <div class="container">
@@ -548,13 +686,13 @@ footer .wm{color:rgba(250,246,240,.4)}
       <div class="c-info">
         <h2>Let's make something <em>great.</em></h2>
         <p>Fill out the form and our team will get back to you within 24 hours. No pressure — just a quick chat about your session.</p>
-        <div class="c-row"><div class="c-lbl">Email</div><div class="c-val"><a href="mailto:sean@harbourviewmedia.ca">sean@harbourviewmedia.ca</a></div></div>
+        <div class="c-row"><div class="c-lbl">Email</div><div class="c-val"><a href="/cdn-cgi/l/email-protection#493a2c28270921283b2b263c3b3f202c3e242c2d2028672a28"><span class="__cf_email__" data-cfemail="235046424d634b4251414c5651554a46544e46474a420d4042">[email&#160;protected]</span></a></div></div>
         <div class="c-row"><div class="c-lbl">Phone</div><div class="c-val"><a href="tel:2365092933">236.509.2933</a></div></div>
         <div class="c-row"><div class="c-lbl">Coverage</div><div class="c-val">Vancouver & the Lower Mainland</div></div>
         <div class="c-row"><div class="c-lbl">Response time</div><div class="c-val">Within 24 hours</div></div>
       </div>
       <div class="form-card">
-        <form action="https://formspree.io/f/mjgernbq" method="POST">
+        <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
           <div class="fg-grid">
             <div class="fg"><label for="name">Your name</label><input type="text" id="name" name="name" placeholder="First & last name" required/></div>
             <div class="fg"><label for="email">Email</label><input type="email" id="email" name="email" placeholder="you@email.com" required/></div>
@@ -585,15 +723,18 @@ footer .wm{color:rgba(250,246,240,.4)}
   <div class="foot-inner">
     <span class="wm" style="cursor:default;"><span class="wm-t">Harbourview</span><span class="wm-ln"></span><span class="wm-b">Media</span></span>
     <ul class="foot-links">
+      <li><a href="#about">About</a></li>
+    <li><a href="#about">About</a></li>
       <li><a href="#services">Services</a></li>
       <li><a href="#pricing">Pricing</a></li>
+      <li><a href="#faq">FAQ</a></li>
       <li><a href="#contact">Book</a></li>
     </ul>
     <span class="foot-copy">© 2026 Harbourview Media · Vancouver, BC</span>
   </div>
 </footer>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
   // Cursor
   const cur=document.getElementById('cur'),curR=document.getElementById('curR');
   let mx=0,my=0,rx=0,ry=0;
@@ -604,6 +745,17 @@ footer .wm{color:rgba(250,246,240,.4)}
   // Nav scroll
   const nav=document.getElementById('nav');
   window.addEventListener('scroll',()=>nav.classList.toggle('scrolled',window.scrollY>40));
+
+
+  // FAQ accordion
+  document.querySelectorAll('.faq-q').forEach(q => {
+    q.addEventListener('click', () => {
+      const item = q.parentElement;
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+      if (!isOpen) item.classList.add('open');
+    });
+  });
 
   // Reveal
   const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');obs.unobserve(e.target)}})},{threshold:.1});
