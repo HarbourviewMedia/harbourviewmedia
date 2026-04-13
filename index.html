@@ -1,103 +1,164 @@
-<!DOCTYPE html>
-<html lang="en-CA">
-<head>
-    <meta charset="UTF-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Harbourview Media | Professional Vancouver Photography Services</title>
-    <meta name="description" content="Professional graduation, portrait, and family photography in Vancouver, BC. High-quality outdoor sessions, 14-day turnaround, and 5-star service. Book your session today."/>
-    <link rel="canonical" href="https://harbourviewmedia.ca"/>
-    
-    <style>
-        /* [Insert your existing :root and core styles here] */
-        /* SEO Tip: Ensure all your <h> tags follow a logical order: H1 -> H2 -> H3 */
-        .s-title { font-family: var(--serif); font-size: clamp(2rem, 4vw, 3rem); margin-bottom: 2rem; }
-        .svc-layout { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
-    </style>
-</head>
 <body>
+    <div class="cur"></div>
+    <div class="cur-r"></div>
 
     <nav id="nav">
-        <a class="wm" href="/">Harbourview Media</a>
+        <a class="wm" href="/">
+            <span class="wm-t">Harbourview</span>
+            <span class="wm-ln"></span>
+            <span class="wm-b">Media</span>
+        </a>
         <ul class="nav-links">
-            <li><a href="#services">Services</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#contact">Book Now</a></li>
+            <li><a href="/services.html">Services</a></li>
+            <li><a href="/portfolio.html">Portfolio</a></li>
+            <li><a href="/about.html">About</a></li>
         </ul>
+        <a class="nav-cta" href="/booking.html">Book Now</a>
     </nav>
 
     <section id="hero">
+        <div class="hero-ring"></div>
+        <div class="hero-badge">
+            <div class="badge-stars">★★★★★</div>
+            <div class="badge-main">5.0 Star Rated</div>
+            <div class="badge-sub">Vancouver & Lower Mainland</div>
+        </div>
+        
         <div class="hero-inner">
-            <h1 class="hero-h1">Natural Portraits. <br><em>Vancouver’s Professional Choice.</em></h1>
-            <p class="hero-desc">We deliver high-end photography for Grads, Families, and Professionals. <strong>Simple, reliable, and delivered fast.</strong></p>
-            <div class="hero-btns">
-                <a class="btn-rust" href="#contact">Check Availability</a>
+            <div class="hero-pill">
+                <div class="pill-dot"></div> Booking 2026 Season
+            </div>
+            <h1 class="hero-h1">Natural Portraits.<br><span class="serif-italic">Vancouver's</span> Professional Choice.</h1>
+            <div class="hero-row">
+                <p class="hero-desc">We deliver high-end photography for Grads, Families, and Professionals. <strong>Simple, reliable, and delivered fast.</strong></p>
+                <div class="hero-btns">
+                    <a class="btn-rust" href="/booking.html">Check Availability</a>
+                    <a class="btn-ink" href="/portfolio.html">View Work</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="hero-stats">
+            <div class="h-stat">
+                <div class="h-num">14<em>days</em></div>
+                <div class="h-lbl">Delivery Time</div>
+            </div>
+            <div class="h-stat">
+                <div class="h-num">30<em>+</em></div>
+                <div class="h-lbl">Curated Edits</div>
+            </div>
+            <div class="h-stat">
+                <div class="h-num">100<em>%</em></div>
+                <div class="h-lbl">Satisfaction</div>
+            </div>
+            <div class="h-stat">
+                <div class="h-num">5.0</div>
+                <div class="h-lbl">Google Rating</div>
             </div>
         </div>
     </section>
+
+    <div id="marquee">
+        <div class="mq-track">
+            <div class="mq-item">Serving <strong>Vancouver</strong></div><div class="mq-sep"></div>
+            <div class="mq-item">Serving <strong>West Vancouver</strong></div><div class="mq-sep"></div>
+            <div class="mq-item">Serving <strong>Burnaby</strong></div><div class="mq-sep"></div>
+            <div class="mq-item">Serving <strong>Richmond</strong></div><div class="mq-sep"></div>
+            <div class="mq-item">Serving <strong>Vancouver</strong></div><div class="mq-sep"></div>
+            <div class="mq-item">Serving <strong>West Vancouver</strong></div><div class="mq-sep"></div>
+            <div class="mq-item">Serving <strong>Burnaby</strong></div><div class="mq-sep"></div>
+            <div class="mq-item">Serving <strong>Richmond</strong></div><div class="mq-sep"></div>
+        </div>
+    </div>
 
     <section id="services">
         <div class="container">
-            <h2 class="s-title">Photography Services across the Lower Mainland</h2>
+            <p class="s-kicker">Our Expertise</p>
+            <h2 class="s-title">Photography Services <em>for every milestone.</em></h2>
+            
             <div class="svc-layout">
-                <div class="svc">
-                    <h3>Graduation Photography (Vancouver)</h3>
-                    <p>Professional on-location grad shoots. We handle the posing and lighting at iconic spots like Lighthouse Park and Gastown.</p>
-                    <div class="svc-foot"><span>From $99</span></div>
+                <div class="svc tall">
+                    <div>
+                        <div class="svc-top">
+                            <span class="svc-tag">Most Popular</span>
+                            <span class="svc-n">01</span>
+                        </div>
+                        <h3>Graduation Sessions</h3>
+                        <p>Professional on-location grad shoots. We handle the posing and lighting at iconic Vancouver spots so you can celebrate your achievement.</p>
+                    </div>
+                    <div class="svc-foot">
+                        <div>
+                            <div class="svc-price">$99</div>
+                            <div class="svc-dur">Starting Price</div>
+                        </div>
+                        <a class="svc-cta" href="/services/graduation.html">→</a>
+                    </div>
                 </div>
+
                 <div class="svc">
-                    <h3>Professional Headshots & Branding</h3>
-                    <p>High-quality LinkedIn and corporate headshots for Vancouver professionals. Polished, modern, and quick.</p>
-                    <div class="svc-foot"><span>From $149</span></div>
+                    <div class="svc-top">
+                        <span class="svc-n">02</span>
+                    </div>
+                    <h3>Professional Headshots</h3>
+                    <p>High-quality LinkedIn and corporate headshots for professionals. Polished, modern, and quick.</p>
+                    <div class="svc-foot">
+                        <div class="svc-price">$149</div>
+                        <a class="svc-cta" href="/services/headshots.html">→</a>
+                    </div>
                 </div>
+
                 <div class="svc">
-                    <h3>Family & Lifestyle Photography</h3>
-                    <p>Relaxed, candid photography sessions for families across Burnaby, Richmond, and North Vancouver.</p>
-                    <div class="svc-foot"><span>From $199</span></div>
+                    <div class="svc-top">
+                        <span class="svc-n">03</span>
+                    </div>
+                    <h3>Family & Lifestyle</h3>
+                    <p>Relaxed, candid photography sessions for families across the Lower Mainland.</p>
+                    <div class="svc-foot">
+                        <div class="svc-price">$199</div>
+                        <a class="svc-cta" href="/services/family.html">→</a>
+                    </div>
                 </div>
+            </div>
+
+            <div class="re-strip">
+                <p>Are you a realtor or property manager? <strong>We also provide comprehensive real estate media.</strong></p>
+                <a class="re-link" href="/services/real-estate.html">View Real Estate Packages →</a>
             </div>
         </div>
     </section>
 
-    <section id="about">
-        <div class="container">
-            <h2 class="s-title">The Harbourview Guarantee</h2>
-            <div class="why-grid">
-                <div>
-                    <h3>14-Day Delivery</h3>
-                    <p>No waiting. Your fully edited, high-res gallery arrives in your inbox in 2 weeks or less.</p>
-                </div>
-                <div>
-                    <h3>On-Location Expert</h3>
-                    <p>We know the Lower Mainland's best lighting spots, from West Van to the Fraser Valley.</p>
-                </div>
-                <div>
-                    <h3>Simple Pricing</h3>
-                    <p>Transparent, flat-rate pricing. No hidden fees or "studio rental" costs.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+    <script>
+        // Custom Cursor Logic
+        const cursor = document.querySelector('.cur');
+        const cursorR = document.querySelector('.cur-r');
+        
+        document.addEventListener('mousemove', (e) => {
+            cursor.style.left = e.clientX + 'px';
+            cursor.style.top = e.clientY + 'px';
+            cursorR.style.left = e.clientX + 'px';
+            cursorR.style.top = e.clientY + 'px';
+        });
 
-    <section id="contact">
-        <div class="container">
-            <h2 class="s-title">Let’s Book Your Session</h2>
-            <form action="/submit" method="POST" class="form-card">
-                <div class="fg"><label>Name</label><input type="text" name="name" required></div>
-                <div class="fg"><label>Service Required</label>
-                    <select name="service">
-                        <option>Graduation Session</option>
-                        <option>Professional Headshots</option>
-                        <option>Family Session</option>
-                    </select>
-                </div>
-                <button type="submit" class="f-submit">Send Inquiry</button>
-            </form>
-        </div>
-    </section>
+        document.querySelectorAll('a, button').forEach(link => {
+            link.addEventListener('mouseenter', () => {
+                cursor.classList.add('big');
+                cursorR.classList.add('big');
+            });
+            link.addEventListener('mouseleave', () => {
+                cursor.classList.remove('big');
+                cursorR.classList.remove('big');
+            });
+        });
 
-    <footer>
-        <p>© 2026 Harbourview Media · Vancouver, BC · Serving the Lower Mainland</p>
-    </footer>
-
+        // Nav Scroll Effect
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('nav');
+            if (window.scrollY > 50) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+        });
+    </script>
 </body>
 </html>
