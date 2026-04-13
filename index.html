@@ -3,455 +3,694 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Harbourview Media — Vancouver Photography</title>
+<title>Harbourview Media — Vancouver Graduation Photography</title>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet" />
 <style>
-  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-  :root {
-    --cream: #F9F6F0;
-    --ivory: #F3EEE5;
-    --charcoal: #1C1C1A;
-    --slate: #3D3D38;
-    --mist: #8A8880;
-    --gold: #B89B6A;
-    --gold-light: #D4BC8E;
-    --warm-white: #FDFBF8;
-    --border: rgba(28,28,26,0.10);
-    --border-gold: rgba(184,155,106,0.30);
-  }
-  html { scroll-behavior: smooth; }
-  body {
-    font-family: 'DM Sans', sans-serif;
-    background: var(--warm-white);
-    color: var(--charcoal);
-    font-weight: 300;
-    line-height: 1.7;
-    overflow-x: hidden;
-  }
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
-  /* NAV */
-  nav {
-    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-    display: flex; align-items: center; justify-content: space-between;
-    padding: 1.4rem 3rem;
-    background: rgba(253,251,248,0.90);
-    backdrop-filter: blur(14px);
-    border-bottom: 1px solid var(--border);
-  }
-  .nav-logo {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.35rem; font-weight: 400; letter-spacing: 0.04em;
-    color: var(--charcoal); text-decoration: none;
-  }
-  .nav-logo span { color: var(--gold); }
-  .nav-links { display: flex; gap: 2.5rem; list-style: none; }
-  .nav-links a {
-    font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase;
-    color: var(--slate); text-decoration: none; transition: color 0.2s;
-  }
-  .nav-links a:hover { color: var(--gold); }
-  .nav-cta {
-    font-size: 0.73rem; letter-spacing: 0.12em; text-transform: uppercase;
-    color: var(--charcoal); text-decoration: none;
-    border: 1px solid var(--charcoal); padding: 0.55rem 1.4rem; transition: all 0.25s;
-  }
-  .nav-cta:hover { background: var(--charcoal); color: var(--warm-white); }
+:root {
+  --forest:    #1E3A2F;
+  --forest-mid:#2C5240;
+  --forest-lt: #3D6B55;
+  --sage:      #7BA899;
+  --sage-lt:   #A8C5BC;
+  --parchment: #F5F0E8;
+  --cream:     #FAF7F2;
+  --white:     #FEFCF9;
+  --amber:     #C8943A;
+  --amber-lt:  #E0B46A;
+  --amber-pale:#F5DFA8;
+  --ink:       #1A1F1C;
+  --ink-mid:   #3A4040;
+  --mist:      #7A8580;
+  --border:    rgba(30,58,47,0.12);
+  --border-amber: rgba(200,148,58,0.30);
+}
 
-  /* HERO */
-  .hero {
-    min-height: 100vh; display: grid; grid-template-columns: 1fr 1fr; padding-top: 76px;
-  }
-  .hero-left {
-    display: flex; flex-direction: column; justify-content: center;
-    padding: 5rem 4rem 5rem 5rem;
-  }
-  .hero-eyebrow {
-    font-size: 0.68rem; letter-spacing: 0.22em; text-transform: uppercase;
-    color: var(--gold); margin-bottom: 2rem;
-  }
-  .hero-title {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(3rem, 5vw, 5rem); font-weight: 300; line-height: 1.08;
-    color: var(--charcoal); margin-bottom: 2rem;
-  }
-  .hero-title em { font-style: italic; color: var(--gold); }
-  .hero-sub {
-    font-size: 0.9rem; color: var(--mist); max-width: 360px;
-    margin-bottom: 3rem; line-height: 1.95;
-  }
-  .hero-actions { display: flex; gap: 1.2rem; align-items: center; }
-  .btn-primary {
-    background: var(--charcoal); color: var(--warm-white);
-    font-family: 'DM Sans', sans-serif; font-size: 0.73rem;
-    letter-spacing: 0.14em; text-transform: uppercase;
-    padding: 1rem 2.2rem; text-decoration: none; transition: background 0.25s;
-  }
-  .btn-primary:hover { background: var(--slate); }
-  .btn-ghost {
-    font-size: 0.73rem; letter-spacing: 0.14em; text-transform: uppercase;
-    color: var(--mist); text-decoration: none;
-    display: flex; align-items: center; gap: 0.5rem; transition: color 0.2s;
-  }
-  .btn-ghost::after { content: '→'; transition: transform 0.2s; }
-  .btn-ghost:hover { color: var(--charcoal); }
-  .btn-ghost:hover::after { transform: translateX(4px); }
-  .hero-right { position: relative; background: var(--ivory); overflow: hidden; }
-  .hero-placeholder {
-    width: 100%; height: 100%; min-height: 400px;
-    background: linear-gradient(160deg, #E8E0D0 0%, #D4C9B0 40%, #C4B898 100%);
-    display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1rem;
-  }
-  .hero-img-label {
-    font-size: 0.68rem; letter-spacing: 0.2em; text-transform: uppercase;
-    color: var(--slate); opacity: 0.45;
-  }
-  .hero-stat-bar {
-    position: absolute; bottom: 2rem; left: -2rem;
-    background: var(--warm-white); padding: 1.2rem 2rem;
-    display: flex; gap: 2.5rem;
-    border: 1px solid var(--border); box-shadow: 0 8px 40px rgba(0,0,0,0.08);
-  }
-  .hero-stat { text-align: center; }
-  .hero-stat-num {
-    font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; font-weight: 400;
-    color: var(--charcoal); display: block;
-  }
-  .hero-stat-label {
-    font-size: 0.63rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--mist);
-  }
+html { scroll-behavior: smooth; }
 
-  /* TAGLINE STRIP */
-  .tagline-strip { background: var(--charcoal); padding: 1.8rem 0; overflow: hidden; }
-  .tagline-scroll {
-    display: flex; gap: 4rem;
-    animation: scroll-left 22s linear infinite; white-space: nowrap;
-  }
-  .tagline-item {
-    font-family: 'Cormorant Garamond', serif; font-size: 1.05rem;
-    font-style: italic; color: var(--gold-light); opacity: 0.7; flex-shrink: 0;
-  }
-  .tagline-dot { color: var(--gold); opacity: 0.4; font-style: normal; }
-  @keyframes scroll-left {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-50%); }
-  }
+body {
+  font-family: 'Outfit', sans-serif;
+  background: var(--white);
+  color: var(--ink);
+  font-weight: 300;
+  line-height: 1.7;
+  overflow-x: hidden;
+}
 
-  /* SHARED */
-  .section-eyebrow {
-    font-size: 0.67rem; letter-spacing: 0.22em; text-transform: uppercase;
-    color: var(--gold); margin-bottom: 1.2rem; display: block;
-  }
-  .section-title {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(2rem, 3.5vw, 3rem); font-weight: 300; line-height: 1.15;
-    color: var(--charcoal); margin-bottom: 1.5rem;
-  }
-  .section-sub { font-size: 0.88rem; color: var(--mist); max-width: 480px; line-height: 1.95; }
+/* ── NAV ── */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 1.2rem 3.5rem;
+  background: rgba(254,252,249,0.92);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--border);
+}
+.nav-logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.25rem; font-weight: 500; letter-spacing: 0.01em;
+  color: var(--forest); text-decoration: none;
+}
+.nav-links { display: flex; gap: 2.5rem; list-style: none; }
+.nav-links a {
+  font-size: 0.75rem; font-weight: 400; letter-spacing: 0.14em;
+  text-transform: uppercase; color: var(--ink-mid);
+  text-decoration: none; transition: color 0.2s;
+}
+.nav-links a:hover { color: var(--amber); }
+.nav-cta {
+  font-size: 0.72rem; font-weight: 500; letter-spacing: 0.12em;
+  text-transform: uppercase; color: var(--white);
+  text-decoration: none; background: var(--forest);
+  padding: 0.6rem 1.5rem; transition: background 0.25s;
+}
+.nav-cta:hover { background: var(--forest-mid); }
 
-  /* SERVICES */
-  #services { background: var(--cream); padding: 7rem 5rem; }
-  .services-header {
-    display: grid; grid-template-columns: 1fr 1fr; gap: 4rem;
-    align-items: end; margin-bottom: 4rem;
-  }
-  .services-grid {
-    display: grid; grid-template-columns: repeat(3, 1fr);
-    gap: 1.5px; background: var(--border);
-  }
-  .service-card {
-    background: var(--warm-white); padding: 3rem 2.6rem;
-    position: relative; overflow: hidden; transition: background 0.3s;
-  }
-  .service-card:hover { background: var(--charcoal); }
-  .service-card:hover .service-num,
-  .service-card:hover .service-name,
-  .service-card:hover .service-desc,
-  .service-card:hover .service-price-tag { color: var(--warm-white); }
-  .service-card:hover .service-divider { background: var(--gold); }
-  .service-card:hover .service-link { color: var(--gold-light); }
-  .service-num {
-    font-family: 'Cormorant Garamond', serif; font-size: 0.82rem;
-    color: var(--gold); letter-spacing: 0.1em; margin-bottom: 1.5rem;
-    display: block; transition: color 0.3s;
-  }
-  .service-name {
-    font-family: 'Cormorant Garamond', serif; font-size: 1.75rem; font-weight: 400;
-    color: var(--charcoal); margin-bottom: 0.8rem; transition: color 0.3s;
-  }
-  .service-divider {
-    width: 30px; height: 1px; background: var(--gold);
-    margin-bottom: 1.2rem; transition: background 0.3s;
-  }
-  .service-desc {
-    font-size: 0.85rem; color: var(--mist); line-height: 1.9;
-    margin-bottom: 2rem; transition: color 0.3s;
-  }
-  .service-price-tag {
-    font-size: 0.75rem; letter-spacing: 0.08em; color: var(--slate); transition: color 0.3s;
-  }
-  .service-price-tag strong {
-    font-family: 'Cormorant Garamond', serif; font-size: 1.5rem;
-    font-weight: 400; margin-right: 0.2rem;
-  }
-  .service-link {
-    display: block; font-size: 0.68rem; letter-spacing: 0.16em; text-transform: uppercase;
-    color: var(--mist); text-decoration: none; margin-top: 1rem; transition: color 0.3s;
-  }
+/* ── HERO ── */
+.hero {
+  min-height: 100vh;
+  background: var(--forest);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding-top: 68px;
+  position: relative;
+  overflow: hidden;
+}
 
-  /* RE BANNER */
-  .re-banner {
-    background: var(--charcoal); margin: 3rem 0 0; padding: 2.5rem 3rem;
-    display: flex; align-items: center; justify-content: space-between; gap: 2rem; flex-wrap: wrap;
-  }
-  .re-banner-left { flex: 1; min-width: 200px; }
-  .re-banner-eyebrow {
-    font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase;
-    color: var(--gold-light); opacity: 0.7; display: block; margin-bottom: 0.5rem;
-  }
-  .re-banner-title {
-    font-family: 'Cormorant Garamond', serif; font-size: 1.6rem;
-    font-weight: 300; color: var(--warm-white); line-height: 1.2;
-  }
-  .re-banner-desc {
-    font-size: 0.82rem; color: rgba(253,251,248,0.42);
-    margin-top: 0.6rem; max-width: 440px; line-height: 1.85;
-  }
-  .re-banner-actions { display: flex; gap: 1rem; align-items: center; flex-wrap: wrap; }
-  .re-btn-call {
-    display: flex; align-items: center; gap: 0.6rem;
-    background: var(--gold); color: var(--charcoal);
-    font-family: 'DM Sans', sans-serif; font-size: 0.73rem; font-weight: 500;
-    letter-spacing: 0.1em; text-transform: uppercase;
-    padding: 0.85rem 1.6rem; text-decoration: none; transition: background 0.2s; white-space: nowrap;
-  }
-  .re-btn-call:hover { background: var(--gold-light); }
-  .re-btn-email {
-    font-size: 0.73rem; letter-spacing: 0.1em; text-transform: none;
-    color: rgba(253,251,248,0.5); text-decoration: none;
-    border: 1px solid rgba(255,255,255,0.15); padding: 0.85rem 1.6rem;
-    transition: all 0.2s; white-space: nowrap;
-  }
-  .re-btn-email:hover { border-color: var(--gold); color: var(--gold-light); }
+/* geometric accent */
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -120px; right: -120px;
+  width: 600px; height: 600px;
+  border: 1px solid rgba(200,148,58,0.15);
+  border-radius: 50%;
+  pointer-events: none;
+}
+.hero::after {
+  content: '';
+  position: absolute;
+  bottom: -80px; left: 20%;
+  width: 360px; height: 360px;
+  border: 1px solid rgba(200,148,58,0.08);
+  border-radius: 50%;
+  pointer-events: none;
+}
 
-  /* PHILOSOPHY */
-  #philosophy { display: grid; grid-template-columns: 1fr 1fr; padding: 0; min-height: 60vh; }
-  .philosophy-visual {
-    background: linear-gradient(170deg, #D4C9B0 0%, #C0B090 100%);
-    display: flex; align-items: center; justify-content: center;
-    position: relative; overflow: hidden; min-height: 55vh;
-  }
-  .philosophy-visual-inner { text-align: center; opacity: 0.2; }
-  .philosophy-quote {
-    position: absolute; bottom: 3rem; left: 3rem; right: 3rem;
-    font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; font-style: italic;
-    color: var(--charcoal); line-height: 1.55; opacity: 0.65;
-  }
-  .philosophy-content {
-    padding: 6rem 5rem; display: flex; flex-direction: column; justify-content: center;
-    background: var(--charcoal); color: var(--warm-white);
-  }
-  .philosophy-content .section-eyebrow { color: var(--gold-light); }
-  .philosophy-content .section-title { color: var(--warm-white); margin-bottom: 2rem; }
-  .philosophy-body {
-    font-size: 0.88rem; color: rgba(253,251,248,0.52);
-    line-height: 2; margin-bottom: 1.4rem; max-width: 400px;
-  }
+.hero-left {
+  display: flex; flex-direction: column; justify-content: center;
+  padding: 5rem 4rem 5rem 5rem;
+  position: relative; z-index: 1;
+}
 
-  /* PRICING */
-  #pricing { background: var(--cream); text-align: center; padding: 7rem 5rem; }
-  #pricing .section-sub { margin: 0 auto 4rem; text-align: center; }
-  .pricing-grid {
-    display: grid; grid-template-columns: repeat(3, 1fr);
-    gap: 1.5rem; max-width: 960px; margin: 0 auto;
-  }
-  .pricing-card {
-    background: var(--warm-white); padding: 2.8rem 2rem;
-    border: 1px solid var(--border); text-align: left; position: relative;
-    transition: transform 0.25s, box-shadow 0.25s;
-  }
-  .pricing-card:hover { transform: translateY(-6px); box-shadow: 0 20px 60px rgba(0,0,0,0.08); }
-  .pricing-card.featured { background: var(--charcoal); border-color: var(--charcoal); }
-  .featured-badge {
-    position: absolute; top: -1px; right: 1.5rem;
-    background: var(--gold); color: var(--charcoal);
-    font-size: 0.6rem; letter-spacing: 0.15em; text-transform: uppercase;
-    padding: 0.3rem 0.8rem; font-weight: 500;
-  }
-  .pricing-service {
-    font-size: 0.63rem; letter-spacing: 0.2em; text-transform: uppercase;
-    color: var(--gold); margin-bottom: 0.7rem; display: block;
-  }
-  .pricing-card.featured .pricing-service { color: var(--gold-light); }
-  .pricing-name {
-    font-family: 'Cormorant Garamond', serif; font-size: 1.3rem;
-    font-weight: 400; color: var(--charcoal); margin-bottom: 0.4rem;
-  }
-  .pricing-card.featured .pricing-name { color: var(--warm-white); }
-  .pricing-price {
-    font-family: 'Cormorant Garamond', serif; font-size: 2.8rem;
-    font-weight: 300; color: var(--charcoal); line-height: 1; margin: 1.1rem 0 0.3rem;
-  }
-  .pricing-card.featured .pricing-price { color: var(--warm-white); }
-  .pricing-price sup {
-    font-size: 1rem; vertical-align: super;
-    font-family: 'DM Sans', sans-serif; font-weight: 300;
-  }
-  .pricing-billing { font-size: 0.73rem; color: var(--mist); margin-bottom: 1.6rem; display: block; }
-  .pricing-card.featured .pricing-billing { color: rgba(253,251,248,0.4); }
-  .pricing-divider { width: 100%; height: 1px; background: var(--border); margin-bottom: 1.6rem; }
-  .pricing-card.featured .pricing-divider { background: rgba(255,255,255,0.12); }
-  .pricing-features { list-style: none; margin-bottom: 2rem; }
-  .pricing-features li {
-    font-size: 0.8rem; color: var(--mist); padding: 0.3rem 0;
-    display: flex; align-items: center; gap: 0.6rem;
-  }
-  .pricing-card.featured .pricing-features li { color: rgba(253,251,248,0.55); }
-  .pricing-features li::before {
-    content: ''; width: 4px; height: 4px; background: var(--gold);
-    border-radius: 50%; flex-shrink: 0;
-  }
-  .pricing-book {
-    display: block; width: 100%; text-align: center;
-    font-size: 0.7rem; letter-spacing: 0.14em; text-transform: uppercase;
-    padding: 0.85rem; text-decoration: none;
-    border: 1px solid var(--charcoal); color: var(--charcoal); transition: all 0.2s;
-  }
-  .pricing-book:hover { background: var(--charcoal); color: var(--warm-white); }
-  .pricing-card.featured .pricing-book {
-    background: var(--gold); border-color: var(--gold); color: var(--charcoal);
-  }
-  .pricing-card.featured .pricing-book:hover { background: var(--gold-light); border-color: var(--gold-light); }
-  .pricing-note { margin-top: 2.5rem; font-size: 0.78rem; color: var(--mist); font-style: italic; }
+.hero-eyebrow {
+  font-size: 0.68rem; font-weight: 500; letter-spacing: 0.25em;
+  text-transform: uppercase; color: var(--amber);
+  margin-bottom: 2rem; display: flex; align-items: center; gap: 0.8rem;
+}
+.hero-eyebrow::before {
+  content: '';
+  width: 28px; height: 1px; background: var(--amber);
+}
 
-  /* PROCESS */
-  #process { text-align: center; padding: 7rem 5rem; }
-  .process-steps {
-    display: grid; grid-template-columns: repeat(4, 1fr);
-    gap: 0; margin-top: 4rem; position: relative;
-  }
-  .process-steps::before {
-    content: ''; position: absolute;
-    top: 2rem; left: 12.5%; right: 12.5%;
-    height: 1px; background: var(--border-gold);
-  }
-  .process-step { padding: 0 2rem; text-align: center; }
-  .process-num {
-    width: 4rem; height: 4rem; border: 1px solid var(--gold); border-radius: 50%;
-    display: flex; align-items: center; justify-content: center;
-    margin: 0 auto 1.8rem; background: var(--warm-white); position: relative; z-index: 1;
-  }
-  .process-num span { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; color: var(--gold); }
-  .process-step-title {
-    font-family: 'Cormorant Garamond', serif; font-size: 1.1rem;
-    font-weight: 400; color: var(--charcoal); margin-bottom: 0.6rem;
-  }
-  .process-step-desc { font-size: 0.8rem; color: var(--mist); line-height: 1.85; }
+.hero-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(3rem, 5vw, 5.2rem);
+  font-weight: 700;
+  line-height: 1.04;
+  color: var(--white);
+  margin-bottom: 2rem;
+  letter-spacing: -0.01em;
+}
+.hero-title em {
+  font-style: italic;
+  font-weight: 400;
+  color: var(--amber-lt);
+}
 
-  /* CONTACT */
-  #contact {
-    background: var(--charcoal); padding: 7rem 5rem;
-    display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: start;
-  }
-  #contact .section-eyebrow { color: var(--gold-light); }
-  #contact .section-title { color: var(--warm-white); }
-  #contact .section-sub { color: rgba(253,251,248,0.45); max-width: 360px; }
-  .contact-details { margin-top: 2.5rem; display: flex; flex-direction: column; gap: 1.2rem; }
-  .contact-detail { display: flex; gap: 1rem; align-items: flex-start; }
-  .contact-detail-label {
-    font-size: 0.63rem; letter-spacing: 0.18em; text-transform: uppercase;
-    color: var(--gold); min-width: 80px; padding-top: 0.15rem;
-  }
-  .contact-detail-val { font-size: 0.87rem; color: rgba(253,251,248,0.6); }
-  .contact-detail-val a { color: rgba(253,251,248,0.6); text-decoration: none; transition: color 0.2s; }
-  .contact-detail-val a:hover { color: var(--gold-light); }
-  .contact-form { display: flex; flex-direction: column; gap: 1.2rem; }
-  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; }
-  .form-group { display: flex; flex-direction: column; gap: 0.5rem; }
-  .form-group label {
-    font-size: 0.63rem; letter-spacing: 0.16em; text-transform: uppercase;
-    color: rgba(253,251,248,0.35);
-  }
-  .form-group input,
-  .form-group select,
-  .form-group textarea {
-    background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.12);
-    color: var(--warm-white); font-family: 'DM Sans', sans-serif;
-    font-size: 0.87rem; font-weight: 300; padding: 0.85rem 1rem;
-    outline: none; transition: border-color 0.2s; -webkit-appearance: none;
-  }
-  .form-group select option { background: var(--charcoal); }
-  .form-group input:focus,
-  .form-group select:focus,
-  .form-group textarea:focus { border-color: var(--gold); }
-  .form-group textarea { resize: vertical; min-height: 120px; }
-  .form-submit {
-    background: var(--gold); border: none; color: var(--charcoal);
-    font-family: 'DM Sans', sans-serif; font-size: 0.73rem; font-weight: 500;
-    letter-spacing: 0.15em; text-transform: uppercase;
-    padding: 1.1rem 2.5rem; cursor: pointer; transition: background 0.2s; align-self: flex-start;
-  }
-  .form-submit:hover { background: var(--gold-light); }
+.hero-sub {
+  font-size: 0.95rem; font-weight: 300;
+  color: rgba(254,252,249,0.55);
+  max-width: 380px; margin-bottom: 3rem; line-height: 1.95;
+}
 
-  /* FOOTER */
-  footer {
-    background: #141412; padding: 2.5rem 5rem;
-    display: flex; align-items: center; justify-content: space-between;
-    border-top: 1px solid rgba(255,255,255,0.06);
-  }
-  .footer-logo {
-    font-family: 'Cormorant Garamond', serif; font-size: 1.05rem;
-    color: rgba(253,251,248,0.35); letter-spacing: 0.05em;
-  }
-  .footer-logo span { color: var(--gold); opacity: 0.6; }
-  .footer-copy { font-size: 0.7rem; color: rgba(253,251,248,0.22); letter-spacing: 0.05em; }
-  .footer-links { display: flex; gap: 2rem; list-style: none; }
-  .footer-links a {
-    font-size: 0.67rem; letter-spacing: 0.14em; text-transform: uppercase;
-    color: rgba(253,251,248,0.22); text-decoration: none; transition: color 0.2s;
-  }
-  .footer-links a:hover { color: var(--gold); }
+.hero-actions { display: flex; gap: 1rem; align-items: center; flex-wrap: wrap; }
 
-  /* REVEAL */
-  .reveal { opacity: 0; transform: translateY(22px); transition: opacity 0.7s ease, transform 0.7s ease; }
-  .reveal.visible { opacity: 1; transform: translateY(0); }
+.btn-amber {
+  background: var(--amber); color: var(--ink);
+  font-family: 'Outfit', sans-serif; font-size: 0.75rem; font-weight: 600;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  padding: 1rem 2.2rem; text-decoration: none; transition: background 0.25s;
+}
+.btn-amber:hover { background: var(--amber-lt); }
 
-  /* MOBILE */
-  @media (max-width: 900px) {
-    nav { padding: 1.2rem 1.5rem; }
-    .nav-links { display: none; }
-    .hero { grid-template-columns: 1fr; }
-    .hero-left { padding: 3rem 2rem; }
-    .hero-right { min-height: 50vw; }
-    #services { padding: 4rem 2rem; }
-    .services-header { grid-template-columns: 1fr; gap: 1.5rem; }
-    .services-grid { grid-template-columns: 1fr; }
-    .re-banner { padding: 2rem; flex-direction: column; align-items: flex-start; }
-    #philosophy { grid-template-columns: 1fr; }
-    .philosophy-content { padding: 3rem 2rem; }
-    .pricing-grid { grid-template-columns: 1fr; max-width: 420px; }
-    .process-steps { grid-template-columns: 1fr 1fr; }
-    .process-steps::before { display: none; }
-    #contact { grid-template-columns: 1fr; gap: 3rem; padding: 4rem 2rem; }
-    .form-row { grid-template-columns: 1fr; }
-    footer { flex-direction: column; gap: 1.5rem; text-align: center; padding: 2rem; }
-  }
-  @media (max-width: 600px) {
-    .hero-stat-bar { left: 1rem; right: 1rem; bottom: 1rem; }
-    #pricing, #process { padding: 4rem 2rem; }
-  }
+.btn-outline-light {
+  font-size: 0.75rem; font-weight: 400; letter-spacing: 0.12em;
+  text-transform: uppercase; color: rgba(254,252,249,0.55);
+  text-decoration: none;
+  border: 1px solid rgba(254,252,249,0.2);
+  padding: 1rem 1.8rem; transition: all 0.25s;
+}
+.btn-outline-light:hover { border-color: var(--amber); color: var(--amber-lt); }
+
+.hero-right {
+  display: flex; flex-direction: column; justify-content: center;
+  padding: 5rem 4rem 5rem 2rem;
+  position: relative; z-index: 1;
+}
+
+/* year countdown cards */
+.year-cards { display: flex; flex-direction: column; gap: 1rem; }
+
+.year-card {
+  border: 1px solid rgba(254,252,249,0.1);
+  padding: 1.6rem 2rem;
+  display: flex; align-items: center; justify-content: space-between;
+  transition: border-color 0.3s, background 0.3s;
+  cursor: default;
+}
+.year-card:hover {
+  border-color: var(--amber);
+  background: rgba(200,148,58,0.06);
+}
+.year-card.highlight {
+  border-color: var(--amber);
+  background: rgba(200,148,58,0.08);
+}
+
+.year-card-left { display: flex; align-items: baseline; gap: 1rem; }
+
+.year-num {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.4rem; font-weight: 400; font-style: italic;
+  color: var(--amber-lt); line-height: 1;
+}
+.year-label {
+  font-size: 0.8rem; font-weight: 400; letter-spacing: 0.05em;
+  color: rgba(254,252,249,0.5);
+}
+
+.year-tag {
+  font-size: 0.62rem; font-weight: 500; letter-spacing: 0.14em;
+  text-transform: uppercase; padding: 0.3rem 0.9rem;
+  border: 1px solid rgba(200,148,58,0.4); color: var(--amber-lt);
+}
+.year-card.highlight .year-tag {
+  background: var(--amber); border-color: var(--amber); color: var(--ink);
+}
+
+.hero-footnote {
+  margin-top: 2rem;
+  font-size: 0.72rem; font-weight: 300;
+  color: rgba(254,252,249,0.28); letter-spacing: 0.04em;
+}
+
+/* ── TAGLINE STRIP ── */
+.tagline-strip {
+  background: var(--amber); padding: 1.4rem 0; overflow: hidden;
+}
+.tagline-scroll {
+  display: flex; gap: 3rem;
+  animation: scroll-left 20s linear infinite; white-space: nowrap;
+}
+.tagline-item {
+  font-family: 'Playfair Display', serif;
+  font-size: 0.95rem; font-style: italic;
+  color: var(--forest); opacity: 0.8; flex-shrink: 0;
+}
+.tagline-dot { opacity: 0.4; font-style: normal; }
+@keyframes scroll-left {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* ── SHARED ── */
+.section-eyebrow {
+  font-size: 0.67rem; font-weight: 500; letter-spacing: 0.22em;
+  text-transform: uppercase; color: var(--amber);
+  margin-bottom: 1rem; display: flex; align-items: center; gap: 0.7rem;
+}
+.section-eyebrow::before {
+  content: ''; width: 20px; height: 1px; background: var(--amber);
+}
+.section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2rem, 3.5vw, 3rem);
+  font-weight: 700; line-height: 1.12;
+  color: var(--forest); margin-bottom: 1.2rem;
+  letter-spacing: -0.01em;
+}
+.section-sub {
+  font-size: 0.9rem; font-weight: 300;
+  color: var(--mist); max-width: 480px; line-height: 2;
+}
+
+/* ── GRAD FEATURE ── */
+#grad-feature {
+  background: var(--parchment);
+  padding: 8rem 5rem;
+}
+
+.grad-feature-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6rem;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.grad-feature-text {}
+
+.grad-tag {
+  display: inline-block;
+  background: var(--forest); color: var(--amber-pale);
+  font-size: 0.6rem; font-weight: 600; letter-spacing: 0.2em;
+  text-transform: uppercase; padding: 0.4rem 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.grad-feature-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.2rem, 4vw, 3.6rem);
+  font-weight: 700; line-height: 1.1;
+  color: var(--forest); margin-bottom: 1.5rem;
+}
+.grad-feature-title em {
+  font-style: italic; font-weight: 400; color: var(--amber);
+}
+
+.grad-feature-body {
+  font-size: 0.92rem; font-weight: 300;
+  color: var(--ink-mid); line-height: 2; margin-bottom: 2.5rem;
+  max-width: 420px;
+}
+
+.grad-stats {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 1.5rem; margin-bottom: 3rem;
+}
+.grad-stat {
+  border-left: 2px solid var(--amber);
+  padding-left: 1.2rem;
+}
+.grad-stat-num {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem; font-weight: 500; color: var(--forest); display: block; line-height: 1;
+}
+.grad-stat-label {
+  font-size: 0.75rem; font-weight: 400; color: var(--mist); margin-top: 0.2rem;
+}
+
+.grad-feature-right { display: flex; flex-direction: column; gap: 1.2rem; }
+
+.grad-perk {
+  background: var(--white);
+  padding: 1.6rem 1.8rem;
+  border: 1px solid var(--border);
+  display: flex; gap: 1.2rem; align-items: flex-start;
+  transition: border-color 0.25s, transform 0.25s;
+}
+.grad-perk:hover { border-color: var(--amber); transform: translateX(4px); }
+
+.grad-perk-icon {
+  width: 36px; height: 36px; flex-shrink: 0;
+  background: var(--forest); display: flex; align-items: center; justify-content: center;
+}
+.grad-perk-icon svg { width: 16px; height: 16px; }
+
+.grad-perk-title {
+  font-size: 0.88rem; font-weight: 600; color: var(--forest); margin-bottom: 0.25rem;
+}
+.grad-perk-desc {
+  font-size: 0.8rem; font-weight: 300; color: var(--mist); line-height: 1.7;
+}
+
+/* ── SERVICES (3 cards) ── */
+#services {
+  background: var(--white);
+  padding: 7rem 5rem;
+}
+.services-intro {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 4rem;
+  align-items: end; margin-bottom: 4rem;
+}
+.services-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem;
+}
+
+.service-card {
+  border: 1px solid var(--border);
+  padding: 2.8rem 2.4rem;
+  position: relative; overflow: hidden;
+  transition: border-color 0.3s, transform 0.3s;
+  background: var(--white);
+}
+.service-card:hover { border-color: var(--forest); transform: translateY(-4px); }
+.service-card.primary-card {
+  background: var(--forest); border-color: var(--forest);
+}
+
+.service-card-num {
+  font-family: 'Playfair Display', serif;
+  font-size: 0.8rem; font-style: italic; color: var(--sage);
+  margin-bottom: 1.5rem; display: block;
+}
+.service-card.primary-card .service-card-num { color: var(--amber); }
+
+.service-card-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem; font-weight: 500; color: var(--forest);
+  margin-bottom: 0.6rem;
+}
+.service-card.primary-card .service-card-name { color: var(--white); }
+
+.service-card-line {
+  width: 28px; height: 2px; background: var(--amber);
+  margin-bottom: 1.2rem;
+}
+
+.service-card-desc {
+  font-size: 0.84rem; font-weight: 300;
+  color: var(--mist); line-height: 1.9; margin-bottom: 2rem;
+}
+.service-card.primary-card .service-card-desc { color: rgba(254,252,249,0.5); }
+
+.service-card-price {
+  font-size: 0.75rem; font-weight: 400; color: var(--ink-mid);
+}
+.service-card.primary-card .service-card-price { color: rgba(254,252,249,0.6); }
+.service-card-price strong {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.6rem; font-weight: 500; margin-right: 0.2rem;
+  color: var(--forest);
+}
+.service-card.primary-card .service-card-price strong { color: var(--amber-lt); }
+
+.service-card-link {
+  display: block; margin-top: 1.2rem;
+  font-size: 0.68rem; font-weight: 500; letter-spacing: 0.14em;
+  text-transform: uppercase; color: var(--sage); text-decoration: none;
+  transition: color 0.2s;
+}
+.service-card:hover .service-card-link { color: var(--amber); }
+.service-card.primary-card .service-card-link { color: var(--amber); }
+
+/* RE banner */
+.re-banner {
+  background: var(--forest); margin: 2rem 0 0;
+  padding: 2.5rem 3rem;
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 2rem; flex-wrap: wrap;
+}
+.re-banner-left { flex: 1; min-width: 200px; }
+.re-banner-eyebrow {
+  font-size: 0.62rem; font-weight: 500; letter-spacing: 0.2em;
+  text-transform: uppercase; color: var(--sage-lt);
+  opacity: 0.7; display: block; margin-bottom: 0.4rem;
+}
+.re-banner-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem; font-weight: 500; color: var(--white); line-height: 1.2;
+}
+.re-banner-desc {
+  font-size: 0.82rem; font-weight: 300;
+  color: rgba(254,252,249,0.4); margin-top: 0.5rem;
+  max-width: 440px; line-height: 1.85;
+}
+.re-banner-actions { display: flex; gap: 1rem; align-items: center; flex-wrap: wrap; }
+.re-btn-call {
+  display: flex; align-items: center; gap: 0.6rem;
+  background: var(--amber); color: var(--ink);
+  font-family: 'Outfit', sans-serif; font-size: 0.73rem; font-weight: 600;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  padding: 0.85rem 1.6rem; text-decoration: none;
+  transition: background 0.2s; white-space: nowrap;
+}
+.re-btn-call:hover { background: var(--amber-lt); }
+.re-btn-email {
+  font-size: 0.73rem; font-weight: 300; color: rgba(254,252,249,0.45);
+  text-decoration: none; border: 1px solid rgba(255,255,255,0.15);
+  padding: 0.85rem 1.6rem; transition: all 0.2s; white-space: nowrap;
+}
+.re-btn-email:hover { border-color: var(--amber); color: var(--amber-lt); }
+
+/* ── PRICING ── */
+#pricing {
+  background: var(--parchment);
+  padding: 7rem 5rem; text-align: center;
+}
+#pricing .section-title { color: var(--forest); }
+#pricing .section-sub { margin: 0 auto 4rem; text-align: center; }
+
+.pricing-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem; max-width: 960px; margin: 0 auto;
+}
+
+.pricing-card {
+  background: var(--white);
+  padding: 2.8rem 2rem;
+  border: 1px solid var(--border);
+  text-align: left; position: relative;
+  transition: transform 0.25s, box-shadow 0.25s;
+}
+.pricing-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 16px 50px rgba(30,58,47,0.10);
+}
+.pricing-card.featured {
+  background: var(--forest); border-color: var(--forest);
+}
+.featured-badge {
+  position: absolute; top: -1px; right: 1.5rem;
+  background: var(--amber); color: var(--ink);
+  font-size: 0.58rem; font-weight: 600; letter-spacing: 0.15em;
+  text-transform: uppercase; padding: 0.28rem 0.8rem;
+}
+
+.pc-service {
+  font-size: 0.62rem; font-weight: 500; letter-spacing: 0.2em;
+  text-transform: uppercase; color: var(--sage); margin-bottom: 0.6rem; display: block;
+}
+.pricing-card.featured .pc-service { color: var(--amber); }
+
+.pc-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.2rem; font-weight: 500; color: var(--forest); margin-bottom: 0.4rem;
+}
+.pricing-card.featured .pc-name { color: var(--white); }
+
+.pc-price {
+  font-family: 'Playfair Display', serif;
+  font-size: 3rem; font-weight: 700; color: var(--forest);
+  line-height: 1; margin: 1rem 0 0.25rem;
+}
+.pricing-card.featured .pc-price { color: var(--amber-lt); }
+.pc-price sup {
+  font-size: 1.1rem; vertical-align: super;
+  font-family: 'Outfit', sans-serif; font-weight: 400;
+}
+
+.pc-billing {
+  font-size: 0.72rem; font-weight: 300; color: var(--mist);
+  margin-bottom: 1.6rem; display: block;
+}
+.pricing-card.featured .pc-billing { color: rgba(254,252,249,0.35); }
+
+.pc-divider {
+  width: 100%; height: 1px;
+  background: var(--border); margin-bottom: 1.5rem;
+}
+.pricing-card.featured .pc-divider { background: rgba(255,255,255,0.1); }
+
+.pc-features { list-style: none; margin-bottom: 2rem; }
+.pc-features li {
+  font-size: 0.8rem; font-weight: 300; color: var(--mist);
+  padding: 0.3rem 0; display: flex; align-items: center; gap: 0.6rem;
+}
+.pricing-card.featured .pc-features li { color: rgba(254,252,249,0.5); }
+.pc-features li::before {
+  content: ''; width: 4px; height: 4px;
+  background: var(--amber); border-radius: 50%; flex-shrink: 0;
+}
+
+.pc-book {
+  display: block; width: 100%; text-align: center;
+  font-size: 0.7rem; font-weight: 600; letter-spacing: 0.12em;
+  text-transform: uppercase; padding: 0.9rem;
+  text-decoration: none; border: 1px solid var(--forest);
+  color: var(--forest); transition: all 0.2s;
+}
+.pc-book:hover { background: var(--forest); color: var(--white); }
+.pricing-card.featured .pc-book {
+  background: var(--amber); border-color: var(--amber); color: var(--ink);
+}
+.pricing-card.featured .pc-book:hover { background: var(--amber-lt); border-color: var(--amber-lt); }
+
+.pricing-note {
+  margin-top: 2.5rem; font-size: 0.78rem; font-weight: 300;
+  color: var(--mist); font-style: italic;
+}
+
+/* ── PROCESS ── */
+#process {
+  background: var(--white);
+  padding: 7rem 5rem; text-align: center;
+}
+.process-steps {
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  gap: 0; margin-top: 4rem; position: relative;
+}
+.process-steps::before {
+  content: ''; position: absolute;
+  top: 2rem; left: 12.5%; right: 12.5%;
+  height: 1px; background: var(--border-amber);
+}
+.process-step { padding: 0 2rem; text-align: center; }
+.process-num {
+  width: 4rem; height: 4rem;
+  border: 1px solid var(--amber); border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  margin: 0 auto 1.8rem; background: var(--white);
+  position: relative; z-index: 1;
+}
+.process-num span {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.1rem; font-style: italic; color: var(--amber);
+}
+.process-step-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.05rem; font-weight: 500; color: var(--forest); margin-bottom: 0.6rem;
+}
+.process-step-desc {
+  font-size: 0.8rem; font-weight: 300; color: var(--mist); line-height: 1.85;
+}
+
+/* ── CONTACT ── */
+#contact {
+  background: var(--forest);
+  padding: 7rem 5rem;
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 6rem; align-items: start;
+}
+#contact .section-eyebrow { color: var(--amber); }
+#contact .section-eyebrow::before { background: var(--amber); }
+#contact .section-title { color: var(--white); }
+#contact .section-sub { color: rgba(254,252,249,0.4); max-width: 360px; }
+
+.contact-details { margin-top: 2.5rem; display: flex; flex-direction: column; gap: 1.2rem; }
+.contact-detail { display: flex; gap: 1rem; align-items: flex-start; }
+.contact-detail-label {
+  font-size: 0.62rem; font-weight: 500; letter-spacing: 0.18em;
+  text-transform: uppercase; color: var(--amber); min-width: 80px; padding-top: 0.1rem;
+}
+.contact-detail-val { font-size: 0.87rem; font-weight: 300; color: rgba(254,252,249,0.55); }
+.contact-detail-val a { color: rgba(254,252,249,0.55); text-decoration: none; transition: color 0.2s; }
+.contact-detail-val a:hover { color: var(--amber-lt); }
+
+.contact-form { display: flex; flex-direction: column; gap: 1.1rem; }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1.1rem; }
+.form-group { display: flex; flex-direction: column; gap: 0.4rem; }
+.form-group label {
+  font-size: 0.62rem; font-weight: 500; letter-spacing: 0.16em;
+  text-transform: uppercase; color: rgba(254,252,249,0.3);
+}
+.form-group input,
+.form-group select,
+.form-group textarea {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.12);
+  color: var(--white); font-family: 'Outfit', sans-serif;
+  font-size: 0.87rem; font-weight: 300; padding: 0.85rem 1rem;
+  outline: none; transition: border-color 0.2s; -webkit-appearance: none;
+}
+.form-group select option { background: var(--forest-mid); }
+.form-group input::placeholder,
+.form-group textarea::placeholder { color: rgba(255,255,255,0.2); }
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus { border-color: var(--amber); }
+.form-group textarea { resize: vertical; min-height: 110px; }
+
+.form-submit {
+  background: var(--amber); border: none; color: var(--ink);
+  font-family: 'Outfit', sans-serif; font-size: 0.73rem; font-weight: 600;
+  letter-spacing: 0.15em; text-transform: uppercase;
+  padding: 1.1rem 2.5rem; cursor: pointer;
+  transition: background 0.2s; align-self: flex-start;
+}
+.form-submit:hover { background: var(--amber-lt); }
+
+/* ── FOOTER ── */
+footer {
+  background: #111A15;
+  padding: 2.5rem 4rem;
+  display: flex; align-items: center; justify-content: space-between;
+  border-top: 1px solid rgba(255,255,255,0.06);
+}
+.footer-logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 1rem; font-style: italic; font-weight: 400;
+  color: rgba(254,252,249,0.3); letter-spacing: 0.02em;
+}
+.footer-copy { font-size: 0.68rem; font-weight: 300; color: rgba(254,252,249,0.2); }
+.footer-links { display: flex; gap: 2rem; list-style: none; }
+.footer-links a {
+  font-size: 0.66rem; font-weight: 400; letter-spacing: 0.14em;
+  text-transform: uppercase; color: rgba(254,252,249,0.2);
+  text-decoration: none; transition: color 0.2s;
+}
+.footer-links a:hover { color: var(--amber); }
+
+/* ── REVEAL ── */
+.reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.7s ease, transform 0.7s ease; }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+
+/* ── MOBILE ── */
+@media (max-width: 960px) {
+  nav { padding: 1.1rem 1.5rem; }
+  .nav-links { display: none; }
+  .hero { grid-template-columns: 1fr; }
+  .hero-left { padding: 3.5rem 2rem 2rem; }
+  .hero-right { padding: 2rem 2rem 3.5rem; }
+  .grad-feature-inner { grid-template-columns: 1fr; gap: 3rem; }
+  #grad-feature { padding: 5rem 2rem; }
+  #services { padding: 5rem 2rem; }
+  .services-intro { grid-template-columns: 1fr; gap: 1.5rem; }
+  .services-grid { grid-template-columns: 1fr; }
+  .re-banner { padding: 2rem; flex-direction: column; align-items: flex-start; }
+  .pricing-grid { grid-template-columns: 1fr; max-width: 400px; }
+  #pricing { padding: 5rem 2rem; }
+  .process-steps { grid-template-columns: 1fr 1fr; }
+  .process-steps::before { display: none; }
+  #process { padding: 5rem 2rem; }
+  #contact { grid-template-columns: 1fr; gap: 3rem; padding: 5rem 2rem; }
+  .form-row { grid-template-columns: 1fr; }
+  footer { flex-direction: column; gap: 1.5rem; text-align: center; padding: 2rem; }
+}
+@media (max-width: 600px) {
+  .grad-stats { grid-template-columns: 1fr; }
+  .process-steps { grid-template-columns: 1fr; }
+  .year-cards { gap: 0.75rem; }
+}
 </style>
 </head>
 <body>
 
 <!-- NAV -->
 <nav>
-  <a href="#" class="nav-logo">Harbourview Media<span>.</span></a>
+  <a href="#" class="nav-logo">Harbourview Media</a>
   <ul class="nav-links">
+    <li><a href="#grad-feature">Grad Photos</a></li>
     <li><a href="#services">Services</a></li>
     <li><a href="#pricing">Pricing</a></li>
-    <li><a href="#process">How It Works</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
   <a href="#contact" class="nav-cta">Book a Session</a>
@@ -460,125 +699,202 @@
 <!-- HERO -->
 <section class="hero">
   <div class="hero-left">
-    <span class="hero-eyebrow">Harbourview Media — Vancouver, BC</span>
+    <span class="hero-eyebrow">Vancouver Graduation Photography</span>
     <h1 class="hero-title">
-      Where moments<br/>
-      become <em>something</em><br/>
-      worth keeping
+      Your grad photos<br/>
+      should feel like<br/>
+      <em>the real thing</em>
     </h1>
     <p class="hero-sub">
-      Graduation portraits, professional headshots, and family sessions — captured with intention, delivered with care, at a price that makes sense.
+      You worked for this. Four years of early mornings, late nights, and everything in between. Let's make sure the photos actually show it — not just a pose, but a moment.
     </p>
     <div class="hero-actions">
-      <a href="#pricing" class="btn-primary">View Pricing</a>
-      <a href="#contact" class="btn-ghost">Get in touch</a>
+      <a href="#pricing" class="btn-amber">See Packages</a>
+      <a href="#contact" class="btn-outline-light">Get in touch</a>
     </div>
   </div>
+
   <div class="hero-right">
-    <div class="hero-placeholder">
-      <svg width="64" height="64" viewBox="0 0 64 64" fill="none" style="opacity:0.25">
-        <rect x="4" y="18" width="56" height="38" rx="4" stroke="#3D3D38" stroke-width="2"/>
-        <circle cx="32" cy="37" r="12" stroke="#3D3D38" stroke-width="2"/>
-        <circle cx="32" cy="37" r="6" stroke="#3D3D38" stroke-width="1.5"/>
-        <rect x="20" y="10" width="14" height="8" rx="2" stroke="#3D3D38" stroke-width="1.5"/>
-        <circle cx="52" cy="26" r="3" fill="#3D3D38"/>
-      </svg>
-      <span class="hero-img-label">Your portfolio here</span>
+    <div class="year-cards">
+      <div class="year-card">
+        <div class="year-card-left">
+          <span class="year-num">'27</span>
+          <span class="year-label">Class of 2027 — now booking</span>
+        </div>
+        <span class="year-tag">Open</span>
+      </div>
+      <div class="year-card highlight">
+        <div class="year-card-left">
+          <span class="year-num">'28</span>
+          <span class="year-label">Class of 2028 — early bird slots</span>
+        </div>
+        <span class="year-tag">Book Early</span>
+      </div>
+      <div class="year-card">
+        <div class="year-card-left">
+          <span class="year-num">'29</span>
+          <span class="year-label">Class of 2029 — taking inquiries</span>
+        </div>
+        <span class="year-tag">Inquire</span>
+      </div>
+      <div class="year-card">
+        <div class="year-card-left">
+          <span class="year-num">'30</span>
+          <span class="year-label">Class of 2030 — get on the list</span>
+        </div>
+        <span class="year-tag">Inquire</span>
+      </div>
     </div>
-    <div class="hero-stat-bar">
-      <div class="hero-stat">
-        <span class="hero-stat-num">3</span>
-        <span class="hero-stat-label">Core services</span>
+    <p class="hero-footnote">High school & university — Metro Vancouver & Lower Mainland</p>
+  </div>
+</section>
+
+<!-- TAGLINE STRIP -->
+<div class="tagline-strip">
+  <div class="tagline-scroll">
+    <span class="tagline-item">Class of 2027</span>
+    <span class="tagline-item tagline-dot">·</span>
+    <span class="tagline-item">Class of 2028</span>
+    <span class="tagline-item tagline-dot">·</span>
+    <span class="tagline-item">Class of 2029</span>
+    <span class="tagline-item tagline-dot">·</span>
+    <span class="tagline-item">Class of 2030</span>
+    <span class="tagline-item tagline-dot">·</span>
+    <span class="tagline-item">Vancouver Grad Photography</span>
+    <span class="tagline-item tagline-dot">·</span>
+    <span class="tagline-item">High School & University</span>
+    <span class="tagline-item tagline-dot">·</span>
+    <span class="tagline-item">Class of 2027</span>
+    <span class="tagline-item tagline-dot">·</span>
+    <span class="tagline-item">Class of 2028</span>
+    <span class="tagline-item tagline-dot">·</span>
+    <span class="tagline-item">Class of 2029</span>
+    <span class="tagline-item tagline-dot">·</span>
+    <span class="tagline-item">Class of 2030</span>
+    <span class="tagline-item tagline-dot">·</span>
+    <span class="tagline-item">Vancouver Grad Photography</span>
+    <span class="tagline-item tagline-dot">·</span>
+    <span class="tagline-item">High School & University</span>
+    <span class="tagline-item tagline-dot">·</span>
+  </div>
+</div>
+
+<!-- GRAD FEATURE SECTION -->
+<section id="grad-feature">
+  <div class="grad-feature-inner">
+    <div class="grad-feature-text reveal">
+      <span class="grad-tag">Our Specialty</span>
+      <h2 class="grad-feature-title">
+        Grad photos that<br/>
+        don't look like<br/>
+        <em>everyone else's</em>
+      </h2>
+      <p class="grad-feature-body">
+        Most grad photos look the same — same park, same pose, same forced smile. We do it differently. We find the locations that match who you actually are, and we shoot until the moment feels real. Because that's the one you'll actually want framed.
+      </p>
+      <p class="grad-feature-body">
+        Whether you're finishing high school or wrapping up university, we've got packages built for both. And we're already booking Classes of 2027 through 2030 — the earlier you lock in, the more flexibility you get on dates and locations.
+      </p>
+      <a href="#pricing" class="btn-amber" style="display:inline-block; margin-top: 0.5rem;">View Grad Packages</a>
+    </div>
+
+    <div class="grad-feature-right reveal">
+      <div class="grad-perk">
+        <div class="grad-perk-icon">
+          <svg viewBox="0 0 16 16" fill="none" stroke="#C8943A" stroke-width="1.4">
+            <circle cx="8" cy="6" r="3"/><path d="M2 14c0-3.3 2.7-6 6-6s6 2.7 6 6"/>
+          </svg>
+        </div>
+        <div>
+          <div class="grad-perk-title">Fully directed sessions</div>
+          <div class="grad-perk-desc">You don't need to know how to pose. Sean guides every shot so you look natural, not stiff.</div>
+        </div>
       </div>
-      <div class="hero-stat">
-        <span class="hero-stat-num">24h</span>
-        <span class="hero-stat-label">Preview delivery</span>
+
+      <div class="grad-perk">
+        <div class="grad-perk-icon">
+          <svg viewBox="0 0 16 16" fill="none" stroke="#C8943A" stroke-width="1.4">
+            <rect x="2" y="2" width="12" height="12" rx="2"/><path d="M5 8h6M8 5v6"/>
+          </svg>
+        </div>
+        <div>
+          <div class="grad-perk-title">Multiple looks per session</div>
+          <div class="grad-perk-desc">Cap & gown, casual, dressed up — your package includes outfit changes so you have options.</div>
+        </div>
       </div>
-      <div class="hero-stat">
-        <span class="hero-stat-num">YVR</span>
-        <span class="hero-stat-label">Based locally</span>
+
+      <div class="grad-perk">
+        <div class="grad-perk-icon">
+          <svg viewBox="0 0 16 16" fill="none" stroke="#C8943A" stroke-width="1.4">
+            <path d="M8 2L9.8 6.6l4.8.4-3.6 3.1 1.1 4.7L8 13.2l-4.1 2.6 1.1-4.7L1.4 7l4.8-.4z"/>
+          </svg>
+        </div>
+        <div>
+          <div class="grad-perk-title">Vancouver's best backdrops</div>
+          <div class="grad-perk-desc">Mountains, forests, waterfront, or urban — we know the spots that make Vancouver shine.</div>
+        </div>
+      </div>
+
+      <div class="grad-perk">
+        <div class="grad-perk-icon">
+          <svg viewBox="0 0 16 16" fill="none" stroke="#C8943A" stroke-width="1.4">
+            <rect x="2" y="4" width="12" height="10" rx="1.5"/><path d="M5 4V3a3 3 0 016 0v1"/>
+          </svg>
+        </div>
+        <div>
+          <div class="grad-perk-title">Private online gallery</div>
+          <div class="grad-perk-desc">All edited images delivered in a shareable gallery — easy to download, print, or post.</div>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- TAGLINE SCROLL -->
-<div class="tagline-strip">
-  <div class="tagline-scroll">
-    <span class="tagline-item">Graduation Portraits</span>
-    <span class="tagline-item tagline-dot">·</span>
-    <span class="tagline-item">Professional Headshots</span>
-    <span class="tagline-item tagline-dot">·</span>
-    <span class="tagline-item">Family Sessions</span>
-    <span class="tagline-item tagline-dot">·</span>
-    <span class="tagline-item">Vancouver & Lower Mainland</span>
-    <span class="tagline-item tagline-dot">·</span>
-    <span class="tagline-item">Real Estate Photography</span>
-    <span class="tagline-item tagline-dot">·</span>
-    <span class="tagline-item">Graduation Portraits</span>
-    <span class="tagline-item tagline-dot">·</span>
-    <span class="tagline-item">Professional Headshots</span>
-    <span class="tagline-item tagline-dot">·</span>
-    <span class="tagline-item">Family Sessions</span>
-    <span class="tagline-item tagline-dot">·</span>
-    <span class="tagline-item">Vancouver & Lower Mainland</span>
-    <span class="tagline-item tagline-dot">·</span>
-    <span class="tagline-item">Real Estate Photography</span>
-    <span class="tagline-item tagline-dot">·</span>
-  </div>
-</div>
-
 <!-- SERVICES -->
 <section id="services">
-  <div class="services-header reveal">
+  <div class="services-intro reveal">
     <div>
-      <span class="section-eyebrow">What we offer</span>
-      <h2 class="section-title">Three services.<br/>One photographer. All heart.</h2>
+      <span class="section-eyebrow">All services</span>
+      <h2 class="section-title">Grads are our thing — but we do more</h2>
     </div>
-    <p class="section-sub">
-      Every session is relaxed, personal, and guided from start to finish. You don't need to know how to pose — that's Sean's job. You just need to show up.
-    </p>
+    <p class="section-sub">Alongside grad photography, we offer headshots and family sessions for anyone who wants photos that actually feel like them.</p>
   </div>
 
   <div class="services-grid">
-    <div class="service-card reveal">
-      <span class="service-num">01</span>
-      <h3 class="service-name">Graduation Portraits</h3>
-      <div class="service-divider"></div>
-      <p class="service-desc">
-        Four years of work deserves more than a phone photo. We capture the pride, the relief, and the version of you that earned it — in Vancouver's best outdoor settings.
-      </p>
-      <span class="service-price-tag">Starting at <strong>$99</strong></span>
-      <a href="#pricing" class="service-link">View packages →</a>
+    <div class="service-card primary-card reveal">
+      <span class="service-card-num">01 — Featured</span>
+      <h3 class="service-card-name">Graduation Portraits</h3>
+      <div class="service-card-line"></div>
+      <p class="service-card-desc">Our main event. High school and university grad packages designed to capture who you are at this exact moment — styled, real, and worth keeping forever.</p>
+      <div class="service-card-price">Starting at <strong>$99</strong></div>
+      <a href="#pricing" class="service-card-link">View packages →</a>
     </div>
-    <div class="service-card reveal">
-      <span class="service-num">02</span>
-      <h3 class="service-name">Professional Headshots</h3>
-      <div class="service-divider"></div>
-      <p class="service-desc">
-        LinkedIn, your company bio, your portfolio. A great headshot speaks before you do. We make sure it says exactly the right thing — confident, real, and you.
-      </p>
-      <span class="service-price-tag">Starting at <strong>$89</strong></span>
-      <a href="#pricing" class="service-link">View packages →</a>
+
+    <div class="service-card reveal reveal-delay-1">
+      <span class="service-card-num">02</span>
+      <h3 class="service-card-name">Professional Headshots</h3>
+      <div class="service-card-line"></div>
+      <p class="service-card-desc">LinkedIn, your resume, your company bio — a clean, confident headshot that makes the right first impression before you even say a word.</p>
+      <div class="service-card-price">Starting at <strong>$79</strong></div>
+      <a href="#pricing" class="service-card-link">View packages →</a>
     </div>
-    <div class="service-card reveal">
-      <span class="service-num">03</span>
-      <h3 class="service-name">Family Sessions</h3>
-      <div class="service-divider"></div>
-      <p class="service-desc">
-        The chaos, the laughing, the in-between glances — that's the stuff worth keeping. We photograph your family as they actually are: beautiful and completely real.
-      </p>
-      <span class="service-price-tag">Starting at <strong>$149</strong></span>
-      <a href="#pricing" class="service-link">View packages →</a>
+
+    <div class="service-card reveal reveal-delay-2">
+      <span class="service-card-num">03</span>
+      <h3 class="service-card-name">Family Sessions</h3>
+      <div class="service-card-line"></div>
+      <p class="service-card-desc">The laughs, the chaos, the in-between glances — we photograph your family as they actually are. Beautiful and completely real.</p>
+      <div class="service-card-price">Starting at <strong>$129</strong></div>
+      <a href="#pricing" class="service-card-link">View packages →</a>
     </div>
   </div>
 
-  <!-- RE BANNER -->
+  <!-- RE banner -->
   <div class="re-banner reveal">
     <div class="re-banner-left">
       <span class="re-banner-eyebrow">Also available</span>
       <h3 class="re-banner-title">Real Estate Photography</h3>
-      <p class="re-banner-desc">Interior and exterior coverage, HDR processing, and MLS-ready files — ideal for agents and homeowners who want listings that stop the scroll. Pricing varies by property size. Reach out for a custom quote.</p>
+      <p class="re-banner-desc">Interior and exterior coverage, HDR processing, MLS-ready files. Pricing varies by property size — reach out for a custom quote.</p>
     </div>
     <div class="re-banner-actions">
       <a href="tel:2365092933" class="re-btn-call">
@@ -590,67 +906,40 @@
   </div>
 </section>
 
-<!-- PHILOSOPHY -->
-<section id="philosophy">
-  <div class="philosophy-visual">
-    <div class="philosophy-visual-inner">
-      <svg width="80" height="80" viewBox="0 0 80 80" fill="none">
-        <circle cx="40" cy="40" r="38" stroke="#3D3D38" stroke-width="1"/>
-        <circle cx="40" cy="40" r="28" stroke="#3D3D38" stroke-width="0.5"/>
-        <circle cx="40" cy="40" r="8" fill="#3D3D38"/>
-      </svg>
-    </div>
-    <blockquote class="philosophy-quote">
-      "We don't photograph things.<br/>We photograph the feeling of being in them."
-    </blockquote>
-  </div>
-  <div class="philosophy-content reveal">
-    <span class="section-eyebrow">Our approach</span>
-    <h2 class="section-title">We sell the mood, not the megapixels</h2>
-    <p class="philosophy-body">
-      Most photographers hand you a folder of sharp images. We hand you something you'll still want on your wall in twenty years. The difference is in how we see — light, timing, and the quiet energy between people.
-    </p>
-    <p class="philosophy-body">
-      Harbourview Media is new, and we're honest about that. What we bring is full attention, genuine care, and a real excitement for the craft — you get someone who's completely present for your session, not just going through the motions.
-    </p>
-    <p class="philosophy-body">
-      And we price fairly — because remarkable photography shouldn't only be available to people with remarkable budgets.
-    </p>
-  </div>
-</section>
-
 <!-- PRICING -->
 <section id="pricing">
-  <span class="section-eyebrow reveal">Transparent pricing</span>
+  <span class="section-eyebrow reveal" style="justify-content:center;">Transparent pricing</span>
   <h2 class="section-title reveal">Clear packages. No surprises.</h2>
-  <p class="section-sub reveal">Honest prices for honest work. Everything's included — no hidden editing fees, no upsells at the end.</p>
+  <p class="section-sub reveal">Everything included — no hidden fees, no upsells at the end.</p>
 
   <div class="pricing-grid">
-    <div class="pricing-card reveal">
-      <span class="pricing-service">Graduation</span>
-      <h3 class="pricing-name">The Milestone</h3>
-      <div class="pricing-price"><sup>$</sup>99</div>
-      <span class="pricing-billing">+ applicable taxes</span>
-      <div class="pricing-divider"></div>
-      <ul class="pricing-features">
+    <!-- Grad — FEATURED -->
+    <div class="pricing-card featured reveal">
+      <div class="featured-badge">Our specialty</div>
+      <span class="pc-service">Graduation</span>
+      <h3 class="pc-name">The Grad Session</h3>
+      <div class="pc-price"><sup>$</sup>99</div>
+      <span class="pc-billing">+ applicable taxes</span>
+      <div class="pc-divider"></div>
+      <ul class="pc-features">
         <li>60-minute outdoor session</li>
-        <li>1–2 locations in Vancouver</li>
+        <li>1–2 Vancouver locations</li>
         <li>Cap & gown + casual looks</li>
         <li>10 fully edited digital images</li>
         <li>Online gallery — 60 days</li>
         <li>Print-ready files included</li>
       </ul>
-      <a href="#contact" class="pricing-book">Book This</a>
+      <a href="#contact" class="pc-book">Book This</a>
     </div>
 
-    <div class="pricing-card featured reveal">
-      <div class="featured-badge">Most popular</div>
-      <span class="pricing-service">Headshots</span>
-      <h3 class="pricing-name">The First Impression</h3>
-      <div class="pricing-price"><sup>$</sup>89</div>
-      <span class="pricing-billing">+ applicable taxes</span>
-      <div class="pricing-divider"></div>
-      <ul class="pricing-features">
+    <!-- Headshots -->
+    <div class="pricing-card reveal reveal-delay-1">
+      <span class="pc-service">Headshots</span>
+      <h3 class="pc-name">The First Impression</h3>
+      <div class="pc-price"><sup>$</sup>79</div>
+      <span class="pc-billing">+ applicable taxes</span>
+      <div class="pc-divider"></div>
+      <ul class="pc-features">
         <li>45-minute outdoor session</li>
         <li>2 outfit looks</li>
         <li>Relaxed posing guidance</li>
@@ -658,16 +947,17 @@
         <li>LinkedIn & web-ready files</li>
         <li>48-hour turnaround</li>
       </ul>
-      <a href="#contact" class="pricing-book">Book This</a>
+      <a href="#contact" class="pc-book">Book This</a>
     </div>
 
-    <div class="pricing-card reveal">
-      <span class="pricing-service">Family</span>
-      <h3 class="pricing-name">The Full Picture</h3>
-      <div class="pricing-price"><sup>$</sup>149</div>
-      <span class="pricing-billing">up to 5 people</span>
-      <div class="pricing-divider"></div>
-      <ul class="pricing-features">
+    <!-- Family -->
+    <div class="pricing-card reveal reveal-delay-2">
+      <span class="pc-service">Family</span>
+      <h3 class="pc-name">The Full Picture</h3>
+      <div class="pc-price"><sup>$</sup>129</div>
+      <span class="pc-billing">up to 5 people</span>
+      <div class="pc-divider"></div>
+      <ul class="pc-features">
         <li>75-minute location session</li>
         <li>Families up to 5 people</li>
         <li>Natural, relaxed direction</li>
@@ -675,36 +965,37 @@
         <li>Online gallery — 90 days</li>
         <li>Print-ready files included</li>
       </ul>
-      <a href="#contact" class="pricing-book">Book This</a>
+      <a href="#contact" class="pc-book">Book This</a>
     </div>
   </div>
-  <p class="pricing-note reveal">Larger families, extra time, or add-ons? Just ask — happy to put something together that works for you.</p>
+
+  <p class="pricing-note reveal">Larger groups, extra time, or add-ons? Just ask — happy to build something that works for you.</p>
 </section>
 
 <!-- PROCESS -->
 <section id="process">
-  <span class="section-eyebrow reveal">How it works</span>
-  <h2 class="section-title reveal">Simple from start to gallery</h2>
+  <span class="section-eyebrow reveal" style="justify-content:center;">How it works</span>
+  <h2 class="section-title reveal">Simple from first message to final gallery</h2>
   <div class="process-steps">
     <div class="process-step reveal">
-      <div class="process-num"><span>01</span></div>
+      <div class="process-num"><span>1</span></div>
       <h3 class="process-step-title">Reach Out</h3>
-      <p class="process-step-desc">Drop a message or give Sean a call. Tell us what you need, when you're free, and what you'd love to capture.</p>
+      <p class="process-step-desc">Message or call Sean. Tell him what you need, your grad year, and when works for you.</p>
     </div>
-    <div class="process-step reveal">
-      <div class="process-num"><span>02</span></div>
-      <h3 class="process-step-title">We Plan Together</h3>
-      <p class="process-step-desc">A quick chat to lock in location, timing, what to wear, and any details that matter to you.</p>
+    <div class="process-step reveal reveal-delay-1">
+      <div class="process-num"><span>2</span></div>
+      <h3 class="process-step-title">Plan Together</h3>
+      <p class="process-step-desc">Quick chat to lock in date, locations, outfits, and any details that matter to you.</p>
     </div>
-    <div class="process-step reveal">
-      <div class="process-num"><span>03</span></div>
+    <div class="process-step reveal reveal-delay-2">
+      <div class="process-num"><span>3</span></div>
       <h3 class="process-step-title">The Session</h3>
-      <p class="process-step-desc">Sean handles all the direction. You just show up and be yourself — relaxed, guided, no awkward guessing.</p>
+      <p class="process-step-desc">Sean handles all direction. You just show up — relaxed, guided, no awkward guessing.</p>
     </div>
-    <div class="process-step reveal">
-      <div class="process-num"><span>04</span></div>
+    <div class="process-step reveal reveal-delay-3">
+      <div class="process-num"><span>4</span></div>
       <h3 class="process-step-title">Your Gallery</h3>
-      <p class="process-step-desc">Edited images in a private online gallery within 5–7 business days. Download, share, print — they're yours.</p>
+      <p class="process-step-desc">Edited images in a private gallery within 5–7 days. Download, share, print — all yours.</p>
     </div>
   </div>
 </section>
@@ -713,7 +1004,7 @@
 <section id="contact">
   <div class="reveal">
     <span class="section-eyebrow">Get in touch</span>
-    <h2 class="section-title">Let's make<br/>something beautiful</h2>
+    <h2 class="section-title">Let's make something you'll actually be proud of</h2>
     <p class="section-sub">Fill out the form or reach out directly. Sean personally handles every enquiry.</p>
     <div class="contact-details">
       <div class="contact-detail">
@@ -734,6 +1025,7 @@
       </div>
     </div>
   </div>
+
   <form class="contact-form reveal" onsubmit="handleSubmit(event)">
     <div class="form-row">
       <div class="form-group">
@@ -753,16 +1045,19 @@
       <label for="service">I'm interested in</label>
       <select id="service">
         <option value="">Select a service...</option>
-        <option>Graduation Portraits — $99</option>
-        <option>Professional Headshots — $89</option>
-        <option>Family Session — $149</option>
+        <option>Graduation Portraits — Class of 2027</option>
+        <option>Graduation Portraits — Class of 2028</option>
+        <option>Graduation Portraits — Class of 2029</option>
+        <option>Graduation Portraits — Class of 2030</option>
+        <option>Professional Headshots — $79</option>
+        <option>Family Session — $129</option>
         <option>Real Estate Photography — quote</option>
         <option>Something else</option>
       </select>
     </div>
     <div class="form-group">
       <label for="message">Tell me about your session</label>
-      <textarea id="message" placeholder="Dates, location ideas, how many people, any special requests..."></textarea>
+      <textarea id="message" placeholder="Grad year, school, location ideas, dates that work for you..."></textarea>
     </div>
     <button type="submit" class="form-submit">Send Message</button>
   </form>
@@ -770,8 +1065,9 @@
 
 <!-- FOOTER -->
 <footer>
-  <span class="footer-logo">Harbourview Media<span>.</span></span>
+  <span class="footer-logo">Harbourview Media</span>
   <ul class="footer-links">
+    <li><a href="#grad-feature">Grad Photos</a></li>
     <li><a href="#services">Services</a></li>
     <li><a href="#pricing">Pricing</a></li>
     <li><a href="#contact">Contact</a></li>
@@ -781,18 +1077,16 @@
 
 <script>
   const reveals = document.querySelectorAll('.reveal');
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) entry.target.classList.add('visible');
-    });
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
   }, { threshold: 0.08 });
-  reveals.forEach(el => observer.observe(el));
+  reveals.forEach(el => io.observe(el));
 
   function handleSubmit(e) {
     e.preventDefault();
     const btn = e.target.querySelector('.form-submit');
     btn.textContent = "Sent — Sean will be in touch soon!";
-    btn.style.background = '#3D3D38';
+    btn.style.background = '#2C5240';
     btn.disabled = true;
   }
 </script>
