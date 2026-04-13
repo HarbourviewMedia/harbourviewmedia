@@ -1,480 +1,102 @@
+<!DOCTYPE html>
 <html lang="en-CA">
 <head>
-<meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Harbourview Media | Vancouver Grad & Portrait Photography</title>
-<meta name="description" content="Vancouver grad photos, portraits &amp; family sessions starting at $99. Natural style, fast delivery, Lower Mainland coverage. Book online today."/>
-  <meta name="robots" content="index, follow"/>
-  <meta name="author" content="Harbourview Media"/>
-  <link rel="canonical" href="https://harbourviewmedia.ca"/>
-  <link rel="sitemap" type="application/xml" href="https://harbourviewmedia.ca/sitemap.xml"/>
-  <meta property="og:title" content="Harbourview Media | Vancouver Grad &amp; Portrait Photography"/>
-  <meta property="og:description" content="Vancouver grad photos, portraits &amp; family sessions starting at $99. Natural style, fast delivery. Book online today."/>
-  <meta property="og:url" content="https://harbourviewmedia.ca"/>
-  <meta property="og:type" content="website"/>
-  <meta property="og:locale" content="en_CA"/>
-  <meta name="twitter:card" content="summary"/>
-  <meta name="twitter:title" content="Harbourview Media | Vancouver Grad &amp; Portrait Photography"/>
-  <meta name="twitter:description" content="Vancouver grad photos, portraits &amp; family sessions starting at $99. Book online today."/>
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "name": "Harbourview Media",
-    "description": "Vancouver-based photography team specializing in grad sessions, portraits, family photography and real estate across the Lower Mainland.",
-    "url": "https://harbourviewmedia.ca",
-    "telephone": "+12365092933",
-    "email": "sean@harbourviewmedia.ca",
-    "priceRange": "$$",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Vancouver",
-      "addressRegion": "BC",
-      "addressCountry": "CA"
-    },
-    "geo": {
-      "@type": "GeoCoordinates",
-      "latitude": 49.2827,
-      "longitude": -123.1207
-    },
-    "areaServed": ["Vancouver","West Vancouver","North Vancouver","Burnaby","Richmond","Surrey","Lower Mainland"],
-    "serviceType": ["Graduation Photography","Portrait Photography","Family Photography","Real Estate Photography"],
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": "5.0",
-      "reviewCount": "1"
-    }
-  }
-  </script>
-<link rel="preconnect" href="https://fonts.googleapis.com"/>
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,700;0,9..144,900;1,9..144,300;1,9..144,700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
-<style>
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Harbourview Media | Vancouver Grad & Portrait Photography</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,700;0,9..144,900;1,9..144,300&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 
-:root{
-  --sand:#faf6f0;
-  --sand2:#f3ede4;
-  --sand3:#e8dfd3;
-  --rust:#c45c2e;
-  --rust-lt:#e07a4a;
-  --rust-pale:#fdeee7;
-  --forest:#1e3a2f;
-  --forest-lt:#2d5241;
-  --sage:#7aab8a;
-  --sage-lt:#b8d4c0;
-  --ink:#1a1612;
-  --mid:#6b5f54;
-  --muted:#a89d94;
-  --white:#ffffff;
-  --serif:'Fraunces',Georgia,serif;
-  --sans:'Inter',system-ui,sans-serif;
-  --max:1120px;
-  --r:16px;
-}
+    <style>
+        :root {
+            --sand: #faf6f0;
+            --rust: #c45c2e;
+            --ink: #1a1612;
+            --white: #ffffff;
+            --serif: 'Fraunces', Georgia, serif;
+            --sans: 'Inter', system-ui, sans-serif;
+            --max-w: 1120px;
+        }
 
-html{scroll-behavior:smooth}
-body{background:var(--sand);color:var(--ink);font-family:var(--sans);font-weight:300;font-size:16px;line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { background: var(--sand); color: var(--ink); font-family: var(--sans); line-height: 1.6; }
 
-/* ── CUSTOM CURSOR ── */
-.cur{position:fixed;width:12px;height:12px;background:var(--rust);border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:width .15s,height .15s,background .15s}
-.cur-r{position:fixed;width:40px;height:40px;border:1.5px solid rgba(196,92,46,.35);border-radius:50%;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);transition:width .2s,height .2s}
-.cur.big{width:20px;height:20px;background:var(--rust-lt)}
-.cur-r.big{width:60px;height:60px}
+        /* Nav */
+        .header-nav { position: fixed; top: 0; left: 0; right: 0; padding: 1.5rem 3rem; display: flex; justify-content: space-between; align-items: center; z-index: 1000; background: rgba(250, 246, 240, 0.9); backdrop-filter: blur(10px); border-bottom: 1px solid rgba(0,0,0,0.05); }
+        .brand { font-family: var(--serif); font-weight: 700; font-size: 1.2rem; text-decoration: none; color: var(--ink); }
+        .nav-links { display: flex; gap: 2rem; list-style: none; }
+        .nav-links a { text-decoration: none; color: var(--ink); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em; }
+        .cta-btn { background: var(--ink); color: var(--white); padding: 0.6rem 1.2rem; border-radius: 50px; text-decoration: none; font-size: 0.8rem; }
 
-/* ── WORDMARK ── */
-.wm{display:inline-flex;flex-direction:column;align-items:center;text-decoration:none;line-height:1;gap:0}
-.wm-t{font-family:var(--sans);font-size:0.65rem;font-weight:600;letter-spacing:0.22em;text-transform:uppercase;color:inherit;padding-bottom:0.26rem}
-.wm-ln{width:100%;height:1px;background:var(--rust);display:block}
-.wm-b{font-family:var(--sans);font-size:0.65rem;font-weight:600;letter-spacing:0.22em;text-transform:uppercase;color:inherit;padding-top:0.26rem}
+        /* Hero */
+        .hero { padding: 140px 0 80px; min-height: 80vh; display: flex; align-items: center; }
+        .container { max-width: var(--max-w); margin: 0 auto; padding: 0 2rem; }
+        .hero-container { display: grid; grid-template-columns: 1.2fr 1fr; gap: 4rem; align-items: center; }
+        .trust-pill { display: inline-flex; align-items: center; gap: 0.5rem; background: rgba(196, 92, 46, 0.1); color: var(--rust); padding: 0.5rem 1rem; border-radius: 100px; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; margin-bottom: 2rem; }
+        h1 { font-family: var(--serif); font-size: clamp(2.5rem, 5vw, 4rem); line-height: 1.1; margin-bottom: 1.5rem; font-weight: 900; }
+        .accent { color: var(--rust); font-style: italic; font-weight: 300; }
+        .primary-btn { display: inline-block; background: var(--ink); color: var(--white); padding: 1.2rem 2.5rem; border-radius: 8px; text-decoration: none; font-weight: 600; }
+        
+        /* Sections */
+        section { padding: 80px 0; }
+        h2 { font-family: var(--serif); font-size: 2.5rem; margin-bottom: 3rem; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+        .card { background: var(--white); padding: 2rem; border-radius: 20px; border: 1px solid rgba(0,0,0,0.05); }
+        
+        /* Form */
+        .fg { display: flex; flex-direction: column; gap: 0.5rem; margin-bottom: 1rem; }
+        input, textarea { padding: 1rem; border: 1px solid #ddd; border-radius: 8px; width: 100%; }
+        button { background: var(--rust); color: white; padding: 1rem; border: none; border-radius: 8px; cursor: pointer; }
 
-/* ── NAV ── */
-nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:center;justify-content:space-between;padding:1.2rem clamp(1.5rem,5vw,3rem);transition:background .3s,box-shadow .3s}
-nav.scrolled{background:rgba(250,246,240,.94);backdrop-filter:blur(16px);box-shadow:0 1px 0 var(--sand3)}
-nav .wm{color:var(--ink)}
-.nav-links{display:flex;gap:2.5rem;list-style:none}
-.nav-links a{font-size:0.75rem;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;color:var(--mid);text-decoration:none;transition:color .2s}
-.nav-links a:hover{color:var(--ink)}
-.nav-cta{display:inline-flex;align-items:center;gap:.5rem;font-size:0.75rem;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;color:var(--white);background:var(--rust);padding:.7rem 1.4rem;border-radius:100px;text-decoration:none;transition:background .2s,transform .15s}
-.nav-cta:hover{background:var(--forest);transform:scale(1.03)}
-
-/* ── HERO ── */
-#hero{min-height:100svh;display:grid;grid-template-rows:1fr auto;padding-top:72px;position:relative;overflow:hidden;background:var(--sand)}
-
-/* Grain texture overlay */
-#hero::before{content:'';position:absolute;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g)' opacity='0.06'/%3E%3C/svg%3E");pointer-events:none;z-index:1}
-
-/* Large decorative circle */
-.hero-ring{position:absolute;width:700px;height:700px;border-radius:50%;border:1px solid rgba(196,92,46,.1);right:-200px;top:50%;transform:translateY(-50%);pointer-events:none;z-index:1}
-.hero-ring::before{content:'';position:absolute;inset:60px;border-radius:50%;border:1px solid rgba(196,92,46,.07)}
-.hero-ring::after{content:'';position:absolute;inset:140px;border-radius:50%;background:radial-gradient(circle,rgba(196,92,46,.05) 0%,transparent 70%)}
-
-/* Floating badge */
-.hero-badge{position:absolute;top:clamp(90px,14vh,130px);right:clamp(1.5rem,6vw,5rem);background:var(--white);border-radius:20px;padding:1.1rem 1.5rem;box-shadow:0 8px 40px rgba(30,58,47,.1);z-index:3;animation:floatBadge 5s ease-in-out infinite}
-@keyframes floatBadge{0%,100%{transform:translateY(0) rotate(-1deg)}50%{transform:translateY(-10px) rotate(1deg)}}
-.badge-stars{color:var(--rust);font-size:.75rem;letter-spacing:.1em;margin-bottom:.25rem}
-.badge-main{font-family:var(--sans);font-size:.85rem;font-weight:600;color:var(--ink)}
-.badge-sub{font-size:.68rem;color:var(--muted);margin-top:.1rem}
-
-/* Available pill */
-.hero-pill{display:inline-flex;align-items:center;gap:.5rem;background:var(--rust-pale);border:1px solid rgba(196,92,46,.2);border-radius:100px;padding:.35rem .9rem;font-size:.68rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--rust);margin-bottom:1.8rem;animation:fadeUp .8s ease both}
-.pill-dot{width:7px;height:7px;background:var(--rust);border-radius:50%;animation:blink 2s ease infinite}
-@keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
-
-.hero-inner{position:relative;z-index:2;padding:clamp(2.5rem,5vw,4.5rem) clamp(1.5rem,5vw,3rem);max-width:var(--max);margin:0 auto;width:100%;align-self:end}
-
-/* BIG asymmetric headline */
-.hero-h1{font-family:var(--serif);font-size:clamp(4rem,11vw,9.5rem);font-weight:900;line-height:.92;letter-spacing:-.03em;color:var(--ink);margin-bottom:2.2rem;animation:fadeUp .85s .08s ease both}
-.hero-h1 .serif-italic{font-style:italic;font-weight:300;color:var(--rust)}
-.hero-h1 .outline-text{-webkit-text-stroke:2px var(--ink);color:transparent}
-
-.hero-row{display:flex;align-items:flex-end;justify-content:space-between;gap:2rem;flex-wrap:wrap;animation:fadeUp .85s .2s ease both}
-.hero-desc{font-size:1rem;color:var(--mid);max-width:400px;line-height:1.8}
-.hero-desc strong{color:var(--ink);font-weight:500}
-.hero-btns{display:flex;gap:.9rem;flex-wrap:wrap;flex-shrink:0}
-
-.btn-rust{display:inline-flex;align-items:center;gap:.55rem;font-size:.82rem;font-weight:600;letter-spacing:.04em;color:var(--white);background:var(--rust);padding:1rem 2rem;border-radius:100px;text-decoration:none;transition:background .2s,transform .15s,box-shadow .2s}
-.btn-rust:hover{background:var(--forest);transform:translateY(-2px);box-shadow:0 10px 28px rgba(30,58,47,.2)}
-.btn-rust svg{transition:transform .2s}
-.btn-rust:hover svg{transform:translateX(3px)}
-
-.btn-ink{display:inline-flex;align-items:center;gap:.55rem;font-size:.82rem;font-weight:600;letter-spacing:.04em;color:var(--ink);background:transparent;padding:1rem 1.6rem;border-radius:100px;text-decoration:none;border:2px solid var(--ink);transition:background .2s,color .2s}
-.btn-ink:hover{background:var(--ink);color:var(--white)}
-
-/* Hero bottom stats — diagonal stripe accent */
-.hero-stats{position:relative;z-index:2;background:var(--forest);padding:0 clamp(1.5rem,5vw,3rem);margin:0;width:100%;display:grid;grid-template-columns:repeat(4,1fr);overflow:hidden;animation:fadeUp .85s .35s ease both}
-.hero-stats::before{content:'';position:absolute;right:0;top:0;bottom:0;width:300px;background:var(--rust);clip-path:polygon(60px 0,100% 0,100% 100%,0 100%)}
-.h-stat{padding:1.8rem 1.5rem;border-right:1px solid rgba(255,255,255,.1);position:relative;z-index:1}
-.h-stat:first-child{padding-left:clamp(1.5rem,5vw,3rem)}
-.h-stat:last-child{border-right:none}
-.h-num{font-family:var(--serif);font-size:2.2rem;font-weight:700;color:var(--white);letter-spacing:-.02em;line-height:1}
-.h-num em{font-style:normal;color:var(--sage-lt);font-size:1.1rem}
-.h-lbl{font-size:.68rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.45);margin-top:.3rem}
-
-/* ── MARQUEE ── */
-#marquee{padding:1.2rem 0;background:var(--sand2);border-top:1px solid var(--sand3);border-bottom:1px solid var(--sand3);overflow:hidden}
-.mq-track{display:flex;gap:2rem;animation:marquee 22s linear infinite;white-space:nowrap;width:max-content}
-.mq-item{display:inline-flex;align-items:center;gap:.6rem;font-size:.72rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);flex-shrink:0}
-.mq-item strong{color:var(--ink)}
-.mq-sep{width:5px;height:5px;background:var(--rust);border-radius:50%;opacity:.5}
-@keyframes marquee{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
-
-/* ── SECTION COMMONS ── */
-section{padding:clamp(5rem,9vw,8rem) 0}
-.container{max-width:var(--max);margin:0 auto;padding:0 clamp(1.5rem,5vw,3rem)}
-.s-kicker{display:inline-flex;align-items:center;gap:.5rem;font-size:.68rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--rust);margin-bottom:.8rem}
-.s-kicker::before{content:'';width:20px;height:2px;background:var(--rust)}
-.s-title{font-family:var(--serif);font-size:clamp(2rem,4.5vw,3.4rem);font-weight:700;line-height:1.08;letter-spacing:-.02em;color:var(--ink);margin-bottom:3rem}
-.s-title em{font-style:italic;font-weight:300;color:var(--muted)}
-
-/* ── SERVICES ── */
-#services{background:var(--sand)}
-.svc-layout{display:grid;grid-template-columns:1.1fr 1fr;grid-template-rows:auto auto;gap:1.2rem}
-
-.svc{background:var(--white);border-radius:var(--r);padding:2.5rem;border:1px solid var(--sand3);transition:transform .25s,box-shadow .25s;position:relative;overflow:hidden}
-.svc::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:var(--rust);transform:scaleX(0);transform-origin:left;transition:transform .35s ease}
-.svc:hover{transform:translateY(-5px);box-shadow:0 20px 50px rgba(26,22,18,.08)}
-.svc:hover::after{transform:scaleX(1)}
-.svc.tall{grid-row:span 2;display:flex;flex-direction:column;justify-content:space-between;background:var(--forest)}
-.svc.tall *:not(.svc-cta){color:rgba(255,255,255,.85) !important}
-.svc.tall::after{background:var(--rust-lt)}
-.svc.tall h3{color:var(--white) !important;font-size:1.8rem}
-
-.svc-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:1.5rem}
-.svc-tag{font-size:.62rem;font-weight:600;letter-spacing:.15em;text-transform:uppercase;background:var(--rust-pale);color:var(--rust);padding:.3rem .75rem;border-radius:100px}
-.svc.tall .svc-tag{background:rgba(255,255,255,.12);color:rgba(255,255,255,.7)}
-.svc-n{font-family:var(--serif);font-size:1rem;font-weight:700;color:var(--sand3);font-style:italic}
-.svc.tall .svc-n{color:rgba(255,255,255,.15)}
-
-.svc h3{font-family:var(--serif);font-size:1.4rem;font-weight:700;color:var(--ink);margin-bottom:.6rem;letter-spacing:-.01em}
-.svc p{font-size:.875rem;color:var(--mid);line-height:1.75;margin-bottom:1.8rem}
-.svc-foot{display:flex;align-items:flex-end;justify-content:space-between;margin-top:auto}
-.svc-price{font-family:var(--serif);font-size:2.4rem;font-weight:700;color:var(--ink);letter-spacing:-.02em;line-height:1}
-.svc-dur{font-size:.7rem;color:var(--muted);margin-top:.2rem}
-.svc-cta{display:inline-flex;align-items:center;justify-content:center;width:46px;height:46px;border-radius:50%;background:var(--rust);color:var(--white);flex-shrink:0;transition:background .2s,transform .2s}
-.svc:hover .svc-cta{background:var(--forest);transform:rotate(-45deg) scale(1.1)}
-.svc.tall .svc-cta{background:var(--white);color:var(--rust)}
-.svc.tall:hover .svc-cta{background:var(--rust);color:var(--white)}
-
-/* RE mention card */
-.re-strip{background:var(--sand2);border:1px solid var(--sand3);border-radius:var(--r);padding:1.5rem 2rem;display:flex;align-items:center;justify-content:space-between;gap:1.5rem;margin-top:1.2rem;flex-wrap:wrap}
-.re-strip p{font-size:.85rem;color:var(--mid)}
-.re-strip strong{color:var(--ink);font-weight:600}
-.re-link{display:inline-flex;align-items:center;gap:.4rem;font-size:.75rem;font-weight:600;letter-spacing:.05em;color:var(--rust);text-decoration:none;border-bottom:1px solid rgba(196,92,46,.3);padding-bottom:1px;transition:border-color .2s}
-.re-link:hover{border-color:var(--rust)}
-
-/* ── PROCESS ── */
-#process{background:var(--sand2)}
-.process-row{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:3rem}
-.proc{background:var(--white);border-radius:var(--r);padding:2.5rem 2rem;border:1px solid var(--sand3);position:relative;overflow:hidden}
-.proc-num{font-family:var(--serif);font-size:5rem;font-weight:900;color:var(--sand3);line-height:1;position:absolute;top:1rem;right:1.5rem;font-style:italic}
-.proc h3{font-size:.95rem;font-weight:600;color:var(--ink);margin-bottom:.6rem;position:relative;z-index:1}
-.proc p{font-size:.85rem;color:var(--mid);line-height:1.75;position:relative;z-index:1}
-.proc-icon{font-size:1.6rem;margin-bottom:1.2rem;display:block}
-
-/* ── PRICING ── */
-#pricing{background:var(--forest);position:relative;overflow:hidden}
-#pricing::before{content:'';position:absolute;width:600px;height:600px;border-radius:50%;border:1px solid rgba(255,255,255,.04);top:-200px;right:-200px}
-#pricing::after{content:'';position:absolute;width:400px;height:400px;border-radius:50%;border:1px solid rgba(255,255,255,.03);bottom:-100px;left:-100px}
-#pricing .s-kicker{color:var(--sage-lt)}
-#pricing .s-kicker::before{background:var(--sage-lt)}
-#pricing .s-title{color:var(--white)}
-#pricing .s-title em{color:rgba(255,255,255,.3)}
-
-.p-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;position:relative;z-index:1}
-.p-card{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:var(--r);padding:2.5rem 2rem;transition:background .25s,transform .25s,border-color .25s;position:relative}
-.p-card:hover{background:rgba(255,255,255,.1);transform:translateY(-4px);border-color:rgba(255,255,255,.2)}
-.p-card.hot{background:var(--rust);border-color:var(--rust)}
-.p-card.hot:hover{background:var(--rust-lt);border-color:var(--rust-lt)}
-.p-badge{position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:var(--white);color:var(--rust);font-size:.62rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:.3rem .9rem;border-radius:100px;white-space:nowrap}
-.p-svc{font-size:.62rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.45);margin-bottom:.4rem}
-.p-name{font-family:var(--serif);font-size:1.2rem;font-weight:700;color:var(--white);margin-bottom:1.2rem}
-.p-price{font-family:var(--serif);font-size:3.2rem;font-weight:900;color:var(--white);line-height:1;letter-spacing:-.03em;margin-bottom:.25rem}
-.p-price sup{font-size:1.2rem;font-weight:600;vertical-align:super}
-.p-meta{font-size:.72rem;color:rgba(255,255,255,.45);margin-bottom:1.5rem}
-.p-divider{height:1px;background:rgba(255,255,255,.1);margin-bottom:1.5rem}
-.p-card.hot .p-divider{background:rgba(255,255,255,.25)}
-.p-feats{list-style:none;display:flex;flex-direction:column;gap:.6rem;margin-bottom:2rem}
-.p-feats li{font-size:.82rem;color:rgba(255,255,255,.65);display:flex;gap:.6rem;align-items:flex-start}
-.p-feats li::before{content:'✓';color:var(--sage-lt);font-weight:700;flex-shrink:0}
-.p-card.hot .p-feats li::before{color:rgba(255,255,255,.8)}
-.p-btn{display:block;text-align:center;font-size:.75rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--white);background:rgba(255,255,255,.12);border:1.5px solid rgba(255,255,255,.2);padding:.9rem;border-radius:100px;text-decoration:none;transition:background .2s,border-color .2s}
-.p-btn:hover{background:rgba(255,255,255,.22);border-color:rgba(255,255,255,.4)}
-.p-card.hot .p-btn{background:var(--white);border-color:var(--white);color:var(--rust);font-weight:700}
-.p-card.hot .p-btn:hover{background:var(--sand);border-color:var(--sand)}
-.p-footnote{text-align:center;font-size:.78rem;color:rgba(255,255,255,.35);margin-top:2rem;position:relative;z-index:1}
-.p-footnote a{color:var(--sage-lt);text-decoration:none}
-
-/* ── TESTIMONIAL ── */
-#testimonial{background:var(--sand)}
-.test-layout{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center}
-.test-left{background:var(--rust);border-radius:24px;padding:3.5rem 3rem;position:relative;overflow:hidden}
-.test-left::before{content:'\201C';font-family:var(--serif);font-size:12rem;font-weight:900;color:rgba(255,255,255,.1);position:absolute;top:-2rem;left:1rem;line-height:1}
-.test-stars{color:var(--white);font-size:.9rem;letter-spacing:.15em;margin-bottom:1.5rem;position:relative;z-index:1}
-.test-q{font-family:var(--serif);font-size:clamp(1.2rem,2.5vw,1.7rem);font-weight:300;font-style:italic;color:var(--white);line-height:1.45;margin-bottom:1.5rem;position:relative;z-index:1}
-.test-auth{font-size:.72rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.6);position:relative;z-index:1}
-
-.trust-list{display:flex;flex-direction:column;gap:1rem}
-.trust-item{display:flex;align-items:center;gap:1.2rem;background:var(--white);border:1px solid var(--sand3);border-radius:14px;padding:1.2rem 1.4rem;transition:border-color .2s,transform .2s}
-.trust-item:hover{border-color:var(--rust);transform:translateX(4px)}
-.t-icon{width:42px;height:42px;border-radius:12px;background:var(--rust-pale);display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0}
-.t-text strong{display:block;font-size:.85rem;font-weight:600;color:var(--ink)}
-.t-text span{font-size:.75rem;color:var(--muted)}
-
-/* ── CTA BAND ── */
-#cta{background:var(--sand2);border-top:1px solid var(--sand3);border-bottom:1px solid var(--sand3)}
-.cta-inner{display:flex;align-items:center;justify-content:space-between;gap:3rem;flex-wrap:wrap}
-.cta-text h2{font-family:var(--serif);font-size:clamp(1.8rem,4vw,3rem);font-weight:700;color:var(--ink);line-height:1.1;letter-spacing:-.02em}
-.cta-text h2 em{font-style:italic;font-weight:300;color:var(--rust)}
-.cta-text p{font-size:.9rem;color:var(--mid);margin-top:.6rem}
-.cta-actions{display:flex;gap:1rem;flex-wrap:wrap;flex-shrink:0}
-
-/* ── CONTACT ── */
-#contact{background:var(--sand)}
-.contact-layout{display:grid;grid-template-columns:1fr 1.5fr;gap:5rem;align-items:start}
-.c-info h2{font-family:var(--serif);font-size:clamp(1.8rem,3.5vw,2.6rem);font-weight:700;color:var(--ink);line-height:1.15;letter-spacing:-.02em;margin-bottom:.8rem}
-.c-info h2 em{font-style:italic;font-weight:300;color:var(--rust)}
-.c-info>p{font-size:.88rem;color:var(--mid);line-height:1.8;margin-bottom:2.5rem}
-.c-row{display:flex;flex-direction:column;gap:.25rem;margin-bottom:1.3rem}
-.c-lbl{font-size:.62rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--rust)}
-.c-val{font-size:.9rem;color:var(--ink)}
-.c-val a{color:var(--ink);text-decoration:none;transition:color .2s}
-.c-val a:hover{color:var(--rust)}
-
-.form-card{background:var(--white);border-radius:20px;padding:2.5rem;border:1px solid var(--sand3);box-shadow:0 8px 40px rgba(26,22,18,.05)}
-.fg-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1rem}
-.fg{display:flex;flex-direction:column;gap:.4rem}
-.fg.span2{grid-column:1/-1}
-.fg label{font-size:.62rem;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--muted)}
-.fg input,.fg select,.fg textarea{background:var(--sand);border:1.5px solid var(--sand3);color:var(--ink);font-family:var(--sans);font-size:.88rem;font-weight:400;padding:.85rem 1rem;width:100%;outline:none;border-radius:10px;transition:border-color .2s,background .2s;appearance:none}
-.fg input:focus,.fg select:focus,.fg textarea:focus{border-color:var(--rust);background:var(--white)}
-.fg textarea{resize:vertical;min-height:100px}
-.f-submit{width:100%;font-family:var(--sans);font-size:.82rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--white);background:var(--rust);border:none;padding:1.1rem;border-radius:100px;cursor:pointer;transition:background .2s,transform .15s;margin-top:.5rem;display:flex;align-items:center;justify-content:center;gap:.6rem}
-.f-submit:hover{background:var(--forest);transform:translateY(-1px)}
-
-/* ── FOOTER ── */
-footer{background:var(--ink);padding:2rem clamp(1.5rem,5vw,3rem)}
-.foot-inner{max-width:var(--max);margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem}
-footer .wm{color:rgba(250,246,240,.4)}
-.foot-links{display:flex;gap:2rem;list-style:none}
-.foot-links a{font-size:.68rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:rgba(250,246,240,.25);text-decoration:none;transition:color .2s}
-.foot-links a:hover{color:rgba(250,246,240,.7)}
-.foot-copy{font-size:.68rem;color:rgba(250,246,240,.18)}
-
-/* ── ANIMATION ── */
-@keyframes fadeUp{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}
-.reveal{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s ease}
-.reveal.in{opacity:1;transform:none}
-.reveal-delay{transition-delay:.12s}
-.reveal-delay2{transition-delay:.22s}
-
-/* ── RESPONSIVE ── */
-@media(max-width:980px){
-  .svc-layout{grid-template-columns:1fr;.svc.tall{grid-row:span 1}}
-  .p-grid{grid-template-columns:1fr}
-  .test-layout{grid-template-columns:1fr}
-  .contact-layout{grid-template-columns:1fr;gap:3rem}
-  .process-row{grid-template-columns:1fr}
-  .cta-inner{flex-direction:column}
-  .hero-stats{grid-template-columns:1fr 1fr}
-  .h-stat:nth-child(2){border-right:none}
-  .h-stat:nth-child(3){border-right:none}
-  .hero-badge{display:none}
-}
-@media(max-width:640px){
-  .nav-links{display:none}
-  .p-grid{grid-template-columns:1fr}
-  .fg-grid{grid-template-columns:1fr}
-  .hero-stats{grid-template-columns:1fr 1fr}
-  .hero-stats::before{display:none}
-  .h-stat{border-right:none;border-bottom:1px solid rgba(255,255,255,.1)}
-}
-
-/* ── ABOUT ── */
-#about{background:var(--sand2);border-top:1px solid var(--sand3)}
-.about-layout{display:grid;grid-template-columns:1.1fr 1fr;gap:5rem;align-items:center}
-.about-left p{font-size:.95rem;color:var(--mid);line-height:1.85;margin-bottom:1.2rem}
-.about-left p strong{color:var(--ink);font-weight:600}
-.about-stats{display:flex;gap:2.5rem;margin-top:2.5rem;flex-wrap:wrap}
-.a-stat{}
-.a-stat-num{font-family:var(--serif);font-size:2.2rem;font-weight:700;color:var(--rust);letter-spacing:-.02em;line-height:1}
-.a-stat-lbl{font-size:.68rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-top:.2rem}
-
-.team-grid{display:flex;flex-direction:column;gap:1rem}
-.team-card{background:var(--white);border:1px solid var(--sand3);border-radius:16px;padding:1.6rem 1.8rem;display:flex;align-items:flex-start;gap:1.4rem;transition:border-color .2s,transform .2s}
-.team-card:hover{border-color:var(--rust);transform:translateX(4px)}
-.team-avatar{width:6px;height:auto;align-self:stretch;border-radius:4px;background:var(--rust);flex-shrink:0}
-.team-avatar.forest{background:var(--forest)}
-.team-avatar.rust2{background:var(--rust-lt)}
-.team-info{flex:1}
-.team-info strong{display:block;font-size:.92rem;font-weight:600;color:var(--ink);margin-bottom:.15rem}
-.team-info .role-tag{font-size:.62rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--rust);margin-bottom:.5rem;display:block}
-.team-info p{font-size:.78rem;color:var(--mid);line-height:1.65}
-.team-role{display:none}
-
-/* ── FAQ ── */
-#faq{background:var(--sand)}
-.faq-layout{display:grid;grid-template-columns:1fr 1.6fr;gap:5rem;align-items:start}
-.faq-list{display:flex;flex-direction:column;gap:.8rem}
-.faq-item{background:var(--white);border:1px solid var(--sand3);border-radius:14px;overflow:hidden;transition:border-color .2s}
-.faq-item.open{border-color:var(--rust)}
-.faq-q{display:flex;align-items:center;justify-content:space-between;padding:1.3rem 1.5rem;cursor:pointer;gap:1rem;user-select:none}
-.faq-q span{font-size:.92rem;font-weight:500;color:var(--ink);line-height:1.4}
-.faq-icon{width:28px;height:28px;border-radius:50%;background:var(--sand2);display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:background .2s,transform .2s;color:var(--mid);font-size:1rem;font-weight:300}
-.faq-item.open .faq-icon{background:var(--rust);color:var(--white);transform:rotate(45deg)}
-.faq-a{max-height:0;overflow:hidden;transition:max-height .35s ease,padding .2s ease}
-.faq-a-inner{padding:0 1.5rem 1.3rem;font-size:.875rem;color:var(--mid);line-height:1.8}
-.faq-item.open .faq-a{max-height:200px}
-
-
-</style>
+        @media (max-width: 768px) { .hero-container { grid-template-columns: 1fr; text-align: center; } }
+    </style>
 </head>
 <body>
 
-<div class="cur" id="cur"></div>
-<div class="cur-r" id="curR"></div>
+    <header class="header-nav">
+        <a href="/" class="brand">Harbourview Media</a>
+        <nav><ul class="nav-links"><li><a href="#services">Services</a></li><li><a href="#pricing">Pricing</a></li><li><a href="#contact">Contact</a></li></ul></nav>
+        <a href="#contact" class="cta-btn">Book Now</a>
+    </header>
 
-<!-- NAV -->
-<nav id="nav">
-  <a class="wm" href="#"><span class="wm-t">Harbourview</span><span class="wm-ln"></span><span class="wm-b">Media</span></a>
-  <ul class="nav-links">
-    <li><a href="#about">About</a></li>
-    <li><a href="#about">About</a></li>
-      <li><a href="#services">Services</a></li>
-    <li><a href="#pricing">Pricing</a></li>
-    <li><a href="#faq">FAQ</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ul>
-  <a class="nav-cta" href="#contact">Book Now →</a>
-</nav>
+    <main>
+        <section class="hero">
+            <div class="container hero-container">
+                <div class="hero-content">
+                    <div class="trust-pill">★ 5.0 Google Rating in Vancouver</div>
+                    <h1>Premium Photography for <span class="accent">Your Best Self.</span></h1>
+                    <p>Grad portraits, headshots, and family sessions. Experience-first photography.</p>
+                    <a href="#contact" class="primary-btn" style="margin-top:2rem;">Book Your Session</a>
+                </div>
+                <div class="hero-visual" style="background:#ddd; aspect-ratio:4/5; border-radius:20px;"></div>
+            </div>
+        </section>
 
-<!-- HERO -->
-<section id="hero">
-  <div class="hero-ring"></div>
-  <div class="hero-badge">
-    <div class="badge-stars">★★★★★</div>
-    <div class="badge-main">5.0 Verified Rating</div>
-    <div class="badge-sub">Google Reviews</div>
-  </div>
-  <div class="hero-inner">
-    <div class="hero-pill"><span class="pill-dot"></span> Now booking Spring & Summer 2026</div>
-    <h1 class="hero-h1">
-      Photos<br>
-      <span class="serif-italic">you'll love.</span><br>
-      <span class="outline-text">Guaranteed.</span>
-    </h1>
-    <div class="hero-row">
-      <p class="hero-desc">Grad sessions, portraits & family photography across <strong>Vancouver & the Lower Mainland.</strong> Natural. Relaxed. Delivered fast.</p>
-      <div class="hero-btns">
-        <a class="btn-rust" href="#contact">Book a Session <svg width="15" height="15" viewBox="0 0 15 15" fill="none"><path d="M2 7.5h11M8 2.5l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-        <a class="btn-ink" href="#pricing">See Pricing</a>
-      </div>
-    </div>
-  </div>
-  <div class="hero-stats">
-    <div class="h-stat">
-      <div class="h-num"><em>$</em>99</div>
-      <div class="h-lbl">Starting price</div>
-    </div>
-    <div class="h-stat">
-      <div class="h-num">5.0<em>★</em></div>
-      <div class="h-lbl">Verified rating</div>
-    </div>
-    <div class="h-stat">
-      <div class="h-num">2 <em style="font-size:.9rem">weeks</em></div>
-      <div class="h-lbl">Gallery delivery</div>
-    </div>
-    <div class="h-stat">
-      <div class="h-num">3<em>+</em></div>
-      <div class="h-lbl">Session types</div>
-    </div>
-  </div>
-</section>
+        <section id="services" class="container">
+            <h2>Our Services</h2>
+            <div class="grid">
+                <div class="card"><h3>Grad Sessions</h3><p>Starting at $99. Natural, relaxed, and fast delivery.</p></div>
+                <div class="card"><h3>Professional Portraits</h3><p>Headshots starting at $149. Perfect for your brand.</p></div>
+            </div>
+        </section>
 
-<!-- MARQUEE -->
-<div id="marquee">
-  <div class="mq-track">
-    <span class="mq-item"><strong>Grad Sessions</strong></span><span class="mq-sep"></span>
-    <span class="mq-item"><strong>Family Photography</strong></span><span class="mq-sep"></span>
-    <span class="mq-item"><strong>Headshots & Portraits</strong></span><span class="mq-sep"></span>
-    <span class="mq-item">📍 <strong>Vancouver</strong></span><span class="mq-sep"></span>
-    <span class="mq-item">📍 <strong>West Vancouver</strong></span><span class="mq-sep"></span>
-    <span class="mq-item">📍 <strong>North Vancouver</strong></span><span class="mq-sep"></span>
-    <span class="mq-item">📍 <strong>Burnaby & Richmond</strong></span><span class="mq-sep"></span>
-    <span class="mq-item">⭐ <strong>5.0 Verified</strong></span><span class="mq-sep"></span>
-    <span class="mq-item">🎓 <strong>Grad Season Open</strong></span><span class="mq-sep"></span>
-    <span class="mq-item">📸 <strong>30+ Edited Images</strong></span><span class="mq-sep"></span>
-    <!-- duplicate -->
-    <span class="mq-item"><strong>Grad Sessions</strong></span><span class="mq-sep"></span>
-    <span class="mq-item"><strong>Family Photography</strong></span><span class="mq-sep"></span>
-    <span class="mq-item"><strong>Headshots & Portraits</strong></span><span class="mq-sep"></span>
-    <span class="mq-item">📍 <strong>Vancouver</strong></span><span class="mq-sep"></span>
-    <span class="mq-item">📍 <strong>West Vancouver</strong></span><span class="mq-sep"></span>
-    <span class="mq-item">📍 <strong>North Vancouver</strong></span><span class="mq-sep"></span>
-    <span class="mq-item">📍 <strong>Burnaby & Richmond</strong></span><span class="mq-sep"></span>
-    <span class="mq-item">⭐ <strong>5.0 Verified</strong></span><span class="mq-sep"></span>
-    <span class="mq-item">🎓 <strong>Grad Season Open</strong></span><span class="mq-sep"></span>
-    <span class="mq-item">📸 <strong>30+ Edited Images</strong></span><span class="mq-sep"></span>
-  </div>
-</div>
+        <section id="contact" class="container" style="background: var(--white); border-radius: 20px;">
+            <h2>Book a Session</h2>
+            <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+                <div class="fg"><label>Name</label><input type="text" name="name" required></div>
+                <div class="fg"><label>Email</label><input type="email" name="email" required></div>
+                <div class="fg"><label>Message</label><textarea name="message" required></textarea></div>
+                <button type="submit">Send Message</button>
+            </form>
+            <p style="margin-top:2rem; font-size: 0.8rem;">Questions? Call Sean at <a href="tel:+12365092933">+1 236-509-2933</a> or email <a href="mailto:sean@harbourviewmedia.ca">sean@harbourviewmedia.ca</a></p>
+        </section>
+    </main>
 
-<!-- SERVICES -->
-<section id="services">
-  <div class="container">
-    <p class="s-kicker reveal">What we offer</p>
-    <h2 class="s-title reveal">A team that shows up.<br><em>Photos that stand out.</em></h2>
-    <div class="svc-layout reveal">
-      <div class="svc tall">
-        <div>
-          <div class="svc-top"><span class="svc-tag">🎓 Spring Special</span><span class="svc-n">01</span></div>
-          <h3>Grad Sessions</h3>
-          <p>The photos you'll actually post. Our team shoots at Vancouver's best outdoor spots — Ambleside, Lighthouse Park, Gastown, wherever fits your vibe. Zero stiff poses. Full edited gallery.</p>
-        </div>
-        <div class="svc-foot">
-          <div><div class="svc-price">$99</div><div class="svc-dur">60 min · 30+ images</div></div>
-          <a class="svc-cta" href="#contact"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 12L12 2M12 2H4M12 2v8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-        </div>
-      </div>
-      <div class="svc"
-<script>
+    <footer style="padding: 2rem; text-align: center; color: #888; font-size: 0.8rem;">
+        &copy; 2026 Harbourview Media. Vancouver, BC.
+    </footer>
 
+</body>
+</html>
