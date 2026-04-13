@@ -477,32 +477,4 @@ footer .wm{color:rgba(250,246,240,.4)}
       </div>
       <div class="svc"
 <script>
-        // Reveal on scroll
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('in');
-                }
-            });
-        }, { threshold: 0.1 });
 
-        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-
-        // Cursor logic
-        const cur = document.getElementById('cur');
-        const curR = document.getElementById('curR');
-        document.addEventListener('mousemove', (e) => {
-            cur.style.left = e.clientX + 'px';
-            cur.style.top = e.clientY + 'px';
-            curR.style.left = e.clientX + 'px';
-            curR.style.top = e.clientY + 'px';
-        });
-
-        // Add 'big' class on hover
-        document.querySelectorAll('a, button').forEach(el => {
-            el.addEventListener('mouseenter', () => { cur.classList.add('big'); curR.classList.add('big'); });
-            el.addEventListener('mouseleave', () => { cur.classList.remove('big'); curR.classList.remove('big'); });
-        });
-    </script>
-</body>
-</html>
