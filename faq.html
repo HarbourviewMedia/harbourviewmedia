@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>FAQ — Harbourview Media</title>
+<link rel="stylesheet" href="style.css" />
+<style>
+.faq-wrap {
+  padding: 6rem 5rem;
+  display: grid; grid-template-columns: 280px 1fr;
+  gap: 6rem; align-items: start; max-width: 1100px; margin: 0 auto;
+}
+
+/* sticky sidebar */
+.faq-sidebar { position: sticky; top: 96px; }
+.faq-sidebar-title {
+  font-family: 'Playfair Display', serif; font-size: 1.1rem; font-weight: 500;
+  color: var(--forest); margin-bottom: 1.5rem;
+}
+.faq-nav { list-style: none; display: flex; flex-direction: column; gap: 0.3rem; }
+.faq-nav a {
+  font-size: 0.78rem; font-weight: 400; color: var(--mist);
+  text-decoration: none; padding: 0.4rem 0;
+  border-left: 2px solid var(--border);
+  padding-left: 1rem; display: block;
+  transition: color 0.2s, border-color 0.2s;
+}
+.faq-nav a:hover, .faq-nav a.active { color: var(--amber); border-color: var(--amber); }
+.faq-cta-box {
+  margin-top: 2.5rem; background: var(--forest);
+  padding: 1.8rem; border: 1px solid var(--forest);
+}
+.faq-cta-box p {
+  font-size: 0.82rem; font-weight: 300; color: rgba(254,252,249,0.5);
+  line-height: 1.8; margin-bottom: 1.2rem;
+}
+.faq-cta-box a {
+  display: block; text-align: center;
+  font-size: 0.68rem; font-weight: 600; letter-spacing: 0.12em;
+  text-transform: uppercase; color: var(--ink);
+  background: var(--amber); padding: 0.8rem;
+  text-decoration: none; transition: background 0.2s;
+}
+.faq-cta-box a:hover { background: var(--amber-lt); }
+
+/* FAQ content */
+.faq-section { margin-bottom: 4rem; }
+.faq-section-title {
+  font-family: 'Playfair Display', serif; font-size: 1.4rem; font-weight: 500;
+  color: var(--forest); margin-bottom: 1.5rem; padding-bottom: 0.8rem;
+  border-bottom: 2px solid var(--amber);
+}
+
+.faq-item { border-bottom: 1px solid var(--border); }
+.faq-q {
+  width: 100%; background: none; border: none; text-align: left;
+  padding: 1.3rem 0; cursor: pointer;
+  display: flex; align-items: flex-start; justify-content: space-between; gap: 1rem;
+  font-family: 'Outfit', sans-serif;
+}
+.faq-q-text {
+  font-size: 0.9rem; font-weight: 500; color: var(--ink); line-height: 1.5;
+  transition: color 0.2s;
+}
+.faq-q:hover .faq-q-text { color: var(--forest); }
+.faq-q.open .faq-q-text { color: var(--forest); }
+
+.faq-icon {
+  width: 22px; height: 22px; flex-shrink: 0;
+  border: 1px solid var(--border); display: flex; align-items: center;
+  justify-content: center; transition: background 0.2s, border-color 0.2s; margin-top: 2px;
+}
+.faq-icon svg { width: 10px; height: 10px; transition: transform 0.3s; }
+.faq-q.open .faq-icon { background: var(--amber); border-color: var(--amber); }
+.faq-q.open .faq-icon svg { transform: rotate(45deg); }
+
+.faq-a {
+  max-height: 0; overflow: hidden;
+  transition: max-height 0.4s ease, padding 0.3s ease;
+}
+.faq-a.open { max-height: 600px; padding-bottom: 1.3rem; }
+.faq-a p {
+  font-size: 0.85rem; font-weight: 300; color: var(--mist);
+  line-height: 1.95;
+}
+.faq-a p + p { margin-top: 0.8rem; }
+.faq-a a { color: var(--amber); text-decoration: none; }
+.faq-a a:hover { text-decoration: underline; }
+
+@media (max-width: 900px) {
+  .faq-wrap { grid-template-columns: 1fr; gap: 3rem; padding: 4rem 2rem; }
+  .faq-sidebar { position: static; }
+  .faq-nav { flex-direction: row; flex-wrap: wrap; gap: 0.5rem; }
+  .faq-nav a { border-left: none; border-bottom: 2px solid var(--border); padding: 0.3rem 0.8rem; padding-left: 0.8rem; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">Harbourview Media</a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="services.html">Services</a></li>
+    <li><a href="pricing.html">Pricing</a></li>
+    <li><a href="faq.html" class="active">FAQ</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <a href="contact.html" class="nav-cta">Book a Session</a>
+</nav>
+
+<div class="page-header">
+  <span class="page-header-eyebrow">Frequently asked questions</span>
+  <h1>Everything you<br/>need to <em>know</em></h1>
+  <p class="page-header-sub">Can't find what you're looking for? Call or email Sean directly — he's happy to chat.</p>
+</div>
+
+<div class="faq-wrap">
+  <!-- SIDEBAR -->
+  <aside class="faq-sidebar">
+    <div class="faq-sidebar-title">Jump to a topic</div>
+    <ul class="faq-nav">
+      <li><a href="#booking">Booking & Scheduling</a></li>
+      <li><a href="#sessions">During the Session</a></li>
+      <li><a href="#grads">Grad Photos</a></li>
+      <li><a href="#delivery">Delivery & Editing</a></li>
+      <li><a href="#pricing-faq">Pricing & Payment</a></li>
+      <li><a href="#re-faq">Real Estate</a></li>
+    </ul>
+    <div class="faq-cta-box">
+      <p>Still have questions? Sean personally answers every inquiry, usually same-day.</p>
+      <a href="contact.html">Get in touch</a>
+    </div>
+  </aside>
+
+  <!-- FAQ CONTENT -->
+  <div>
+
+    <!-- BOOKING -->
+    <div class="faq-section reveal" id="booking">
+      <h2 class="faq-section-title">Booking & Scheduling</h2>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggle(this)">
+          <span class="faq-q-text">How far in advance should I book?</span>
+          <span class="faq-icon"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 1v8M1 5h8"/></svg></span>
+        </button>
+        <div class="faq-a">
+          <p>For grad sessions during spring and summer (peak season), booking 4–8 weeks in advance is ideal. Weekends fill up fast, especially in May and June. If you're booking for Class of 2026, reach out now — spots are going quickly.</p>
+          <p>For headshots and family sessions, 1–2 weeks is usually fine, though weekends may be tighter. Off-season months (November through February) are more flexible.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggle(this)">
+          <span class="faq-q-text">How do I lock in a date?</span>
+          <span class="faq-icon"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 1v8M1 5h8"/></svg></span>
+        </button>
+        <div class="faq-a">
+          <p>Just fill out the <a href="contact.html">contact form</a> or call or text Sean at <a href="tel:2365092933">(236) 509-2933</a>. Once we've confirmed the details, a 50% deposit holds your session date.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggle(this)">
+          <span class="faq-q-text">What if I need to reschedule?</span>
+          <span class="faq-icon"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 1v8M1 5h8"/></svg></span>
+        </button>
+        <div class="faq-a">
+          <p>Life happens — rescheduling is no problem as long as we have at least 48 hours notice. Your deposit carries forward to the new date. Last-minute cancellations (under 24 hours) may forfeit the deposit.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggle(this)">
+          <span class="faq-q-text">What if it rains on my session day?</span>
+          <span class="faq-icon"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 1v8M1 5h8"/></svg></span>
+        </button>
+        <div class="faq-a">
+          <p>Vancouver rain is a real thing. If weather is looking rough, we'll touch base the day before and have a backup plan ready — whether that's a light overcast (which actually photographs beautifully), an alternate covered location, or rescheduling entirely. Your deposit is always protected.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- SESSIONS -->
+    <div class="faq-section reveal" id="sessions">
+      <h2 class="faq-section-title">During the Session</h2>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggle(this)">
+          <span class="faq-q-text">I'm not photogenic — is that a problem?</span>
+          <span class="faq-icon"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 1v8M1 5h8"/></svg></span>
+        </button>
+        <div class="faq-a">
+          <p>Everyone says this. Seriously — it's part of the job to make people feel comfortable and get natural expressions out of them. Sean guides every shot: where to stand, how to angle, what to do with your hands. You don't need to know anything going in.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggle(this)">
+          <span class="faq-q-text">Can I bring a friend or family member?</span>
+          <span class="faq-icon"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 1v8M1 5h8"/></svg></span>
+        </button>
+        <div class="faq-a">
+          <p>Absolutely. For grad sessions especially, having a parent or friend there to hold bags, help with outfit changes, or just be a familiar face can make the session more relaxed. Just let us know ahead of time.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggle(this)">
+          <span class="faq-q-text">What should I wear?</span>
+          <span class="faq-icon"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 1v8M1 5h8"/></svg></span>
+        </button>
+        <div class="faq-a">
+          <p>We'll talk through this before your session. As a general rule: wear something that feels like you, avoid busy patterns or logos that date quickly, and bring at least one outfit you feel genuinely good in. Solid colours and timeless cuts photograph well and keep the focus on you, not your shirt.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggle(this)">
+          <span class="faq-q-text">Where will the session take place?</span>
+          <span class="faq-icon"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 1v8M1 5h8"/></svg></span>
+        </button>
+        <div class="faq-a">
+          <p>We shoot outdoors in Metro Vancouver and the Lower Mainland. Popular spots include Stanley Park, Queen Elizabeth Park, Jericho Beach, UBC campus, and various urban pockets around Gastown and Mount Pleasant. If you have a location in mind, we can work with that too.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- GRADS -->
+    <div class="faq-section reveal" id="grads">
+      <h2 class="faq-section-title">Grad Photos</h2>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggle(this)">
+          <span class="faq-q-text">Do you do both high school and university grads?</span>
+          <span class="faq-icon"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 1v8M1 5h8"/></svg></span>
+        </button>
+        <div class="faq-a">
+          <p>Yes — both. The session structure is the same, though the vibe and styling can vary depending on your school, ceremony timing, and personal preference. Whether you're finishing Grade 12 or crossing the stage at SFU or UBC, the package covers you.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggle(this)">
+          <span class="faq-q-text">Can I book even if my graduation is a year or two away?</span>
+          <span class="faq-icon"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 1v8M1 5h8"/></svg></span>
+        </button>
+        <div class="faq-a">
+          <p>Yes, and it's actually a smart move. Classes of 2027, 2028, and 2029 can inquire now to get on the priority list — no deposit required until 8 weeks before your session. You'll get first pick of dates, locations, and any early pricing locks. Just <a href="contact.html">send a message</a> with your grad year.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggle(this)">
+          <span class="faq-q-text">What if I don't have my cap and gown yet?</span>
+          <span class="faq-icon"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 1v8M1 5h8"/></svg></span>
+        </button>
+        <div class="faq-a">
+          <p>That's fine — we'll time the session around when you have it. Many grads do a casual-only session beforehand for a fun look, then a separate cap & gown session closer to ceremony. Both looks are included in the package either way.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggle(this)">
+          <span class="faq-q-text">Can my parents or partner be in some of the photos?</span>
+          <span class="faq-icon"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 1v8M1 5h8"/></svg></span>
+        </button>
+        <div class="faq-a">
+          <p>Absolutely. A few shots with parents or a partner are totally normal and included in the session time. Just let us know ahead so we can plan the flow of the session around it.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- DELIVERY -->
+    <div class="faq-section reveal" id="delivery">
+      <h2 class="faq-section-title">Delivery & Editing</h2>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggle(this)">
+          <span class="faq-q-text">How long until I get my photos?</span>
+          <span class="faq-icon"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 1v8M1 5h8"/></svg></span>
+        </button>
+        <div class="faq-a">
+          <p>Grad portraits and family sessions are delivered within 5–7 business days. Headshots are delivered within 48 hours. Real estate photography is delivered within 24 hours of the shoot.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggle(this)">
+          <span class="faq-q-text">How are photos delivered?</span>
+          <span class="faq-icon"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 1v8M1 5h8"/></svg></span>
+        </button>
+        <div class="faq-a">
+          <p>You'll receive a link to a private online gallery where you can view, download, and share your images. Files are included at full resolution for printing, plus web-sized versions for social media and digital use.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggle(this)">
+          <span class="faq-q-text">Can I request specific edits or adjustments?</span>
+          <span class="faq-icon"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 1v8M1 5h8"/></svg></span>
+        </button>
+        <div class="faq-a">
+          <p>Yes. If there's a specific image you love but want tweaked — brightness, cropping, etc. — just flag it and we'll sort it out. Minor adjustments are included. Extensive retouching beyond natural skin correction can be quoted separately.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggle(this)">
+          <span class="faq-q-text">Do I own the photos?</span>
+          <span class="faq-icon"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 1v8M1 5h8"/></svg></span>
+        </button>
+        <div class="faq-a">
+          <p>You receive a personal use license, meaning you can print, share, and post your photos freely for personal use. Commercial use (e.g. for business advertising) requires a separate license — just ask. Sean retains the copyright as photographer but will always ask before using your images in his own portfolio or marketing.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- PRICING FAQ -->
+    <div class="faq-section reveal" id="pricing-faq">
+      <h2 class="faq-section-title">Pricing & Payment</h2>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggle(this)">
+          <span class="faq-q-text">How does payment work?</span>
+          <span class="faq-icon"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 1v8M1 5h8"/></svg></span>
+        </button>
+        <div class="faq-a">
+          <p>A 50% deposit is due when you confirm your booking. The remaining balance is due on the day of the session. Payment can be made via e-transfer, cash, or credit card.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggle(this)">
+          <span class="faq-q-text">Are there any hidden fees?</span>
+          <span class="faq-icon"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 1v8M1 5h8"/></svg></span>
+        </button>
+        <div class="faq-a">
+          <p>No. The price listed is the price you pay, plus applicable taxes. There are no extra editing charges, no surprise print package upsells, and no access fees for your gallery. What you see on the <a href="pricing.html">pricing page</a> is what it costs.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggle(this)">
+          <span class="faq-q-text">Can I get more edited images than what's in the package?</span>
+          <span class="faq-icon"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 1v8M1 5h8"/></svg></span>
+        </button>
+        <div class="faq-a">
+          <p>Yes — additional edited images can be added for $15 each. Just let Sean know at or after your session and he'll quote it before proceeding.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- REAL ESTATE -->
+    <div class="faq-section reveal" id="re-faq">
+      <h2 class="faq-section-title">Real Estate Photography</h2>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggle(this)">
+          <span class="faq-q-text">How is real estate pricing determined?</span>
+          <span class="faq-icon"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 1v8M1 5h8"/></svg></span>
+        </button>
+        <div class="faq-a">
+          <p>Pricing is based on property size, number of rooms, and whether exterior shots or special add-ons (like twilight photography) are needed. Call or email to get a quick quote — it's no pressure and usually takes about 5 minutes.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggle(this)">
+          <span class="faq-q-text">What's included in a real estate shoot?</span>
+          <span class="faq-icon"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 1v8M1 5h8"/></svg></span>
+        </button>
+        <div class="faq-a">
+          <p>Standard packages include interior and exterior coverage, HDR-blended images, MLS-ready file sizing, and delivery within 24 hours. Add-ons like twilight exteriors, floor plans, or virtual staging can be discussed when you reach out.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggle(this)">
+          <span class="faq-q-text">How quickly can you turn around a listing?</span>
+          <span class="faq-icon"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 1v8M1 5h8"/></svg></span>
+        </button>
+        <div class="faq-a">
+          <p>Edited photos are delivered within 24 hours of the shoot. Same-day delivery may be available in some cases — just ask when you book.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div style="background:var(--forest);padding:5rem;text-align:center;">
+  <h2 style="font-family:'Playfair Display',serif;font-size:2rem;font-weight:700;color:var(--white);margin-bottom:1rem;">Still have a question?</h2>
+  <p style="font-size:0.88rem;font-weight:300;color:rgba(254,252,249,0.45);max-width:400px;margin:0 auto 2.5rem;line-height:1.9;">Sean personally handles every inquiry — call, text, or email and you'll hear back same day.</p>
+  <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
+    <a href="tel:2365092933" class="btn-amber">(236) 509-2933</a>
+    <a href="contact.html" class="btn-outline-light">Send a message</a>
+  </div>
+</div>
+
+<footer>
+  <span class="footer-logo">Harbourview Media</span>
+  <ul class="footer-links">
+    <li><a href="services.html">Services</a></li>
+    <li><a href="pricing.html">Pricing</a></li>
+    <li><a href="faq.html">FAQ</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <span class="footer-copy">&copy; 2025 Harbourview Media. Vancouver, BC.</span>
+</footer>
+
+<script>
+function toggle(btn) {
+  const isOpen = btn.classList.contains('open');
+  document.querySelectorAll('.faq-q.open').forEach(b => {
+    b.classList.remove('open');
+    b.nextElementSibling.classList.remove('open');
+  });
+  if (!isOpen) {
+    btn.classList.add('open');
+    btn.nextElementSibling.classList.add('open');
+  }
+}
+const io = new IntersectionObserver(e => e.forEach(x => { if(x.isIntersecting) x.target.classList.add('visible'); }), { threshold: 0.06 });
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
+</body>
+</html>
