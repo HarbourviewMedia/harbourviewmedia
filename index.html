@@ -4,696 +4,204 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Harbourview Media — Vancouver Graduation Photography</title>
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="style.css" />
 <style>
-*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-
-:root {
-  --forest:    #1E3A2F;
-  --forest-mid:#2C5240;
-  --forest-lt: #3D6B55;
-  --sage:      #7BA899;
-  --sage-lt:   #A8C5BC;
-  --parchment: #F5F0E8;
-  --cream:     #FAF7F2;
-  --white:     #FEFCF9;
-  --amber:     #C8943A;
-  --amber-lt:  #E0B46A;
-  --amber-pale:#F5DFA8;
-  --ink:       #1A1F1C;
-  --ink-mid:   #3A4040;
-  --mist:      #7A8580;
-  --border:    rgba(30,58,47,0.12);
-  --border-amber: rgba(200,148,58,0.30);
-}
-
-html { scroll-behavior: smooth; }
-
-body {
-  font-family: 'Outfit', sans-serif;
-  background: var(--white);
-  color: var(--ink);
-  font-weight: 300;
-  line-height: 1.7;
-  overflow-x: hidden;
-}
-
-/* ── NAV ── */
-nav {
-  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-  display: flex; align-items: center; justify-content: space-between;
-  padding: 1.2rem 3.5rem;
-  background: rgba(254,252,249,0.92);
-  backdrop-filter: blur(16px);
-  border-bottom: 1px solid var(--border);
-}
-.nav-logo {
-  font-family: 'Playfair Display', serif;
-  font-size: 1.25rem; font-weight: 500; letter-spacing: 0.01em;
-  color: var(--forest); text-decoration: none;
-}
-.nav-links { display: flex; gap: 2.5rem; list-style: none; }
-.nav-links a {
-  font-size: 0.75rem; font-weight: 400; letter-spacing: 0.14em;
-  text-transform: uppercase; color: var(--ink-mid);
-  text-decoration: none; transition: color 0.2s;
-}
-.nav-links a:hover { color: var(--amber); }
-.nav-cta {
-  font-size: 0.72rem; font-weight: 500; letter-spacing: 0.12em;
-  text-transform: uppercase; color: var(--white);
-  text-decoration: none; background: var(--forest);
-  padding: 0.6rem 1.5rem; transition: background 0.25s;
-}
-.nav-cta:hover { background: var(--forest-mid); }
-
 /* ── HERO ── */
 .hero {
-  min-height: 100vh;
-  background: var(--forest);
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  padding-top: 68px;
-  position: relative;
-  overflow: hidden;
+  min-height: 100vh; background: var(--forest);
+  display: grid; grid-template-columns: 1fr 1fr;
+  padding-top: 68px; position: relative; overflow: hidden;
 }
-
-/* geometric accent */
 .hero::before {
-  content: '';
-  position: absolute;
-  top: -120px; right: -120px;
-  width: 600px; height: 600px;
-  border: 1px solid rgba(200,148,58,0.15);
-  border-radius: 50%;
-  pointer-events: none;
+  content: ''; position: absolute; top: -120px; right: -120px;
+  width: 600px; height: 600px; border: 1px solid rgba(200,148,58,0.13);
+  border-radius: 50%; pointer-events: none;
 }
 .hero::after {
-  content: '';
-  position: absolute;
-  bottom: -80px; left: 20%;
-  width: 360px; height: 360px;
-  border: 1px solid rgba(200,148,58,0.08);
-  border-radius: 50%;
-  pointer-events: none;
+  content: ''; position: absolute; bottom: -80px; left: 22%;
+  width: 340px; height: 340px; border: 1px solid rgba(200,148,58,0.07);
+  border-radius: 50%; pointer-events: none;
 }
-
 .hero-left {
   display: flex; flex-direction: column; justify-content: center;
-  padding: 5rem 4rem 5rem 5rem;
-  position: relative; z-index: 1;
+  padding: 5rem 4rem 5rem 5rem; position: relative; z-index: 1;
 }
-
 .hero-eyebrow {
-  font-size: 0.68rem; font-weight: 500; letter-spacing: 0.25em;
+  font-size: 0.67rem; font-weight: 500; letter-spacing: 0.25em;
   text-transform: uppercase; color: var(--amber);
   margin-bottom: 2rem; display: flex; align-items: center; gap: 0.8rem;
 }
-.hero-eyebrow::before {
-  content: '';
-  width: 28px; height: 1px; background: var(--amber);
-}
-
+.hero-eyebrow::before { content: ''; width: 28px; height: 1px; background: var(--amber); }
 .hero-title {
   font-family: 'Playfair Display', serif;
-  font-size: clamp(3rem, 5vw, 5.2rem);
-  font-weight: 700;
-  line-height: 1.04;
-  color: var(--white);
-  margin-bottom: 2rem;
-  letter-spacing: -0.01em;
+  font-size: clamp(3rem, 5vw, 5.2rem); font-weight: 700;
+  line-height: 1.04; color: var(--white); margin-bottom: 2rem; letter-spacing: -0.01em;
 }
-.hero-title em {
-  font-style: italic;
-  font-weight: 400;
-  color: var(--amber-lt);
-}
-
+.hero-title em { font-style: italic; font-weight: 400; color: var(--amber-lt); }
 .hero-sub {
-  font-size: 0.95rem; font-weight: 300;
-  color: rgba(254,252,249,0.55);
-  max-width: 380px; margin-bottom: 3rem; line-height: 1.95;
+  font-size: 0.93rem; font-weight: 300;
+  color: rgba(254,252,249,0.5); max-width: 380px; margin-bottom: 3rem; line-height: 2;
 }
-
 .hero-actions { display: flex; gap: 1rem; align-items: center; flex-wrap: wrap; }
-
-.btn-amber {
-  background: var(--amber); color: var(--ink);
-  font-family: 'Outfit', sans-serif; font-size: 0.75rem; font-weight: 600;
-  letter-spacing: 0.12em; text-transform: uppercase;
-  padding: 1rem 2.2rem; text-decoration: none; transition: background 0.25s;
-}
-.btn-amber:hover { background: var(--amber-lt); }
-
-.btn-outline-light {
-  font-size: 0.75rem; font-weight: 400; letter-spacing: 0.12em;
-  text-transform: uppercase; color: rgba(254,252,249,0.55);
-  text-decoration: none;
-  border: 1px solid rgba(254,252,249,0.2);
-  padding: 1rem 1.8rem; transition: all 0.25s;
-}
-.btn-outline-light:hover { border-color: var(--amber); color: var(--amber-lt); }
 
 .hero-right {
   display: flex; flex-direction: column; justify-content: center;
-  padding: 5rem 4rem 5rem 2rem;
-  position: relative; z-index: 1;
+  padding: 5rem 4rem 5rem 2rem; position: relative; z-index: 1;
 }
 
-/* year countdown cards */
-.year-cards { display: flex; flex-direction: column; gap: 1rem; }
+/* Year cards */
+.year-cards { display: flex; flex-direction: column; gap: 0.85rem; }
 
 .year-card {
   border: 1px solid rgba(254,252,249,0.1);
-  padding: 1.6rem 2rem;
+  padding: 1.5rem 2rem;
   display: flex; align-items: center; justify-content: space-between;
-  transition: border-color 0.3s, background 0.3s;
-  cursor: default;
+  transition: border-color 0.25s, background 0.25s, transform 0.2s;
+  cursor: pointer; text-decoration: none;
 }
 .year-card:hover {
   border-color: var(--amber);
-  background: rgba(200,148,58,0.06);
+  background: rgba(200,148,58,0.07);
+  transform: translateX(6px);
 }
-.year-card.highlight {
-  border-color: var(--amber);
-  background: rgba(200,148,58,0.08);
-}
+.year-card.highlight { border-color: var(--amber); background: rgba(200,148,58,0.09); }
 
 .year-card-left { display: flex; align-items: baseline; gap: 1rem; }
-
 .year-num {
   font-family: 'Playfair Display', serif;
-  font-size: 2.4rem; font-weight: 400; font-style: italic;
+  font-size: 2.3rem; font-weight: 400; font-style: italic;
   color: var(--amber-lt); line-height: 1;
 }
-.year-label {
-  font-size: 0.8rem; font-weight: 400; letter-spacing: 0.05em;
-  color: rgba(254,252,249,0.5);
-}
+.year-label { font-size: 0.78rem; font-weight: 300; color: rgba(254,252,249,0.45); }
 
 .year-tag {
-  font-size: 0.62rem; font-weight: 500; letter-spacing: 0.14em;
-  text-transform: uppercase; padding: 0.3rem 0.9rem;
+  font-size: 0.58rem; font-weight: 600; letter-spacing: 0.14em;
+  text-transform: uppercase; padding: 0.28rem 0.9rem;
   border: 1px solid rgba(200,148,58,0.4); color: var(--amber-lt);
+  white-space: nowrap;
 }
+.year-card.now .year-tag,
 .year-card.highlight .year-tag {
   background: var(--amber); border-color: var(--amber); color: var(--ink);
 }
 
 .hero-footnote {
-  margin-top: 2rem;
-  font-size: 0.72rem; font-weight: 300;
-  color: rgba(254,252,249,0.28); letter-spacing: 0.04em;
-}
-
-/* ── TAGLINE STRIP ── */
-.tagline-strip {
-  background: var(--amber); padding: 1.4rem 0; overflow: hidden;
-}
-.tagline-scroll {
-  display: flex; gap: 3rem;
-  animation: scroll-left 20s linear infinite; white-space: nowrap;
-}
-.tagline-item {
-  font-family: 'Playfair Display', serif;
-  font-size: 0.95rem; font-style: italic;
-  color: var(--forest); opacity: 0.8; flex-shrink: 0;
-}
-.tagline-dot { opacity: 0.4; font-style: normal; }
-@keyframes scroll-left {
-  0%   { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
-}
-
-/* ── SHARED ── */
-.section-eyebrow {
-  font-size: 0.67rem; font-weight: 500; letter-spacing: 0.22em;
-  text-transform: uppercase; color: var(--amber);
-  margin-bottom: 1rem; display: flex; align-items: center; gap: 0.7rem;
-}
-.section-eyebrow::before {
-  content: ''; width: 20px; height: 1px; background: var(--amber);
-}
-.section-title {
-  font-family: 'Playfair Display', serif;
-  font-size: clamp(2rem, 3.5vw, 3rem);
-  font-weight: 700; line-height: 1.12;
-  color: var(--forest); margin-bottom: 1.2rem;
-  letter-spacing: -0.01em;
-}
-.section-sub {
-  font-size: 0.9rem; font-weight: 300;
-  color: var(--mist); max-width: 480px; line-height: 2;
+  margin-top: 1.5rem; font-size: 0.7rem; font-weight: 300;
+  color: rgba(254,252,249,0.24); letter-spacing: 0.04em;
 }
 
 /* ── GRAD FEATURE ── */
-#grad-feature {
-  background: var(--parchment);
-  padding: 8rem 5rem;
-}
-
+#grad-feature { background: var(--parchment); padding: 8rem 5rem; }
 .grad-feature-inner {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 6rem;
-  align-items: center;
-  max-width: 1200px;
-  margin: 0 auto;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 6rem;
+  align-items: center; max-width: 1200px; margin: 0 auto;
 }
-
-.grad-feature-text {}
-
 .grad-tag {
-  display: inline-block;
-  background: var(--forest); color: var(--amber-pale);
-  font-size: 0.6rem; font-weight: 600; letter-spacing: 0.2em;
-  text-transform: uppercase; padding: 0.4rem 1rem;
-  margin-bottom: 1.5rem;
+  display: inline-block; background: var(--forest); color: var(--amber-pale);
+  font-size: 0.58rem; font-weight: 600; letter-spacing: 0.2em;
+  text-transform: uppercase; padding: 0.38rem 1rem; margin-bottom: 1.5rem;
 }
-
 .grad-feature-title {
   font-family: 'Playfair Display', serif;
-  font-size: clamp(2.2rem, 4vw, 3.6rem);
-  font-weight: 700; line-height: 1.1;
+  font-size: clamp(2.2rem, 4vw, 3.4rem); font-weight: 700; line-height: 1.1;
   color: var(--forest); margin-bottom: 1.5rem;
 }
-.grad-feature-title em {
-  font-style: italic; font-weight: 400; color: var(--amber);
-}
-
+.grad-feature-title em { font-style: italic; font-weight: 400; color: var(--amber); }
 .grad-feature-body {
-  font-size: 0.92rem; font-weight: 300;
-  color: var(--ink-mid); line-height: 2; margin-bottom: 2.5rem;
-  max-width: 420px;
+  font-size: 0.9rem; font-weight: 300; color: var(--ink-mid);
+  line-height: 2; margin-bottom: 1.4rem; max-width: 420px;
 }
-
-.grad-stats {
-  display: grid; grid-template-columns: 1fr 1fr;
-  gap: 1.5rem; margin-bottom: 3rem;
-}
-.grad-stat {
-  border-left: 2px solid var(--amber);
-  padding-left: 1.2rem;
-}
-.grad-stat-num {
-  font-family: 'Playfair Display', serif;
-  font-size: 2rem; font-weight: 500; color: var(--forest); display: block; line-height: 1;
-}
-.grad-stat-label {
-  font-size: 0.75rem; font-weight: 400; color: var(--mist); margin-top: 0.2rem;
-}
-
-.grad-feature-right { display: flex; flex-direction: column; gap: 1.2rem; }
+.grad-feature-right { display: flex; flex-direction: column; gap: 1rem; }
 
 .grad-perk {
-  background: var(--white);
-  padding: 1.6rem 1.8rem;
+  background: var(--white); padding: 1.5rem 1.8rem;
   border: 1px solid var(--border);
   display: flex; gap: 1.2rem; align-items: flex-start;
   transition: border-color 0.25s, transform 0.25s;
 }
 .grad-perk:hover { border-color: var(--amber); transform: translateX(4px); }
-
 .grad-perk-icon {
   width: 36px; height: 36px; flex-shrink: 0;
   background: var(--forest); display: flex; align-items: center; justify-content: center;
 }
 .grad-perk-icon svg { width: 16px; height: 16px; }
+.grad-perk-title { font-size: 0.86rem; font-weight: 600; color: var(--forest); margin-bottom: 0.2rem; }
+.grad-perk-desc { font-size: 0.78rem; font-weight: 300; color: var(--mist); line-height: 1.7; }
 
-.grad-perk-title {
-  font-size: 0.88rem; font-weight: 600; color: var(--forest); margin-bottom: 0.25rem;
-}
-.grad-perk-desc {
-  font-size: 0.8rem; font-weight: 300; color: var(--mist); line-height: 1.7;
-}
-
-/* ── SERVICES (3 cards) ── */
-#services {
-  background: var(--white);
-  padding: 7rem 5rem;
-}
+/* ── SERVICES PREVIEW ── */
+#services-preview { background: var(--white); padding: 7rem 5rem; }
 .services-intro {
   display: grid; grid-template-columns: 1fr 1fr; gap: 4rem;
   align-items: end; margin-bottom: 4rem;
 }
-.services-grid {
-  display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem;
-}
+.services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
 
 .service-card {
-  border: 1px solid var(--border);
-  padding: 2.8rem 2.4rem;
+  border: 1px solid var(--border); padding: 2.6rem 2.2rem;
   position: relative; overflow: hidden;
-  transition: border-color 0.3s, transform 0.3s;
-  background: var(--white);
+  transition: border-color 0.28s, transform 0.28s;
+  background: var(--white); text-decoration: none; display: block;
 }
 .service-card:hover { border-color: var(--forest); transform: translateY(-4px); }
-.service-card.primary-card {
-  background: var(--forest); border-color: var(--forest);
-}
+.service-card.primary-card { background: var(--forest); border-color: var(--forest); }
 
 .service-card-num {
-  font-family: 'Playfair Display', serif;
-  font-size: 0.8rem; font-style: italic; color: var(--sage);
-  margin-bottom: 1.5rem; display: block;
+  font-family: 'Playfair Display', serif; font-size: 0.78rem; font-style: italic;
+  color: var(--sage); margin-bottom: 1.4rem; display: block;
 }
 .service-card.primary-card .service-card-num { color: var(--amber); }
-
 .service-card-name {
-  font-family: 'Playfair Display', serif;
-  font-size: 1.5rem; font-weight: 500; color: var(--forest);
-  margin-bottom: 0.6rem;
+  font-family: 'Playfair Display', serif; font-size: 1.45rem; font-weight: 500;
+  color: var(--forest); margin-bottom: 0.5rem;
 }
 .service-card.primary-card .service-card-name { color: var(--white); }
-
-.service-card-line {
-  width: 28px; height: 2px; background: var(--amber);
-  margin-bottom: 1.2rem;
-}
-
+.service-card-line { width: 26px; height: 2px; background: var(--amber); margin-bottom: 1.1rem; }
 .service-card-desc {
-  font-size: 0.84rem; font-weight: 300;
-  color: var(--mist); line-height: 1.9; margin-bottom: 2rem;
+  font-size: 0.82rem; font-weight: 300; color: var(--mist); line-height: 1.9; margin-bottom: 1.8rem;
 }
-.service-card.primary-card .service-card-desc { color: rgba(254,252,249,0.5); }
-
-.service-card-price {
-  font-size: 0.75rem; font-weight: 400; color: var(--ink-mid);
-}
-.service-card.primary-card .service-card-price { color: rgba(254,252,249,0.6); }
+.service-card.primary-card .service-card-desc { color: rgba(254,252,249,0.45); }
+.service-card-price { font-size: 0.73rem; font-weight: 400; color: var(--ink-mid); }
+.service-card.primary-card .service-card-price { color: rgba(254,252,249,0.55); }
 .service-card-price strong {
-  font-family: 'Playfair Display', serif;
-  font-size: 1.6rem; font-weight: 500; margin-right: 0.2rem;
-  color: var(--forest);
+  font-family: 'Playfair Display', serif; font-size: 1.55rem; font-weight: 500;
+  margin-right: 0.2rem; color: var(--forest);
 }
 .service-card.primary-card .service-card-price strong { color: var(--amber-lt); }
-
-.service-card-link {
-  display: block; margin-top: 1.2rem;
-  font-size: 0.68rem; font-weight: 500; letter-spacing: 0.14em;
-  text-transform: uppercase; color: var(--sage); text-decoration: none;
+.service-card-cta {
+  display: block; margin-top: 1.2rem; font-size: 0.66rem; font-weight: 500;
+  letter-spacing: 0.14em; text-transform: uppercase; color: var(--sage);
   transition: color 0.2s;
 }
-.service-card:hover .service-card-link { color: var(--amber); }
-.service-card.primary-card .service-card-link { color: var(--amber); }
+.service-card:hover .service-card-cta { color: var(--amber); }
+.service-card.primary-card .service-card-cta { color: var(--amber); }
 
-/* RE banner */
-.re-banner {
-  background: var(--forest); margin: 2rem 0 0;
-  padding: 2.5rem 3rem;
-  display: flex; align-items: center; justify-content: space-between;
-  gap: 2rem; flex-wrap: wrap;
-}
-.re-banner-left { flex: 1; min-width: 200px; }
-.re-banner-eyebrow {
-  font-size: 0.62rem; font-weight: 500; letter-spacing: 0.2em;
-  text-transform: uppercase; color: var(--sage-lt);
-  opacity: 0.7; display: block; margin-bottom: 0.4rem;
-}
-.re-banner-title {
-  font-family: 'Playfair Display', serif;
-  font-size: 1.5rem; font-weight: 500; color: var(--white); line-height: 1.2;
-}
-.re-banner-desc {
-  font-size: 0.82rem; font-weight: 300;
-  color: rgba(254,252,249,0.4); margin-top: 0.5rem;
-  max-width: 440px; line-height: 1.85;
-}
-.re-banner-actions { display: flex; gap: 1rem; align-items: center; flex-wrap: wrap; }
-.re-btn-call {
-  display: flex; align-items: center; gap: 0.6rem;
-  background: var(--amber); color: var(--ink);
-  font-family: 'Outfit', sans-serif; font-size: 0.73rem; font-weight: 600;
-  letter-spacing: 0.1em; text-transform: uppercase;
-  padding: 0.85rem 1.6rem; text-decoration: none;
-  transition: background 0.2s; white-space: nowrap;
-}
-.re-btn-call:hover { background: var(--amber-lt); }
-.re-btn-email {
-  font-size: 0.73rem; font-weight: 300; color: rgba(254,252,249,0.45);
-  text-decoration: none; border: 1px solid rgba(255,255,255,0.15);
-  padding: 0.85rem 1.6rem; transition: all 0.2s; white-space: nowrap;
-}
-.re-btn-email:hover { border-color: var(--amber); color: var(--amber-lt); }
-
-/* ── PRICING ── */
-#pricing {
-  background: var(--parchment);
-  padding: 7rem 5rem; text-align: center;
-}
-#pricing .section-title { color: var(--forest); }
-#pricing .section-sub { margin: 0 auto 4rem; text-align: center; }
-
-.pricing-grid {
-  display: grid; grid-template-columns: repeat(3, 1fr);
-  gap: 1.5rem; max-width: 960px; margin: 0 auto;
-}
-
-.pricing-card {
-  background: var(--white);
-  padding: 2.8rem 2rem;
-  border: 1px solid var(--border);
-  text-align: left; position: relative;
-  transition: transform 0.25s, box-shadow 0.25s;
-}
-.pricing-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 16px 50px rgba(30,58,47,0.10);
-}
-.pricing-card.featured {
-  background: var(--forest); border-color: var(--forest);
-}
-.featured-badge {
-  position: absolute; top: -1px; right: 1.5rem;
-  background: var(--amber); color: var(--ink);
-  font-size: 0.58rem; font-weight: 600; letter-spacing: 0.15em;
-  text-transform: uppercase; padding: 0.28rem 0.8rem;
-}
-
-.pc-service {
-  font-size: 0.62rem; font-weight: 500; letter-spacing: 0.2em;
-  text-transform: uppercase; color: var(--sage); margin-bottom: 0.6rem; display: block;
-}
-.pricing-card.featured .pc-service { color: var(--amber); }
-
-.pc-name {
-  font-family: 'Playfair Display', serif;
-  font-size: 1.2rem; font-weight: 500; color: var(--forest); margin-bottom: 0.4rem;
-}
-.pricing-card.featured .pc-name { color: var(--white); }
-
-.pc-price {
-  font-family: 'Playfair Display', serif;
-  font-size: 3rem; font-weight: 700; color: var(--forest);
-  line-height: 1; margin: 1rem 0 0.25rem;
-}
-.pricing-card.featured .pc-price { color: var(--amber-lt); }
-.pc-price sup {
-  font-size: 1.1rem; vertical-align: super;
-  font-family: 'Outfit', sans-serif; font-weight: 400;
-}
-
-.pc-billing {
-  font-size: 0.72rem; font-weight: 300; color: var(--mist);
-  margin-bottom: 1.6rem; display: block;
-}
-.pricing-card.featured .pc-billing { color: rgba(254,252,249,0.35); }
-
-.pc-divider {
-  width: 100%; height: 1px;
-  background: var(--border); margin-bottom: 1.5rem;
-}
-.pricing-card.featured .pc-divider { background: rgba(255,255,255,0.1); }
-
-.pc-features { list-style: none; margin-bottom: 2rem; }
-.pc-features li {
-  font-size: 0.8rem; font-weight: 300; color: var(--mist);
-  padding: 0.3rem 0; display: flex; align-items: center; gap: 0.6rem;
-}
-.pricing-card.featured .pc-features li { color: rgba(254,252,249,0.5); }
-.pc-features li::before {
-  content: ''; width: 4px; height: 4px;
-  background: var(--amber); border-radius: 50%; flex-shrink: 0;
-}
-
-.pc-book {
-  display: block; width: 100%; text-align: center;
-  font-size: 0.7rem; font-weight: 600; letter-spacing: 0.12em;
-  text-transform: uppercase; padding: 0.9rem;
-  text-decoration: none; border: 1px solid var(--forest);
-  color: var(--forest); transition: all 0.2s;
-}
-.pc-book:hover { background: var(--forest); color: var(--white); }
-.pricing-card.featured .pc-book {
-  background: var(--amber); border-color: var(--amber); color: var(--ink);
-}
-.pricing-card.featured .pc-book:hover { background: var(--amber-lt); border-color: var(--amber-lt); }
-
-.pricing-note {
-  margin-top: 2.5rem; font-size: 0.78rem; font-weight: 300;
-  color: var(--mist); font-style: italic;
-}
-
-/* ── PROCESS ── */
-#process {
-  background: var(--white);
-  padding: 7rem 5rem; text-align: center;
-}
-.process-steps {
-  display: grid; grid-template-columns: repeat(4, 1fr);
-  gap: 0; margin-top: 4rem; position: relative;
-}
-.process-steps::before {
-  content: ''; position: absolute;
-  top: 2rem; left: 12.5%; right: 12.5%;
-  height: 1px; background: var(--border-amber);
-}
-.process-step { padding: 0 2rem; text-align: center; }
-.process-num {
-  width: 4rem; height: 4rem;
-  border: 1px solid var(--amber); border-radius: 50%;
-  display: flex; align-items: center; justify-content: center;
-  margin: 0 auto 1.8rem; background: var(--white);
-  position: relative; z-index: 1;
-}
-.process-num span {
-  font-family: 'Playfair Display', serif;
-  font-size: 1.1rem; font-style: italic; color: var(--amber);
-}
-.process-step-title {
-  font-family: 'Playfair Display', serif;
-  font-size: 1.05rem; font-weight: 500; color: var(--forest); margin-bottom: 0.6rem;
-}
-.process-step-desc {
-  font-size: 0.8rem; font-weight: 300; color: var(--mist); line-height: 1.85;
-}
-
-/* ── CONTACT ── */
-#contact {
-  background: var(--forest);
-  padding: 7rem 5rem;
-  display: grid; grid-template-columns: 1fr 1fr;
-  gap: 6rem; align-items: start;
-}
-#contact .section-eyebrow { color: var(--amber); }
-#contact .section-eyebrow::before { background: var(--amber); }
-#contact .section-title { color: var(--white); }
-#contact .section-sub { color: rgba(254,252,249,0.4); max-width: 360px; }
-
-.contact-details { margin-top: 2.5rem; display: flex; flex-direction: column; gap: 1.2rem; }
-.contact-detail { display: flex; gap: 1rem; align-items: flex-start; }
-.contact-detail-label {
-  font-size: 0.62rem; font-weight: 500; letter-spacing: 0.18em;
-  text-transform: uppercase; color: var(--amber); min-width: 80px; padding-top: 0.1rem;
-}
-.contact-detail-val { font-size: 0.87rem; font-weight: 300; color: rgba(254,252,249,0.55); }
-.contact-detail-val a { color: rgba(254,252,249,0.55); text-decoration: none; transition: color 0.2s; }
-.contact-detail-val a:hover { color: var(--amber-lt); }
-
-.contact-form { display: flex; flex-direction: column; gap: 1.1rem; }
-.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1.1rem; }
-.form-group { display: flex; flex-direction: column; gap: 0.4rem; }
-.form-group label {
-  font-size: 0.62rem; font-weight: 500; letter-spacing: 0.16em;
-  text-transform: uppercase; color: rgba(254,252,249,0.3);
-}
-.form-group input,
-.form-group select,
-.form-group textarea {
-  background: rgba(255,255,255,0.05);
-  border: 1px solid rgba(255,255,255,0.12);
-  color: var(--white); font-family: 'Outfit', sans-serif;
-  font-size: 0.87rem; font-weight: 300; padding: 0.85rem 1rem;
-  outline: none; transition: border-color 0.2s; -webkit-appearance: none;
-}
-.form-group select option { background: var(--forest-mid); }
-.form-group input::placeholder,
-.form-group textarea::placeholder { color: rgba(255,255,255,0.2); }
-.form-group input:focus,
-.form-group select:focus,
-.form-group textarea:focus { border-color: var(--amber); }
-.form-group textarea { resize: vertical; min-height: 110px; }
-
-.form-submit {
-  background: var(--amber); border: none; color: var(--ink);
-  font-family: 'Outfit', sans-serif; font-size: 0.73rem; font-weight: 600;
-  letter-spacing: 0.15em; text-transform: uppercase;
-  padding: 1.1rem 2.5rem; cursor: pointer;
-  transition: background 0.2s; align-self: flex-start;
-}
-.form-submit:hover { background: var(--amber-lt); }
-
-/* ── FOOTER ── */
-footer {
-  background: #111A15;
-  padding: 2.5rem 4rem;
-  display: flex; align-items: center; justify-content: space-between;
-  border-top: 1px solid rgba(255,255,255,0.06);
-}
-.footer-logo {
-  font-family: 'Playfair Display', serif;
-  font-size: 1rem; font-style: italic; font-weight: 400;
-  color: rgba(254,252,249,0.3); letter-spacing: 0.02em;
-}
-.footer-copy { font-size: 0.68rem; font-weight: 300; color: rgba(254,252,249,0.2); }
-.footer-links { display: flex; gap: 2rem; list-style: none; }
-.footer-links a {
-  font-size: 0.66rem; font-weight: 400; letter-spacing: 0.14em;
-  text-transform: uppercase; color: rgba(254,252,249,0.2);
-  text-decoration: none; transition: color 0.2s;
-}
-.footer-links a:hover { color: var(--amber); }
-
-/* ── REVEAL ── */
-.reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.7s ease, transform 0.7s ease; }
-.reveal.visible { opacity: 1; transform: translateY(0); }
-.reveal-delay-1 { transition-delay: 0.1s; }
-.reveal-delay-2 { transition-delay: 0.2s; }
-.reveal-delay-3 { transition-delay: 0.3s; }
-
-/* ── MOBILE ── */
 @media (max-width: 960px) {
-  nav { padding: 1.1rem 1.5rem; }
-  .nav-links { display: none; }
   .hero { grid-template-columns: 1fr; }
   .hero-left { padding: 3.5rem 2rem 2rem; }
-  .hero-right { padding: 2rem 2rem 3.5rem; }
+  .hero-right { padding: 1.5rem 2rem 3.5rem; }
   .grad-feature-inner { grid-template-columns: 1fr; gap: 3rem; }
   #grad-feature { padding: 5rem 2rem; }
-  #services { padding: 5rem 2rem; }
+  #services-preview { padding: 5rem 2rem; }
   .services-intro { grid-template-columns: 1fr; gap: 1.5rem; }
   .services-grid { grid-template-columns: 1fr; }
-  .re-banner { padding: 2rem; flex-direction: column; align-items: flex-start; }
-  .pricing-grid { grid-template-columns: 1fr; max-width: 400px; }
-  #pricing { padding: 5rem 2rem; }
-  .process-steps { grid-template-columns: 1fr 1fr; }
-  .process-steps::before { display: none; }
-  #process { padding: 5rem 2rem; }
-  #contact { grid-template-columns: 1fr; gap: 3rem; padding: 5rem 2rem; }
-  .form-row { grid-template-columns: 1fr; }
-  footer { flex-direction: column; gap: 1.5rem; text-align: center; padding: 2rem; }
 }
 @media (max-width: 600px) {
-  .grad-stats { grid-template-columns: 1fr; }
-  .process-steps { grid-template-columns: 1fr; }
-  .year-cards { gap: 0.75rem; }
+  .hero-title { font-size: 2.6rem; }
 }
 </style>
 </head>
 <body>
 
-<!-- NAV -->
 <nav>
-  <a href="#" class="nav-logo">Harbourview Media</a>
+  <a href="index.html" class="nav-logo">Harbourview Media</a>
   <ul class="nav-links">
-    <li><a href="#grad-feature">Grad Photos</a></li>
-    <li><a href="#services">Services</a></li>
-    <li><a href="#pricing">Pricing</a></li>
-    <li><a href="#contact">Contact</a></li>
+    <li><a href="index.html" class="active">Home</a></li>
+    <li><a href="services.html">Services</a></li>
+    <li><a href="pricing.html">Pricing</a></li>
+    <li><a href="faq.html">FAQ</a></li>
+    <li><a href="contact.html">Contact</a></li>
   </ul>
-  <a href="#contact" class="nav-cta">Book a Session</a>
+  <a href="contact.html" class="nav-cta">Book a Session</a>
 </nav>
 
 <!-- HERO -->
@@ -706,44 +214,44 @@ footer {
       <em>the real thing</em>
     </h1>
     <p class="hero-sub">
-      You worked for this. Four years of early mornings, late nights, and everything in between. Let's make sure the photos actually show it — not just a pose, but a moment.
+      You worked for this. Four years of early mornings, late nights, and everything in between. Let's make sure the photos actually show it.
     </p>
     <div class="hero-actions">
-      <a href="#pricing" class="btn-amber">See Packages</a>
-      <a href="#contact" class="btn-outline-light">Get in touch</a>
+      <a href="pricing.html" class="btn-amber">See Packages</a>
+      <a href="contact.html" class="btn-outline-light">Get in touch</a>
     </div>
   </div>
 
   <div class="hero-right">
     <div class="year-cards">
-      <div class="year-card">
+      <a href="contact.html?year=2026" class="year-card now">
+        <div class="year-card-left">
+          <span class="year-num">'26</span>
+          <span class="year-label">Class of 2026 — booking now</span>
+        </div>
+        <span class="year-tag">Book Now</span>
+      </a>
+      <a href="contact.html?year=2027" class="year-card highlight">
         <div class="year-card-left">
           <span class="year-num">'27</span>
-          <span class="year-label">Class of 2027 — now booking</span>
+          <span class="year-label">Class of 2027 — early spots open</span>
         </div>
-        <span class="year-tag">Open</span>
-      </div>
-      <div class="year-card highlight">
+        <span class="year-tag">Early Bird</span>
+      </a>
+      <a href="contact.html?year=2028" class="year-card">
         <div class="year-card-left">
           <span class="year-num">'28</span>
-          <span class="year-label">Class of 2028 — early bird slots</span>
+          <span class="year-label">Class of 2028 — now taking inquiries</span>
         </div>
-        <span class="year-tag">Book Early</span>
-      </div>
-      <div class="year-card">
+        <span class="year-tag">Inquire</span>
+      </a>
+      <a href="contact.html?year=2029" class="year-card">
         <div class="year-card-left">
           <span class="year-num">'29</span>
-          <span class="year-label">Class of 2029 — taking inquiries</span>
+          <span class="year-label">Class of 2029 — get on the list</span>
         </div>
         <span class="year-tag">Inquire</span>
-      </div>
-      <div class="year-card">
-        <div class="year-card-left">
-          <span class="year-num">'30</span>
-          <span class="year-label">Class of 2030 — get on the list</span>
-        </div>
-        <span class="year-tag">Inquire</span>
-      </div>
+      </a>
     </div>
     <p class="hero-footnote">High school & university — Metro Vancouver & Lower Mainland</p>
   </div>
@@ -752,106 +260,81 @@ footer {
 <!-- TAGLINE STRIP -->
 <div class="tagline-strip">
   <div class="tagline-scroll">
-    <span class="tagline-item">Class of 2027</span>
-    <span class="tagline-item tagline-dot">·</span>
-    <span class="tagline-item">Class of 2028</span>
-    <span class="tagline-item tagline-dot">·</span>
-    <span class="tagline-item">Class of 2029</span>
-    <span class="tagline-item tagline-dot">·</span>
-    <span class="tagline-item">Class of 2030</span>
-    <span class="tagline-item tagline-dot">·</span>
-    <span class="tagline-item">Vancouver Grad Photography</span>
-    <span class="tagline-item tagline-dot">·</span>
-    <span class="tagline-item">High School & University</span>
-    <span class="tagline-item tagline-dot">·</span>
-    <span class="tagline-item">Class of 2027</span>
-    <span class="tagline-item tagline-dot">·</span>
-    <span class="tagline-item">Class of 2028</span>
-    <span class="tagline-item tagline-dot">·</span>
-    <span class="tagline-item">Class of 2029</span>
-    <span class="tagline-item tagline-dot">·</span>
-    <span class="tagline-item">Class of 2030</span>
-    <span class="tagline-item tagline-dot">·</span>
-    <span class="tagline-item">Vancouver Grad Photography</span>
-    <span class="tagline-item tagline-dot">·</span>
-    <span class="tagline-item">High School & University</span>
-    <span class="tagline-item tagline-dot">·</span>
+    <span class="tagline-item">Class of 2026</span><span class="tagline-item tagline-dot">·</span>
+    <span class="tagline-item">Class of 2027</span><span class="tagline-item tagline-dot">·</span>
+    <span class="tagline-item">Class of 2028</span><span class="tagline-item tagline-dot">·</span>
+    <span class="tagline-item">Class of 2029</span><span class="tagline-item tagline-dot">·</span>
+    <span class="tagline-item">Vancouver Grad Photography</span><span class="tagline-item tagline-dot">·</span>
+    <span class="tagline-item">High School & University</span><span class="tagline-item tagline-dot">·</span>
+    <span class="tagline-item">Class of 2026</span><span class="tagline-item tagline-dot">·</span>
+    <span class="tagline-item">Class of 2027</span><span class="tagline-item tagline-dot">·</span>
+    <span class="tagline-item">Class of 2028</span><span class="tagline-item tagline-dot">·</span>
+    <span class="tagline-item">Class of 2029</span><span class="tagline-item tagline-dot">·</span>
+    <span class="tagline-item">Vancouver Grad Photography</span><span class="tagline-item tagline-dot">·</span>
+    <span class="tagline-item">High School & University</span><span class="tagline-item tagline-dot">·</span>
   </div>
 </div>
 
-<!-- GRAD FEATURE SECTION -->
+<!-- GRAD FEATURE -->
 <section id="grad-feature">
   <div class="grad-feature-inner">
-    <div class="grad-feature-text reveal">
+    <div class="reveal">
       <span class="grad-tag">Our Specialty</span>
       <h2 class="grad-feature-title">
-        Grad photos that<br/>
-        don't look like<br/>
-        <em>everyone else's</em>
+        Grad photos that<br/>don't look like<br/><em>everyone else's</em>
       </h2>
       <p class="grad-feature-body">
-        Most grad photos look the same — same park, same pose, same forced smile. We do it differently. We find the locations that match who you actually are, and we shoot until the moment feels real. Because that's the one you'll actually want framed.
+        Most grad photos look the same — same park, same pose, same forced smile. We find locations that match who you actually are, and shoot until the moment feels real. Because that's the one you'll actually want framed.
       </p>
       <p class="grad-feature-body">
-        Whether you're finishing high school or wrapping up university, we've got packages built for both. And we're already booking Classes of 2027 through 2030 — the earlier you lock in, the more flexibility you get on dates and locations.
+        Whether you're finishing high school or wrapping up university, we've got packages built for both. We're already booking Classes of 2026 through 2029 — lock in early for the best dates and locations.
       </p>
-      <a href="#pricing" class="btn-amber" style="display:inline-block; margin-top: 0.5rem;">View Grad Packages</a>
+      <a href="pricing.html" class="btn-amber" style="margin-top:0.5rem;">View Grad Packages</a>
     </div>
 
     <div class="grad-feature-right reveal">
       <div class="grad-perk">
         <div class="grad-perk-icon">
-          <svg viewBox="0 0 16 16" fill="none" stroke="#C8943A" stroke-width="1.4">
-            <circle cx="8" cy="6" r="3"/><path d="M2 14c0-3.3 2.7-6 6-6s6 2.7 6 6"/>
-          </svg>
+          <svg viewBox="0 0 16 16" fill="none" stroke="#C8943A" stroke-width="1.4"><circle cx="8" cy="6" r="3"/><path d="M2 14c0-3.3 2.7-6 6-6s6 2.7 6 6"/></svg>
         </div>
         <div>
           <div class="grad-perk-title">Fully directed sessions</div>
-          <div class="grad-perk-desc">You don't need to know how to pose. Sean guides every shot so you look natural, not stiff.</div>
+          <div class="grad-perk-desc">Sean guides every shot so you look natural, not stiff. No experience needed.</div>
         </div>
       </div>
-
       <div class="grad-perk">
         <div class="grad-perk-icon">
-          <svg viewBox="0 0 16 16" fill="none" stroke="#C8943A" stroke-width="1.4">
-            <rect x="2" y="2" width="12" height="12" rx="2"/><path d="M5 8h6M8 5v6"/>
-          </svg>
+          <svg viewBox="0 0 16 16" fill="none" stroke="#C8943A" stroke-width="1.4"><rect x="2" y="2" width="12" height="12" rx="2"/><path d="M5 8h6M8 5v6"/></svg>
         </div>
         <div>
           <div class="grad-perk-title">Multiple looks per session</div>
-          <div class="grad-perk-desc">Cap & gown, casual, dressed up — your package includes outfit changes so you have options.</div>
+          <div class="grad-perk-desc">Cap & gown, casual, dressed up — outfit changes are included so you have options.</div>
         </div>
       </div>
-
       <div class="grad-perk">
         <div class="grad-perk-icon">
-          <svg viewBox="0 0 16 16" fill="none" stroke="#C8943A" stroke-width="1.4">
-            <path d="M8 2L9.8 6.6l4.8.4-3.6 3.1 1.1 4.7L8 13.2l-4.1 2.6 1.1-4.7L1.4 7l4.8-.4z"/>
-          </svg>
+          <svg viewBox="0 0 16 16" fill="none" stroke="#C8943A" stroke-width="1.4"><path d="M8 2L9.8 6.6l4.8.4-3.6 3.1 1.1 4.7L8 13.2l-4.1 2.6 1.1-4.7L1.4 7l4.8-.4z"/></svg>
         </div>
         <div>
           <div class="grad-perk-title">Vancouver's best backdrops</div>
-          <div class="grad-perk-desc">Mountains, forests, waterfront, or urban — we know the spots that make Vancouver shine.</div>
+          <div class="grad-perk-desc">Mountains, forests, waterfront, urban — we know the spots that make the city shine.</div>
         </div>
       </div>
-
       <div class="grad-perk">
         <div class="grad-perk-icon">
-          <svg viewBox="0 0 16 16" fill="none" stroke="#C8943A" stroke-width="1.4">
-            <rect x="2" y="4" width="12" height="10" rx="1.5"/><path d="M5 4V3a3 3 0 016 0v1"/>
-          </svg>
+          <svg viewBox="0 0 16 16" fill="none" stroke="#C8943A" stroke-width="1.4"><rect x="2" y="4" width="12" height="10" rx="1.5"/><path d="M5 4V3a3 3 0 016 0v1"/></svg>
         </div>
         <div>
           <div class="grad-perk-title">Private online gallery</div>
-          <div class="grad-perk-desc">All edited images delivered in a shareable gallery — easy to download, print, or post.</div>
+          <div class="grad-perk-desc">All edited images in a shareable gallery — easy to download, share, or print.</div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- SERVICES -->
-<section id="services">
+<!-- SERVICES PREVIEW -->
+<section id="services-preview">
   <div class="services-intro reveal">
     <div>
       <span class="section-eyebrow">All services</span>
@@ -859,42 +342,37 @@ footer {
     </div>
     <p class="section-sub">Alongside grad photography, we offer headshots and family sessions for anyone who wants photos that actually feel like them.</p>
   </div>
-
   <div class="services-grid">
-    <div class="service-card primary-card reveal">
+    <a href="services.html#grads" class="service-card primary-card reveal">
       <span class="service-card-num">01 — Featured</span>
       <h3 class="service-card-name">Graduation Portraits</h3>
       <div class="service-card-line"></div>
-      <p class="service-card-desc">Our main event. High school and university grad packages designed to capture who you are at this exact moment — styled, real, and worth keeping forever.</p>
+      <p class="service-card-desc">High school and university packages designed to capture who you are at this exact moment — styled, real, and worth keeping forever.</p>
       <div class="service-card-price">Starting at <strong>$99</strong></div>
-      <a href="#pricing" class="service-card-link">View packages →</a>
-    </div>
-
-    <div class="service-card reveal reveal-delay-1">
+      <span class="service-card-cta">Learn more →</span>
+    </a>
+    <a href="services.html#headshots" class="service-card reveal d1">
       <span class="service-card-num">02</span>
       <h3 class="service-card-name">Professional Headshots</h3>
       <div class="service-card-line"></div>
-      <p class="service-card-desc">LinkedIn, your resume, your company bio — a clean, confident headshot that makes the right first impression before you even say a word.</p>
+      <p class="service-card-desc">LinkedIn, your resume, your company bio — a clean, confident headshot that makes the right first impression.</p>
       <div class="service-card-price">Starting at <strong>$79</strong></div>
-      <a href="#pricing" class="service-card-link">View packages →</a>
-    </div>
-
-    <div class="service-card reveal reveal-delay-2">
+      <span class="service-card-cta">Learn more →</span>
+    </a>
+    <a href="services.html#family" class="service-card reveal d2">
       <span class="service-card-num">03</span>
       <h3 class="service-card-name">Family Sessions</h3>
       <div class="service-card-line"></div>
-      <p class="service-card-desc">The laughs, the chaos, the in-between glances — we photograph your family as they actually are. Beautiful and completely real.</p>
+      <p class="service-card-desc">The laughs, the chaos, the in-between glances — we photograph your family as they actually are.</p>
       <div class="service-card-price">Starting at <strong>$129</strong></div>
-      <a href="#pricing" class="service-card-link">View packages →</a>
-    </div>
+      <span class="service-card-cta">Learn more →</span>
+    </a>
   </div>
-
-  <!-- RE banner -->
   <div class="re-banner reveal">
     <div class="re-banner-left">
       <span class="re-banner-eyebrow">Also available</span>
       <h3 class="re-banner-title">Real Estate Photography</h3>
-      <p class="re-banner-desc">Interior and exterior coverage, HDR processing, MLS-ready files. Pricing varies by property size — reach out for a custom quote.</p>
+      <p class="re-banner-desc">Interior & exterior coverage, HDR processing, MLS-ready files. Pricing varies by property size — reach out for a custom quote.</p>
     </div>
     <div class="re-banner-actions">
       <a href="tel:2365092933" class="re-btn-call">
@@ -906,189 +384,21 @@ footer {
   </div>
 </section>
 
-<!-- PRICING -->
-<section id="pricing">
-  <span class="section-eyebrow reveal" style="justify-content:center;">Transparent pricing</span>
-  <h2 class="section-title reveal">Clear packages. No surprises.</h2>
-  <p class="section-sub reveal">Everything included — no hidden fees, no upsells at the end.</p>
-
-  <div class="pricing-grid">
-    <!-- Grad — FEATURED -->
-    <div class="pricing-card featured reveal">
-      <div class="featured-badge">Our specialty</div>
-      <span class="pc-service">Graduation</span>
-      <h3 class="pc-name">The Grad Session</h3>
-      <div class="pc-price"><sup>$</sup>99</div>
-      <span class="pc-billing">+ applicable taxes</span>
-      <div class="pc-divider"></div>
-      <ul class="pc-features">
-        <li>60-minute outdoor session</li>
-        <li>1–2 Vancouver locations</li>
-        <li>Cap & gown + casual looks</li>
-        <li>10 fully edited digital images</li>
-        <li>Online gallery — 60 days</li>
-        <li>Print-ready files included</li>
-      </ul>
-      <a href="#contact" class="pc-book">Book This</a>
-    </div>
-
-    <!-- Headshots -->
-    <div class="pricing-card reveal reveal-delay-1">
-      <span class="pc-service">Headshots</span>
-      <h3 class="pc-name">The First Impression</h3>
-      <div class="pc-price"><sup>$</sup>79</div>
-      <span class="pc-billing">+ applicable taxes</span>
-      <div class="pc-divider"></div>
-      <ul class="pc-features">
-        <li>45-minute outdoor session</li>
-        <li>2 outfit looks</li>
-        <li>Relaxed posing guidance</li>
-        <li>8 fully retouched images</li>
-        <li>LinkedIn & web-ready files</li>
-        <li>48-hour turnaround</li>
-      </ul>
-      <a href="#contact" class="pc-book">Book This</a>
-    </div>
-
-    <!-- Family -->
-    <div class="pricing-card reveal reveal-delay-2">
-      <span class="pc-service">Family</span>
-      <h3 class="pc-name">The Full Picture</h3>
-      <div class="pc-price"><sup>$</sup>129</div>
-      <span class="pc-billing">up to 5 people</span>
-      <div class="pc-divider"></div>
-      <ul class="pc-features">
-        <li>75-minute location session</li>
-        <li>Families up to 5 people</li>
-        <li>Natural, relaxed direction</li>
-        <li>20 fully edited digital images</li>
-        <li>Online gallery — 90 days</li>
-        <li>Print-ready files included</li>
-      </ul>
-      <a href="#contact" class="pc-book">Book This</a>
-    </div>
-  </div>
-
-  <p class="pricing-note reveal">Larger groups, extra time, or add-ons? Just ask — happy to build something that works for you.</p>
-</section>
-
-<!-- PROCESS -->
-<section id="process">
-  <span class="section-eyebrow reveal" style="justify-content:center;">How it works</span>
-  <h2 class="section-title reveal">Simple from first message to final gallery</h2>
-  <div class="process-steps">
-    <div class="process-step reveal">
-      <div class="process-num"><span>1</span></div>
-      <h3 class="process-step-title">Reach Out</h3>
-      <p class="process-step-desc">Message or call Sean. Tell him what you need, your grad year, and when works for you.</p>
-    </div>
-    <div class="process-step reveal reveal-delay-1">
-      <div class="process-num"><span>2</span></div>
-      <h3 class="process-step-title">Plan Together</h3>
-      <p class="process-step-desc">Quick chat to lock in date, locations, outfits, and any details that matter to you.</p>
-    </div>
-    <div class="process-step reveal reveal-delay-2">
-      <div class="process-num"><span>3</span></div>
-      <h3 class="process-step-title">The Session</h3>
-      <p class="process-step-desc">Sean handles all direction. You just show up — relaxed, guided, no awkward guessing.</p>
-    </div>
-    <div class="process-step reveal reveal-delay-3">
-      <div class="process-num"><span>4</span></div>
-      <h3 class="process-step-title">Your Gallery</h3>
-      <p class="process-step-desc">Edited images in a private gallery within 5–7 days. Download, share, print — all yours.</p>
-    </div>
-  </div>
-</section>
-
-<!-- CONTACT -->
-<section id="contact">
-  <div class="reveal">
-    <span class="section-eyebrow">Get in touch</span>
-    <h2 class="section-title">Let's make something you'll actually be proud of</h2>
-    <p class="section-sub">Fill out the form or reach out directly. Sean personally handles every enquiry.</p>
-    <div class="contact-details">
-      <div class="contact-detail">
-        <span class="contact-detail-label">Phone</span>
-        <span class="contact-detail-val"><a href="tel:2365092933">(236) 509-2933</a></span>
-      </div>
-      <div class="contact-detail">
-        <span class="contact-detail-label">Email</span>
-        <span class="contact-detail-val"><a href="mailto:sean@harbourviewmedia.ca">sean@harbourviewmedia.ca</a></span>
-      </div>
-      <div class="contact-detail">
-        <span class="contact-detail-label">Based in</span>
-        <span class="contact-detail-val">Vancouver, British Columbia</span>
-      </div>
-      <div class="contact-detail">
-        <span class="contact-detail-label">Area</span>
-        <span class="contact-detail-val">Metro Vancouver & Lower Mainland</span>
-      </div>
-    </div>
-  </div>
-
-  <form class="contact-form reveal" onsubmit="handleSubmit(event)">
-    <div class="form-row">
-      <div class="form-group">
-        <label for="fname">First name</label>
-        <input type="text" id="fname" placeholder="Alex" />
-      </div>
-      <div class="form-group">
-        <label for="lname">Last name</label>
-        <input type="text" id="lname" placeholder="Chen" />
-      </div>
-    </div>
-    <div class="form-group">
-      <label for="email">Email address</label>
-      <input type="email" id="email" placeholder="alex@email.com" />
-    </div>
-    <div class="form-group">
-      <label for="service">I'm interested in</label>
-      <select id="service">
-        <option value="">Select a service...</option>
-        <option>Graduation Portraits — Class of 2027</option>
-        <option>Graduation Portraits — Class of 2028</option>
-        <option>Graduation Portraits — Class of 2029</option>
-        <option>Graduation Portraits — Class of 2030</option>
-        <option>Professional Headshots — $79</option>
-        <option>Family Session — $129</option>
-        <option>Real Estate Photography — quote</option>
-        <option>Something else</option>
-      </select>
-    </div>
-    <div class="form-group">
-      <label for="message">Tell me about your session</label>
-      <textarea id="message" placeholder="Grad year, school, location ideas, dates that work for you..."></textarea>
-    </div>
-    <button type="submit" class="form-submit">Send Message</button>
-  </form>
-</section>
-
 <!-- FOOTER -->
 <footer>
   <span class="footer-logo">Harbourview Media</span>
   <ul class="footer-links">
-    <li><a href="#grad-feature">Grad Photos</a></li>
-    <li><a href="#services">Services</a></li>
-    <li><a href="#pricing">Pricing</a></li>
-    <li><a href="#contact">Contact</a></li>
+    <li><a href="services.html">Services</a></li>
+    <li><a href="pricing.html">Pricing</a></li>
+    <li><a href="faq.html">FAQ</a></li>
+    <li><a href="contact.html">Contact</a></li>
   </ul>
   <span class="footer-copy">&copy; 2025 Harbourview Media. Vancouver, BC.</span>
 </footer>
 
 <script>
-  const reveals = document.querySelectorAll('.reveal');
-  const io = new IntersectionObserver((entries) => {
-    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
-  }, { threshold: 0.08 });
-  reveals.forEach(el => io.observe(el));
-
-  function handleSubmit(e) {
-    e.preventDefault();
-    const btn = e.target.querySelector('.form-submit');
-    btn.textContent = "Sent — Sean will be in touch soon!";
-    btn.style.background = '#2C5240';
-    btn.disabled = true;
-  }
+const io = new IntersectionObserver(e => e.forEach(x => { if(x.isIntersecting) x.target.classList.add('visible'); }), { threshold: 0.08 });
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 </script>
 </body>
 </html>
