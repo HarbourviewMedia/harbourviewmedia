@@ -147,7 +147,7 @@
       Let's make<br/>something<br/><em>worth keeping</em>
     </h1>
     <p class="contact-subtext">
-      Fill out the form and Sean will follow up personally — usually same day. Or reach out directly if you'd rather just chat.
+      Fill out the form and our team will follow up promptly — usually same day. Or reach out directly if you'd rather just chat.
     </p>
 
     <div class="contact-details">
@@ -180,7 +180,7 @@
       <div class="process-mini">
         <div class="process-mini-item">
           <span class="pmn">1.</span>
-          <span class="pmt">Sean reviews your message and responds personally — no automated replies.</span>
+          <span class="pmt">Our team reviews your message and responds directly — no automated replies.</span>
         </div>
         <div class="process-mini-item">
           <span class="pmn">2.</span>
@@ -201,30 +201,30 @@
   <!-- FORM SIDE -->
   <div class="contact-form-wrap">
     <h2 class="form-heading">Send a message</h2>
-    <p class="form-sub">For real estate inquiries, just mention it in the message — Sean will follow up with a custom quote.</p>
+    <p class="form-sub">For real estate inquiries, just mention it in the message — we'll follow up with a custom quote.</p>
 
-    <form class="contact-form" id="contactForm" onsubmit="handleSubmit(event)">
+    <form class="contact-form" id="contactForm" action="https://formspree.io/f/YOUR_mjgernbq" method="POST">
       <div class="form-row">
         <div class="form-group">
           <label for="fname">First name</label>
-          <input type="text" id="fname" placeholder="Alex" required />
+          <input type="text" id="fname" name="first_name" placeholder="Alex" required />
         </div>
         <div class="form-group">
           <label for="lname">Last name</label>
-          <input type="text" id="lname" placeholder="Chen" />
+          <input type="text" id="lname" name="last_name" placeholder="Chen" />
         </div>
       </div>
       <div class="form-group">
         <label for="email">Email address</label>
-        <input type="email" id="email" placeholder="alex@email.com" required />
+        <input type="email" id="email" name="email" placeholder="alex@email.com" required />
       </div>
       <div class="form-group">
         <label for="phone">Phone (optional)</label>
-        <input type="tel" id="phone" placeholder="(604) 555-0100" />
+        <input type="tel" id="phone" name="phone" placeholder="(604) 555-0100" />
       </div>
       <div class="form-group">
         <label for="service">I'm interested in</label>
-        <select id="service">
+        <select id="service" name="service">
           <option value="">Select a service...</option>
           <option value="graduation-2026">Graduation Portraits — Class of 2026</option>
           <option value="graduation-2027">Graduation Portraits — Class of 2027</option>
@@ -237,9 +237,13 @@
         </select>
       </div>
       <div class="form-group">
-        <label for="message">Tell me about your session</label>
-        <textarea id="message" placeholder="Grad year and school, dates that work for you, location ideas, how many people, any questions..."></textarea>
+        <label for="message">Tell us about your session</label>
+        <textarea id="message" name="message" placeholder="Grad year and school, dates that work for you, location ideas, how many people, any questions..."></textarea>
       </div>
+      <!-- Honeypot spam filter -->
+      <input type="text" name="_gotcha" style="display:none" />
+      <!-- Redirect after submission -->
+      <input type="hidden" name="_next" value="contact.html?sent=true" />
       <button type="submit" class="form-submit">Send Message</button>
     </form>
 
@@ -248,7 +252,7 @@
         <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M4 11l5 5 9-9" stroke="#1A1F1C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </div>
       <h3>Message sent!</h3>
-      <p>Thanks for reaching out. Sean will get back to you personally — usually within a few hours.</p>
+      <p>Thanks for reaching out. Our team will get back to you — usually within a few hours.</p>
     </div>
   </div>
 </div>
@@ -269,6 +273,7 @@
 const params = new URLSearchParams(window.location.search);
 const yearParam = params.get('year');
 const serviceParam = params.get('service');
+const sentParam = params.get('sent');
 const select = document.getElementById('service');
 
 if (yearParam) {
@@ -279,8 +284,8 @@ if (yearParam) {
   if (opt) opt.selected = true;
 }
 
-function handleSubmit(e) {
-  e.preventDefault();
+// Show success banner if Formspree redirected back with ?sent=true
+if (sentParam === 'true') {
   document.getElementById('contactForm').style.display = 'none';
   document.getElementById('formSuccess').style.display = 'block';
 }
