@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Services — Harbourview Media</title>
+<link rel="stylesheet" href="style.css" />
+<style>
+.services-wrap { padding: 6rem 5rem; }
+
+.service-block {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 6rem; align-items: start;
+  padding: 5rem 0; border-bottom: 1px solid var(--border);
+}
+.service-block:last-of-type { border-bottom: none; }
+.service-block.flip { direction: rtl; }
+.service-block.flip > * { direction: ltr; }
+
+.service-num-large {
+  font-family: 'Playfair Display', serif;
+  font-size: 5rem; font-weight: 700; font-style: italic;
+  color: var(--border); line-height: 1; margin-bottom: 0.5rem;
+  user-select: none;
+}
+.service-label {
+  font-size: 0.62rem; font-weight: 500; letter-spacing: 0.2em;
+  text-transform: uppercase; color: var(--amber); margin-bottom: 0.8rem; display: block;
+}
+.service-heading {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.8rem, 3vw, 2.6rem); font-weight: 700; line-height: 1.12;
+  color: var(--forest); margin-bottom: 1.2rem;
+}
+.service-body {
+  font-size: 0.88rem; font-weight: 300; color: var(--ink-mid);
+  line-height: 2; margin-bottom: 2rem; max-width: 420px;
+}
+
+.service-includes { list-style: none; margin-bottom: 2.5rem; }
+.service-includes li {
+  font-size: 0.82rem; font-weight: 300; color: var(--mist);
+  padding: 0.5rem 0; border-bottom: 1px solid var(--border);
+  display: flex; align-items: center; gap: 0.8rem;
+}
+.service-includes li::before {
+  content: ''; width: 6px; height: 6px; border-radius: 50%;
+  background: var(--amber); flex-shrink: 0;
+}
+
+.service-price-block {
+  background: var(--parchment);
+  padding: 2.5rem;
+  border: 1px solid var(--border);
+  position: sticky; top: 96px;
+}
+.spb-label {
+  font-size: 0.62rem; font-weight: 500; letter-spacing: 0.18em;
+  text-transform: uppercase; color: var(--mist); display: block; margin-bottom: 0.5rem;
+}
+.spb-price {
+  font-family: 'Playfair Display', serif;
+  font-size: 3.2rem; font-weight: 700; color: var(--forest); line-height: 1;
+}
+.spb-price sup { font-size: 1.2rem; vertical-align: super; font-family: 'Outfit', sans-serif; font-weight: 300; }
+.spb-from { font-size: 0.75rem; font-weight: 300; color: var(--mist); margin-bottom: 1.5rem; display: block; }
+.spb-divider { width: 100%; height: 1px; background: var(--border); margin-bottom: 1.5rem; }
+
+.service-block.dark-block { background: var(--forest); margin: 0 -5rem; padding: 5rem 5rem; }
+.service-block.dark-block .service-heading { color: var(--white); }
+.service-block.dark-block .service-body { color: rgba(254,252,249,0.5); }
+.service-block.dark-block .service-num-large { color: rgba(255,255,255,0.06); }
+.service-block.dark-block .service-includes li { color: rgba(254,252,249,0.5); border-color: rgba(255,255,255,0.1); }
+.service-block.dark-block .service-price-block { background: rgba(255,255,255,0.05); border-color: rgba(255,255,255,0.12); }
+.service-block.dark-block .spb-label { color: var(--sage-lt); }
+.service-block.dark-block .spb-price { color: var(--amber-lt); }
+.service-block.dark-block .spb-from { color: rgba(254,252,249,0.4); }
+.service-block.dark-block .spb-divider { background: rgba(255,255,255,0.1); }
+.service-block.dark-block .btn-amber { background: var(--amber); }
+
+@media (max-width: 900px) {
+  .services-wrap { padding: 4rem 2rem; }
+  .service-block { grid-template-columns: 1fr; gap: 2.5rem; direction: ltr; }
+  .service-block.flip { direction: ltr; }
+  .service-price-block { position: static; }
+  .service-block.dark-block { margin: 0 -2rem; padding: 4rem 2rem; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">Harbourview Media</a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="services.html" class="active">Services</a></li>
+    <li><a href="pricing.html">Pricing</a></li>
+    <li><a href="faq.html">FAQ</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <a href="contact.html" class="nav-cta">Book a Session</a>
+</nav>
+
+<div class="page-header">
+  <span class="page-header-eyebrow">What we offer</span>
+  <h1>Photography built around<br/><em>the moments that matter</em></h1>
+  <p class="page-header-sub">Three core services, one photographer, and a genuine commitment to getting it right every time.</p>
+</div>
+
+<div class="services-wrap">
+
+  <!-- GRAD -->
+  <div class="service-block" id="grads">
+    <div class="reveal">
+      <div class="service-num-large">01</div>
+      <span class="service-label">Our Specialty</span>
+      <h2 class="service-heading">Graduation Portraits</h2>
+      <p class="service-body">
+        Most grad photos look the same — same park, same pose, same forced smile. We do it differently. We find locations that match who you actually are, and we shoot until the moment feels genuine. Because that's the one you'll actually want on your wall.
+      </p>
+      <p class="service-body">
+        Available for both high school and university grads. Already booking Classes of 2026, 2027, 2028, and 2029 across Metro Vancouver and the Lower Mainland.
+      </p>
+      <ul class="service-includes">
+        <li>60-minute outdoor session</li>
+        <li>1–2 curated Vancouver locations</li>
+        <li>Cap & gown + casual outfit changes</li>
+        <li>Fully directed posing — no experience needed</li>
+        <li>10 fully edited, print-ready digital images</li>
+        <li>Private online gallery for 60 days</li>
+        <li>High school and university grads welcome</li>
+      </ul>
+      <a href="contact.html?service=graduation" class="btn-forest">Book a Grad Session</a>
+    </div>
+    <div class="reveal d1">
+      <div class="service-price-block">
+        <span class="spb-label">Starting from</span>
+        <div class="spb-price"><sup>$</sup>99</div>
+        <span class="spb-from">+ applicable taxes</span>
+        <div class="spb-divider"></div>
+        <p style="font-size:0.8rem;font-weight:300;color:var(--mist);line-height:1.8;margin-bottom:1.5rem;">
+          Custom packages available for larger groups, extended sessions, or add-ons like extra edited images or additional locations.
+        </p>
+        <a href="pricing.html" class="btn-outline" style="width:100%;text-align:center;">See all pricing</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- HEADSHOTS -->
+  <div class="service-block flip" id="headshots">
+    <div class="reveal">
+      <div class="service-num-large">02</div>
+      <span class="service-label">Professional</span>
+      <h2 class="service-heading">Headshots</h2>
+      <p class="service-body">
+        LinkedIn, your company bio, your acting portfolio — a great headshot speaks before you do. We create images that feel confident, natural, and genuinely like you. Not the stiff, forced version of you.
+      </p>
+      <ul class="service-includes">
+        <li>45-minute outdoor or natural-light session</li>
+        <li>2 outfit looks included</li>
+        <li>Relaxed posing guidance throughout</li>
+        <li>8 fully retouched digital images</li>
+        <li>LinkedIn & web-optimized file sizes</li>
+        <li>48-hour delivery turnaround</li>
+      </ul>
+      <a href="contact.html?service=headshots" class="btn-forest">Book a Headshot Session</a>
+    </div>
+    <div class="reveal d1">
+      <div class="service-price-block">
+        <span class="spb-label">Starting from</span>
+        <div class="spb-price"><sup>$</sup>79</div>
+        <span class="spb-from">+ applicable taxes</span>
+        <div class="spb-divider"></div>
+        <p style="font-size:0.8rem;font-weight:300;color:var(--mist);line-height:1.8;margin-bottom:1.5rem;">
+          Team headshot packages available for businesses and studios. Reach out for group pricing.
+        </p>
+        <a href="pricing.html" class="btn-outline" style="width:100%;text-align:center;">See all pricing</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- FAMILY -->
+  <div class="service-block" id="family">
+    <div class="reveal">
+      <div class="service-num-large">03</div>
+      <span class="service-label">Family</span>
+      <h2 class="service-heading">Family Sessions</h2>
+      <p class="service-body">
+        The chaos, the laughing, the in-between glances — that's the stuff worth keeping. We photograph your family as they actually are: a little messy, a little beautiful, and completely real. No stiff lineups, no fake smiles.
+      </p>
+      <ul class="service-includes">
+        <li>75-minute outdoor location session</li>
+        <li>Families up to 5 people</li>
+        <li>Natural, relaxed direction throughout</li>
+        <li>20 fully edited digital images</li>
+        <li>Private online gallery for 90 days</li>
+        <li>Print-ready files included</li>
+      </ul>
+      <a href="contact.html?service=family" class="btn-forest">Book a Family Session</a>
+    </div>
+    <div class="reveal d1">
+      <div class="service-price-block">
+        <span class="spb-label">Starting from</span>
+        <div class="spb-price"><sup>$</sup>129</div>
+        <span class="spb-from">up to 5 people, + taxes</span>
+        <div class="spb-divider"></div>
+        <p style="font-size:0.8rem;font-weight:300;color:var(--mist);line-height:1.8;margin-bottom:1.5rem;">
+          Larger families, extended sessions, or holiday mini-sessions? Just ask.
+        </p>
+        <a href="pricing.html" class="btn-outline" style="width:100%;text-align:center;">See all pricing</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- RE BANNER -->
+<div style="padding: 0 5rem 5rem; background: var(--white);">
+  <div class="re-banner reveal">
+    <div class="re-banner-left">
+      <span class="re-banner-eyebrow">Also available</span>
+      <h3 class="re-banner-title">Real Estate Photography</h3>
+      <p class="re-banner-desc">Interior & exterior coverage, HDR processing, MLS-ready files. Pricing varies by property size — reach out for a custom quote.</p>
+    </div>
+    <div class="re-banner-actions">
+      <a href="tel:2365092933" class="re-btn-call">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 1h3l1.5 3.5-1.75 1.05C5.58 7.18 6.82 8.42 8.45 9.25L9.5 7.5 13 9v3c0 1-4 2-9-3S1 2 2 1z" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"/></svg>
+        (236) 509-2933
+      </a>
+      <a href="mailto:sean@harbourviewmedia.ca" class="re-btn-email">sean@harbourviewmedia.ca</a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <span class="footer-logo">Harbourview Media</span>
+  <ul class="footer-links">
+    <li><a href="services.html">Services</a></li>
+    <li><a href="pricing.html">Pricing</a></li>
+    <li><a href="faq.html">FAQ</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <span class="footer-copy">&copy; 2025 Harbourview Media. Vancouver, BC.</span>
+</footer>
+
+<script>
+const io = new IntersectionObserver(e => e.forEach(x => { if(x.isIntersecting) x.target.classList.add('visible'); }), { threshold: 0.06 });
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
+</body>
+</html>
