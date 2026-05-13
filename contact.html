@@ -1,129 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Contact — Harbourview Media</title>
-<link rel="stylesheet" href="style.css" />
 <style>
-.contact-wrap {
-  display: grid; grid-template-columns: 1fr 1fr;
-  gap: 0; min-height: 80vh;
-}
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400&family=Outfit:wght@300;400;500;600&display=swap');
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--forest:#1E3A2F;--forest-mid:#2A4D3E;--parchment:#F7F3EC;--white:#FEFCF9;--amber:#C8943A;--amber-lt:#DBA84E;--ink:#1A1F1C;--mist:#7A8A82;--sage:#6B8C78;--sage-lt:#A8C0B0;--border:#E4DDD3}
+html{scroll-behavior:smooth}
+body{font-family:'Outfit',sans-serif;background:var(--white);color:var(--ink);font-weight:300;-webkit-font-smoothing:antialiased}
+a{text-decoration:none;color:inherit}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;height:68px;display:flex;align-items:center;justify-content:space-between;padding:0 5rem;background:rgba(30,58,47,0.97);backdrop-filter:blur(8px);border-bottom:1px solid rgba(200,148,58,0.15)}
+.nav-logo{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:500;color:var(--white)}
+.nav-links{display:flex;gap:2.5rem;list-style:none}
+.nav-links a{font-size:0.75rem;font-weight:400;letter-spacing:0.08em;text-transform:uppercase;color:rgba(254,252,249,0.5);transition:color 0.2s}
+.nav-links a:hover,.nav-links a.active{color:var(--white)}
+.nav-cta{font-size:0.68rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--ink);background:var(--amber);padding:0.6rem 1.4rem;transition:background 0.2s}
+.nav-cta:hover{background:var(--amber-lt)}
+footer{background:var(--ink);padding:3rem 5rem;display:flex;align-items:center;justify-content:space-between;gap:2rem;flex-wrap:wrap}
+.footer-logo{font-family:'Playfair Display',serif;font-size:1rem;font-weight:500;color:rgba(254,252,249,0.5)}
+.footer-links{display:flex;gap:2rem;list-style:none}
+.footer-links a{font-size:0.7rem;font-weight:300;letter-spacing:0.08em;text-transform:uppercase;color:rgba(254,252,249,0.3);transition:color 0.2s}
+.footer-links a:hover{color:var(--amber-lt)}
+.footer-copy{font-size:0.68rem;font-weight:300;color:rgba(254,252,249,0.2)}
 
-/* LEFT PANEL */
-.contact-info {
-  background: var(--forest);
-  padding: 6rem 5rem;
-  display: flex; flex-direction: column; justify-content: center;
-  position: relative; overflow: hidden;
-}
-.contact-info::before {
-  content: ''; position: absolute; bottom: -80px; right: -80px;
-  width: 360px; height: 360px; border: 1px solid rgba(200,148,58,0.1);
-  border-radius: 50%; pointer-events: none;
-}
-.contact-info .section-eyebrow { color: var(--amber); position: relative; z-index: 1; }
-.contact-info .section-eyebrow::before { background: var(--amber); }
+.contact-wrap{display:grid;grid-template-columns:1fr 1fr;min-height:calc(100vh - 68px);margin-top:68px}
+.contact-info{background:var(--forest);padding:6rem 5rem;display:flex;flex-direction:column;justify-content:center;position:relative;overflow:hidden}
+.contact-info::before{content:'';position:absolute;bottom:-80px;right:-80px;width:360px;height:360px;border:1px solid rgba(200,148,58,0.1);border-radius:50%;pointer-events:none}
+.ci-eyebrow{font-size:0.65rem;font-weight:500;letter-spacing:0.25em;text-transform:uppercase;color:var(--amber);display:flex;align-items:center;gap:0.8rem;margin-bottom:1.5rem;position:relative;z-index:1}
+.ci-eyebrow::before{content:'';width:28px;height:1px;background:var(--amber)}
+.ci-heading{font-family:'Playfair Display',serif;font-size:clamp(2rem,3.5vw,3rem);font-weight:700;line-height:1.12;color:var(--white);margin-bottom:1.2rem;position:relative;z-index:1}
+.ci-heading em{font-style:italic;font-weight:400;color:var(--amber-lt)}
+.ci-sub{font-size:0.87rem;font-weight:300;color:rgba(254,252,249,0.4);line-height:1.95;max-width:340px;margin-bottom:3rem;position:relative;z-index:1}
+.ci-details{display:flex;flex-direction:column;gap:1.3rem;position:relative;z-index:1}
+.ci-detail{display:flex;gap:1rem;align-items:flex-start}
+.ci-detail-label{font-size:0.6rem;font-weight:500;letter-spacing:0.18em;text-transform:uppercase;color:var(--amber);min-width:72px;padding-top:0.12rem}
+.ci-detail-val{font-size:0.87rem;font-weight:300;color:rgba(254,252,249,0.55)}
+.ci-detail-val a{color:rgba(254,252,249,0.55);transition:color 0.2s}
+.ci-detail-val a:hover{color:var(--amber-lt)}
+.ci-divider{width:100%;height:1px;background:rgba(255,255,255,0.08);margin:3rem 0;position:relative;z-index:1}
+.ci-process{position:relative;z-index:1}
+.ci-process-title{font-size:0.62rem;font-weight:500;letter-spacing:0.18em;text-transform:uppercase;color:rgba(254,252,249,0.3);margin-bottom:1.5rem;display:block}
+.process-items{display:flex;flex-direction:column;gap:1rem}
+.pi{display:flex;gap:1rem;align-items:flex-start}
+.pi-n{font-family:'Playfair Display',serif;font-size:1rem;font-style:italic;color:var(--amber);min-width:20px;line-height:1.4}
+.pi-t{font-size:0.8rem;font-weight:300;color:rgba(254,252,249,0.4);line-height:1.6}
 
-.contact-heading {
-  font-family: 'Playfair Display', serif;
-  font-size: clamp(2rem, 3.5vw, 3rem); font-weight: 700; line-height: 1.12;
-  color: var(--white); margin-bottom: 1.2rem; position: relative; z-index: 1;
-}
-.contact-heading em { font-style: italic; font-weight: 400; color: var(--amber-lt); }
-.contact-subtext {
-  font-size: 0.87rem; font-weight: 300;
-  color: rgba(254,252,249,0.4); line-height: 1.95;
-  max-width: 340px; margin-bottom: 3rem; position: relative; z-index: 1;
-}
+.contact-form-wrap{background:var(--parchment);padding:6rem 5rem;display:flex;flex-direction:column;justify-content:center}
+.form-heading{font-family:'Playfair Display',serif;font-size:1.6rem;font-weight:700;color:var(--forest);margin-bottom:0.5rem}
+.form-sub{font-size:0.82rem;font-weight:300;color:var(--mist);margin-bottom:2.5rem;line-height:1.8}
+.contact-form{display:flex;flex-direction:column;gap:1.2rem}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.form-group{display:flex;flex-direction:column;gap:0.4rem}
+.form-group label{font-size:0.65rem;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:var(--mist)}
+.form-group input,.form-group select,.form-group textarea{font-family:'Outfit',sans-serif;font-size:0.88rem;font-weight:300;padding:0.85rem 1rem;border:1px solid var(--border);background:var(--white);color:var(--ink);outline:none;transition:border-color 0.2s;-webkit-appearance:none;appearance:none}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:var(--amber)}
+.form-group textarea{min-height:120px;resize:vertical}
+.form-submit{font-family:'Outfit',sans-serif;font-size:0.72rem;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;padding:1rem 2rem;background:var(--forest);color:var(--white);border:none;cursor:pointer;transition:background 0.2s;margin-top:0.4rem}
+.form-submit:hover{background:var(--forest-mid)}
+.form-success{display:none;text-align:center;padding:3rem 2rem}
+.form-success-icon{width:56px;height:56px;background:var(--amber);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 1.5rem}
+.form-success h3{font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:700;color:var(--forest);margin-bottom:0.8rem}
+.form-success p{font-size:0.85rem;font-weight:300;color:var(--mist);line-height:1.8}
 
-.contact-details { display: flex; flex-direction: column; gap: 1.3rem; position: relative; z-index: 1; }
-.contact-detail { display: flex; gap: 1rem; align-items: flex-start; }
-.contact-detail-label {
-  font-size: 0.6rem; font-weight: 500; letter-spacing: 0.18em;
-  text-transform: uppercase; color: var(--amber); min-width: 72px; padding-top: 0.12rem;
-}
-.contact-detail-val { font-size: 0.87rem; font-weight: 300; color: rgba(254,252,249,0.55); }
-.contact-detail-val a { color: rgba(254,252,249,0.55); text-decoration: none; transition: color 0.2s; }
-.contact-detail-val a:hover { color: var(--amber-lt); }
-
-.contact-divider {
-  width: 100%; height: 1px; background: rgba(255,255,255,0.08);
-  margin: 3rem 0; position: relative; z-index: 1;
-}
-
-.contact-process { position: relative; z-index: 1; }
-.contact-process-title {
-  font-size: 0.62rem; font-weight: 500; letter-spacing: 0.18em;
-  text-transform: uppercase; color: var(--sage-lt); opacity: 0.7;
-  margin-bottom: 1.5rem; display: block;
-}
-.process-mini { display: flex; flex-direction: column; gap: 1rem; }
-.process-mini-item { display: flex; gap: 1rem; align-items: flex-start; }
-.pmn { 
-  font-family: 'Playfair Display', serif; font-size: 1rem; font-style: italic;
-  color: var(--amber); min-width: 20px; line-height: 1.4;
-}
-.pmt { font-size: 0.8rem; font-weight: 300; color: rgba(254,252,249,0.4); line-height: 1.6; }
-
-/* RIGHT PANEL */
-.contact-form-wrap {
-  background: var(--parchment);
-  padding: 6rem 5rem;
-  display: flex; flex-direction: column; justify-content: center;
-}
-.form-heading {
-  font-family: 'Playfair Display', serif; font-size: 1.6rem; font-weight: 700;
-  color: var(--forest); margin-bottom: 0.5rem;
-}
-.form-sub {
-  font-size: 0.82rem; font-weight: 300; color: var(--mist);
-  margin-bottom: 2.5rem; line-height: 1.8;
-}
-
-/* override form styles for light background */
-.contact-form-wrap .form-group label { color: var(--mist); }
-.contact-form-wrap .form-group input,
-.contact-form-wrap .form-group select,
-.contact-form-wrap .form-group textarea {
-  background: var(--white);
-  border: 1px solid var(--border);
-  color: var(--ink);
-}
-.contact-form-wrap .form-group input::placeholder,
-.contact-form-wrap .form-group textarea::placeholder { color: rgba(30,58,47,0.25); }
-.contact-form-wrap .form-group select option { background: var(--white); color: var(--ink); }
-.contact-form-wrap .form-group input:focus,
-.contact-form-wrap .form-group select:focus,
-.contact-form-wrap .form-group textarea:focus { border-color: var(--amber); }
-.contact-form-wrap .form-submit { background: var(--forest); color: var(--white); }
-.contact-form-wrap .form-submit:hover { background: var(--forest-mid); }
-
-/* success state */
-.form-success {
-  display: none; text-align: center; padding: 3rem 2rem;
-}
-.form-success-icon {
-  width: 56px; height: 56px; background: var(--amber);
-  border-radius: 50%; display: flex; align-items: center; justify-content: center;
-  margin: 0 auto 1.5rem;
-}
-.form-success h3 {
-  font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 700;
-  color: var(--forest); margin-bottom: 0.8rem;
-}
-.form-success p { font-size: 0.85rem; font-weight: 300; color: var(--mist); line-height: 1.8; }
-
-@media (max-width: 900px) {
-  .contact-wrap { grid-template-columns: 1fr; }
-  .contact-info { padding: 4rem 2rem; }
-  .contact-form-wrap { padding: 4rem 2rem; }
+@media(max-width:900px){
+  nav{padding:0 1.5rem}.nav-links{display:none}
+  .contact-wrap{grid-template-columns:1fr}
+  .contact-info{padding:4rem 2rem}
+  .contact-form-wrap{padding:4rem 2rem}
+  .form-row{grid-template-columns:1fr}
+  footer{padding:2.5rem 1.5rem;flex-direction:column;gap:1.5rem}
 }
 </style>
 </head>
 <body>
-
 <nav>
   <a href="index.html" class="nav-logo">Harbourview Media</a>
   <ul class="nav-links">
@@ -133,126 +84,98 @@
     <li><a href="faq.html">FAQ</a></li>
     <li><a href="contact.html" class="active">Contact</a></li>
   </ul>
-  <a href="contact.html" class="nav-cta">Book a Session</a>
+  <a href="contact.html" class="nav-cta">Get a Quote</a>
 </nav>
 
-<!-- spacer for fixed nav -->
-<div style="height:68px;"></div>
-
 <div class="contact-wrap">
-  <!-- INFO SIDE -->
   <div class="contact-info">
-    <span class="section-eyebrow">Get in touch</span>
-    <h1 class="contact-heading">
-      Let's make<br/>something<br/><em>worth keeping</em>
-    </h1>
-    <p class="contact-subtext">
-      Fill out the form and our team will follow up promptly — usually same day. Or reach out directly if you'd rather just chat.
-    </p>
-
-    <div class="contact-details">
-      <div class="contact-detail">
-        <span class="contact-detail-label">Call / Text</span>
-        <span class="contact-detail-val"><a href="tel:2365092933">(236) 509-2933</a></span>
+    <span class="ci-eyebrow">Get in touch</span>
+    <h1 class="ci-heading">Let's make your restaurant<br/><em>look the part</em></h1>
+    <p class="ci-sub">Fill out the form and we'll follow up promptly — usually same day. Or reach out directly if you'd rather just chat.</p>
+    <div class="ci-details">
+      <div class="ci-detail">
+        <span class="ci-detail-label">Call / Text</span>
+        <span class="ci-detail-val"><a href="tel:2365092933">(236) 509-2933</a></span>
       </div>
-      <div class="contact-detail">
-        <span class="contact-detail-label">Email</span>
-        <span class="contact-detail-val"><a href="mailto:sean@harbourviewmedia.ca">sean@harbourviewmedia.ca</a></span>
+      <div class="ci-detail">
+        <span class="ci-detail-label">Email</span>
+        <span class="ci-detail-val"><a href="mailto:sean@harbourviewmedia.ca">sean@harbourviewmedia.ca</a></span>
       </div>
-      <div class="contact-detail">
-        <span class="contact-detail-label">Based in</span>
-        <span class="contact-detail-val">Vancouver, British Columbia</span>
+      <div class="ci-detail">
+        <span class="ci-detail-label">Based in</span>
+        <span class="ci-detail-val">Vancouver, British Columbia</span>
       </div>
-      <div class="contact-detail">
-        <span class="contact-detail-label">Area</span>
-        <span class="contact-detail-val">Metro Vancouver & Lower Mainland</span>
+      <div class="ci-detail">
+        <span class="ci-detail-label">Area</span>
+        <span class="ci-detail-val">Metro Vancouver & Lower Mainland</span>
       </div>
-      <div class="contact-detail">
-        <span class="contact-detail-label">Response</span>
-        <span class="contact-detail-val">Usually same day</span>
+      <div class="ci-detail">
+        <span class="ci-detail-label">Response</span>
+        <span class="ci-detail-val">Usually same day</span>
       </div>
     </div>
-
-    <div class="contact-divider"></div>
-
-    <div class="contact-process">
-      <span class="contact-process-title">What happens next</span>
-      <div class="process-mini">
-        <div class="process-mini-item">
-          <span class="pmn">1.</span>
-          <span class="pmt">Our team reviews your message and responds directly — no automated replies.</span>
-        </div>
-        <div class="process-mini-item">
-          <span class="pmn">2.</span>
-          <span class="pmt">We confirm the date, location, and package details together.</span>
-        </div>
-        <div class="process-mini-item">
-          <span class="pmn">3.</span>
-          <span class="pmt">A 50% deposit locks in your session. The rest is due day-of.</span>
-        </div>
-        <div class="process-mini-item">
-          <span class="pmn">4.</span>
-          <span class="pmt">Show up, have a good time, and get photos you'll actually love.</span>
-        </div>
+    <div class="ci-divider"></div>
+    <div class="ci-process">
+      <span class="ci-process-title">What happens next</span>
+      <div class="process-items">
+        <div class="pi"><span class="pi-n">1.</span><span class="pi-t">We review your message and respond directly — no automated replies.</span></div>
+        <div class="pi"><span class="pi-n">2.</span><span class="pi-t">We confirm the package, schedule, and any specifics about your space.</span></div>
+        <div class="pi"><span class="pi-n">3.</span><span class="pi-t">We show up, shoot, and deliver your gallery within 48 hours.</span></div>
+        <div class="pi"><span class="pi-n">4.</span><span class="pi-t">Your feed looks like the restaurant you've built. Repeat monthly.</span></div>
       </div>
     </div>
   </div>
 
-  <!-- FORM SIDE -->
   <div class="contact-form-wrap">
     <h2 class="form-heading">Send a message</h2>
-    <p class="form-sub">For real estate inquiries, just mention it in the message — we'll follow up with a custom quote.</p>
-
+    <p class="form-sub">Restaurant owner? Tell us your name, what you're after, and the best time to connect — we'll take it from there.</p>
     <form class="contact-form" id="contactForm" action="https://formspree.io/f/mjgernbq" method="POST">
       <div class="form-row">
         <div class="form-group">
           <label for="fname">First name</label>
-          <input type="text" id="fname" name="first_name" placeholder="Alex" required />
+          <input type="text" id="fname" name="first_name" placeholder="Alex" required/>
         </div>
         <div class="form-group">
           <label for="lname">Last name</label>
-          <input type="text" id="lname" name="last_name" placeholder="Chen" />
+          <input type="text" id="lname" name="last_name" placeholder="Chen"/>
         </div>
       </div>
       <div class="form-group">
         <label for="email">Email address</label>
-        <input type="email" id="email" name="email" placeholder="alex@email.com" required />
+        <input type="email" id="email" name="email" placeholder="alex@yourrestaurant.com" required/>
       </div>
       <div class="form-group">
         <label for="phone">Phone (optional)</label>
-        <input type="tel" id="phone" name="phone" placeholder="(604) 555-0100" />
+        <input type="tel" id="phone" name="phone" placeholder="(604) 555-0100"/>
       </div>
       <div class="form-group">
         <label for="service">I'm interested in</label>
         <select id="service" name="service">
           <option value="">Select a service...</option>
-          <option value="graduation-2026">Graduation Portraits — Class of 2026</option>
-          <option value="graduation-2027">Graduation Portraits — Class of 2027</option>
-          <option value="graduation-2028">Graduation Portraits — Class of 2028</option>
-          <option value="graduation-2029">Graduation Portraits — Class of 2029</option>
+          <option value="restaurant-starter">Restaurant Content — Starter ($299/mo)</option>
+          <option value="restaurant-standard">Restaurant Content — Standard ($449/mo)</option>
+          <option value="restaurant-full">Restaurant Content — Full Coverage ($649/mo)</option>
+          <option value="restaurant-oneoff">Restaurant Content — One-off shoot</option>
           <option value="headshots">Professional Headshots — $79</option>
           <option value="family">Family Session — $129</option>
-          <option value="realestate">Real Estate Photography — quote</option>
+          <option value="realestate">Real Estate Photography — custom quote</option>
           <option value="other">Something else</option>
         </select>
       </div>
       <div class="form-group">
-        <label for="message">Tell us about your session</label>
-        <textarea id="message" name="message" placeholder="Grad year and school, dates that work for you, location ideas, how many people, any questions..."></textarea>
+        <label for="message">Tell us about your project</label>
+        <textarea id="message" name="message" placeholder="Restaurant name, what you need, best time to connect, any questions..."></textarea>
       </div>
-      <!-- Honeypot spam filter -->
-      <input type="text" name="_gotcha" style="display:none" />
-      <!-- Redirect after submission -->
-      <input type="hidden" name="_next" value="contact.html?sent=true" />
+      <input type="text" name="_gotcha" style="display:none"/>
+      <input type="hidden" name="_next" value="contact.html?sent=true"/>
       <button type="submit" class="form-submit">Send Message</button>
     </form>
-
     <div class="form-success" id="formSuccess">
       <div class="form-success-icon">
         <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M4 11l5 5 9-9" stroke="#1A1F1C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </div>
       <h3>Message sent!</h3>
-      <p>Thanks for reaching out. Our team will get back to you — usually within a few hours.</p>
+      <p>Thanks for reaching out. We'll get back to you — usually within a few hours.</p>
     </div>
   </div>
 </div>
@@ -265,30 +188,15 @@
     <li><a href="faq.html">FAQ</a></li>
     <li><a href="contact.html">Contact</a></li>
   </ul>
-  <span class="footer-copy">&copy; 2025 Harbourview Media. Vancouver, BC.</span>
+  <span class="footer-copy">© 2026 Harbourview Media. Vancouver, BC.</span>
 </footer>
-
 <script>
-// Pre-select dropdown based on URL params
-const params = new URLSearchParams(window.location.search);
-const yearParam = params.get('year');
-const serviceParam = params.get('service');
-const sentParam = params.get('sent');
-const select = document.getElementById('service');
-
-if (yearParam) {
-  const opt = select.querySelector(`option[value="graduation-${yearParam}"]`);
-  if (opt) opt.selected = true;
-} else if (serviceParam) {
-  const opt = select.querySelector(`option[value="${serviceParam}"]`);
-  if (opt) opt.selected = true;
-}
-
-// Show success banner if Formspree redirected back with ?sent=true
-if (sentParam === 'true') {
-  document.getElementById('contactForm').style.display = 'none';
-  document.getElementById('formSuccess').style.display = 'block';
-}
+const params=new URLSearchParams(window.location.search);
+const svc=params.get('service');
+const sent=params.get('sent');
+const sel=document.getElementById('service');
+if(svc){const o=sel.querySelector(`option[value="${svc}"]`);if(o)o.selected=true;}
+if(sent==='true'){document.getElementById('contactForm').style.display='none';document.getElementById('formSuccess').style.display='block';}
 </script>
 </body>
 </html>
