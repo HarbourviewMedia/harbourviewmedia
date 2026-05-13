@@ -1,94 +1,108 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Services — Harbourview Media</title>
-<link rel="stylesheet" href="style.css" />
 <style>
-.services-wrap { padding: 6rem 5rem; }
-
-.service-block {
-  display: grid; grid-template-columns: 1fr 1fr;
-  gap: 6rem; align-items: start;
-  padding: 5rem 0; border-bottom: 1px solid var(--border);
-}
-.service-block:last-of-type { border-bottom: none; }
-.service-block.flip { direction: rtl; }
-.service-block.flip > * { direction: ltr; }
-
-.service-num-large {
-  font-family: 'Playfair Display', serif;
-  font-size: 5rem; font-weight: 700; font-style: italic;
-  color: var(--border); line-height: 1; margin-bottom: 0.5rem;
-  user-select: none;
-}
-.service-label {
-  font-size: 0.62rem; font-weight: 500; letter-spacing: 0.2em;
-  text-transform: uppercase; color: var(--amber); margin-bottom: 0.8rem; display: block;
-}
-.service-heading {
-  font-family: 'Playfair Display', serif;
-  font-size: clamp(1.8rem, 3vw, 2.6rem); font-weight: 700; line-height: 1.12;
-  color: var(--forest); margin-bottom: 1.2rem;
-}
-.service-body {
-  font-size: 0.88rem; font-weight: 300; color: var(--ink-mid);
-  line-height: 2; margin-bottom: 2rem; max-width: 420px;
-}
-
-.service-includes { list-style: none; margin-bottom: 2.5rem; }
-.service-includes li {
-  font-size: 0.82rem; font-weight: 300; color: var(--mist);
-  padding: 0.5rem 0; border-bottom: 1px solid var(--border);
-  display: flex; align-items: center; gap: 0.8rem;
-}
-.service-includes li::before {
-  content: ''; width: 6px; height: 6px; border-radius: 50%;
-  background: var(--amber); flex-shrink: 0;
-}
-
-.service-price-block {
-  background: var(--parchment);
-  padding: 2.5rem;
-  border: 1px solid var(--border);
-  position: sticky; top: 96px;
-}
-.spb-label {
-  font-size: 0.62rem; font-weight: 500; letter-spacing: 0.18em;
-  text-transform: uppercase; color: var(--mist); display: block; margin-bottom: 0.5rem;
-}
-.spb-price {
-  font-family: 'Playfair Display', serif;
-  font-size: 3.2rem; font-weight: 700; color: var(--forest); line-height: 1;
-}
-.spb-price sup { font-size: 1.2rem; vertical-align: super; font-family: 'Outfit', sans-serif; font-weight: 300; }
-.spb-from { font-size: 0.75rem; font-weight: 300; color: var(--mist); margin-bottom: 1.5rem; display: block; }
-.spb-divider { width: 100%; height: 1px; background: var(--border); margin-bottom: 1.5rem; }
-
-.service-block.dark-block { background: var(--forest); margin: 0 -5rem; padding: 5rem 5rem; }
-.service-block.dark-block .service-heading { color: var(--white); }
-.service-block.dark-block .service-body { color: rgba(254,252,249,0.5); }
-.service-block.dark-block .service-num-large { color: rgba(255,255,255,0.06); }
-.service-block.dark-block .service-includes li { color: rgba(254,252,249,0.5); border-color: rgba(255,255,255,0.1); }
-.service-block.dark-block .service-price-block { background: rgba(255,255,255,0.05); border-color: rgba(255,255,255,0.12); }
-.service-block.dark-block .spb-label { color: var(--sage-lt); }
-.service-block.dark-block .spb-price { color: var(--amber-lt); }
-.service-block.dark-block .spb-from { color: rgba(254,252,249,0.4); }
-.service-block.dark-block .spb-divider { background: rgba(255,255,255,0.1); }
-.service-block.dark-block .btn-amber { background: var(--amber); }
-
-@media (max-width: 900px) {
-  .services-wrap { padding: 4rem 2rem; }
-  .service-block { grid-template-columns: 1fr; gap: 2.5rem; direction: ltr; }
-  .service-block.flip { direction: ltr; }
-  .service-price-block { position: static; }
-  .service-block.dark-block { margin: 0 -2rem; padding: 4rem 2rem; }
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400&family=Outfit:wght@300;400;500;600&display=swap');
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--forest:#1E3A2F;--forest-mid:#2A4D3E;--parchment:#F7F3EC;--white:#FEFCF9;--amber:#C8943A;--amber-lt:#DBA84E;--amber-pale:#F5E6C8;--ink:#1A1F1C;--ink-mid:#2E3530;--mist:#7A8A82;--sage:#6B8C78;--border:#E4DDD3}
+html{scroll-behavior:smooth}
+body{font-family:'Outfit',sans-serif;background:var(--white);color:var(--ink);font-weight:300;-webkit-font-smoothing:antialiased}
+a{text-decoration:none;color:inherit}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;height:68px;display:flex;align-items:center;justify-content:space-between;padding:0 5rem;background:rgba(30,58,47,0.97);backdrop-filter:blur(8px);border-bottom:1px solid rgba(200,148,58,0.15)}
+.nav-logo{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:500;color:var(--white)}
+.nav-links{display:flex;gap:2.5rem;list-style:none}
+.nav-links a{font-size:0.75rem;font-weight:400;letter-spacing:0.08em;text-transform:uppercase;color:rgba(254,252,249,0.5);transition:color 0.2s}
+.nav-links a:hover,.nav-links a.active{color:var(--white)}
+.nav-cta{font-size:0.68rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--ink);background:var(--amber);padding:0.6rem 1.4rem;transition:background 0.2s}
+.nav-cta:hover{background:var(--amber-lt)}
+.btn-amber{display:inline-block;background:var(--amber);color:var(--ink);font-size:0.7rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;padding:0.85rem 2rem;transition:background 0.2s}
+.btn-amber:hover{background:var(--amber-lt)}
+.btn-forest{display:inline-block;background:var(--forest);color:var(--white);font-size:0.7rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;padding:0.85rem 2rem;transition:background 0.2s}
+.btn-forest:hover{background:var(--forest-mid)}
+.btn-outline{display:inline-block;border:1px solid var(--border);color:var(--mist);font-size:0.68rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;padding:0.8rem 2rem;transition:all 0.2s}
+.btn-outline:hover{border-color:var(--amber);color:var(--amber)}
+.page-header{background:var(--forest);padding:calc(68px + 4rem) 5rem 4rem}
+.page-header-eyebrow{font-size:0.65rem;font-weight:500;letter-spacing:0.25em;text-transform:uppercase;color:var(--amber);display:flex;align-items:center;gap:0.8rem;margin-bottom:1.5rem}
+.page-header-eyebrow::before{content:'';width:28px;height:1px;background:var(--amber)}
+.page-header h1{font-family:'Playfair Display',serif;font-size:clamp(2.5rem,4.5vw,4rem);font-weight:700;line-height:1.08;color:var(--white);margin-bottom:1.2rem}
+.page-header h1 em{font-style:italic;font-weight:400;color:var(--amber-lt)}
+.page-header-sub{font-size:0.9rem;font-weight:300;color:rgba(254,252,249,0.45);max-width:520px;line-height:1.9}
+footer{background:var(--ink);padding:3rem 5rem;display:flex;align-items:center;justify-content:space-between;gap:2rem;flex-wrap:wrap}
+.footer-logo{font-family:'Playfair Display',serif;font-size:1rem;font-weight:500;color:rgba(254,252,249,0.5)}
+.footer-links{display:flex;gap:2rem;list-style:none}
+.footer-links a{font-size:0.7rem;font-weight:300;letter-spacing:0.08em;text-transform:uppercase;color:rgba(254,252,249,0.3);transition:color 0.2s}
+.footer-links a:hover{color:var(--amber-lt)}
+.footer-copy{font-size:0.68rem;font-weight:300;color:rgba(254,252,249,0.2)}
+.reveal{opacity:0;transform:translateY(22px);transition:opacity 0.65s ease,transform 0.65s ease}
+.reveal.visible{opacity:1;transform:none}
+.d1{transition-delay:0.12s}.d2{transition-delay:0.24s}
+.re-banner{background:var(--parchment);border:1px solid var(--border);padding:2.5rem 3rem;display:flex;align-items:center;justify-content:space-between;gap:2rem;flex-wrap:wrap}
+.re-banner-eyebrow{font-size:0.6rem;font-weight:500;letter-spacing:0.2em;text-transform:uppercase;color:var(--amber);display:block;margin-bottom:0.4rem}
+.re-banner-title{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:600;color:var(--forest);margin-bottom:0.4rem}
+.re-banner-desc{font-size:0.8rem;font-weight:300;color:var(--mist);line-height:1.7;max-width:380px}
+.re-banner-actions{display:flex;gap:1rem;flex-wrap:wrap;align-items:center}
+.re-btn-call{display:flex;align-items:center;gap:0.5rem;background:var(--forest);color:var(--white);font-size:0.7rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;padding:0.82rem 1.5rem;transition:background 0.2s}
+.re-btn-call:hover{background:var(--forest-mid)}
+.re-btn-email{font-size:0.7rem;font-weight:300;color:var(--mist);border:1px solid var(--border);padding:0.82rem 1.5rem;transition:all 0.2s}
+.re-btn-email:hover{border-color:var(--amber);color:var(--amber)}
+.services-wrap{padding:6rem 5rem}
+.sb{display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:start;padding:5rem 0;border-bottom:1px solid var(--border)}
+.sb:last-of-type{border-bottom:none}
+.sb.flip{direction:rtl}
+.sb.flip>*{direction:ltr}
+.sb-num{font-family:'Playfair Display',serif;font-size:5rem;font-weight:700;font-style:italic;color:var(--border);line-height:1;margin-bottom:0.5rem;user-select:none}
+.sb-label{font-size:0.62rem;font-weight:500;letter-spacing:0.2em;text-transform:uppercase;color:var(--amber);margin-bottom:0.8rem;display:block}
+.sb-heading{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3vw,2.6rem);font-weight:700;line-height:1.12;color:var(--forest);margin-bottom:1.2rem}
+.sb-body{font-size:0.88rem;font-weight:300;color:var(--ink-mid);line-height:2;margin-bottom:1.8rem;max-width:420px}
+.sb-includes{list-style:none;margin-bottom:2.5rem}
+.sb-includes li{font-size:0.82rem;font-weight:300;color:var(--mist);padding:0.5rem 0;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:0.8rem}
+.sb-includes li::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--amber);flex-shrink:0}
+.spb{background:var(--parchment);padding:2.5rem;border:1px solid var(--border);position:sticky;top:96px}
+.spb-label{font-size:0.62rem;font-weight:500;letter-spacing:0.18em;text-transform:uppercase;color:var(--mist);display:block;margin-bottom:0.5rem}
+.spb-price{font-family:'Playfair Display',serif;font-size:3.2rem;font-weight:700;color:var(--forest);line-height:1}
+.spb-price sup{font-size:1.2rem;vertical-align:super;font-family:'Outfit',sans-serif;font-weight:300}
+.spb-from{font-size:0.75rem;font-weight:300;color:var(--mist);margin-bottom:1.5rem;display:block}
+.spb-div{width:100%;height:1px;background:var(--border);margin-bottom:1.5rem}
+.spb-note{font-size:0.8rem;font-weight:300;color:var(--mist);line-height:1.8;margin-bottom:1.5rem}
+/* dark block */
+.sb.dark{background:var(--forest);margin:0 -5rem;padding:5rem 5rem}
+.sb.dark .sb-heading{color:var(--white)}
+.sb.dark .sb-body{color:rgba(254,252,249,0.5)}
+.sb.dark .sb-num{color:rgba(255,255,255,0.06)}
+.sb.dark .sb-includes li{color:rgba(254,252,249,0.55);border-color:rgba(255,255,255,0.1)}
+.sb.dark .sb-includes li::before{background:var(--amber)}
+.sb.dark .spb{background:rgba(255,255,255,0.05);border-color:rgba(255,255,255,0.12)}
+.sb.dark .spb-label{color:rgba(254,252,249,0.4)}
+.sb.dark .spb-price{color:var(--amber-lt)}
+.sb.dark .spb-from{color:rgba(254,252,249,0.35)}
+.sb.dark .spb-div{background:rgba(255,255,255,0.1)}
+.sb.dark .spb-note{color:rgba(254,252,249,0.4)}
+/* tiers */
+.tiers{display:flex;flex-direction:column;gap:0.6rem;margin-bottom:1.5rem}
+.tier{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);padding:0.9rem 1.1rem;display:flex;justify-content:space-between;align-items:center}
+.tier.best{background:rgba(200,148,58,0.15);border-color:rgba(200,148,58,0.5)}
+.tier-name{font-size:0.78rem;font-weight:500;color:rgba(254,252,249,0.8)}
+.tier-detail{font-size:0.7rem;font-weight:300;color:rgba(254,252,249,0.4);margin-top:0.1rem}
+.tier-price{font-family:'Playfair Display',serif;font-size:1.3rem;font-weight:600;color:var(--amber-lt);white-space:nowrap}
+.tier-price span{font-family:'Outfit',sans-serif;font-size:0.65rem;font-weight:300;color:rgba(254,252,249,0.35)}
+@media(max-width:900px){
+  .services-wrap{padding:4rem 2rem}
+  .sb{grid-template-columns:1fr;gap:2.5rem;direction:ltr}
+  .sb.flip{direction:ltr}
+  .spb{position:static}
+  .sb.dark{margin:0 -2rem;padding:4rem 2rem}
+  nav{padding:0 1.5rem}
+  .nav-links{display:none}
+  .page-header{padding:calc(68px + 3rem) 1.5rem 3rem}
+  footer{padding:2.5rem 1.5rem;flex-direction:column;gap:1.5rem}
+  .re-banner{padding:2rem 1.5rem}
 }
 </style>
 </head>
 <body>
-
 <nav>
   <a href="index.html" class="nav-logo">Harbourview Media</a>
   <ul class="nav-links">
@@ -98,97 +112,95 @@
     <li><a href="faq.html">FAQ</a></li>
     <li><a href="contact.html">Contact</a></li>
   </ul>
-  <a href="contact.html" class="nav-cta">Book a Session</a>
+  <a href="contact.html" class="nav-cta">Get a Quote</a>
 </nav>
-
 <div class="page-header">
   <span class="page-header-eyebrow">What we offer</span>
-  <h1>Photography built around<br/><em>the moments that matter</em></h1>
-  <p class="page-header-sub">Three core services, one photographer, and a genuine commitment to getting it right every time.</p>
+  <h1>Photography that works<br/><em>as hard as you do</em></h1>
+  <p class="page-header-sub">Monthly content packages for restaurants and food businesses, headshots for professionals, and family sessions.</p>
 </div>
-
 <div class="services-wrap">
 
-  <!-- GRAD -->
-  <div class="service-block" id="grads">
+  <div class="sb dark" id="restaurant">
     <div class="reveal">
-      <div class="service-num-large">01</div>
-      <span class="service-label">Our Specialty</span>
-      <h2 class="service-heading">Graduation Portraits</h2>
-      <p class="service-body">
-        Most grad photos look the same — same park, same pose, same forced smile. We do it differently. We find locations that match who you actually are, and we shoot until the moment feels genuine. Because that's the one you'll actually want on your wall.
-      </p>
-      <p class="service-body">
-        Available for both high school and university grads. Already booking Classes of 2026, 2027, 2028, and 2029 across Metro Vancouver and the Lower Mainland.
-      </p>
-      <ul class="service-includes">
-        <li>60-minute outdoor session</li>
-        <li>1–2 curated Vancouver locations</li>
-        <li>Cap & gown + casual outfit changes</li>
-        <li>Fully directed posing — no experience needed</li>
-        <li>10 fully edited, print-ready digital images</li>
-        <li>Private online gallery for 60 days</li>
-        <li>High school and university grads welcome</li>
+      <div class="sb-num">01</div>
+      <span class="sb-label">Our Specialty</span>
+      <h2 class="sb-heading">Restaurant & Brand Content</h2>
+      <p class="sb-body">Your Instagram feed is your storefront. If it looks like phone photos, that's what people think your restaurant is. We shoot your food, your space, and your people every month — so your feed always reflects the best version of what you do.</p>
+      <p class="sb-body">No long-term contracts. No creative briefs. Tell us what's new this month and we handle the rest. Shoots available across Metro Vancouver and the Lower Mainland.</p>
+      <ul class="sb-includes">
+        <li>Monthly on-location shoot at your restaurant</li>
+        <li>Food and dishes — hero shots and detail work</li>
+        <li>Atmosphere and interior — dining room, bar, service</li>
+        <li>Team and staff portraits — candid and directed</li>
+        <li>All images fully edited and colour-graded</li>
+        <li>Private gallery delivered within 48 hours</li>
+        <li>Instagram, Stories, Google Business, and print-ready sizes</li>
+        <li>No contract — month-to-month, cancel anytime</li>
       </ul>
-      <a href="contact.html?service=graduation" class="btn-forest">Book a Grad Session</a>
+      <a href="contact.html?service=restaurant-monthly" class="btn-amber">Get a Quote</a>
     </div>
     <div class="reveal d1">
-      <div class="service-price-block">
-        <span class="spb-label">Starting from</span>
-        <div class="spb-price"><sup>$</sup>99</div>
-        <span class="spb-from">+ applicable taxes</span>
-        <div class="spb-divider"></div>
-        <p style="font-size:0.8rem;font-weight:300;color:var(--mist);line-height:1.8;margin-bottom:1.5rem;">
-          Custom packages available for larger groups, extended sessions, or add-ons like extra edited images or additional locations.
-        </p>
-        <a href="pricing.html" class="btn-outline" style="width:100%;text-align:center;">See all pricing</a>
+      <div class="spb">
+        <span class="spb-label">Monthly packages from</span>
+        <div class="spb-price"><sup>$</sup>299</div>
+        <span class="spb-from">per month · no contract · + taxes</span>
+        <div class="spb-div"></div>
+        <div class="tiers">
+          <div class="tier">
+            <div><div class="tier-name">Starter</div><div class="tier-detail">15 edited images / month</div></div>
+            <div class="tier-price">$299 <span>/mo</span></div>
+          </div>
+          <div class="tier best">
+            <div><div class="tier-name">Standard — Most Popular</div><div class="tier-detail">30 edited images / month</div></div>
+            <div class="tier-price">$449 <span>/mo</span></div>
+          </div>
+          <div class="tier">
+            <div><div class="tier-name">Full Coverage</div><div class="tier-detail">50+ images + Reels clip</div></div>
+            <div class="tier-price">$649 <span>/mo</span></div>
+          </div>
+        </div>
+        <p class="spb-note">One-off shoots available for menu launches, events, or seasonal content. Reach out for a custom quote.</p>
+        <a href="contact.html?service=restaurant-monthly" class="btn-amber" style="width:100%;text-align:center;display:block">Get a Quote</a>
       </div>
     </div>
   </div>
 
-  <!-- HEADSHOTS -->
-  <div class="service-block flip" id="headshots">
+  <div class="sb flip" id="headshots">
     <div class="reveal">
-      <div class="service-num-large">02</div>
-      <span class="service-label">Professional</span>
-      <h2 class="service-heading">Headshots</h2>
-      <p class="service-body">
-        LinkedIn, your company bio, your acting portfolio — a great headshot speaks before you do. We create images that feel confident, natural, and genuinely like you. Not the stiff, forced version of you.
-      </p>
-      <ul class="service-includes">
+      <div class="sb-num">02</div>
+      <span class="sb-label">Professional</span>
+      <h2 class="sb-heading">Headshots</h2>
+      <p class="sb-body">LinkedIn, your company bio, your team page — a great headshot speaks before you do. We create images that feel confident and natural, not stiff and overlit. Individual sessions and team packages available.</p>
+      <ul class="sb-includes">
         <li>45-minute outdoor or natural-light session</li>
         <li>2 outfit looks included</li>
         <li>Relaxed posing guidance throughout</li>
         <li>8 fully retouched digital images</li>
-        <li>LinkedIn & web-optimized file sizes</li>
+        <li>LinkedIn & web-optimised file sizes</li>
         <li>48-hour delivery turnaround</li>
       </ul>
       <a href="contact.html?service=headshots" class="btn-forest">Book a Headshot Session</a>
     </div>
     <div class="reveal d1">
-      <div class="service-price-block">
+      <div class="spb">
         <span class="spb-label">Starting from</span>
         <div class="spb-price"><sup>$</sup>79</div>
         <span class="spb-from">+ applicable taxes</span>
-        <div class="spb-divider"></div>
-        <p style="font-size:0.8rem;font-weight:300;color:var(--mist);line-height:1.8;margin-bottom:1.5rem;">
-          Team headshot packages available for businesses and studios. Reach out for group pricing.
-        </p>
-        <a href="pricing.html" class="btn-outline" style="width:100%;text-align:center;">See all pricing</a>
+        <div class="spb-div"></div>
+        <p class="spb-note">Team headshot packages for businesses and studios. Group rates for 3+ people — reach out for custom pricing.</p>
+        <a href="pricing.html" class="btn-outline" style="width:100%;text-align:center">See all pricing</a>
       </div>
     </div>
   </div>
 
-  <!-- FAMILY -->
-  <div class="service-block" id="family">
+  <div class="sb" id="family">
     <div class="reveal">
-      <div class="service-num-large">03</div>
-      <span class="service-label">Family</span>
-      <h2 class="service-heading">Family Sessions</h2>
-      <p class="service-body">
-        The chaos, the laughing, the in-between glances — that's the stuff worth keeping. We photograph your family as they actually are: a little messy, a little beautiful, and completely real. No stiff lineups, no fake smiles.
-      </p>
-      <ul class="service-includes">
+      <div class="sb-num">03</div>
+      <span class="sb-label">Family</span>
+      <h2 class="sb-heading">Family Sessions</h2>
+      <p class="sb-body">The chaos, the laughing, the in-between glances — that's the stuff worth keeping. We photograph your family as they actually are: a little messy, a little beautiful, and completely real.</p>
+      <ul class="sb-includes">
         <li>75-minute outdoor location session</li>
         <li>Families up to 5 people</li>
         <li>Natural, relaxed direction throughout</li>
@@ -199,33 +211,28 @@
       <a href="contact.html?service=family" class="btn-forest">Book a Family Session</a>
     </div>
     <div class="reveal d1">
-      <div class="service-price-block">
+      <div class="spb">
         <span class="spb-label">Starting from</span>
         <div class="spb-price"><sup>$</sup>129</div>
         <span class="spb-from">up to 5 people, + taxes</span>
-        <div class="spb-divider"></div>
-        <p style="font-size:0.8rem;font-weight:300;color:var(--mist);line-height:1.8;margin-bottom:1.5rem;">
-          Larger families, extended sessions, or holiday mini-sessions? Just ask.
-        </p>
-        <a href="pricing.html" class="btn-outline" style="width:100%;text-align:center;">See all pricing</a>
+        <div class="spb-div"></div>
+        <p class="spb-note">Larger families, extended sessions, or holiday mini-sessions? Just ask.</p>
+        <a href="pricing.html" class="btn-outline" style="width:100%;text-align:center">See all pricing</a>
       </div>
     </div>
   </div>
+
 </div>
 
-<!-- RE BANNER -->
-<div style="padding: 0 5rem 5rem; background: var(--white);">
+<div style="padding:0 5rem 5rem;background:var(--white)">
   <div class="re-banner reveal">
-    <div class="re-banner-left">
+    <div>
       <span class="re-banner-eyebrow">Also available</span>
       <h3 class="re-banner-title">Real Estate Photography</h3>
-      <p class="re-banner-desc">Interior & exterior coverage, HDR processing, MLS-ready files. Pricing varies by property size — reach out for a custom quote.</p>
+      <p class="re-banner-desc">Interior & exterior coverage, HDR processing, MLS-ready files. Pricing varies by property size.</p>
     </div>
     <div class="re-banner-actions">
-      <a href="tel:2365092933" class="re-btn-call">
-        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 1h3l1.5 3.5-1.75 1.05C5.58 7.18 6.82 8.42 8.45 9.25L9.5 7.5 13 9v3c0 1-4 2-9-3S1 2 2 1z" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"/></svg>
-        (236) 509-2933
-      </a>
+      <a href="tel:2365092933" class="re-btn-call"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 1h3l1.5 3.5-1.75 1.05C5.58 7.18 6.82 8.42 8.45 9.25L9.5 7.5 13 9v3c0 1-4 2-9-3S1 2 2 1z" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"/></svg>(236) 509-2933</a>
       <a href="mailto:sean@harbourviewmedia.ca" class="re-btn-email">sean@harbourviewmedia.ca</a>
     </div>
   </div>
@@ -239,12 +246,11 @@
     <li><a href="faq.html">FAQ</a></li>
     <li><a href="contact.html">Contact</a></li>
   </ul>
-  <span class="footer-copy">&copy; 2026 Harbourview Media. Vancouver, BC.</span>
+  <span class="footer-copy">© 2026 Harbourview Media. Vancouver, BC.</span>
 </footer>
-
 <script>
-const io = new IntersectionObserver(e => e.forEach(x => { if(x.isIntersecting) x.target.classList.add('visible'); }), { threshold: 0.06 });
-document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+const io=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('visible')}),{threshold:0.06});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 </script>
 </body>
 </html>
