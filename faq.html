@@ -1,171 +1,209 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>FAQ — Harbourview Media</title>
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400&family=Outfit:wght@300;400;500;600&display=swap');
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-:root{--forest:#1E3A2F;--forest-mid:#2A4D3E;--parchment:#F7F3EC;--white:#FEFCF9;--amber:#C8943A;--amber-lt:#DBA84E;--ink:#1A1F1C;--mist:#7A8A82;--border:#E4DDD3}
-html{scroll-behavior:smooth}
-body{font-family:'Outfit',sans-serif;background:var(--white);color:var(--ink);font-weight:300;-webkit-font-smoothing:antialiased}
-a{text-decoration:none;color:inherit}
-nav{position:fixed;top:0;left:0;right:0;z-index:100;height:68px;display:flex;align-items:center;justify-content:space-between;padding:0 5rem;background:rgba(30,58,47,0.97);backdrop-filter:blur(8px);border-bottom:1px solid rgba(200,148,58,0.15)}
-.nav-logo{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:500;color:var(--white)}
-.nav-links{display:flex;gap:2.5rem;list-style:none}
-.nav-links a{font-size:0.75rem;font-weight:400;letter-spacing:0.08em;text-transform:uppercase;color:rgba(254,252,249,0.5);transition:color 0.2s}
-.nav-links a:hover,.nav-links a.active{color:var(--white)}
-.nav-cta{font-size:0.68rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--ink);background:var(--amber);padding:0.6rem 1.4rem;transition:background 0.2s}
-.nav-cta:hover{background:var(--amber-lt)}
-.page-header{background:var(--forest);padding:calc(68px + 4rem) 5rem 4rem}
-.page-header-eyebrow{font-size:0.65rem;font-weight:500;letter-spacing:0.25em;text-transform:uppercase;color:var(--amber);display:flex;align-items:center;gap:0.8rem;margin-bottom:1.5rem}
-.page-header-eyebrow::before{content:'';width:28px;height:1px;background:var(--amber)}
-.page-header h1{font-family:'Playfair Display',serif;font-size:clamp(2.5rem,4.5vw,4rem);font-weight:700;line-height:1.08;color:var(--white);margin-bottom:1.2rem}
-.page-header h1 em{font-style:italic;font-weight:400;color:var(--amber-lt)}
-.page-header-sub{font-size:0.9rem;font-weight:300;color:rgba(254,252,249,0.45);max-width:520px;line-height:1.9}
-.faq-wrap{padding:6rem 5rem;max-width:860px;margin:0 auto}
-.faq-section{margin-bottom:4rem}
-.faq-section-title{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:600;color:var(--forest);margin-bottom:2rem;padding-bottom:1rem;border-bottom:1px solid var(--border)}
-.faq-item{padding:1.8rem 0;border-bottom:1px solid var(--border)}
-.faq-item:last-child{border-bottom:none}
-.faq-q{font-size:0.95rem;font-weight:500;color:var(--forest);margin-bottom:0.8rem;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:1rem}
-.faq-q::after{content:'+';font-size:1.2rem;font-weight:300;color:var(--amber);flex-shrink:0;transition:transform 0.2s}
-.faq-item.open .faq-q::after{transform:rotate(45deg)}
-.faq-a{font-size:0.85rem;font-weight:300;color:var(--mist);line-height:1.95;max-height:0;overflow:hidden;transition:max-height 0.3s ease}
-.faq-item.open .faq-a{max-height:400px}
-.faq-cta{background:var(--forest);padding:4rem 5rem;text-align:center;margin-top:2rem}
-.faq-cta h3{font-family:'Playfair Display',serif;font-size:1.8rem;font-weight:700;color:var(--white);margin-bottom:1rem}
-.faq-cta h3 em{font-style:italic;font-weight:400;color:var(--amber-lt)}
-.faq-cta p{font-size:0.87rem;font-weight:300;color:rgba(254,252,249,0.45);margin-bottom:2rem;line-height:1.9}
-.btn-amber{display:inline-block;background:var(--amber);color:var(--ink);font-size:0.7rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;padding:0.85rem 2rem;transition:background 0.2s}
-.btn-amber:hover{background:var(--amber-lt)}
-footer{background:var(--ink);padding:3rem 5rem;display:flex;align-items:center;justify-content:space-between;gap:2rem;flex-wrap:wrap}
-.footer-logo{font-family:'Playfair Display',serif;font-size:1rem;font-weight:500;color:rgba(254,252,249,0.5)}
-.footer-links{display:flex;gap:2rem;list-style:none}
-.footer-links a{font-size:0.7rem;font-weight:300;letter-spacing:0.08em;text-transform:uppercase;color:rgba(254,252,249,0.3);transition:color 0.2s}
-.footer-links a:hover{color:var(--amber-lt)}
-.footer-copy{font-size:0.68rem;font-weight:300;color:rgba(254,252,249,0.2)}
-@media(max-width:768px){
-  nav{padding:0 1.5rem}.nav-links{display:none}
-  .page-header{padding:calc(68px+3rem) 1.5rem 3rem}
-  .faq-wrap{padding:4rem 1.5rem}
-  .faq-cta{padding:3rem 1.5rem}
-  footer{padding:2.5rem 1.5rem;flex-direction:column;gap:1.5rem}
-}
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FAQ — Harbourview Media</title>
+  <meta name="description" content="Common questions about event photography, booking, deposits, and delivery from Harbourview Media in Vancouver." />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --black: #0d0d0d; --white: #f5f4f0; --accent: #c8a96e;
+      --grey: #6b6b6b; --light: #eeece7; --border: #dedad3;
+      --font-display: Georgia, 'Times New Roman', serif;
+      --font-body: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    }
+    body { font-family: var(--font-body); background: var(--white); color: var(--black); line-height: 1.6; }
+    nav { display: flex; justify-content: space-between; align-items: center; padding: 1.25rem 2.5rem; border-bottom: 1px solid var(--border); background: var(--white); position: sticky; top: 0; z-index: 100; }
+    .nav-logo { font-family: var(--font-display); font-size: 1.05rem; font-weight: normal; text-decoration: none; color: var(--black); }
+    .nav-links { display: flex; gap: 2rem; list-style: none; align-items: center; }
+    .nav-links a { text-decoration: none; color: var(--grey); font-size: 0.8rem; letter-spacing: 0.06em; text-transform: uppercase; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--black); }
+    .nav-cta { background: var(--black) !important; color: var(--white) !important; padding: 0.55rem 1.2rem !important; border-radius: 2px; }
+    .nav-cta:hover { background: var(--accent) !important; color: var(--black) !important; }
+
+    .page-header { padding: 4rem 2.5rem 3rem; max-width: 1100px; margin: 0 auto; border-bottom: 1px solid var(--border); }
+    .page-label { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.14em; color: var(--accent); font-weight: 600; margin-bottom: 1rem; }
+    .page-header h1 { font-family: var(--font-display); font-size: clamp(2rem, 4vw, 3.2rem); font-weight: normal; line-height: 1.15; }
+    .page-header h1 em { font-style: italic; color: var(--accent); }
+
+    .faq-section { padding: 3.5rem 2.5rem; max-width: 1100px; margin: 0 auto; border-bottom: 1px solid var(--border); }
+    .faq-section-label { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.14em; color: var(--accent); font-weight: 600; margin-bottom: 2rem; }
+    .faq-grid { display: flex; flex-direction: column; gap: 0; }
+
+    details { border-bottom: 1px solid var(--border); }
+    details:first-of-type { border-top: 1px solid var(--border); }
+    summary {
+      padding: 1.25rem 0;
+      font-size: 0.95rem;
+      font-weight: 600;
+      cursor: pointer;
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+    }
+    summary::-webkit-details-marker { display: none; }
+    summary::after { content: '+'; color: var(--accent); font-size: 1.2rem; font-weight: 300; flex-shrink: 0; transition: transform 0.2s; }
+    details[open] summary::after { content: '−'; }
+    .faq-answer { padding: 0 0 1.5rem; font-size: 0.9rem; color: var(--grey); line-height: 1.75; max-width: 680px; }
+
+    .cta-block { padding: 3rem 2.5rem; max-width: 1100px; margin: 0 auto; }
+    .cta-block h3 { font-family: var(--font-display); font-size: 1.3rem; font-weight: normal; margin-bottom: 0.5rem; }
+    .cta-block h3 em { font-style: italic; color: var(--accent); }
+    .cta-block p { font-size: 0.9rem; color: var(--grey); margin-bottom: 1.25rem; }
+    .btn-primary { display: inline-block; background: var(--black); color: var(--white); padding: 0.75rem 1.5rem; text-decoration: none; font-size: 0.78rem; letter-spacing: 0.06em; text-transform: uppercase; border-radius: 2px; transition: background 0.2s; }
+    .btn-primary:hover { background: var(--accent); color: var(--black); }
+
+    footer { border-top: 1px solid var(--border); padding: 2rem 2.5rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
+    .footer-logo { font-family: var(--font-display); font-size: 0.95rem; color: var(--black); text-decoration: none; }
+    .footer-links { display: flex; gap: 1.5rem; list-style: none; }
+    .footer-links a { font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--grey); text-decoration: none; }
+    .footer-links a:hover { color: var(--black); }
+    .footer-copy { font-size: 0.78rem; color: var(--grey); }
+
+    @media (max-width: 680px) {
+      nav { padding: 1rem 1.25rem; }
+      .nav-links { gap: 0.75rem; }
+      .page-header, .faq-section, .cta-block { padding-left: 1.25rem; padding-right: 1.25rem; }
+      footer { flex-direction: column; align-items: flex-start; padding: 1.5rem 1.25rem; }
+    }
+  </style>
 </head>
 <body>
+
 <nav>
   <a href="index.html" class="nav-logo">Harbourview Media</a>
   <ul class="nav-links">
-    <li><a href="index.html">Home</a></li>
     <li><a href="services.html">Services</a></li>
     <li><a href="pricing.html">Pricing</a></li>
-    <li><a href="faq.html" class="active">FAQ</a></li>
+    <li><a href="faq.html">FAQ</a></li>
     <li><a href="contact.html">Contact</a></li>
+    <li><a href="contact.html" class="nav-cta">Get a Quote</a></li>
   </ul>
-  <a href="contact.html" class="nav-cta">Get a Quote</a>
 </nav>
+
 <div class="page-header">
-  <span class="page-header-eyebrow">Common questions</span>
-  <h1>Everything you<br/><em>want to know</em></h1>
-  <p class="page-header-sub">Quick answers to what most people ask before booking. Don't see yours? Just reach out directly.</p>
+  <p class="page-label">Common questions</p>
+  <h1>Everything you <em>want to know</em></h1>
 </div>
 
-<div class="faq-wrap">
+<!-- EVENT FAQ -->
+<div class="faq-section">
+  <p class="faq-section-label">Event Photography</p>
+  <div class="faq-grid">
 
-  <div class="faq-section">
-    <h2 class="faq-section-title">Restaurant & Brand Content</h2>
-    <div class="faq-item">
-      <div class="faq-q">How does the monthly package actually work?</div>
-      <div class="faq-a">We schedule a shoot at your restaurant once a month. You tell us what's new — new dishes, seasonal menu, events — and we build a shot list around that. We show up, shoot, edit, and deliver a private gallery within 48 hours. You download what you need and use it however you like.</div>
-    </div>
-    <div class="faq-item">
-      <div class="faq-q">Do I need to write a creative brief or come prepared?</div>
-      <div class="faq-a">No. That's the point of working with us monthly — we handle the creative direction. Just let us know your new dishes and any upcoming events, and we take care of the rest. The less work it is for you, the better the arrangement works.</div>
-    </div>
-    <div class="faq-item">
-      <div class="faq-q">What does a typical shoot cover?</div>
-      <div class="faq-a">We cover hero food shots, atmospheric dining room and bar images, team and staff portraits, and any behind-the-scenes moments worth capturing. The mix depends on your package — the Standard and Full Coverage tiers give us more time to go deeper on each area.</div>
-    </div>
-    <div class="faq-item">
-      <div class="faq-q">Can I do a one-off shoot instead of a monthly package?</div>
-      <div class="faq-a">Yes. If you have a menu launch, grand opening, special event, or just need a content refresh, we can do a one-off shoot. Reach out and we'll build a custom quote based on what you need.</div>
-    </div>
-    <div class="faq-item">
-      <div class="faq-q">How long is the contract?</div>
-      <div class="faq-a">There's no long-term contract. All packages are month-to-month. You can pause or cancel with one month's notice. We'd rather earn your business every month than lock you in.</div>
-    </div>
-    <div class="faq-item">
-      <div class="faq-q">What formats do I get the images in?</div>
-      <div class="faq-a">All images are delivered in a private online gallery optimised for Instagram (square and portrait crops), Instagram Stories, Google Business cover, and high-resolution print-ready files. You get everything in one gallery — no extra requests needed.</div>
-    </div>
+    <details>
+      <summary>What kinds of events do you shoot?</summary>
+      <p class="faq-answer">Prom nights, grad parties, corporate events, social gatherings, birthday parties — if it's a group of people having a good time, we're comfortable shooting it. We're based in Vancouver and know the best locations across Metro Vancouver and the Lower Mainland.</p>
+    </details>
+
+    <details>
+      <summary>What's included in an event shoot?</summary>
+      <p class="faq-answer">Every event shoot includes group photos, individual portraits, fully edited and colour-corrected images, and a private online gallery for download. For larger events we bring a second shooter so nothing gets missed. Delivery is within 7–10 business days.</p>
+    </details>
+
+    <details>
+      <summary>Do you shoot limo and vehicle photos?</summary>
+      <p class="faq-answer">Yes — limo coverage is available as part of our full event packages. We handle interior shots as well as outdoor stops along the route. If you have specific stops in mind, let us know when you reach out and we can plan accordingly.</p>
+    </details>
+
+    <details>
+      <summary>Can you suggest good photo locations in Vancouver?</summary>
+      <p class="faq-answer">Absolutely. For outdoor event photos, Gastown and the Harbour area are our home turf. Other great spots depending on your route include Burrard Bridge, the Plaza of Nations, and North Vancouver waterfront. We'll suggest the best options based on your timing and itinerary.</p>
+    </details>
+
+    <details>
+      <summary>How many people can you cover in one shoot?</summary>
+      <p class="faq-answer">Comfortably up to 15–20 people solo. For larger groups or when you want simultaneous group and individual coverage, we bring a second shooter. Just let us know your group size when you enquire and we'll recommend the right package.</p>
+    </details>
+
+    <details>
+      <summary>How quickly do we get our photos?</summary>
+      <p class="faq-answer">Standard delivery is 7–10 business days. If you need photos sooner, ask about rush turnaround when booking — we can sometimes accommodate 48-hour delivery depending on the shoot scope.</p>
+    </details>
+
   </div>
-
-  <div class="faq-section">
-    <h2 class="faq-section-title">Headshots & Family Sessions</h2>
-    <div class="faq-item">
-      <div class="faq-q">Where do headshot sessions take place?</div>
-      <div class="faq-a">We shoot outdoors in natural light, or in a naturally lit indoor location that suits your brand. We know Vancouver's best spots for clean, professional results — we'll recommend a location based on what look you're going for.</div>
-    </div>
-    <div class="faq-item">
-      <div class="faq-q">Do you offer team headshot packages?</div>
-      <div class="faq-a">Yes. We offer group rates for teams of 3 or more. Reach out with your headcount and we'll put together a custom quote — usually easier and faster than everyone booking separately.</div>
-    </div>
-    <div class="faq-item">
-      <div class="faq-q">How many people can come to a family session?</div>
-      <div class="faq-a">The standard family package covers up to 5 people. For larger families or extended family sessions, just ask — we can accommodate larger groups and will adjust the pricing accordingly.</div>
-    </div>
-  </div>
-
-  <div class="faq-section">
-    <h2 class="faq-section-title">Booking & Logistics</h2>
-    <div class="faq-item">
-      <div class="faq-q">How far in advance should I book?</div>
-      <div class="faq-a">For monthly retainer clients, we schedule recurring slots that stay consistent. For one-off shoots and individual sessions, 1–2 weeks' notice is usually enough, though we can sometimes accommodate shorter notice depending on availability.</div>
-    </div>
-    <div class="faq-item">
-      <div class="faq-q">What areas do you cover?</div>
-      <div class="faq-a">We're based in Vancouver and cover Metro Vancouver and the Lower Mainland — including Vancouver, Burnaby, Richmond, Surrey, North Shore, Coquitlam, and surrounding areas.</div>
-    </div>
-    <div class="faq-item">
-      <div class="faq-q">What happens if it rains?</div>
-      <div class="faq-a">For restaurant shoots, we're shooting indoors so weather isn't a factor. For outdoor portrait sessions (headshots, family), we'll monitor the forecast together and reschedule at no charge if conditions aren't right.</div>
-    </div>
-    <div class="faq-item">
-      <div class="faq-q">How do I pay?</div>
-      <div class="faq-a">Monthly retainer clients are invoiced at the start of each month. For one-off shoots and portrait sessions, a 50% deposit is required to confirm your booking, with the remainder due on the day of the shoot.</div>
-    </div>
-  </div>
-
 </div>
 
-<div class="faq-cta">
-  <h3>Still have questions?<br/><em>Just reach out.</em></h3>
+<!-- PORTRAITS FAQ -->
+<div class="faq-section">
+  <p class="faq-section-label">Headshots &amp; Portrait Sessions</p>
+  <div class="faq-grid">
+
+    <details>
+      <summary>Where do portrait sessions take place?</summary>
+      <p class="faq-answer">We shoot outdoors in natural light, or in a naturally lit indoor location that suits your look. We know Vancouver's best spots for clean, professional results — we'll recommend a location based on what you're going for.</p>
+    </details>
+
+    <details>
+      <summary>Do you offer team headshot packages?</summary>
+      <p class="faq-answer">Yes. We offer group rates for teams of 3 or more. Reach out with your headcount and we'll put together a custom quote — usually easier and faster than everyone booking separately.</p>
+    </details>
+
+    <details>
+      <summary>How many people can come to a family session?</summary>
+      <p class="faq-answer">The standard family package covers up to 5 people. For larger families or extended family sessions, just ask — we can accommodate larger groups and will adjust the pricing accordingly.</p>
+    </details>
+
+  </div>
+</div>
+
+<!-- BOOKING FAQ -->
+<div class="faq-section">
+  <p class="faq-section-label">Booking &amp; Logistics</p>
+  <div class="faq-grid">
+
+    <details>
+      <summary>How far in advance should I book?</summary>
+      <p class="faq-answer">For events, 2–4 weeks notice is ideal, especially for prom and grad season (May–June). For portrait sessions, 1–2 weeks is usually enough. We can sometimes accommodate shorter notice — just reach out and ask.</p>
+    </details>
+
+    <details>
+      <summary>How do I confirm a booking?</summary>
+      <p class="faq-answer">A deposit via e-transfer confirms your date. For event packages the deposit is 30% of the total, with the remainder due on the day of the shoot. Deposits are non-refundable.</p>
+    </details>
+
+    <details>
+      <summary>What areas do you cover?</summary>
+      <p class="faq-answer">We're based in Vancouver and cover Metro Vancouver and the Lower Mainland — including Vancouver, Burnaby, Richmond, Surrey, North Shore, Coquitlam, and surrounding areas.</p>
+    </details>
+
+    <details>
+      <summary>What happens if it rains?</summary>
+      <p class="faq-answer">For outdoor portrait sessions we'll monitor the forecast together and reschedule at no charge if conditions aren't right. For events, we work with whatever the weather gives us — we'll adapt locations and timing as needed.</p>
+    </details>
+
+    <details>
+      <summary>How do I pay?</summary>
+      <p class="faq-answer">E-transfer. A deposit is required to confirm your booking, with the remainder due on the day of the shoot. We'll send you the details when you book.</p>
+    </details>
+
+    <details>
+      <summary>What's your cancellation policy?</summary>
+      <p class="faq-answer">Deposits are non-refundable. If you need to reschedule with more than 7 days notice, we'll do our best to find a new date at no charge. Last-minute cancellations may forfeit the full booking amount depending on the circumstances.</p>
+    </details>
+
+  </div>
+</div>
+
+<div class="cta-block">
+  <h3>Still have questions? <em>Just reach out.</em></h3>
   <p>We respond same day. No automated replies, no waiting in a queue.</p>
-  <a href="contact.html" class="btn-amber">Send us a message</a>
+  <a href="contact.html" class="btn-primary">Send us a message</a>
 </div>
 
 <footer>
-  <span class="footer-logo">Harbourview Media</span>
+  <a href="index.html" class="footer-logo">Harbourview Media</a>
   <ul class="footer-links">
     <li><a href="services.html">Services</a></li>
     <li><a href="pricing.html">Pricing</a></li>
     <li><a href="faq.html">FAQ</a></li>
     <li><a href="contact.html">Contact</a></li>
   </ul>
-  <span class="footer-copy">© 2026 Harbourview Media. Vancouver, BC.</span>
+  <p class="footer-copy">© 2026 Harbourview Media. Vancouver, BC.</p>
 </footer>
-<script>
-document.querySelectorAll('.faq-q').forEach(q=>{
-  q.addEventListener('click',()=>{
-    const item=q.parentElement;
-    const wasOpen=item.classList.contains('open');
-    document.querySelectorAll('.faq-item.open').forEach(i=>i.classList.remove('open'));
-    if(!wasOpen)item.classList.add('open');
-  });
-});
-</script>
+
 </body>
 </html>
