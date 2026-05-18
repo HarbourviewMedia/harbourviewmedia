@@ -1,321 +1,244 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Harbourview Media — Vancouver Restaurant & Commercial Photography</title>
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400&family=Outfit:wght@300;400;500;600&display=swap');
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-:root{--forest:#1E3A2F;--forest-mid:#2A4D3E;--parchment:#F7F3EC;--white:#FEFCF9;--amber:#C8943A;--amber-lt:#DBA84E;--amber-pale:#F5E6C8;--ink:#1A1F1C;--ink-mid:#2E3530;--mist:#7A8A82;--sage:#6B8C78;--sage-lt:#A8C0B0;--border:#E4DDD3}
-html{scroll-behavior:smooth}
-body{font-family:'Outfit',sans-serif;background:var(--white);color:var(--ink);font-weight:300;-webkit-font-smoothing:antialiased}
-a{text-decoration:none;color:inherit}
-nav{position:fixed;top:0;left:0;right:0;z-index:100;height:68px;display:flex;align-items:center;justify-content:space-between;padding:0 5rem;background:rgba(30,58,47,0.97);backdrop-filter:blur(8px);border-bottom:1px solid rgba(200,148,58,0.15)}
-.nav-logo{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:500;color:var(--white)}
-.nav-links{display:flex;gap:2.5rem;list-style:none}
-.nav-links a{font-size:0.75rem;font-weight:400;letter-spacing:0.08em;text-transform:uppercase;color:rgba(254,252,249,0.5);transition:color 0.2s}
-.nav-links a:hover,.nav-links a.active{color:var(--white)}
-.nav-cta{font-size:0.68rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--ink);background:var(--amber);padding:0.6rem 1.4rem;transition:background 0.2s}
-.nav-cta:hover{background:var(--amber-lt)}
-.btn-amber{display:inline-block;background:var(--amber);color:var(--ink);font-size:0.7rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;padding:0.85rem 2rem;transition:background 0.2s}
-.btn-amber:hover{background:var(--amber-lt)}
-.btn-outline-light{display:inline-block;border:1px solid rgba(254,252,249,0.25);color:rgba(254,252,249,0.65);font-size:0.7rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;padding:0.85rem 2rem;transition:all 0.2s}
-.btn-outline-light:hover{border-color:var(--amber);color:var(--amber-lt)}
-.tagline-strip{background:var(--amber);overflow:hidden;padding:0.85rem 0;white-space:nowrap}
-.tagline-scroll{display:inline-flex;animation:scroll 30s linear infinite}
-.tagline-item{font-size:0.65rem;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:var(--ink);padding:0 1.6rem}
-.tagline-dot{padding:0;opacity:0.4}
-@keyframes scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
-.section-eyebrow{font-size:0.63rem;font-weight:500;letter-spacing:0.22em;text-transform:uppercase;color:var(--amber);display:flex;align-items:center;gap:0.7rem;margin-bottom:1.2rem}
-.section-eyebrow::before{content:'';width:22px;height:1px;background:var(--amber)}
-.section-title{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3vw,2.6rem);font-weight:700;line-height:1.15;color:var(--forest)}
-.section-sub{font-size:0.88rem;font-weight:300;color:var(--mist);line-height:1.95;max-width:400px}
-footer{background:var(--ink);padding:3rem 5rem;display:flex;align-items:center;justify-content:space-between;gap:2rem;flex-wrap:wrap}
-.footer-logo{font-family:'Playfair Display',serif;font-size:1rem;font-weight:500;color:rgba(254,252,249,0.5)}
-.footer-links{display:flex;gap:2rem;list-style:none}
-.footer-links a{font-size:0.7rem;font-weight:300;letter-spacing:0.08em;text-transform:uppercase;color:rgba(254,252,249,0.3);transition:color 0.2s}
-.footer-links a:hover{color:var(--amber-lt)}
-.footer-copy{font-size:0.68rem;font-weight:300;color:rgba(254,252,249,0.2)}
-.reveal{opacity:0;transform:translateY(22px);transition:opacity 0.65s ease,transform 0.65s ease}
-.reveal.visible{opacity:1;transform:none}
-.d1{transition-delay:0.12s}.d2{transition-delay:0.24s}.d3{transition-delay:0.36s}
-.re-banner{background:var(--parchment);border:1px solid var(--border);padding:2.5rem 3rem;display:flex;align-items:center;justify-content:space-between;gap:2rem;flex-wrap:wrap;margin-top:3rem}
-.re-banner-eyebrow{font-size:0.6rem;font-weight:500;letter-spacing:0.2em;text-transform:uppercase;color:var(--amber);display:block;margin-bottom:0.4rem}
-.re-banner-title{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:600;color:var(--forest);margin-bottom:0.4rem}
-.re-banner-desc{font-size:0.8rem;font-weight:300;color:var(--mist);line-height:1.7;max-width:380px}
-.re-banner-actions{display:flex;gap:1rem;flex-wrap:wrap;align-items:center}
-.re-btn-call{display:flex;align-items:center;gap:0.5rem;background:var(--forest);color:var(--white);font-size:0.7rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;padding:0.82rem 1.5rem;transition:background 0.2s}
-.re-btn-call:hover{background:var(--forest-mid)}
-.re-btn-email{font-size:0.7rem;font-weight:300;color:var(--mist);border:1px solid var(--border);padding:0.82rem 1.5rem;transition:all 0.2s}
-.re-btn-email:hover{border-color:var(--amber);color:var(--amber)}
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Harbourview Media — Vancouver Event & Portrait Photography</title>
+  <meta name="description" content="Vancouver event and portrait photography. Proms, grad parties, corporate events, headshots, and family sessions across Metro Vancouver and the Lower Mainland." />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --black: #0d0d0d;
+      --white: #f5f4f0;
+      --accent: #c8a96e;
+      --grey: #6b6b6b;
+      --light: #eeece7;
+      --border: #dedad3;
+      --font-display: Georgia, 'Times New Roman', serif;
+      --font-body: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--font-body); background: var(--white); color: var(--black); line-height: 1.6; }
 
-/* HERO */
-.hero{min-height:100vh;background:var(--forest);display:grid;grid-template-columns:1fr 1fr;padding-top:68px;position:relative;overflow:hidden}
-.hero::before{content:'';position:absolute;top:-120px;right:-120px;width:600px;height:600px;border:1px solid rgba(200,148,58,0.13);border-radius:50%;pointer-events:none}
-.hero::after{content:'';position:absolute;bottom:-80px;left:22%;width:340px;height:340px;border:1px solid rgba(200,148,58,0.07);border-radius:50%;pointer-events:none}
-.hero-left{display:flex;flex-direction:column;justify-content:center;padding:5rem 4rem 5rem 5rem;position:relative;z-index:1}
-.hero-eyebrow{font-size:0.67rem;font-weight:500;letter-spacing:0.25em;text-transform:uppercase;color:var(--amber);margin-bottom:2rem;display:flex;align-items:center;gap:0.8rem}
-.hero-eyebrow::before{content:'';width:28px;height:1px;background:var(--amber)}
-.hero-title{font-family:'Playfair Display',serif;font-size:clamp(2.8rem,4.5vw,5rem);font-weight:700;line-height:1.05;color:var(--white);margin-bottom:2rem;letter-spacing:-0.01em}
-.hero-title em{font-style:italic;font-weight:400;color:var(--amber-lt)}
-.hero-sub{font-size:0.93rem;font-weight:300;color:rgba(254,252,249,0.5);max-width:380px;margin-bottom:3rem;line-height:2}
-.hero-actions{display:flex;gap:1rem;align-items:center;flex-wrap:wrap}
-.hero-right{display:flex;flex-direction:column;justify-content:center;padding:5rem 4rem 5rem 2rem;position:relative;z-index:1}
-.trust-cards{display:flex;flex-direction:column;gap:0.85rem}
-.trust-card{border:1px solid rgba(254,252,249,0.1);padding:1.5rem 2rem;display:flex;align-items:center;justify-content:space-between;transition:border-color 0.25s,background 0.25s}
-.trust-card.highlight{border-color:var(--amber);background:rgba(200,148,58,0.09)}
-.trust-card-left{display:flex;align-items:baseline;gap:1rem}
-.trust-card-num{font-family:'Playfair Display',serif;font-size:2.2rem;font-weight:400;font-style:italic;color:var(--amber-lt);line-height:1;flex-shrink:0}
-.trust-card-label{font-size:0.78rem;font-weight:300;color:rgba(254,252,249,0.5);line-height:1.6;max-width:210px}
-.trust-card-tag{font-size:0.58rem;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;padding:0.28rem 0.9rem;border:1px solid rgba(200,148,58,0.4);color:var(--amber-lt);white-space:nowrap;flex-shrink:0}
-.trust-card.highlight .trust-card-tag{background:var(--amber);border-color:var(--amber);color:var(--ink)}
-.hero-footnote{margin-top:1.5rem;font-size:0.7rem;font-weight:300;color:rgba(254,252,249,0.24);letter-spacing:0.04em}
+    nav {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 1.25rem 2.5rem; border-bottom: 1px solid var(--border);
+      background: var(--white); position: sticky; top: 0; z-index: 100;
+    }
+    .nav-logo { font-family: var(--font-display); font-size: 1.05rem; font-weight: normal; text-decoration: none; color: var(--black); letter-spacing: 0.02em; }
+    .nav-links { display: flex; gap: 2rem; list-style: none; align-items: center; }
+    .nav-links a { text-decoration: none; color: var(--grey); font-size: 0.8rem; letter-spacing: 0.06em; text-transform: uppercase; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--black); }
+    .nav-cta { background: var(--black) !important; color: var(--white) !important; padding: 0.55rem 1.2rem !important; border-radius: 2px; }
+    .nav-cta:hover { background: var(--accent) !important; color: var(--black) !important; }
 
-/* FEATURE */
-#feature{background:var(--parchment);padding:8rem 5rem}
-.feature-inner{display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:center;max-width:1200px;margin:0 auto}
-.feature-tag{display:inline-block;background:var(--forest);color:var(--amber-pale);font-size:0.58rem;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;padding:0.38rem 1rem;margin-bottom:1.5rem}
-.feature-title{font-family:'Playfair Display',serif;font-size:clamp(2.2rem,4vw,3.4rem);font-weight:700;line-height:1.1;color:var(--forest);margin-bottom:1.5rem}
-.feature-title em{font-style:italic;font-weight:400;color:var(--amber)}
-.feature-body{font-size:0.9rem;font-weight:300;color:var(--ink-mid);line-height:2;margin-bottom:1.4rem;max-width:420px}
-.perks{display:flex;flex-direction:column;gap:1rem}
-.perk{background:var(--white);padding:1.4rem 1.8rem;border:1px solid var(--border);display:flex;gap:1.2rem;align-items:flex-start;transition:border-color 0.25s,transform 0.25s}
-.perk:hover{border-color:var(--amber);transform:translateX(4px)}
-.perk-icon{width:36px;height:36px;flex-shrink:0;background:var(--forest);display:flex;align-items:center;justify-content:center}
-.perk-icon svg{width:16px;height:16px}
-.perk-title{font-size:0.86rem;font-weight:600;color:var(--forest);margin-bottom:0.15rem}
-.perk-desc{font-size:0.78rem;font-weight:300;color:var(--mist);line-height:1.7}
+    .hero { padding: 6rem 2.5rem 5rem; max-width: 1100px; margin: 0 auto; }
+    .hero-eyebrow { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.14em; color: var(--accent); margin-bottom: 1.5rem; font-weight: 600; }
+    .hero h1 { font-family: var(--font-display); font-size: clamp(2.4rem, 5vw, 4.2rem); font-weight: normal; line-height: 1.15; max-width: 820px; margin-bottom: 1.75rem; }
+    .hero h1 em { font-style: italic; color: var(--accent); }
+    .hero-sub { font-size: 1.05rem; color: var(--grey); max-width: 540px; margin-bottom: 2.5rem; line-height: 1.75; }
+    .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+    .btn-primary { background: var(--black); color: var(--white); padding: 0.85rem 2rem; text-decoration: none; font-size: 0.8rem; letter-spacing: 0.06em; text-transform: uppercase; border-radius: 2px; transition: background 0.2s; display: inline-block; }
+    .btn-primary:hover { background: var(--accent); color: var(--black); }
+    .btn-secondary { border: 1px solid var(--black); color: var(--black); padding: 0.85rem 2rem; text-decoration: none; font-size: 0.8rem; letter-spacing: 0.06em; text-transform: uppercase; border-radius: 2px; transition: all 0.2s; display: inline-block; }
+    .btn-secondary:hover { background: var(--black); color: var(--white); }
 
-/* SERVICES */
-#services{background:var(--white);padding:7rem 5rem}
-.services-intro{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:end;margin-bottom:4rem}
-.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
-.sc{border:1px solid var(--border);padding:2.6rem 2.2rem;position:relative;overflow:hidden;transition:border-color 0.28s,transform 0.28s;background:var(--white);text-decoration:none;display:block}
-.sc:hover{border-color:var(--forest);transform:translateY(-4px)}
-.sc.primary{background:var(--forest);border-color:var(--forest)}
-.sc-num{font-family:'Playfair Display',serif;font-size:0.78rem;font-style:italic;color:var(--sage);margin-bottom:1.4rem;display:block}
-.sc.primary .sc-num{color:var(--amber)}
-.sc-name{font-family:'Playfair Display',serif;font-size:1.4rem;font-weight:500;color:var(--forest);margin-bottom:0.5rem}
-.sc.primary .sc-name{color:var(--white)}
-.sc-line{width:26px;height:2px;background:var(--amber);margin-bottom:1.1rem}
-.sc-desc{font-size:0.82rem;font-weight:300;color:var(--mist);line-height:1.9;margin-bottom:1.8rem}
-.sc.primary .sc-desc{color:rgba(254,252,249,0.45)}
-.sc-price{font-size:0.73rem;font-weight:400;color:var(--ink-mid)}
-.sc.primary .sc-price{color:rgba(254,252,249,0.55)}
-.sc-price strong{font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:500;margin-right:0.2rem;color:var(--forest)}
-.sc.primary .sc-price strong{color:var(--amber-lt)}
-.sc-cta{display:block;margin-top:1.2rem;font-size:0.66rem;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;color:var(--sage);transition:color 0.2s}
-.sc:hover .sc-cta{color:var(--amber)}
-.sc.primary .sc-cta{color:var(--amber)}
+    .stats-bar { background: var(--black); color: var(--white); padding: 1.75rem 2.5rem; display: flex; gap: 3rem; flex-wrap: wrap; }
+    .stat-item { display: flex; flex-direction: column; }
+    .stat-value { font-family: var(--font-display); font-size: 1.6rem; font-style: italic; color: var(--accent); }
+    .stat-label { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.08em; color: #999; margin-top: 0.2rem; }
 
-/* RETAINER STRIP */
-.retainer-strip{background:var(--forest);margin-top:3rem;padding:3.5rem 4rem;display:flex;align-items:center;justify-content:space-between;gap:3rem;border:1px solid rgba(200,148,58,0.2)}
-.retainer-eyebrow{font-size:0.6rem;font-weight:600;letter-spacing:0.22em;text-transform:uppercase;color:var(--amber);margin-bottom:0.6rem;display:block}
-.retainer-title{font-family:'Playfair Display',serif;font-size:1.6rem;font-weight:700;color:var(--white);margin-bottom:0.5rem}
-.retainer-desc{font-size:0.82rem;font-weight:300;color:rgba(254,252,249,0.5);max-width:420px;line-height:1.8}
-.retainer-price{text-align:center;flex-shrink:0}
-.retainer-from{font-size:0.62rem;font-weight:300;color:rgba(254,252,249,0.4);letter-spacing:0.1em;display:block;margin-bottom:0.2rem}
-.retainer-amount{font-family:'Playfair Display',serif;font-size:3rem;font-weight:700;color:var(--amber-lt);line-height:1}
-.retainer-amount sup{font-size:1.1rem;font-family:'Outfit',sans-serif;font-weight:300;vertical-align:super}
-.retainer-period{font-size:0.72rem;font-weight:300;color:rgba(254,252,249,0.35);display:block;margin-bottom:1.2rem}
+    .marquee-wrap { border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 0.9rem 0; overflow: hidden; }
+    .marquee-track { display: flex; gap: 2.5rem; animation: marquee 22s linear infinite; white-space: nowrap; }
+    .marquee-track span { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--grey); }
+    .marquee-track .dot { color: var(--accent); }
+    @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 
-@media(max-width:960px){
-  .hero{grid-template-columns:1fr}
-  .hero-left{padding:3.5rem 2rem 2rem}
-  .hero-right{padding:1.5rem 2rem 3.5rem}
-  .feature-inner{grid-template-columns:1fr;gap:3rem}
-  #feature{padding:5rem 2rem}
-  #services{padding:5rem 2rem}
-  .services-intro{grid-template-columns:1fr;gap:1.5rem}
-  .services-grid{grid-template-columns:1fr}
-  .retainer-strip{flex-direction:column;padding:2.5rem 2rem;text-align:center}
-  footer{padding:2.5rem 1.5rem;flex-direction:column;gap:1.5rem}
-  nav{padding:0 1.5rem}
-  .nav-links{display:none}
-}
-</style>
+    section { padding: 5rem 2.5rem; max-width: 1100px; margin: 0 auto; }
+    .section-full { padding: 5rem 2.5rem; background: var(--light); }
+    .section-full-inner { max-width: 1100px; margin: 0 auto; }
+    .section-label { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.14em; color: var(--accent); font-weight: 600; margin-bottom: 1rem; }
+    .section-title { font-family: var(--font-display); font-size: clamp(1.8rem, 3vw, 2.6rem); font-weight: normal; line-height: 1.2; margin-bottom: 1.25rem; }
+    .section-title em { font-style: italic; color: var(--accent); }
+    .section-body { font-size: 1rem; color: var(--grey); max-width: 560px; line-height: 1.75; margin-bottom: 2.5rem; }
+
+    .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-top: 3rem; }
+    .service-card { border: 1px solid var(--border); padding: 2rem; border-radius: 3px; background: #fff; transition: border-color 0.2s, box-shadow 0.2s; }
+    .service-card:hover { border-color: var(--accent); box-shadow: 0 4px 20px rgba(0,0,0,0.06); }
+    .service-card.featured { border-color: var(--black); }
+    .service-tag { font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.12em; color: var(--accent); font-weight: 600; margin-bottom: 0.75rem; display: block; }
+    .service-card h3 { font-family: var(--font-display); font-size: 1.3rem; font-weight: normal; margin-bottom: 0.75rem; }
+    .service-card p { font-size: 0.9rem; color: var(--grey); line-height: 1.7; margin-bottom: 1.25rem; }
+    .service-price { font-size: 0.85rem; color: var(--black); font-weight: 600; margin-bottom: 1rem; }
+    .service-link { font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--black); text-decoration: none; border-bottom: 1px solid var(--black); padding-bottom: 1px; }
+    .service-link:hover { color: var(--accent); border-color: var(--accent); }
+
+    .why-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 2.5rem; margin-top: 3rem; }
+    .why-num { font-family: var(--font-display); font-size: 2rem; font-style: italic; color: var(--accent); margin-bottom: 0.5rem; }
+    .why-item h4 { font-size: 0.9rem; font-weight: 600; margin-bottom: 0.5rem; }
+    .why-item p { font-size: 0.875rem; color: var(--grey); line-height: 1.7; }
+
+    .cta-band { background: var(--black); color: var(--white); padding: 4.5rem 2.5rem; text-align: center; }
+    .cta-band h2 { font-family: var(--font-display); font-size: clamp(1.8rem, 3vw, 2.8rem); font-weight: normal; margin-bottom: 1rem; }
+    .cta-band h2 em { font-style: italic; color: var(--accent); }
+    .cta-band p { font-size: 1rem; color: #999; margin-bottom: 2rem; }
+    .btn-light { background: var(--white); color: var(--black); padding: 0.85rem 2rem; text-decoration: none; font-size: 0.8rem; letter-spacing: 0.06em; text-transform: uppercase; border-radius: 2px; display: inline-block; transition: background 0.2s; }
+    .btn-light:hover { background: var(--accent); }
+
+    footer { border-top: 1px solid var(--border); padding: 2rem 2.5rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
+    .footer-logo { font-family: var(--font-display); font-size: 0.95rem; color: var(--black); text-decoration: none; }
+    .footer-links { display: flex; gap: 1.5rem; list-style: none; }
+    .footer-links a { font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--grey); text-decoration: none; }
+    .footer-links a:hover { color: var(--black); }
+    .footer-copy { font-size: 0.78rem; color: var(--grey); }
+
+    @media (max-width: 680px) {
+      nav { padding: 1rem 1.25rem; }
+      .nav-links { gap: 0.75rem; }
+      .hero, section { padding: 3.5rem 1.25rem 3rem; }
+      .stats-bar { padding: 1.5rem 1.25rem; gap: 1.5rem; }
+      .section-full { padding: 3rem 1.25rem; }
+      footer { flex-direction: column; align-items: flex-start; padding: 1.5rem 1.25rem; }
+      .cta-band { padding: 3rem 1.25rem; }
+    }
+  </style>
 </head>
 <body>
+
 <nav>
   <a href="index.html" class="nav-logo">Harbourview Media</a>
   <ul class="nav-links">
-    <li><a href="index.html" class="active">Home</a></li>
     <li><a href="services.html">Services</a></li>
     <li><a href="pricing.html">Pricing</a></li>
     <li><a href="faq.html">FAQ</a></li>
     <li><a href="contact.html">Contact</a></li>
+    <li><a href="contact.html" class="nav-cta">Get a Quote</a></li>
   </ul>
-  <a href="contact.html" class="nav-cta">Get a Quote</a>
 </nav>
 
-<section class="hero">
-  <div class="hero-left">
-    <span class="hero-eyebrow">Vancouver Restaurant Photography</span>
-    <h1 class="hero-title">Your restaurant deserves photos that make people<br/><em>hungry before they arrive</em></h1>
-    <p class="hero-sub">Monthly content packages for Vancouver restaurants, cafés, and food businesses. Fresh images delivered every month — no brief, no back-and-forth.</p>
-    <div class="hero-actions">
-      <a href="pricing.html" class="btn-amber">See Packages</a>
-      <a href="contact.html" class="btn-outline-light">Get in touch</a>
-    </div>
-  </div>
-  <div class="hero-right">
-    <div class="trust-cards">
-      <div class="trust-card highlight">
-        <div class="trust-card-left">
-          <span class="trust-card-num">20+</span>
-          <span class="trust-card-label">Edited images delivered monthly — ready for Instagram, Google, your menu</span>
-        </div>
-        <span class="trust-card-tag">Monthly</span>
-      </div>
-      <div class="trust-card">
-        <div class="trust-card-left">
-          <span class="trust-card-num">48h</span>
-          <span class="trust-card-label">Gallery delivered within 48 hours of your shoot — never waiting weeks</span>
-        </div>
-        <span class="trust-card-tag">Fast</span>
-      </div>
-      <div class="trust-card">
-        <div class="trust-card-left">
-          <span class="trust-card-num">0</span>
-          <span class="trust-card-label">Long-term contracts. Month-to-month, cancel any time, no lock-in</span>
-        </div>
-        <span class="trust-card-tag">Flexible</span>
-      </div>
-      <div class="trust-card">
-        <div class="trust-card-left">
-          <span class="trust-card-num">YVR</span>
-          <span class="trust-card-label">Based in Vancouver — Metro Vancouver & Lower Mainland coverage</span>
-        </div>
-        <span class="trust-card-tag">Local</span>
-      </div>
-    </div>
-    <p class="hero-footnote">Restaurants · Cafés · Food Businesses · Retail — Metro Vancouver & Lower Mainland</p>
-  </div>
-</section>
-
-<div class="tagline-strip">
-  <div class="tagline-scroll">
-    <span class="tagline-item">Restaurant Photography</span><span class="tagline-item tagline-dot">·</span>
-    <span class="tagline-item">Food Content</span><span class="tagline-item tagline-dot">·</span>
-    <span class="tagline-item">Brand Photography</span><span class="tagline-item tagline-dot">·</span>
-    <span class="tagline-item">Monthly Retainers</span><span class="tagline-item tagline-dot">·</span>
-    <span class="tagline-item">48-Hour Delivery</span><span class="tagline-item tagline-dot">·</span>
-    <span class="tagline-item">Metro Vancouver</span><span class="tagline-item tagline-dot">·</span>
-    <span class="tagline-item">Restaurant Photography</span><span class="tagline-item tagline-dot">·</span>
-    <span class="tagline-item">Food Content</span><span class="tagline-item tagline-dot">·</span>
-    <span class="tagline-item">Brand Photography</span><span class="tagline-item tagline-dot">·</span>
-    <span class="tagline-item">Monthly Retainers</span><span class="tagline-item tagline-dot">·</span>
-    <span class="tagline-item">48-Hour Delivery</span><span class="tagline-item tagline-dot">·</span>
-    <span class="tagline-item">Metro Vancouver</span><span class="tagline-item tagline-dot">·</span>
+<div class="hero">
+  <p class="hero-eyebrow">Vancouver Event &amp; Portrait Photography</p>
+  <h1>Your best nights deserve photos that <em>actually look like them.</em></h1>
+  <p class="hero-sub">From prom nights in Gastown to corporate events downtown — we cover Metro Vancouver's moments with professional coverage, clean editing, and no missed shots.</p>
+  <div class="hero-actions">
+    <a href="contact.html" class="btn-primary">Get a Quote</a>
+    <a href="services.html" class="btn-secondary">See Services</a>
   </div>
 </div>
 
-<section id="feature">
-  <div class="feature-inner">
-    <div class="reveal">
-      <span class="feature-tag">Our Specialty</span>
-      <h2 class="feature-title">Photos that look like your restaurant<br/><em>at its absolute best</em></h2>
-      <p class="feature-body">Most restaurant photos look the same — bad lighting, wrong angles, colours that lie. We shoot your food, your space, and your team the way they look on a great service. Because that's what fills tables.</p>
-      <p class="feature-body">We work with Vancouver restaurants on a monthly basis. You tell us what's new this month — we handle the rest. No creative brief needed. Just consistent, quality images every single month.</p>
-      <a href="pricing.html" class="btn-amber" style="margin-top:0.5rem">View Content Packages</a>
-    </div>
-    <div class="perks reveal d1">
-      <div class="perk">
-        <div class="perk-icon"><svg viewBox="0 0 16 16" fill="none" stroke="#C8943A" stroke-width="1.4"><circle cx="8" cy="5" r="3"/><path d="M2 14c0-3 2.7-5.5 6-5.5s6 2.5 6 5.5"/></svg></div>
-        <div><div class="perk-title">Dishes, atmosphere, team</div><div class="perk-desc">Hero food shots, ambient dining room, staff portraits, behind-the-scenes — everything a modern restaurant feed needs.</div></div>
-      </div>
-      <div class="perk">
-        <div class="perk-icon"><svg viewBox="0 0 16 16" fill="none" stroke="#C8943A" stroke-width="1.4"><rect x="1" y="3" width="14" height="10" rx="2"/><path d="M5 8h6"/></svg></div>
-        <div><div class="perk-title">Sized for every platform</div><div class="perk-desc">Instagram squares, Stories crops, Google Business cover, menu inserts — all delivered and optimised. Your team just posts.</div></div>
-      </div>
-      <div class="perk">
-        <div class="perk-icon"><svg viewBox="0 0 16 16" fill="none" stroke="#C8943A" stroke-width="1.4"><path d="M3 4h10M3 8h7M3 12h5"/></svg></div>
-        <div><div class="perk-title">No creative brief needed</div><div class="perk-desc">We handle the shot list. Tell us your new dishes — we figure out the rest. Less work for you, better results for both.</div></div>
-      </div>
-      <div class="perk">
-        <div class="perk-icon"><svg viewBox="0 0 16 16" fill="none" stroke="#C8943A" stroke-width="1.4"><rect x="2" y="4" width="12" height="10" rx="1.5"/><path d="M5 4V3a3 3 0 016 0v1"/></svg></div>
-        <div><div class="perk-title">Gallery in 48 hours</div><div class="perk-desc">All images delivered within 48 hours of the shoot — shareable, downloadable, print-ready. No chasing.</div></div>
-      </div>
-    </div>
-  </div>
-</section>
+<div class="stats-bar">
+  <div class="stat-item"><span class="stat-value">48h</span><span class="stat-label">Rush delivery available</span></div>
+  <div class="stat-item"><span class="stat-value">2</span><span class="stat-label">Shooters for large events</span></div>
+  <div class="stat-item"><span class="stat-value">Local</span><span class="stat-label">Metro Vancouver &amp; Lower Mainland</span></div>
+  <div class="stat-item"><span class="stat-value">0</span><span class="stat-label">Long-term contracts</span></div>
+</div>
 
-<section id="services">
-  <div class="services-intro reveal">
-    <div>
-      <span class="section-eyebrow">All services</span>
-      <h2 class="section-title">Food is our focus — but we do more</h2>
-    </div>
-    <p class="section-sub">Alongside restaurant content, we offer professional headshots for individuals and teams, and family sessions.</p>
+<div class="marquee-wrap">
+  <div class="marquee-track">
+    <span>Prom &amp; Grad Parties</span><span class="dot">·</span>
+    <span>Corporate Events</span><span class="dot">·</span>
+    <span>Grad Portraits</span><span class="dot">·</span>
+    <span>Headshots</span><span class="dot">·</span>
+    <span>Family Sessions</span><span class="dot">·</span>
+    <span>Limo &amp; Group Shoots</span><span class="dot">·</span>
+    <span>Social Events</span><span class="dot">·</span>
+    <span>Real Estate</span><span class="dot">·</span>
+    <span>Prom &amp; Grad Parties</span><span class="dot">·</span>
+    <span>Corporate Events</span><span class="dot">·</span>
+    <span>Grad Portraits</span><span class="dot">·</span>
+    <span>Headshots</span><span class="dot">·</span>
+    <span>Family Sessions</span><span class="dot">·</span>
+    <span>Limo &amp; Group Shoots</span><span class="dot">·</span>
+    <span>Social Events</span><span class="dot">·</span>
+    <span>Real Estate</span><span class="dot">·</span>
   </div>
+</div>
+
+<section>
+  <p class="section-label">What We Offer</p>
+  <h2 class="section-title">Photography built around <em>the moments that matter</em></h2>
+  <p class="section-body">Events are our focus. We also shoot grad portraits, headshots, and family sessions — but if you've got a night worth remembering, that's where we do our best work.</p>
+
   <div class="services-grid">
-    <a href="services.html#restaurant" class="sc primary reveal">
-      <span class="sc-num">01 — Featured</span>
-      <h3 class="sc-name">Restaurant & Brand Content</h3>
-      <div class="sc-line"></div>
-      <p class="sc-desc">Monthly photography for restaurants, cafés, and food businesses. Fresh images every month — food, atmosphere, team. No contract.</p>
-      <div class="sc-price">From <strong>$299</strong>/month</div>
-      <span class="sc-cta">Learn more →</span>
-    </a>
-    <a href="services.html#headshots" class="sc reveal d1">
-      <span class="sc-num">02</span>
-      <h3 class="sc-name">Professional Headshots</h3>
-      <div class="sc-line"></div>
-      <p class="sc-desc">LinkedIn, team pages, company bios — clean, confident headshots that make the right first impression. Individual and team packages.</p>
-      <div class="sc-price">Starting at <strong>$79</strong></div>
-      <span class="sc-cta">Learn more →</span>
-    </a>
-    <a href="services.html#family" class="sc reveal d2">
-      <span class="sc-num">03</span>
-      <h3 class="sc-name">Family Sessions</h3>
-      <div class="sc-line"></div>
-      <p class="sc-desc">The laughs, the chaos, the in-between moments — your family as they actually are. Relaxed, outdoor, real.</p>
-      <div class="sc-price">Starting at <strong>$129</strong></div>
-      <span class="sc-cta">Learn more →</span>
-    </a>
-  </div>
+    <div class="service-card featured">
+      <span class="service-tag">★ Our Specialty</span>
+      <h3>Event Photography</h3>
+      <p>Prom nights, grad parties, corporate events, social gatherings. We know Vancouver's best locations and we know how to run a shoot when people don't want to stop having fun. Two-shooter coverage available for larger groups.</p>
+      <p class="service-price">From $425 · Two-shooter packages from $800</p>
+      <a href="services.html#events" class="service-link">Learn more →</a>
+    </div>
 
-  <div class="retainer-strip reveal">
-    <div>
-      <span class="retainer-eyebrow">Monthly Content Package</span>
-      <h3 class="retainer-title">Stop posting phone photos.</h3>
-      <p class="retainer-desc">A monthly shoot keeps your feed looking like a restaurant people actually want to visit. No contract, no creative brief, no chasing your photographer. Consistent content on a schedule that works for your kitchen.</p>
+    <div class="service-card">
+      <span class="service-tag">Popular</span>
+      <h3>Graduation Portraits</h3>
+      <p>Not the same park, same pose, same forced smile. We find locations that match who you actually are and shoot until the moment feels real. Classes of 2026–2029 welcome.</p>
+      <p class="service-price">From $99</p>
+      <a href="services.html#grad" class="service-link">Learn more →</a>
     </div>
-    <div class="retainer-price">
-      <span class="retainer-from">starting from</span>
-      <div class="retainer-amount"><sup>$</sup>299</div>
-      <span class="retainer-period">per month · no contract</span>
-      <a href="contact.html?service=restaurant-monthly" class="btn-amber">Get a Quote</a>
-    </div>
-  </div>
 
-  <div class="re-banner reveal">
-    <div class="re-banner-left">
-      <span class="re-banner-eyebrow">Also available</span>
-      <h3 class="re-banner-title">Real Estate Photography</h3>
-      <p class="re-banner-desc">Interior & exterior coverage, HDR processing, MLS-ready files. Pricing varies by property size — reach out for a custom quote.</p>
+    <div class="service-card">
+      <span class="service-tag">Professional</span>
+      <h3>Headshots</h3>
+      <p>LinkedIn, company bio, portfolio. Clean, confident, and genuinely like you — not the stiff version. Individual and team packages available.</p>
+      <p class="service-price">From $79</p>
+      <a href="services.html#headshots" class="service-link">Learn more →</a>
     </div>
-    <div class="re-banner-actions">
-      <a href="tel:2365092933" class="re-btn-call"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 1h3l1.5 3.5-1.75 1.05C5.58 7.18 6.82 8.42 8.45 9.25L9.5 7.5 13 9v3c0 1-4 2-9-3S1 2 2 1z" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"/></svg>(236) 509-2933</a>
-      <a href="mailto:sean@harbourviewmedia.ca" class="re-btn-email">sean@harbourviewmedia.ca</a>
+
+    <div class="service-card">
+      <span class="service-tag">Family</span>
+      <h3>Family Sessions</h3>
+      <p>The chaos, the laughing, the in-between glances. Relaxed, outdoor, real. No stiff lineups, no fake smiles. Up to 5 people, larger families welcome.</p>
+      <p class="service-price">From $129</p>
+      <a href="services.html#family" class="service-link">Learn more →</a>
     </div>
   </div>
 </section>
+
+<div class="section-full">
+  <div class="section-full-inner">
+    <p class="section-label">Why Harbourview</p>
+    <h2 class="section-title">What you actually get <em>when you book us</em></h2>
+    <div class="why-grid">
+      <div class="why-item">
+        <div class="why-num">01</div>
+        <h4>We know Vancouver</h4>
+        <p>Gastown, Harbour, Burrard Bridge, North Van — we've shot them all. No scouting time wasted on your dime.</p>
+      </div>
+      <div class="why-item">
+        <div class="why-num">02</div>
+        <h4>Two-shooter coverage</h4>
+        <p>For larger events we bring a second shooter. Group shots, candids, and individual portraits — covered simultaneously, nothing missed.</p>
+      </div>
+      <div class="why-item">
+        <div class="why-num">03</div>
+        <h4>Professional editing</h4>
+        <p>Colour-corrected, retouched, delivered in a private gallery. Not a raw dump. Not a USB stick six weeks later.</p>
+      </div>
+      <div class="why-item">
+        <div class="why-num">04</div>
+        <h4>No hidden fees</h4>
+        <p>The price you see is what you pay. Deposit to confirm, balance on the day. No surprise editing charges at the end.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="cta-band">
+  <h2>Ready to lock in your <em>date?</em></h2>
+  <p>We respond same day. No automated replies, no waiting in a queue.</p>
+  <a href="contact.html" class="btn-light">Get a Quote</a>
+</div>
 
 <footer>
-  <span class="footer-logo">Harbourview Media</span>
+  <a href="index.html" class="footer-logo">Harbourview Media</a>
   <ul class="footer-links">
     <li><a href="services.html">Services</a></li>
     <li><a href="pricing.html">Pricing</a></li>
     <li><a href="faq.html">FAQ</a></li>
     <li><a href="contact.html">Contact</a></li>
   </ul>
-  <span class="footer-copy">© 2026 Harbourview Media. Vancouver, BC.</span>
+  <p class="footer-copy">© 2026 Harbourview Media. Vancouver, BC.</p>
 </footer>
-<script>
-const io=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('visible')}),{threshold:0.08});
-document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
-</script>
+
 </body>
 </html>
