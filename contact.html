@@ -1,202 +1,309 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Contact — Harbourview Media</title>
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400&family=Outfit:wght@300;400;500;600&display=swap');
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-:root{--forest:#1E3A2F;--forest-mid:#2A4D3E;--parchment:#F7F3EC;--white:#FEFCF9;--amber:#C8943A;--amber-lt:#DBA84E;--ink:#1A1F1C;--mist:#7A8A82;--sage:#6B8C78;--sage-lt:#A8C0B0;--border:#E4DDD3}
-html{scroll-behavior:smooth}
-body{font-family:'Outfit',sans-serif;background:var(--white);color:var(--ink);font-weight:300;-webkit-font-smoothing:antialiased}
-a{text-decoration:none;color:inherit}
-nav{position:fixed;top:0;left:0;right:0;z-index:100;height:68px;display:flex;align-items:center;justify-content:space-between;padding:0 5rem;background:rgba(30,58,47,0.97);backdrop-filter:blur(8px);border-bottom:1px solid rgba(200,148,58,0.15)}
-.nav-logo{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:500;color:var(--white)}
-.nav-links{display:flex;gap:2.5rem;list-style:none}
-.nav-links a{font-size:0.75rem;font-weight:400;letter-spacing:0.08em;text-transform:uppercase;color:rgba(254,252,249,0.5);transition:color 0.2s}
-.nav-links a:hover,.nav-links a.active{color:var(--white)}
-.nav-cta{font-size:0.68rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--ink);background:var(--amber);padding:0.6rem 1.4rem;transition:background 0.2s}
-.nav-cta:hover{background:var(--amber-lt)}
-footer{background:var(--ink);padding:3rem 5rem;display:flex;align-items:center;justify-content:space-between;gap:2rem;flex-wrap:wrap}
-.footer-logo{font-family:'Playfair Display',serif;font-size:1rem;font-weight:500;color:rgba(254,252,249,0.5)}
-.footer-links{display:flex;gap:2rem;list-style:none}
-.footer-links a{font-size:0.7rem;font-weight:300;letter-spacing:0.08em;text-transform:uppercase;color:rgba(254,252,249,0.3);transition:color 0.2s}
-.footer-links a:hover{color:var(--amber-lt)}
-.footer-copy{font-size:0.68rem;font-weight:300;color:rgba(254,252,249,0.2)}
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact — Harbourview Media</title>
+  <meta name="description" content="Get a quote for event photography, grad portraits, headshots, or family sessions in Vancouver. We respond same day." />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --black: #0d0d0d; --white: #f5f4f0; --accent: #c8a96e;
+      --grey: #6b6b6b; --light: #eeece7; --border: #dedad3;
+      --font-display: Georgia, 'Times New Roman', serif;
+      --font-body: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    }
+    body { font-family: var(--font-body); background: var(--white); color: var(--black); line-height: 1.6; }
 
-.contact-wrap{display:grid;grid-template-columns:1fr 1fr;min-height:calc(100vh - 68px);margin-top:68px}
-.contact-info{background:var(--forest);padding:6rem 5rem;display:flex;flex-direction:column;justify-content:center;position:relative;overflow:hidden}
-.contact-info::before{content:'';position:absolute;bottom:-80px;right:-80px;width:360px;height:360px;border:1px solid rgba(200,148,58,0.1);border-radius:50%;pointer-events:none}
-.ci-eyebrow{font-size:0.65rem;font-weight:500;letter-spacing:0.25em;text-transform:uppercase;color:var(--amber);display:flex;align-items:center;gap:0.8rem;margin-bottom:1.5rem;position:relative;z-index:1}
-.ci-eyebrow::before{content:'';width:28px;height:1px;background:var(--amber)}
-.ci-heading{font-family:'Playfair Display',serif;font-size:clamp(2rem,3.5vw,3rem);font-weight:700;line-height:1.12;color:var(--white);margin-bottom:1.2rem;position:relative;z-index:1}
-.ci-heading em{font-style:italic;font-weight:400;color:var(--amber-lt)}
-.ci-sub{font-size:0.87rem;font-weight:300;color:rgba(254,252,249,0.4);line-height:1.95;max-width:340px;margin-bottom:3rem;position:relative;z-index:1}
-.ci-details{display:flex;flex-direction:column;gap:1.3rem;position:relative;z-index:1}
-.ci-detail{display:flex;gap:1rem;align-items:flex-start}
-.ci-detail-label{font-size:0.6rem;font-weight:500;letter-spacing:0.18em;text-transform:uppercase;color:var(--amber);min-width:72px;padding-top:0.12rem}
-.ci-detail-val{font-size:0.87rem;font-weight:300;color:rgba(254,252,249,0.55)}
-.ci-detail-val a{color:rgba(254,252,249,0.55);transition:color 0.2s}
-.ci-detail-val a:hover{color:var(--amber-lt)}
-.ci-divider{width:100%;height:1px;background:rgba(255,255,255,0.08);margin:3rem 0;position:relative;z-index:1}
-.ci-process{position:relative;z-index:1}
-.ci-process-title{font-size:0.62rem;font-weight:500;letter-spacing:0.18em;text-transform:uppercase;color:rgba(254,252,249,0.3);margin-bottom:1.5rem;display:block}
-.process-items{display:flex;flex-direction:column;gap:1rem}
-.pi{display:flex;gap:1rem;align-items:flex-start}
-.pi-n{font-family:'Playfair Display',serif;font-size:1rem;font-style:italic;color:var(--amber);min-width:20px;line-height:1.4}
-.pi-t{font-size:0.8rem;font-weight:300;color:rgba(254,252,249,0.4);line-height:1.6}
+    nav { display: flex; justify-content: space-between; align-items: center; padding: 1.25rem 2.5rem; border-bottom: 1px solid var(--border); background: var(--white); position: sticky; top: 0; z-index: 100; }
+    .nav-logo { font-family: var(--font-display); font-size: 1.05rem; font-weight: normal; text-decoration: none; color: var(--black); }
+    .nav-links { display: flex; gap: 2rem; list-style: none; align-items: center; }
+    .nav-links a { text-decoration: none; color: var(--grey); font-size: 0.8rem; letter-spacing: 0.06em; text-transform: uppercase; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--black); }
+    .nav-cta { background: var(--black) !important; color: var(--white) !important; padding: 0.55rem 1.2rem !important; border-radius: 2px; }
+    .nav-cta:hover { background: var(--accent) !important; color: var(--black) !important; }
 
-.contact-form-wrap{background:var(--parchment);padding:6rem 5rem;display:flex;flex-direction:column;justify-content:center}
-.form-heading{font-family:'Playfair Display',serif;font-size:1.6rem;font-weight:700;color:var(--forest);margin-bottom:0.5rem}
-.form-sub{font-size:0.82rem;font-weight:300;color:var(--mist);margin-bottom:2.5rem;line-height:1.8}
-.contact-form{display:flex;flex-direction:column;gap:1.2rem}
-.form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
-.form-group{display:flex;flex-direction:column;gap:0.4rem}
-.form-group label{font-size:0.65rem;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:var(--mist)}
-.form-group input,.form-group select,.form-group textarea{font-family:'Outfit',sans-serif;font-size:0.88rem;font-weight:300;padding:0.85rem 1rem;border:1px solid var(--border);background:var(--white);color:var(--ink);outline:none;transition:border-color 0.2s;-webkit-appearance:none;appearance:none}
-.form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:var(--amber)}
-.form-group textarea{min-height:120px;resize:vertical}
-.form-submit{font-family:'Outfit',sans-serif;font-size:0.72rem;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;padding:1rem 2rem;background:var(--forest);color:var(--white);border:none;cursor:pointer;transition:background 0.2s;margin-top:0.4rem}
-.form-submit:hover{background:var(--forest-mid)}
-.form-success{display:none;text-align:center;padding:3rem 2rem}
-.form-success-icon{width:56px;height:56px;background:var(--amber);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 1.5rem}
-.form-success h3{font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:700;color:var(--forest);margin-bottom:0.8rem}
-.form-success p{font-size:0.85rem;font-weight:300;color:var(--mist);line-height:1.8}
+    /* LAYOUT */
+    .contact-wrap { display: grid; grid-template-columns: 1fr 1fr; max-width: 1100px; margin: 0 auto; min-height: calc(100vh - 65px); }
 
-@media(max-width:900px){
-  nav{padding:0 1.5rem}.nav-links{display:none}
-  .contact-wrap{grid-template-columns:1fr}
-  .contact-info{padding:4rem 2rem}
-  .contact-form-wrap{padding:4rem 2rem}
-  .form-row{grid-template-columns:1fr}
-  footer{padding:2.5rem 1.5rem;flex-direction:column;gap:1.5rem}
-}
-</style>
+    /* LEFT PANEL */
+    .contact-left { padding: 4rem 3rem 4rem 2.5rem; border-right: 1px solid var(--border); }
+    .page-label { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.14em; color: var(--accent); font-weight: 600; margin-bottom: 1rem; }
+    .contact-left h1 { font-family: var(--font-display); font-size: clamp(2rem, 3.5vw, 3rem); font-weight: normal; line-height: 1.15; margin-bottom: 1.25rem; }
+    .contact-left h1 em { font-style: italic; color: var(--accent); }
+    .contact-left p { font-size: 0.95rem; color: var(--grey); line-height: 1.75; margin-bottom: 2.5rem; max-width: 400px; }
+
+    .contact-details { display: flex; flex-direction: column; gap: 1.25rem; margin-bottom: 3rem; }
+    .contact-detail { display: flex; flex-direction: column; gap: 0.2rem; }
+    .detail-label { font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.12em; color: var(--accent); font-weight: 600; }
+    .detail-value { font-size: 0.9rem; color: var(--black); }
+    .detail-value a { color: var(--black); text-decoration: none; border-bottom: 1px solid var(--border); padding-bottom: 1px; transition: border-color 0.2s; }
+    .detail-value a:hover { border-color: var(--accent); color: var(--accent); }
+
+    .next-steps { margin-top: 2rem; }
+    .next-steps h3 { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.12em; color: var(--grey); font-weight: 600; margin-bottom: 1.25rem; }
+    .steps-list { display: flex; flex-direction: column; gap: 1rem; }
+    .step { display: flex; gap: 1rem; align-items: flex-start; }
+    .step-num { font-family: var(--font-display); font-size: 1rem; font-style: italic; color: var(--accent); flex-shrink: 0; width: 1.5rem; }
+    .step-text { font-size: 0.875rem; color: var(--grey); line-height: 1.6; }
+
+    /* RIGHT PANEL — FORM */
+    .contact-right { padding: 4rem 2.5rem 4rem 3rem; }
+    .contact-right h2 { font-family: var(--font-display); font-size: 1.3rem; font-weight: normal; margin-bottom: 0.4rem; }
+    .contact-right h2 em { font-style: italic; color: var(--accent); }
+    .form-sub { font-size: 0.85rem; color: var(--grey); margin-bottom: 2rem; }
+
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem; }
+    .form-group { display: flex; flex-direction: column; gap: 0.4rem; margin-bottom: 1rem; }
+    .form-group label { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.1em; font-weight: 600; color: var(--black); }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      font-family: var(--font-body);
+      font-size: 0.9rem;
+      padding: 0.75rem 1rem;
+      border: 1px solid var(--border);
+      border-radius: 2px;
+      background: #fff;
+      color: var(--black);
+      transition: border-color 0.2s;
+      outline: none;
+      appearance: none;
+      -webkit-appearance: none;
+    }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus { border-color: var(--black); }
+    .form-group textarea { resize: vertical; min-height: 120px; }
+    .form-group select { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%236b6b6b' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 1rem center; padding-right: 2.5rem; cursor: pointer; }
+
+    .optional-tag { font-size: 0.65rem; color: var(--grey); font-weight: normal; text-transform: none; letter-spacing: 0; margin-left: 0.4rem; }
+
+    .btn-submit { width: 100%; background: var(--black); color: var(--white); padding: 1rem 2rem; border: none; font-family: var(--font-body); font-size: 0.8rem; letter-spacing: 0.06em; text-transform: uppercase; border-radius: 2px; cursor: pointer; transition: background 0.2s; margin-top: 0.5rem; }
+    .btn-submit:hover { background: var(--accent); color: var(--black); }
+
+    /* SUCCESS STATE */
+    .success-state { display: none; text-align: center; padding: 3rem 1rem; }
+    .success-state.visible { display: block; }
+    .success-icon { font-size: 2rem; margin-bottom: 1rem; }
+    .success-state h3 { font-family: var(--font-display); font-size: 1.5rem; font-weight: normal; margin-bottom: 0.75rem; }
+    .success-state h3 em { font-style: italic; color: var(--accent); }
+    .success-state p { font-size: 0.9rem; color: var(--grey); }
+    .form-visible { display: block; }
+    .form-hidden { display: none; }
+
+    footer { border-top: 1px solid var(--border); padding: 2rem 2.5rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
+    .footer-logo { font-family: var(--font-display); font-size: 0.95rem; color: var(--black); text-decoration: none; }
+    .footer-links { display: flex; gap: 1.5rem; list-style: none; }
+    .footer-links a { font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--grey); text-decoration: none; }
+    .footer-links a:hover { color: var(--black); }
+    .footer-copy { font-size: 0.78rem; color: var(--grey); }
+
+    @media (max-width: 768px) {
+      .contact-wrap { grid-template-columns: 1fr; }
+      .contact-left { border-right: none; border-bottom: 1px solid var(--border); padding: 3rem 1.25rem 2.5rem; }
+      .contact-right { padding: 2.5rem 1.25rem; }
+      .form-row { grid-template-columns: 1fr; }
+      nav { padding: 1rem 1.25rem; }
+      .nav-links { gap: 0.75rem; }
+      footer { flex-direction: column; align-items: flex-start; padding: 1.5rem 1.25rem; }
+    }
+  </style>
 </head>
 <body>
+
 <nav>
   <a href="index.html" class="nav-logo">Harbourview Media</a>
   <ul class="nav-links">
-    <li><a href="index.html">Home</a></li>
     <li><a href="services.html">Services</a></li>
     <li><a href="pricing.html">Pricing</a></li>
     <li><a href="faq.html">FAQ</a></li>
-    <li><a href="contact.html" class="active">Contact</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li><a href="contact.html" class="nav-cta">Get a Quote</a></li>
   </ul>
-  <a href="contact.html" class="nav-cta">Get a Quote</a>
 </nav>
 
 <div class="contact-wrap">
-  <div class="contact-info">
-    <span class="ci-eyebrow">Get in touch</span>
-    <h1 class="ci-heading">Let's make your restaurant<br/><em>look the part</em></h1>
-    <p class="ci-sub">Fill out the form and we'll follow up promptly — usually same day. Or reach out directly if you'd rather just chat.</p>
-    <div class="ci-details">
-      <div class="ci-detail">
-        <span class="ci-detail-label">Call / Text</span>
-        <span class="ci-detail-val"><a href="tel:2365092933">(236) 509-2933</a></span>
+
+  <!-- LEFT -->
+  <div class="contact-left">
+    <p class="page-label">Get in touch</p>
+    <h1>Let's make your <em>night unforgettable.</em></h1>
+    <p>Tell us what you're planning and we'll build something that works. We respond same day — no automated replies, no waiting in a queue.</p>
+
+    <div class="contact-details">
+      <div class="contact-detail">
+        <span class="detail-label">Call / Text</span>
+        <span class="detail-value"><a href="tel:2365092933">(236) 509-2933</a></span>
       </div>
-      <div class="ci-detail">
-        <span class="ci-detail-label">Email</span>
-        <span class="ci-detail-val"><a href="mailto:sean@harbourviewmedia.ca">sean@harbourviewmedia.ca</a></span>
+      <div class="contact-detail">
+        <span class="detail-label">Email</span>
+        <span class="detail-value"><a href="mailto:sean@harbourviewmedia.ca">sean@harbourviewmedia.ca</a></span>
       </div>
-      <div class="ci-detail">
-        <span class="ci-detail-label">Based in</span>
-        <span class="ci-detail-val">Vancouver, British Columbia</span>
+      <div class="contact-detail">
+        <span class="detail-label">Based in</span>
+        <span class="detail-value">Vancouver, British Columbia</span>
       </div>
-      <div class="ci-detail">
-        <span class="ci-detail-label">Area</span>
-        <span class="ci-detail-val">Metro Vancouver & Lower Mainland</span>
+      <div class="contact-detail">
+        <span class="detail-label">Area</span>
+        <span class="detail-value">Metro Vancouver &amp; Lower Mainland</span>
       </div>
-      <div class="ci-detail">
-        <span class="ci-detail-label">Response</span>
-        <span class="ci-detail-val">Usually same day</span>
+      <div class="contact-detail">
+        <span class="detail-label">Response time</span>
+        <span class="detail-value">Usually same day</span>
       </div>
     </div>
-    <div class="ci-divider"></div>
-    <div class="ci-process">
-      <span class="ci-process-title">What happens next</span>
-      <div class="process-items">
-        <div class="pi"><span class="pi-n">1.</span><span class="pi-t">We review your message and respond directly — no automated replies.</span></div>
-        <div class="pi"><span class="pi-n">2.</span><span class="pi-t">We confirm the package, schedule, and any specifics about your space.</span></div>
-        <div class="pi"><span class="pi-n">3.</span><span class="pi-t">We show up, shoot, and deliver your gallery within 48 hours.</span></div>
-        <div class="pi"><span class="pi-n">4.</span><span class="pi-t">Your feed looks like the restaurant you've built. Repeat monthly.</span></div>
+
+    <div class="next-steps">
+      <h3>What happens next</h3>
+      <div class="steps-list">
+        <div class="step">
+          <span class="step-num">1.</span>
+          <span class="step-text">We review your message and respond directly — no bots, no templates.</span>
+        </div>
+        <div class="step">
+          <span class="step-num">2.</span>
+          <span class="step-text">We confirm the package, date, and any specifics — locations, group size, timing.</span>
+        </div>
+        <div class="step">
+          <span class="step-num">3.</span>
+          <span class="step-text">You pay the deposit via e-transfer and your date is locked in.</span>
+        </div>
+        <div class="step">
+          <span class="step-num">4.</span>
+          <span class="step-text">We show up, shoot, edit, and deliver your gallery within 7–10 business days.</span>
+        </div>
       </div>
     </div>
   </div>
 
-  <div class="contact-form-wrap">
-    <h2 class="form-heading">Send a message</h2>
-    <p class="form-sub">Restaurant owner? Tell us your name, what you're after, and the best time to connect — we'll take it from there.</p>
-    <form class="contact-form" id="contactForm" action="https://formspree.io/f/mjgernbq" method="POST">
-      <div class="form-row">
-        <div class="form-group">
-          <label for="fname">First name</label>
-          <input type="text" id="fname" name="first_name" placeholder="Alex" required/>
+  <!-- RIGHT — FORM -->
+  <div class="contact-right">
+    <h2>Send a <em>message</em></h2>
+    <p class="form-sub">Tell us what you're planning and the best way to reach you — we'll take it from there.</p>
+
+    <div id="formWrap" class="form-visible">
+      <form id="contactForm" action="https://formspree.io/f/mjgernbq" method="POST">
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="firstName">First name</label>
+            <input type="text" id="firstName" name="firstName" placeholder="Alex" required />
+          </div>
+          <div class="form-group">
+            <label for="lastName">Last name</label>
+            <input type="text" id="lastName" name="lastName" placeholder="Chen" required />
+          </div>
         </div>
+
         <div class="form-group">
-          <label for="lname">Last name</label>
-          <input type="text" id="lname" name="last_name" placeholder="Chen"/>
+          <label for="email">Email address</label>
+          <input type="email" id="email" name="email" placeholder="you@email.com" required />
         </div>
-      </div>
-      <div class="form-group">
-        <label for="email">Email address</label>
-        <input type="email" id="email" name="email" placeholder="alex@yourrestaurant.com" required/>
-      </div>
-      <div class="form-group">
-        <label for="phone">Phone (optional)</label>
-        <input type="tel" id="phone" name="phone" placeholder="(604) 555-0100"/>
-      </div>
-      <div class="form-group">
-        <label for="service">I'm interested in</label>
-        <select id="service" name="service">
-          <option value="">Select a service...</option>
-          <option value="restaurant-starter">Restaurant Content — Starter ($299/mo)</option>
-          <option value="restaurant-standard">Restaurant Content — Standard ($449/mo)</option>
-          <option value="restaurant-full">Restaurant Content — Full Coverage ($649/mo)</option>
-          <option value="restaurant-oneoff">Restaurant Content — One-off shoot</option>
-          <option value="headshots">Professional Headshots — $79</option>
-          <option value="family">Family Session — $129</option>
-          <option value="realestate">Real Estate Photography — custom quote</option>
-          <option value="other">Something else</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label for="message">Tell us about your project</label>
-        <textarea id="message" name="message" placeholder="Restaurant name, what you need, best time to connect, any questions..."></textarea>
-      </div>
-      <input type="text" name="_gotcha" style="display:none"/>
-      <input type="hidden" name="_next" value="contact.html?sent=true"/>
-      <button type="submit" class="form-submit">Send Message</button>
-    </form>
-    <div class="form-success" id="formSuccess">
-      <div class="form-success-icon">
-        <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M4 11l5 5 9-9" stroke="#1A1F1C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </div>
-      <h3>Message sent!</h3>
+
+        <div class="form-group">
+          <label for="phone">Phone <span class="optional-tag">(optional)</span></label>
+          <input type="tel" id="phone" name="phone" placeholder="(604) 555-0100" />
+        </div>
+
+        <div class="form-group">
+          <label for="service">I'm interested in</label>
+          <select id="service" name="service" required>
+            <option value="" disabled selected>Select a service…</option>
+            <optgroup label="Event Photography">
+              <option value="event-solo">Event — Solo Shoot ($425)</option>
+              <option value="event-full">Event — Full Coverage, Two Shooters ($950)</option>
+              <option value="event-bundle">Event — Bundle Both ($1,250)</option>
+              <option value="event-custom">Event — Custom / Not Sure Yet</option>
+            </optgroup>
+            <optgroup label="Portraits">
+              <option value="graduation">Graduation Portraits ($99)</option>
+              <option value="headshots">Professional Headshots ($79)</option>
+              <option value="headshots-team">Team Headshots — Custom Quote</option>
+              <option value="family">Family Session ($129)</option>
+            </optgroup>
+            <optgroup label="Other">
+              <option value="real-estate">Real Estate Photography — Custom Quote</option>
+              <option value="other">Something else</option>
+            </optgroup>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="eventDate">Event or session date <span class="optional-tag">(if known)</span></label>
+          <input type="text" id="eventDate" name="eventDate" placeholder="e.g. June 6, 2026" />
+        </div>
+
+        <div class="form-group">
+          <label for="message">Tell us about your project</label>
+          <textarea id="message" name="message" placeholder="Location, number of people, what you're hoping to capture — the more detail the better." required></textarea>
+        </div>
+
+        <button type="submit" class="btn-submit">Send Message</button>
+
+      </form>
+    </div>
+
+    <div id="successState" class="success-state">
+      <div class="success-icon">✓</div>
+      <h3>Message <em>sent!</em></h3>
       <p>Thanks for reaching out. We'll get back to you — usually within a few hours.</p>
     </div>
   </div>
+
 </div>
 
 <footer>
-  <span class="footer-logo">Harbourview Media</span>
+  <a href="index.html" class="footer-logo">Harbourview Media</a>
   <ul class="footer-links">
     <li><a href="services.html">Services</a></li>
     <li><a href="pricing.html">Pricing</a></li>
     <li><a href="faq.html">FAQ</a></li>
     <li><a href="contact.html">Contact</a></li>
   </ul>
-  <span class="footer-copy">© 2026 Harbourview Media. Vancouver, BC.</span>
+  <p class="footer-copy">© 2026 Harbourview Media. Vancouver, BC.</p>
 </footer>
+
 <script>
-const params=new URLSearchParams(window.location.search);
-const svc=params.get('service');
-const sent=params.get('sent');
-const sel=document.getElementById('service');
-if(svc){const o=sel.querySelector(`option[value="${svc}"]`);if(o)o.selected=true;}
-if(sent==='true'){document.getElementById('contactForm').style.display='none';document.getElementById('formSuccess').style.display='block';}
+  // Pre-select service from URL param e.g. contact.html?service=event-solo
+  const params = new URLSearchParams(window.location.search);
+  const serviceParam = params.get('service');
+  if (serviceParam) {
+    const select = document.getElementById('service');
+    if (select) {
+      const option = select.querySelector(`option[value="${serviceParam}"]`);
+      if (option) option.selected = true;
+    }
+  }
+
+  // Form submission — works with Formspree
+  const form = document.getElementById('contactForm');
+  form.addEventListener('submit', async function(e) {
+    e.preventDefault();
+    const btn = form.querySelector('.btn-submit');
+    btn.textContent = 'Sending…';
+    btn.disabled = true;
+
+    try {
+      const response = await fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { 'Accept': 'application/json' }
+      });
+
+      if (response.ok) {
+        document.getElementById('formWrap').classList.replace('form-visible', 'form-hidden');
+        document.getElementById('successState').classList.add('visible');
+      } else {
+        btn.textContent = 'Something went wrong — try emailing directly.';
+        btn.disabled = false;
+      }
+    } catch {
+      btn.textContent = 'Something went wrong — try emailing directly.';
+      btn.disabled = false;
+    }
+  });
 </script>
+
 </body>
 </html>
