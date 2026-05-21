@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>FAQ — Harbourview Media</title>
-  <meta name="description" content="Common questions about event photography, booking, deposits, and delivery from Harbourview Media in Vancouver." />
+  <meta name="description" content="Common questions from HR directors, event planners, and marketing teams about booking corporate photography with Harbourview Media in Vancouver." />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
@@ -14,6 +14,7 @@
       --font-body: 'Helvetica Neue', Helvetica, Arial, sans-serif;
     }
     body { font-family: var(--font-body); background: var(--white); color: var(--black); line-height: 1.6; }
+
     nav { display: flex; justify-content: space-between; align-items: center; padding: 1.25rem 2.5rem; border-bottom: 1px solid var(--border); background: var(--white); position: sticky; top: 0; z-index: 100; }
     .nav-logo { font-family: var(--font-display); font-size: 1.05rem; font-weight: normal; text-decoration: none; color: var(--black); }
     .nav-links { display: flex; gap: 2rem; list-style: none; align-items: center; }
@@ -26,34 +27,34 @@
     .page-label { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.14em; color: var(--accent); font-weight: 600; margin-bottom: 1rem; }
     .page-header h1 { font-family: var(--font-display); font-size: clamp(2rem, 4vw, 3.2rem); font-weight: normal; line-height: 1.15; }
     .page-header h1 em { font-style: italic; color: var(--accent); }
+    .page-header p { font-size: 1rem; color: var(--grey); max-width: 560px; margin-top: 1.25rem; line-height: 1.75; }
 
-    .faq-section { padding: 3.5rem 2.5rem; max-width: 1100px; margin: 0 auto; border-bottom: 1px solid var(--border); }
-    .faq-section-label { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.14em; color: var(--accent); font-weight: 600; margin-bottom: 2rem; }
-    .faq-grid { display: flex; flex-direction: column; gap: 0; }
+    .faq-wrap { max-width: 1100px; margin: 0 auto; padding: 0 2.5rem; display: grid; grid-template-columns: 220px 1fr; gap: 4rem; align-items: start; padding-top: 4rem; padding-bottom: 4rem; }
+
+    .faq-nav { position: sticky; top: 80px; }
+    .faq-nav-label { font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.12em; color: var(--accent); font-weight: 600; margin-bottom: 1rem; }
+    .faq-nav ul { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; }
+    .faq-nav a { font-size: 0.82rem; color: var(--grey); text-decoration: none; transition: color 0.2s; }
+    .faq-nav a:hover { color: var(--black); }
+
+    .faq-content { }
+    .faq-group { margin-bottom: 3.5rem; }
+    .faq-group-label { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.14em; color: var(--accent); font-weight: 600; margin-bottom: 1.5rem; padding-bottom: 0.75rem; border-bottom: 1px solid var(--border); }
 
     details { border-bottom: 1px solid var(--border); }
     details:first-of-type { border-top: 1px solid var(--border); }
-    summary {
-      padding: 1.25rem 0;
-      font-size: 0.95rem;
-      font-weight: 600;
-      cursor: pointer;
-      list-style: none;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 1rem;
-    }
+    summary { padding: 1.1rem 0; font-size: 0.92rem; font-weight: 600; cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center; gap: 1rem; }
     summary::-webkit-details-marker { display: none; }
-    summary::after { content: '+'; color: var(--accent); font-size: 1.2rem; font-weight: 300; flex-shrink: 0; transition: transform 0.2s; }
+    summary::after { content: '+'; color: var(--accent); font-size: 1.1rem; font-weight: 300; flex-shrink: 0; }
     details[open] summary::after { content: '−'; }
-    .faq-answer { padding: 0 0 1.5rem; font-size: 0.9rem; color: var(--grey); line-height: 1.75; max-width: 680px; }
+    .faq-answer { padding: 0 0 1.5rem; font-size: 0.9rem; color: var(--grey); line-height: 1.8; max-width: 640px; }
+    .faq-answer a { color: var(--black); }
 
-    .cta-block { padding: 3rem 2.5rem; max-width: 1100px; margin: 0 auto; }
-    .cta-block h3 { font-family: var(--font-display); font-size: 1.3rem; font-weight: normal; margin-bottom: 0.5rem; }
+    .cta-block { padding: 3rem 2.5rem; max-width: 1100px; margin: 0 auto; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 2rem; }
+    .cta-block h3 { font-family: var(--font-display); font-size: 1.4rem; font-weight: normal; }
     .cta-block h3 em { font-style: italic; color: var(--accent); }
-    .cta-block p { font-size: 0.9rem; color: var(--grey); margin-bottom: 1.25rem; }
-    .btn-primary { display: inline-block; background: var(--black); color: var(--white); padding: 0.75rem 1.5rem; text-decoration: none; font-size: 0.78rem; letter-spacing: 0.06em; text-transform: uppercase; border-radius: 2px; transition: background 0.2s; }
+    .cta-block p { font-size: 0.875rem; color: var(--grey); margin-top: 0.4rem; }
+    .btn-primary { display: inline-block; background: var(--black); color: var(--white); padding: 0.85rem 2rem; text-decoration: none; font-size: 0.8rem; letter-spacing: 0.06em; text-transform: uppercase; border-radius: 2px; transition: background 0.2s; white-space: nowrap; }
     .btn-primary:hover { background: var(--accent); color: var(--black); }
 
     footer { border-top: 1px solid var(--border); padding: 2rem 2.5rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
@@ -63,10 +64,13 @@
     .footer-links a:hover { color: var(--black); }
     .footer-copy { font-size: 0.78rem; color: var(--grey); }
 
-    @media (max-width: 680px) {
+    @media (max-width: 768px) {
       nav { padding: 1rem 1.25rem; }
       .nav-links { gap: 0.75rem; }
-      .page-header, .faq-section, .cta-block { padding-left: 1.25rem; padding-right: 1.25rem; }
+      .page-header { padding: 3rem 1.25rem 2rem; }
+      .faq-wrap { grid-template-columns: 1fr; padding: 2.5rem 1.25rem; gap: 2rem; }
+      .faq-nav { display: none; }
+      .cta-block { padding: 2.5rem 1.25rem; flex-direction: column; align-items: flex-start; }
       footer { flex-direction: column; align-items: flex-start; padding: 1.5rem 1.25rem; }
     }
   </style>
@@ -80,118 +84,192 @@
     <li><a href="pricing.html">Pricing</a></li>
     <li><a href="faq.html">FAQ</a></li>
     <li><a href="contact.html">Contact</a></li>
-    <li><a href="contact.html" class="nav-cta">Get a Quote</a></li>
+    <li><a href="contact.html" class="nav-cta">Request a Quote</a></li>
   </ul>
 </nav>
 
 <div class="page-header">
   <p class="page-label">Common questions</p>
-  <h1>Everything you <em>want to know</em></h1>
+  <h1>Questions we get from <em>event planners &amp; HR teams</em></h1>
+  <p>Everything you'd want answered before putting us on a vendor list — covered here. If something's missing, reach out directly.</p>
 </div>
 
-<!-- EVENT FAQ -->
-<div class="faq-section">
-  <p class="faq-section-label">Event Photography</p>
-  <div class="faq-grid">
+<div class="faq-wrap">
 
-    <details>
-      <summary>What kinds of events do you shoot?</summary>
-      <p class="faq-answer">Prom nights, grad parties, corporate events, social gatherings, birthday parties — if it's a group of people having a good time, we're comfortable shooting it. We're based in Vancouver and know the best locations across Metro Vancouver and the Lower Mainland.</p>
-    </details>
+  <!-- SIDEBAR NAV -->
+  <nav class="faq-nav">
+    <p class="faq-nav-label">Jump to</p>
+    <ul>
+      <li><a href="#events">Corporate Events</a></li>
+      <li><a href="#headshots">Headshots</a></li>
+      <li><a href="#delivery">Delivery</a></li>
+      <li><a href="#vendor">Vendor & Compliance</a></li>
+      <li><a href="#booking">Booking & Payments</a></li>
+    </ul>
+  </nav>
 
-    <details>
-      <summary>What's included in an event shoot?</summary>
-      <p class="faq-answer">Every event shoot includes group photos, individual portraits, fully edited and colour-corrected images, and a private online gallery for download. For larger events we bring a second shooter so nothing gets missed. Delivery is within 7–10 business days.</p>
-    </details>
+  <!-- FAQ CONTENT -->
+  <div class="faq-content">
 
-    <details>
-      <summary>Do you shoot limo and vehicle photos?</summary>
-      <p class="faq-answer">Yes — limo coverage is available as part of our full event packages. We handle interior shots as well as outdoor stops along the route. If you have specific stops in mind, let us know when you reach out and we can plan accordingly.</p>
-    </details>
+    <!-- CORPORATE EVENTS -->
+    <div class="faq-group" id="events">
+      <p class="faq-group-label">Corporate Event Coverage</p>
 
-    <details>
-      <summary>Can you suggest good photo locations in Vancouver?</summary>
-      <p class="faq-answer">Absolutely. For outdoor event photos, Gastown and the Harbour area are our home turf. Other great spots depending on your route include Burrard Bridge, the Plaza of Nations, and North Vancouver waterfront. We'll suggest the best options based on your timing and itinerary.</p>
-    </details>
+      <details>
+        <summary>How far in advance do we need to book?</summary>
+        <p class="faq-answer">For corporate events, 2–4 weeks is ideal. For large conferences or multi-day events, 4–8 weeks gives us time to plan coverage properly with your team. That said, we can often accommodate shorter notice — reach out and we'll let you know availability immediately.</p>
+      </details>
 
-    <details>
-      <summary>How many people can you cover in one shoot?</summary>
-      <p class="faq-answer">Comfortably up to 15–20 people solo. For larger groups or when you want simultaneous group and individual coverage, we bring a second shooter. Just let us know your group size when you enquire and we'll recommend the right package.</p>
-    </details>
+      <details>
+        <summary>How do you plan coverage for a large event?</summary>
+        <p class="faq-answer">Before every event we run a planning call with your event or marketing team to build a shot list — key speakers, sponsor signage, networking moments, VIP attendees, and anything else that matters to your stakeholders. We don't show up and improvise. Coverage is mapped in advance so nothing critical gets missed.</p>
+      </details>
 
-    <details>
-      <summary>How quickly do we get our photos?</summary>
-      <p class="faq-answer">Standard delivery is 7–10 business days. If you need photos sooner, ask about rush turnaround when booking — we can sometimes accommodate 48-hour delivery depending on the shoot scope.</p>
-    </details>
+      <details>
+        <summary>Can you cover multi-day conferences?</summary>
+        <p class="faq-answer">Yes. Multi-day conference packages include a dedicated account manager, per-day highlight delivery, and consistent editing across all days. We can also provide a branded gallery portal for your communications or media team to access images in real time.</p>
+      </details>
 
-  </div>
-</div>
+      <details>
+        <summary>What if our event runs over schedule?</summary>
+        <p class="faq-answer">It happens. We build buffer time into event bookings and can extend on the day at an hourly rate agreed in advance. We'll never just pack up and leave mid-event — just communicate any changes and we'll adapt.</p>
+      </details>
 
-<!-- PORTRAITS FAQ -->
-<div class="faq-section">
-  <p class="faq-section-label">Headshots &amp; Portrait Sessions</p>
-  <div class="faq-grid">
+      <details>
+        <summary>Do you cover outdoor events or off-site locations?</summary>
+        <p class="faq-answer">Yes — we cover events across Metro Vancouver and the Lower Mainland, indoors or out. For locations outside Metro Vancouver, travel costs may apply. Let us know your venue when you submit a request.</p>
+      </details>
 
-    <details>
-      <summary>Where do portrait sessions take place?</summary>
-      <p class="faq-answer">We shoot outdoors in natural light, or in a naturally lit indoor location that suits your look. We know Vancouver's best spots for clean, professional results — we'll recommend a location based on what you're going for.</p>
-    </details>
+      <details>
+        <summary>Can you coordinate with our AV or event production team?</summary>
+        <p class="faq-answer">Absolutely. We're used to working alongside AV crews, lighting teams, and event producers. Share your production contact and we'll coordinate directly so there are no conflicts on the day.</p>
+      </details>
+    </div>
 
-    <details>
-      <summary>Do you offer team headshot packages?</summary>
-      <p class="faq-answer">Yes. We offer group rates for teams of 3 or more. Reach out with your headcount and we'll put together a custom quote — usually easier and faster than everyone booking separately.</p>
-    </details>
+    <!-- HEADSHOTS -->
+    <div class="faq-group" id="headshots">
+      <p class="faq-group-label">Professional Headshots</p>
 
-    <details>
-      <summary>How many people can come to a family session?</summary>
-      <p class="faq-answer">The standard family package covers up to 5 people. For larger families or extended family sessions, just ask — we can accommodate larger groups and will adjust the pricing accordingly.</p>
-    </details>
+      <details>
+        <summary>Do you come to our office or do we come to you?</summary>
+        <p class="faq-answer">We come to you. For team headshot days we set up a consistent lighting and backdrop setup at your office — this keeps disruption minimal and means your team doesn't lose half a day travelling. We can also shoot at an external location if your office space isn't suitable.</p>
+      </details>
 
-  </div>
-</div>
+      <details>
+        <summary>How long does each person need?</summary>
+        <p class="faq-answer">Roughly 10–15 minutes per person for standard headshots. For executive portraits with multiple looks or more direction, allow 30–45 minutes. We'll build a schedule with your HR or office coordinator in advance so the day runs smoothly.</p>
+      </details>
 
-<!-- BOOKING FAQ -->
-<div class="faq-section">
-  <p class="faq-section-label">Booking &amp; Logistics</p>
-  <div class="faq-grid">
+      <details>
+        <summary>How do you ensure consistency across a large team?</summary>
+        <p class="faq-answer">We use the same lighting setup, same background, and same editing style for every person — whether we shoot 5 people in one session or 50 people across three sessions. New hires added later will match your existing team photos.</p>
+      </details>
 
-    <details>
-      <summary>How far in advance should I book?</summary>
-      <p class="faq-answer">For events, 2–4 weeks notice is ideal, especially for prom and grad season (May–June). For portrait sessions, 1–2 weeks is usually enough. We can sometimes accommodate shorter notice — just reach out and ask.</p>
-    </details>
+      <details>
+        <summary>Can we add new hires after the initial shoot?</summary>
+        <p class="faq-answer">Yes. We keep your session settings on file so new hires can be added in a future session and match seamlessly. Ongoing top-up sessions are available for enterprise clients.</p>
+      </details>
 
-    <details>
-      <summary>How do I confirm a booking?</summary>
-      <p class="faq-answer">A deposit via e-transfer confirms your date. For event packages the deposit is 30% of the total, with the remainder due on the day of the shoot. Deposits are non-refundable.</p>
-    </details>
+      <details>
+        <summary>What format are the files delivered in?</summary>
+        <p class="faq-answer">Each person receives high-resolution print-ready files and web-optimized versions — sized for LinkedIn, company websites, and press kits. If you need a specific format or resolution for your CMS or directory system, let us know and we'll export accordingly.</p>
+      </details>
+    </div>
 
-    <details>
-      <summary>What areas do you cover?</summary>
-      <p class="faq-answer">We're based in Vancouver and cover Metro Vancouver and the Lower Mainland — including Vancouver, Burnaby, Richmond, Surrey, North Shore, Coquitlam, and surrounding areas.</p>
-    </details>
+    <!-- DELIVERY -->
+    <div class="faq-group" id="delivery">
+      <p class="faq-group-label">Delivery &amp; Turnaround</p>
 
-    <details>
-      <summary>What happens if it rains?</summary>
-      <p class="faq-answer">For outdoor portrait sessions we'll monitor the forecast together and reschedule at no charge if conditions aren't right. For events, we work with whatever the weather gives us — we'll adapt locations and timing as needed.</p>
-    </details>
+      <details>
+        <summary>What is the standard delivery timeline?</summary>
+        <p class="faq-answer">Full edited gallery delivered within 48 hours of the shoot. For corporate events, we also deliver a same-night sneak peek of highlight images — typically 10–20 selects — so your team can post to LinkedIn or issue a press release the following morning.</p>
+      </details>
 
-    <details>
-      <summary>How do I pay?</summary>
-      <p class="faq-answer">E-transfer. A deposit is required to confirm your booking, with the remainder due on the day of the shoot. We'll send you the details when you book.</p>
-    </details>
+      <details>
+        <summary>Can we get images faster if we have a press deadline?</summary>
+        <p class="faq-answer">Yes. Rush delivery — including same-day or next-morning full gallery — is available. This needs to be agreed in advance, not requested after the shoot. Include your deadline when you submit your quote request and we'll factor it into the package.</p>
+      </details>
 
-    <details>
-      <summary>What's your cancellation policy?</summary>
-      <p class="faq-answer">Deposits are non-refundable. If you need to reschedule with more than 7 days notice, we'll do our best to find a new date at no charge. Last-minute cancellations may forfeit the full booking amount depending on the circumstances.</p>
-    </details>
+      <details>
+        <summary>How are images delivered?</summary>
+        <p class="faq-answer">Via a private, password-protected online gallery your team can access from any device. Images can be downloaded individually or as a full zip. We can also deliver via a shared Drive folder if that works better for your workflow.</p>
+      </details>
+
+      <details>
+        <summary>How long is the gallery available for download?</summary>
+        <p class="faq-answer">Standard galleries are available for 90 days. For enterprise clients or ongoing retainers, extended or permanent access can be arranged.</p>
+      </details>
+    </div>
+
+    <!-- VENDOR & COMPLIANCE -->
+    <div class="faq-group" id="vendor">
+      <p class="faq-group-label">Vendor &amp; Compliance</p>
+
+      <details>
+        <summary>Do you carry liability insurance?</summary>
+        <p class="faq-answer">Yes. Proof of liability insurance is available on request — typically required by corporate venues and event organizers. Include this in your quote request and we'll have documentation ready for your procurement team.</p>
+      </details>
+
+      <details>
+        <summary>Are you WCB compliant?</summary>
+        <p class="faq-answer">Yes. WCB clearance documentation is available on request for events and venues that require it.</p>
+      </details>
+
+      <details>
+        <summary>What licensing is included with corporate images?</summary>
+        <p class="faq-answer">All packages include a standard corporate usage license covering internal communications, company-owned digital channels, press, and marketing materials. If you require broader commercial, advertising, or third-party licensing, this is quoted separately — just flag it in your request.</p>
+      </details>
+
+      <details>
+        <summary>Can we be added to your vendor list or do we need to onboard you as a vendor?</summary>
+        <p class="faq-answer">We're set up to handle standard corporate vendor onboarding — W-forms, insurance certificates, vendor agreements, and digital invoicing. If your procurement team has a specific onboarding process, share it with us and we'll work through it.</p>
+      </details>
+
+      <details>
+        <summary>Do you sign NDAs?</summary>
+        <p class="faq-answer">Yes. For events or shoots involving sensitive information, proprietary products, or confidential attendees, we're happy to sign an NDA before the engagement. Include this in your initial request.</p>
+      </details>
+    </div>
+
+    <!-- BOOKING & PAYMENTS -->
+    <div class="faq-group" id="booking">
+      <p class="faq-group-label">Booking &amp; Payments</p>
+
+      <details>
+        <summary>How do we get a quote?</summary>
+        <p class="faq-answer">Submit a request via the <a href="contact.html">contact page</a> with your event details, team size, date, and any specific requirements. The team will respond with a detailed quote within 24 hours — no obligation.</p>
+      </details>
+
+      <details>
+        <summary>What information do you need to provide a quote?</summary>
+        <p class="faq-answer">Event date, location, expected duration, approximate attendee count (for events), or number of people (for headshots), and any specific deliverable requirements like rush turnaround or licensing scope. The more detail, the more accurate the quote.</p>
+      </details>
+
+      <details>
+        <summary>What are your payment terms?</summary>
+        <p class="faq-answer">A 30–50% deposit confirms the booking, with the remainder invoiced after delivery. We accept e-transfer and can issue formal invoices for accounts payable. Net-30 terms are available for established corporate clients.</p>
+      </details>
+
+      <details>
+        <summary>What is your cancellation policy?</summary>
+        <p class="faq-answer">Deposits are non-refundable. For cancellations with more than 14 days notice, we'll work with you to reschedule at no additional charge. Cancellations within 7 days of the event may be subject to a cancellation fee depending on the scope — outlined in your service agreement.</p>
+      </details>
+
+      <details>
+        <summary>Do you offer retainer arrangements for ongoing work?</summary>
+        <p class="faq-answer">Yes. If your organization runs regular events or needs quarterly headshot updates, retainer packages are available at preferred rates. Reach out to discuss what a longer-term arrangement could look like.</p>
+      </details>
+    </div>
 
   </div>
 </div>
 
 <div class="cta-block">
-  <h3>Still have questions? <em>Just reach out.</em></h3>
-  <p>We respond same day. No automated replies, no waiting in a queue.</p>
-  <a href="contact.html" class="btn-primary">Send us a message</a>
+  <div>
+    <h3>Still have <em>questions?</em></h3>
+    <p>The team will respond within 2 hours during business hours.</p>
+  </div>
+  <a href="contact.html" class="btn-primary">Request a Vendor Quote</a>
 </div>
 
 <footer>
