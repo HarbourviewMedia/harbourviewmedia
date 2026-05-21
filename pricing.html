@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Pricing — Harbourview Media</title>
-  <meta name="description" content="Clear, transparent pricing for event photography, grad portraits, headshots, and family sessions in Vancouver." />
+  <meta name="description" content="Transparent corporate photography pricing for Vancouver businesses. Event coverage and professional headshot packages — custom quotes within 24 hours." />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
@@ -14,6 +14,7 @@
       --font-body: 'Helvetica Neue', Helvetica, Arial, sans-serif;
     }
     body { font-family: var(--font-body); background: var(--white); color: var(--black); line-height: 1.6; }
+
     nav { display: flex; justify-content: space-between; align-items: center; padding: 1.25rem 2.5rem; border-bottom: 1px solid var(--border); background: var(--white); position: sticky; top: 0; z-index: 100; }
     .nav-logo { font-family: var(--font-display); font-size: 1.05rem; font-weight: normal; text-decoration: none; color: var(--black); }
     .nav-links { display: flex; gap: 2rem; list-style: none; align-items: center; }
@@ -26,58 +27,49 @@
     .page-label { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.14em; color: var(--accent); font-weight: 600; margin-bottom: 1rem; }
     .page-header h1 { font-family: var(--font-display); font-size: clamp(2rem, 4vw, 3.2rem); font-weight: normal; line-height: 1.15; }
     .page-header h1 em { font-style: italic; color: var(--accent); }
+    .page-header p { font-size: 1rem; color: var(--grey); max-width: 560px; margin-top: 1.25rem; line-height: 1.75; }
 
-    .marquee-wrap { border-bottom: 1px solid var(--border); padding: 0.9rem 0; overflow: hidden; }
-    .marquee-track { display: flex; gap: 2.5rem; animation: marquee 22s linear infinite; white-space: nowrap; }
-    .marquee-track span { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--grey); }
-    .marquee-track .dot { color: var(--accent); }
-    @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+    .pricing-section { padding: 4.5rem 2.5rem; max-width: 1100px; margin: 0 auto; border-bottom: 1px solid var(--border); }
+    .pricing-section.alt { background: var(--light); max-width: 100%; padding: 4.5rem 2.5rem; border-bottom: 1px solid var(--border); }
+    .pricing-section.alt .inner { max-width: 1100px; margin: 0 auto; }
+    .section-label { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.14em; color: var(--accent); font-weight: 600; margin-bottom: 1rem; }
+    .section-title { font-family: var(--font-display); font-size: clamp(1.6rem, 2.5vw, 2.2rem); font-weight: normal; margin-bottom: 1rem; line-height: 1.2; }
+    .section-title em { font-style: italic; color: var(--accent); }
+    .section-body { font-size: 0.95rem; color: var(--grey); max-width: 580px; line-height: 1.75; margin-bottom: 2.5rem; }
 
-    .pricing-section { padding: 4rem 2.5rem; max-width: 1100px; margin: 0 auto; }
-    .pricing-section + .pricing-section { border-top: 1px solid var(--border); }
-    .section-label { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.14em; color: var(--accent); font-weight: 600; margin-bottom: 2rem; }
+    .tiers-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.25rem; margin-bottom: 2rem; }
+    .tier-card { border: 1px solid var(--border); padding: 2rem; border-radius: 3px; background: #fff; }
+    .tier-card.featured { border-color: var(--black); }
+    .tier-tag { font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.12em; color: var(--accent); font-weight: 600; margin-bottom: 0.6rem; display: block; }
+    .tier-card h3 { font-family: var(--font-display); font-size: 1.2rem; font-weight: normal; margin-bottom: 0.5rem; }
+    .tier-scope { font-size: 0.85rem; color: var(--grey); margin-bottom: 1.25rem; font-style: italic; }
+    .tier-includes { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; margin-bottom: 1.5rem; }
+    .tier-includes li { font-size: 0.85rem; color: var(--grey); display: flex; gap: 0.5rem; align-items: flex-start; }
+    .tier-includes li::before { content: '—'; color: var(--accent); flex-shrink: 0; }
+    .tier-cta { font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--black); text-decoration: none; border-bottom: 1px solid var(--black); padding-bottom: 1px; transition: color 0.2s; }
+    .tier-cta:hover { color: var(--accent); border-color: var(--accent); }
 
-    .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); gap: 1.25rem; }
-    .price-card { border: 1px solid var(--border); padding: 2rem; border-radius: 3px; background: #fff; position: relative; }
-    .price-card.featured { border-color: var(--black); }
-    .price-card.bundle { background: var(--black); color: var(--white); border-color: var(--black); }
-    .featured-badge { position: absolute; top: -1px; right: 1.5rem; background: var(--black); color: var(--white); font-size: 0.62rem; text-transform: uppercase; letter-spacing: 0.1em; padding: 0.3rem 0.75rem; border-radius: 0 0 3px 3px; }
-    .bundle-badge { position: absolute; top: -1px; right: 1.5rem; background: var(--accent); color: var(--black); font-size: 0.62rem; text-transform: uppercase; letter-spacing: 0.1em; padding: 0.3rem 0.75rem; border-radius: 0 0 3px 3px; font-weight: 600; }
-
-    .card-category { font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.12em; color: var(--accent); margin-bottom: 0.5rem; }
-    .bundle .card-category { color: var(--accent); }
-    .price-card h3 { font-family: var(--font-display); font-size: 1.2rem; font-weight: normal; margin-bottom: 1.25rem; }
-    .bundle h3 { color: var(--white); }
-
-    .price-amount { font-family: var(--font-display); font-size: 2.4rem; font-style: italic; color: var(--black); line-height: 1; margin-bottom: 0.3rem; }
-    .bundle .price-amount { color: var(--accent); }
-    .price-note { font-size: 0.78rem; color: var(--grey); margin-bottom: 1.5rem; }
-    .bundle .price-note { color: #999; }
-
-    .price-features { list-style: none; display: flex; flex-direction: column; gap: 0.55rem; margin-bottom: 1.75rem; }
-    .price-features li { font-size: 0.85rem; color: var(--grey); display: flex; gap: 0.6rem; align-items: flex-start; }
-    .bundle .price-features li { color: #ccc; }
-    .price-features li::before { content: '—'; color: var(--accent); flex-shrink: 0; }
-
-    .btn-book { display: inline-block; background: var(--black); color: var(--white); padding: 0.75rem 1.5rem; text-decoration: none; font-size: 0.78rem; letter-spacing: 0.06em; text-transform: uppercase; border-radius: 2px; transition: background 0.2s; }
-    .btn-book:hover { background: var(--accent); color: var(--black); }
-    .bundle .btn-book { background: var(--accent); color: var(--black); }
-    .bundle .btn-book:hover { background: var(--white); }
-
-    .custom-note { margin-top: 1.5rem; padding: 1.25rem 1.5rem; border: 1px solid var(--border); border-radius: 3px; font-size: 0.875rem; color: var(--grey); }
+    .custom-note { border: 1px solid var(--border); border-radius: 3px; padding: 1.5rem; font-size: 0.9rem; color: var(--grey); line-height: 1.7; }
     .custom-note strong { color: var(--black); }
+    .custom-note a { color: var(--black); }
 
-    .includes-section { padding: 3rem 2.5rem; background: var(--light); }
-    .includes-inner { max-width: 1100px; margin: 0 auto; }
-    .includes-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; margin-top: 2rem; }
-    .include-item h4 { font-size: 0.875rem; font-weight: 600; margin-bottom: 0.35rem; }
-    .include-item p { font-size: 0.825rem; color: var(--grey); line-height: 1.6; }
+    .what-affects { padding: 4rem 2.5rem; max-width: 1100px; margin: 0 auto; border-bottom: 1px solid var(--border); }
+    .factors-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 2rem; margin-top: 2.5rem; }
+    .factor h4 { font-size: 0.875rem; font-weight: 600; margin-bottom: 0.4rem; }
+    .factor p { font-size: 0.85rem; color: var(--grey); line-height: 1.65; }
+    .factor-num { font-family: var(--font-display); font-size: 1.6rem; font-style: italic; color: var(--accent); margin-bottom: 0.4rem; }
 
-    .cta-band { background: var(--black); color: var(--white); padding: 4rem 2.5rem; text-align: center; }
-    .cta-band h2 { font-family: var(--font-display); font-size: clamp(1.6rem, 3vw, 2.4rem); font-weight: normal; margin-bottom: 1rem; }
+    .always-included { padding: 4rem 2.5rem; background: var(--light); }
+    .always-inner { max-width: 1100px; margin: 0 auto; }
+    .included-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; margin-top: 2.5rem; }
+    .included-item h4 { font-size: 0.875rem; font-weight: 600; margin-bottom: 0.35rem; }
+    .included-item p { font-size: 0.825rem; color: var(--grey); line-height: 1.65; }
+
+    .cta-band { background: var(--black); color: var(--white); padding: 4.5rem 2.5rem; text-align: center; }
+    .cta-band h2 { font-family: var(--font-display); font-size: clamp(1.6rem, 3vw, 2.6rem); font-weight: normal; margin-bottom: 1rem; }
     .cta-band h2 em { font-style: italic; color: var(--accent); }
     .cta-band p { font-size: 0.95rem; color: #999; margin-bottom: 2rem; }
-    .btn-light { background: var(--white); color: var(--black); padding: 0.85rem 2rem; text-decoration: none; font-size: 0.8rem; letter-spacing: 0.06em; text-transform: uppercase; border-radius: 2px; display: inline-block; }
+    .btn-light { background: var(--white); color: var(--black); padding: 0.85rem 2rem; text-decoration: none; font-size: 0.8rem; letter-spacing: 0.06em; text-transform: uppercase; border-radius: 2px; display: inline-block; transition: background 0.2s; }
     .btn-light:hover { background: var(--accent); }
 
     footer { border-top: 1px solid var(--border); padding: 2rem 2.5rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
@@ -87,13 +79,13 @@
     .footer-links a:hover { color: var(--black); }
     .footer-copy { font-size: 0.78rem; color: var(--grey); }
 
-    @media (max-width: 680px) {
+    @media (max-width: 768px) {
       nav { padding: 1rem 1.25rem; }
       .nav-links { gap: 0.75rem; }
-      .page-header, .pricing-section { padding: 3rem 1.25rem 2rem; }
-      .includes-section { padding: 2.5rem 1.25rem; }
-      footer { flex-direction: column; align-items: flex-start; padding: 1.5rem 1.25rem; }
+      .page-header, .pricing-section, .what-affects { padding: 3rem 1.25rem; }
+      .pricing-section.alt, .always-included { padding: 3rem 1.25rem; }
       .cta-band { padding: 3rem 1.25rem; }
+      footer { flex-direction: column; align-items: flex-start; padding: 1.5rem 1.25rem; }
     }
   </style>
 </head>
@@ -106,182 +98,186 @@
     <li><a href="pricing.html">Pricing</a></li>
     <li><a href="faq.html">FAQ</a></li>
     <li><a href="contact.html">Contact</a></li>
-    <li><a href="contact.html" class="nav-cta">Book a Session</a></li>
+    <li><a href="contact.html" class="nav-cta">Request a Quote</a></li>
   </ul>
 </nav>
 
 <div class="page-header">
-  <p class="page-label">Transparent pricing</p>
-  <h1>Clear packages. <em>No surprises.</em></h1>
-</div>
-
-<div class="marquee-wrap">
-  <div class="marquee-track">
-    <span>Events — from $350</span><span class="dot">·</span>
-    <span>Extended Event — from $750</span><span class="dot">·</span>
-    <span>Graduation — from $99</span><span class="dot">·</span>
-    <span>Headshots — from $79</span><span class="dot">·</span>
-    <span>Family — from $109</span><span class="dot">·</span>
-    <span>Real Estate — call for quote</span><span class="dot">·</span>
-    <span>Events — from $350</span><span class="dot">·</span>
-    <span>Extended Event — from $750</span><span class="dot">·</span>
-    <span>Graduation — from $99</span><span class="dot">·</span>
-    <span>Headshots — from $79</span><span class="dot">·</span>
-    <span>Family — from $109</span><span class="dot">·</span>
-    <span>Real Estate — call for quote</span><span class="dot">·</span>
-  </div>
+  <p class="page-label">Pricing</p>
+  <h1>Transparent pricing. <em>No surprises.</em></h1>
+  <p>Corporate photography isn't one-size-fits-all. Scope, team size, and coverage duration all affect the final number. We outline our tiers here so you can come to the conversation informed — and we'll send a custom quote within 24 hours.</p>
 </div>
 
 <!-- EVENT PRICING -->
 <div class="pricing-section">
-  <p class="section-label">★ Our Specialty — Event Photography</p>
-  <div class="pricing-grid">
+  <p class="section-label">Corporate Event Coverage</p>
+  <h2 class="section-title">Event <em>packages</em></h2>
+  <p class="section-body">Pricing scales with event duration, team size, and coverage scope. All packages include pre-event planning, same-night highlight delivery, and full gallery within 48 hours.</p>
 
-    <div class="price-card featured">
-      <div class="featured-badge">Most Popular</div>
-      <p class="card-category">Event</p>
-      <h3>The Quick Shoot</h3>
-      <div class="price-amount">$350</div>
-      <p class="price-note">+ applicable taxes</p>
-      <ul class="price-features">
-        <li>1–1.5 hour outdoor event shoot</li>
-        <li>Up to ~12 people</li>
-        <li>Group + individual photos</li>
-        <li>Gastown, Harbour, or your chosen location</li>
-        <li>All photos fully edited</li>
-        <li>Digital gallery delivered in 7–10 days</li>
-        <li>$120 deposit to confirm</li>
+  <div class="tiers-grid">
+    <div class="tier-card">
+      <span class="tier-tag">Half Day</span>
+      <h3>Essential Coverage</h3>
+      <p class="tier-scope">Up to 4 hours · 1 photographer · up to 150 people</p>
+      <ul class="tier-includes">
+        <li>Pre-event coverage brief</li>
+        <li>Keynote + networking coverage</li>
+        <li>150–200 edited images delivered</li>
+        <li>Same-night highlight sneak peek</li>
+        <li>Full gallery within 48 hours</li>
+        <li>Corporate usage license</li>
       </ul>
-      <a href="contact.html?service=event-quick" class="btn-book">Book This</a>
+      <a href="contact.html?service=event-coverage" class="tier-cta">Request a quote →</a>
     </div>
 
-    <div class="price-card">
-      <p class="card-category">Event — Extended</p>
-      <h3>The Full Night</h3>
-      <div class="price-amount">$750</div>
-      <p class="price-note">+ applicable taxes</p>
-      <ul class="price-features">
-        <li>2.5–3 hour event shoot</li>
-        <li>Limo + outdoor location coverage</li>
-        <li>Multiple stops along the route</li>
-        <li>Group + individual photos</li>
-        <li>All photos fully edited</li>
-        <li>Digital gallery in 7–10 days</li>
-        <li>$250 deposit to confirm</li>
+    <div class="tier-card featured">
+      <span class="tier-tag">Most Requested</span>
+      <h3>Full Day Coverage</h3>
+      <p class="tier-scope">Up to 8 hours · scalable team · any event size</p>
+      <ul class="tier-includes">
+        <li>Full pre-event planning session</li>
+        <li>Multi-angle coverage throughout</li>
+        <li>Keynote, panels, sponsors, networking</li>
+        <li>300–500+ edited images delivered</li>
+        <li>Same-night highlight sneak peek</li>
+        <li>Full gallery within 48 hours</li>
+        <li>Corporate usage license</li>
+        <li>WCB and insurance documentation</li>
       </ul>
-      <a href="contact.html?service=event-full" class="btn-book">Book This</a>
+      <a href="contact.html?service=event-coverage" class="tier-cta">Request a quote →</a>
     </div>
 
-    <div class="price-card bundle">
-      <div class="bundle-badge">Best Value</div>
-      <p class="card-category">Bundle</p>
-      <h3>Book Both &amp; Save</h3>
-      <div class="price-amount">$999</div>
-      <p class="price-note">Save $101 · + applicable taxes</p>
-      <ul class="price-features">
-        <li>Quick shoot + full night coverage</li>
-        <li>Everything in both packages above</li>
-        <li>Best option for full prom day coverage</li>
-        <li>Digital gallery for both shoots</li>
-        <li>$300 deposit to confirm</li>
+    <div class="tier-card">
+      <span class="tier-tag">Multi-Day</span>
+      <h3>Conference Package</h3>
+      <p class="tier-scope">2+ days · dedicated team · full conference coverage</p>
+      <ul class="tier-includes">
+        <li>Dedicated account manager</li>
+        <li>Full shot list developed with your team</li>
+        <li>Per-day highlight delivery</li>
+        <li>Full edited gallery per day</li>
+        <li>Branded gallery portal available</li>
+        <li>Corporate usage license</li>
+        <li>WCB and insurance documentation</li>
       </ul>
-      <a href="contact.html?service=event-bundle" class="btn-book">Book This</a>
+      <a href="contact.html?service=event-coverage" class="tier-cta">Request a quote →</a>
     </div>
-
   </div>
+
   <div class="custom-note">
-    <strong>Need something custom?</strong> Larger groups, multi-location shoots, extended coverage, or same-day turnaround — reach out and we'll build a package that works. <a href="contact.html" style="color:var(--black);">Get a quote →</a>
+    <strong>All event packages are custom quoted.</strong> Duration, team size, turnaround requirements, and licensing scope all affect the final number. Submit a request and the team will respond with a detailed quote within 24 hours — no obligation.
   </div>
 </div>
 
-<!-- PORTRAIT PRICING -->
-<div class="pricing-section">
-  <p class="section-label">Portrait Sessions</p>
-  <div class="pricing-grid">
+<!-- HEADSHOT PRICING -->
+<div class="pricing-section alt">
+  <div class="inner">
+    <p class="section-label">Professional Headshots</p>
+    <h2 class="section-title">Headshot <em>packages</em></h2>
+    <p class="section-body">Individual sessions and full team days. We come to your office or shoot at a preferred location — consistent style across every team member, delivered in 48 hours.</p>
 
-    <div class="price-card">
-      <p class="card-category">Graduation</p>
-      <h3>The Grad Session</h3>
-      <div class="price-amount">$99</div>
-      <p class="price-note">+ applicable taxes</p>
-      <ul class="price-features">
-        <li>60-minute outdoor session</li>
-        <li>1–2 Vancouver locations</li>
-        <li>Cap &amp; gown + casual looks</li>
-        <li>10 fully edited digital images</li>
-        <li>Online gallery — 60 days</li>
-        <li>Print-ready files included</li>
-        <li>High school &amp; university</li>
-      </ul>
-      <a href="contact.html?service=graduation" class="btn-book">Book This</a>
+    <div class="tiers-grid">
+      <div class="tier-card">
+        <span class="tier-tag">Individual</span>
+        <h3>Executive Portrait</h3>
+        <p class="tier-scope">1 person · 30–45 minutes · 1 location</p>
+        <ul class="tier-includes">
+          <li>Style brief before the shoot</li>
+          <li>2 wardrobe looks</li>
+          <li>Posing direction throughout</li>
+          <li>10 fully retouched images</li>
+          <li>Web + print-ready files</li>
+          <li>48-hour delivery</li>
+        </ul>
+        <a href="contact.html?service=headshots" class="tier-cta">Request a quote →</a>
+      </div>
+
+      <div class="tier-card featured">
+        <span class="tier-tag">Most Requested</span>
+        <h3>Team Headshot Day</h3>
+        <p class="tier-scope">5–30 people · on-location at your office</p>
+        <ul class="tier-includes">
+          <li>We set up at your office — minimal disruption</li>
+          <li>~10–15 minutes per person</li>
+          <li>Consistent style across all team members</li>
+          <li>8 retouched images per person</li>
+          <li>Individual galleries per team member</li>
+          <li>Master gallery for HR/marketing use</li>
+          <li>48-hour delivery</li>
+        </ul>
+        <a href="contact.html?service=headshots" class="tier-cta">Request a quote →</a>
+      </div>
+
+      <div class="tier-card">
+        <span class="tier-tag">Enterprise</span>
+        <h3>Company-Wide Rollout</h3>
+        <p class="tier-scope">30+ people · multi-session or multi-location</p>
+        <ul class="tier-includes">
+          <li>Dedicated account manager</li>
+          <li>Scheduled across multiple dates or offices</li>
+          <li>Branded gallery portal</li>
+          <li>Consistent editing across all sessions</li>
+          <li>New hire top-up sessions available</li>
+          <li>Priority 48-hour delivery</li>
+        </ul>
+        <a href="contact.html?service=headshots" class="tier-cta">Request a quote →</a>
+      </div>
     </div>
 
-    <div class="price-card">
-      <p class="card-category">Headshots</p>
-      <h3>The First Impression</h3>
-      <div class="price-amount">$79</div>
-      <p class="price-note">+ applicable taxes</p>
-      <ul class="price-features">
-        <li>45-minute outdoor session</li>
-        <li>2 outfit looks</li>
-        <li>Relaxed posing guidance</li>
-        <li>8 fully retouched images</li>
-        <li>LinkedIn &amp; web-ready files</li>
-        <li>48-hour turnaround</li>
-      </ul>
-      <a href="contact.html?service=headshots" class="btn-book">Book This</a>
-    </div>
-
-    <div class="price-card">
-      <p class="card-category">Family</p>
-      <h3>The Full Picture</h3>
-      <div class="price-amount">$109</div>
-      <p class="price-note">up to 5 people + taxes</p>
-      <ul class="price-features">
-        <li>75-minute location session</li>
-        <li>Families up to 5 people</li>
-        <li>Natural, relaxed direction</li>
-        <li>20 fully edited digital images</li>
-        <li>Online gallery — 90 days</li>
-        <li>Print-ready files included</li>
-      </ul>
-      <a href="contact.html?service=family" class="btn-book">Book This</a>
-    </div>
-
-  </div>
-  <div class="custom-note">
-    Larger groups, extra time, or add-ons? Just ask — happy to build something custom that works for you.
-  </div>
-</div>
-
-<!-- WHAT'S INCLUDED -->
-<div class="includes-section">
-  <div class="includes-inner">
-    <p class="section-label" style="font-size:0.72rem; text-transform:uppercase; letter-spacing:0.14em; color:var(--accent); font-weight:600;">Every session includes</p>
-    <h2 style="font-family:var(--font-display); font-size:clamp(1.4rem,2.5vw,2rem); font-weight:normal; margin-bottom:0.5rem;">No matter which package you pick</h2>
-    <div class="includes-grid">
-      <div class="include-item"><h4>Pre-shoot consultation</h4><p>A quick call or message before your session to plan locations, timing, and what you're hoping to capture.</p></div>
-      <div class="include-item"><h4>Professional editing</h4><p>Colour-corrected and retouched to look clean and natural — not over-filtered.</p></div>
-      <div class="include-item"><h4>Private online gallery</h4><p>Password-protected gallery you can share, download, or send to a print lab.</p></div>
-      <div class="include-item"><h4>Print-ready resolution</h4><p>High-res files sized for printing at any scale — from phone wallpapers to large canvas.</p></div>
-      <div class="include-item"><h4>Posing direction</h4><p>We guide every shot. You don't need to know how to pose — that's our job.</p></div>
-      <div class="include-item"><h4>No hidden fees</h4><p>The price you see is what you pay. Deposit to confirm, balance on the day.</p></div>
+    <div class="custom-note">
+      <strong>Volume pricing available.</strong> The more people, the lower the per-person rate. Teams of 5+ receive preferred pricing — included automatically in your custom quote.
     </div>
   </div>
 </div>
 
-<!-- REAL ESTATE -->
-<div class="pricing-section" style="border-top: 1px solid var(--border);">
-  <p class="section-label">Also Available</p>
-  <h3 style="font-family:var(--font-display); font-size:1.3rem; font-weight:normal; margin-bottom:0.75rem;">Real Estate Photography</h3>
-  <p style="font-size:0.9rem; color:var(--grey); max-width:500px; margin-bottom:1rem;">Interior &amp; exterior coverage, HDR processing, MLS-ready files. Pricing varies by property size and scope — reach out for a no-pressure custom quote.</p>
-  <p style="font-size:0.875rem; color:var(--grey);">📞 <a href="tel:2365092933" style="color:var(--grey);">(236) 509-2933</a> &nbsp;·&nbsp; <a href="mailto:sean@harbourviewmedia.ca" style="color:var(--grey);">sean@harbourviewmedia.ca</a></p>
+<!-- WHAT AFFECTS PRICE -->
+<div class="what-affects">
+  <p class="section-label">How pricing works</p>
+  <h2 class="section-title">What <em>affects the quote</em></h2>
+  <div class="factors-grid">
+    <div class="factor">
+      <div class="factor-num">01</div>
+      <h4>Duration</h4>
+      <p>Half-day, full-day, or multi-day. The longer the coverage, the more scalable the team we deploy.</p>
+    </div>
+    <div class="factor">
+      <div class="factor-num">02</div>
+      <h4>Team size</h4>
+      <p>Larger events or bigger headshot rosters require more shooters. Volume discounts apply at scale.</p>
+    </div>
+    <div class="factor">
+      <div class="factor-num">03</div>
+      <h4>Turnaround</h4>
+      <p>Standard is 48 hours. Same-day or next-morning rush delivery is available at a premium.</p>
+    </div>
+    <div class="factor">
+      <div class="factor-num">04</div>
+      <h4>Licensing scope</h4>
+      <p>Standard corporate license covers internal use and owned channels. Broader commercial or ad licensing is quoted separately.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ALWAYS INCLUDED -->
+<div class="always-included">
+  <div class="always-inner">
+    <p class="section-label">Every engagement includes</p>
+    <h2 class="section-title" style="font-family:var(--font-display); font-size:clamp(1.4rem,2.5vw,2rem); font-weight:normal; margin-bottom:0.5rem;">Regardless of scope or budget</h2>
+    <div class="included-grid">
+      <div class="included-item"><h4>Pre-shoot planning</h4><p>A call or brief before every engagement to align on priorities, shot lists, and logistics.</p></div>
+      <div class="included-item"><h4>Same-night sneak peek</h4><p>Highlight images delivered the same night for morning press or social — at no extra charge.</p></div>
+      <div class="included-item"><h4>Professional editing</h4><p>Every image colour-corrected and retouched. No raw files, no half-finished galleries.</p></div>
+      <div class="included-item"><h4>Private delivery portal</h4><p>Password-protected gallery your team can access, download, and share internally.</p></div>
+      <div class="included-item"><h4>2-hour response time</h4><p>Dedicated account management during business hours. No chasing, no delays.</p></div>
+      <div class="included-item"><h4>Corporate usage license</h4><p>Clear licensing terms included in every engagement so your legal team has what they need.</p></div>
+    </div>
+  </div>
 </div>
 
 <div class="cta-band">
-  <h2>Still have <em>questions?</em></h2>
-  <p>We respond same day. No automated replies, no waiting in a queue.</p>
-  <a href="contact.html" class="btn-light">Get in Touch</a>
+  <h2>Ready for a <em>custom quote?</em></h2>
+  <p>Share your project details and the team will respond within 24 hours.</p>
+  <a href="contact.html" class="btn-light">Request a Vendor Quote</a>
 </div>
 
 <footer>
