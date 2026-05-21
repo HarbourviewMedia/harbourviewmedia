@@ -128,8 +128,8 @@
   <!-- LEFT -->
   <div class="contact-left">
     <p class="page-label">Get in touch</p>
-    <h1>Let's make your <em>night unforgettable.</em></h1>
-    <p>Tell us what you're planning and we'll build something that works. We respond same day — no automated replies, no waiting in a queue.</p>
+    <h1>Let's talk about <em>your project.</em></h1>
+    <p>Share your details and Sean will respond within 24 hours with pricing and availability. No automated replies, no waiting in a queue.</p>
 
     <div class="contact-details">
       <div class="contact-detail">
@@ -179,11 +179,11 @@
 
   <!-- RIGHT — FORM -->
   <div class="contact-right">
-    <h2>Send a <em>message</em></h2>
-    <p class="form-sub">Tell us what you're planning and the best way to reach you — we'll take it from there.</p>
+    <h2>Request <em>Pricing &amp; Availability</em></h2>
+    <p class="form-sub">Share your project details and Sean will respond within 24 hours with pricing and availability.</p>
 
     <div id="formWrap" class="form-visible">
-      <form id="contactForm" action="https://formspree.io/f/mjgernbq" method="POST">
+      <form id="contactForm" action="https://formspree.io/f/YOUR_mjgernbq" method="POST">
 
         <div class="form-row">
           <div class="form-group">
@@ -207,31 +207,30 @@
         </div>
 
         <div class="form-group">
-          <label for="service">I'm interested in</label>
+          <label for="service">I'm inquiring about</label>
           <select id="service" name="service" required>
             <option value="" disabled selected>Select a service…</option>
-            <optgroup label="Event Photography">
-              <option value="event-quick">Event — Quick Shoot ($350)</option>
-              <option value="event-full">Event — Full Night, Extended ($750)</option>
-              <option value="event-bundle">Event — Bundle Both ($999)</option>
-              <option value="event-custom">Event — Custom / Not Sure Yet</option>
-            </optgroup>
-            <optgroup label="Portraits">
-              <option value="graduation">Graduation Portraits ($99)</option>
-              <option value="headshots">Professional Headshots ($79)</option>
-              <option value="headshots-team">Team Headshots — Custom Quote</option>
-              <option value="family">Family Session ($129)</option>
-            </optgroup>
-            <optgroup label="Other">
-              <option value="real-estate">Real Estate Photography — Custom Quote</option>
-              <option value="other">Something else</option>
-            </optgroup>
+            <option value="event-coverage">Event Coverage</option>
+            <option value="headshots">Professional Headshots</option>
+            <option value="graduation">Graduation Sessions</option>
+            <option value="other">Custom / Other</option>
           </select>
         </div>
 
         <div class="form-group">
-          <label for="eventDate">Event or session date <span class="optional-tag">(if known)</span></label>
-          <input type="text" id="eventDate" name="eventDate" placeholder="e.g. June 6, 2026" />
+          <label for="budget">Estimated budget</label>
+          <select id="budget" name="budget" required>
+            <option value="" disabled selected>Select a range…</option>
+            <option value="under-200">Under $200</option>
+            <option value="200-500">$200 – $500</option>
+            <option value="500-1000">$500 – $1,000</option>
+            <option value="1000-plus">$1,000+</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="eventDate">Preferred date <span class="optional-tag">(if known)</span></label>
+          <input type="date" id="eventDate" name="eventDate" />
         </div>
 
         <div class="form-group">
@@ -239,15 +238,15 @@
           <textarea id="message" name="message" placeholder="Location, number of people, what you're hoping to capture — the more detail the better." required></textarea>
         </div>
 
-        <button type="submit" class="btn-submit">Send Message</button>
+        <button type="submit" class="btn-submit">Request Pricing &amp; Availability</button>
 
       </form>
     </div>
 
     <div id="successState" class="success-state">
       <div class="success-icon">✓</div>
-      <h3>Message <em>sent!</em></h3>
-      <p>Thanks for reaching out. We'll get back to you — usually within a few hours.</p>
+      <h3>Request <em>received.</em></h3>
+      <p>Thank you. Sean will review your project details and reply within 24 hours with pricing and availability.</p>
     </div>
   </div>
 
@@ -265,7 +264,7 @@
 </footer>
 
 <script>
-  // Pre-select service from URL param e.g. contact.html?service=event-solo
+  // Pre-select service from URL param e.g. contact.html?service=headshots
   const params = new URLSearchParams(window.location.search);
   const serviceParam = params.get('service');
   if (serviceParam) {
@@ -295,11 +294,11 @@
         document.getElementById('formWrap').classList.replace('form-visible', 'form-hidden');
         document.getElementById('successState').classList.add('visible');
       } else {
-        btn.textContent = 'Something went wrong — try emailing directly.';
+        btn.textContent = 'Something went wrong — please email sean@harbourviewmedia.ca directly.';
         btn.disabled = false;
       }
     } catch {
-      btn.textContent = 'Something went wrong — try emailing directly.';
+      btn.textContent = 'Something went wrong — please email sean@harbourviewmedia.ca directly.';
       btn.disabled = false;
     }
   });
