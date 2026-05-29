@@ -29,13 +29,10 @@
     .page-header h1 em { font-style: italic; color: var(--accent); }
     .page-header p { font-size: 1rem; color: var(--grey); max-width: 560px; margin-top: 1.25rem; line-height: 1.75; }
 
-    .faq-wrap { max-width: 1100px; margin: 0 auto; padding: 4rem 2.5rem; display: grid; grid-template-columns: 180px 1fr; gap: 5rem; align-items: start; }
-
-    .faq-nav { position: sticky; top: 80px; }
-    .faq-nav-label { font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.12em; color: var(--accent); font-weight: 600; margin-bottom: 1rem; display: block; }
-    .faq-nav ul { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; border-left: 1px solid var(--border); padding-left: 1rem; }
-    .faq-nav a { font-size: 0.82rem; color: var(--grey); text-decoration: none; transition: color 0.2s; display: block; }
-    .faq-nav a:hover { color: var(--black); }
+    .faq-wrap { max-width: 1100px; margin: 0 auto; padding: 3rem 2.5rem 4rem; }
+    .faq-jumps { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 3rem; }
+    .faq-jump-link { font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--grey); text-decoration: none; border: 1px solid var(--border); padding: 0.45rem 1rem; border-radius: 2px; background: #fff; transition: all 0.2s; }
+    .faq-jump-link:hover { border-color: var(--black); color: var(--black); }
 
     .faq-content { }
     .faq-group { margin-bottom: 3.5rem; }
@@ -68,8 +65,7 @@
       nav { padding: 1rem 1.25rem; }
       .nav-links { gap: 0.75rem; }
       .page-header { padding: 3rem 1.25rem 2rem; }
-      .faq-wrap { grid-template-columns: 1fr; padding: 2.5rem 1.25rem; gap: 2rem; }
-      .faq-nav { display: none; }
+      .faq-wrap { padding: 2rem 1.25rem; }
       .cta-block { padding: 2.5rem 1.25rem; flex-direction: column; align-items: flex-start; }
       footer { flex-direction: column; align-items: flex-start; padding: 1.5rem 1.25rem; }
     }
@@ -95,20 +91,14 @@
 </div>
 
 <div class="faq-wrap">
+  <div class="faq-jumps">
+    <a href="#events" class="faq-jump-link">Corporate Events</a>
+    <a href="#headshots" class="faq-jump-link">Headshots</a>
+    <a href="#delivery" class="faq-jump-link">Delivery</a>
+    <a href="#vendor" class="faq-jump-link">Vendor &amp; Compliance</a>
+    <a href="#booking" class="faq-jump-link">Booking &amp; Payments</a>
+  </div>
 
-  <!-- SIDEBAR NAV -->
-  <nav class="faq-nav">
-    <p class="faq-nav-label">Jump to</p>
-    <ul>
-      <li><a href="#events">Corporate Events</a></li>
-      <li><a href="#headshots">Headshots</a></li>
-      <li><a href="#delivery">Delivery</a></li>
-      <li><a href="#vendor">Vendor & Compliance</a></li>
-      <li><a href="#booking">Booking & Payments</a></li>
-    </ul>
-  </nav>
-
-  <!-- FAQ CONTENT -->
   <div class="faq-content">
 
     <!-- CORPORATE EVENTS -->
